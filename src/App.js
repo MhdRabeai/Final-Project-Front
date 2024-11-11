@@ -8,6 +8,7 @@ import { Register } from "./Pages/Register";
 import "preline/preline";
 import { HSStaticMethods } from "preline/preline";
 import { lazy, useEffect } from "react";
+import AuthRoot from "./Pages/AuthRoot";
 
 const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
@@ -28,8 +29,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
         <Route path="about" element={<About />} />
         <Route path="blogs" element={<Blogs />}>
           <Route path=":blogId" element={<div>blogId</div>} />
@@ -38,8 +37,12 @@ function App() {
         <Route path="team" element={<Team />}>
           <Route path=":doctorId" element={<div>doctorId</div>} />
         </Route>
-        <Route path="*" element={<NotFound />} />
       </Route>
+      <Route element={<AuthRoot />}>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
