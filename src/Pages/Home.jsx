@@ -1,6 +1,5 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
 
 export const Home = () => {
-  return <div className=" ">Home</div>;
+  return <div className=" max-w-[86rem] mx-auto px-4">Home</div>;
 };

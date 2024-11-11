@@ -1,7 +1,7 @@
 import React from "react";
 
 const Team = () => {
-  return <div>Team</div>;
+  return <div className="max-w-[86rem] mx-auto px-4">Team</div>;
 };
 
 export default Team;

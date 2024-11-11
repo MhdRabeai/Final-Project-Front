@@ -7,12 +7,13 @@ import { Login } from "./Pages/Login";
 import { Register } from "./Pages/Register";
 import "preline/preline";
 import { HSStaticMethods } from "preline/preline";
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 
-import About from "./Pages/About";
-import Blogs from "./Pages/Blogs";
-import Contact from "./Pages/Contact";
-import Team from "./Pages/Team";
+const About = lazy(() => import("./Pages/About"));
+const Blogs = lazy(() => import("./Pages/Blogs"));
+const Contact = lazy(() => import("./Pages/Contact"));
+const Team = lazy(() => import("./Pages/Team"));
+
 function App() {
   const location = useLocation();
 
