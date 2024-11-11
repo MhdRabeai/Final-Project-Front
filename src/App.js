@@ -8,7 +8,7 @@ import { Register } from "./Pages/Register";
 import "preline/preline";
 import { HSStaticMethods } from "preline/preline";
 import { useEffect } from "react";
-// import pagedone from "pagedone/pagedone";
+
 import About from "./Pages/About";
 import Blogs from "./Pages/Blogs";
 import Contact from "./Pages/Contact";
@@ -16,13 +16,11 @@ import Team from "./Pages/Team";
 function App() {
   const location = useLocation();
 
-  useEffect(() => {
-    require("preline/preline");
-    // pagedone.init();
-  }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     // @ts-ignore
+    require("preline/preline");
     HSStaticMethods.autoInit();
   }, [location.pathname]);
   return (
