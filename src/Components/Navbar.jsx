@@ -73,7 +73,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
               to="/"
               aria-current="page"
@@ -85,7 +85,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
               to="/about"
             >
@@ -95,7 +95,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
               to="/team"
             >
@@ -105,7 +105,7 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
               to="/blogs"
             >
@@ -115,18 +115,24 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
               }
               to="/contact"
             >
               Contact
             </NavLink>
-            <button onClick={toggleTheme} className="  p-1 sm:pr-2">
+            <button onClick={toggleTheme} className="transition  p-1 sm:pr-2">
               {isDark ? (
-                <MdDarkMode className="fill-white scale-150" />
+                <MdDarkMode className="fill-white scale-150 transition" />
               ) : (
-                <GoSun className="fill-white scale-150" />
+                <GoSun className="fill-white scale-150 transition" />
               )}
+            </button>
+            <button
+              type="button"
+              class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent hover:border-white bg-white text-[#4f9451] hover:bg-[#4f9451] hover:text-white transition "
+            >
+              Button
             </button>
           </div>
         </div>

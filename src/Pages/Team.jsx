@@ -3,35 +3,67 @@ import React, { useState } from "react";
 const TeamCard = ({ imageSrc, name, profession }) => {
   return (
     <div className="w-full px-4 md:w-1/2 xl:w-1/4">
-      <div className="mx-auto mb-10 w-full max-w-[370px]">
-        <div className="relative overflow-hidden rounded-lg">
-          <img src={imageSrc} alt="" className="w-full" />
-          <div className="absolute bottom-5 left-0 w-full text-center">
-            <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-black">
-              <h3 className="text-base font-semibold text-dark dark:text-white">
-                {name}
-              </h3>
-              <p className="text-xs text-body-color dark:text-dark-6">
-                {profession}
-              </p>
-            </div>
+    <div className="mx-auto mb-10 w-full max-w-[370px] transition-transform transform hover:-translate-y-2 duration-300">
+      <div className="relative overflow-hidden rounded-lg">
+        <img src={imageSrc} alt="" className="w-full" />
+        <div className="absolute bottom-5 left-0 w-full text-center">
+          <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-black">
+            <h3 className="text-base font-semibold text-dark dark:text-white">
+              {name}
+            </h3>
+            <p className="text-xs text-body-color dark:text-dark-6">
+              {profession}
+            </p>
           </div>
         </div>
       </div>
     </div>
-  );
+  </div>
+  )
 };
 
 const Team = () => {
   const teamData = [
-    { name: "Coriss Ambady", profession: "Web Developer", imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg" },
-    { name: "John Doe", profession: "UI/UX Designer", imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg" },
-    { name: "Jane Smith", profession: "Backend Developer", imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg" },
-    { name: "Samuel Green", profession: "Frontend Developer", imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg" },
-    { name: "Robert Williams", profession: "Project Manager", imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg" },
-    { name: "Alice Johnson", profession: "QA Engineer", imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg" },
-    { name: "Lucas Martin", profession: "Web Developer", imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg" },
-    { name: "Sophia Davis", profession: "DevOps Engineer", imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg" },
+    {
+      name: "Coriss Ambady",
+      profession: "Web Developer",
+      imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
+    },
+    {
+      name: "John Doe",
+      profession: "UI/UX Designer",
+      imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
+    },
+    {
+      name: "Jane Smith",
+      profession: "Backend Developer",
+      imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
+    },
+    {
+      name: "Samuel Green",
+      profession: "Frontend Developer",
+      imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
+    },
+    {
+      name: "Robert Williams",
+      profession: "Project Manager",
+      imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
+    },
+    {
+      name: "Alice Johnson",
+      profession: "QA Engineer",
+      imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
+    },
+    {
+      name: "Lucas Martin",
+      profession: "Web Developer",
+      imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
+    },
+    {
+      name: "Sophia Davis",
+      profession: "DevOps Engineer",
+      imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
+    },
   ];
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -46,9 +78,10 @@ const Team = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <section className="pb-10 pt-20 dark:bg-black lg:pb-20 lg:pt-[120px]">
+    <section className=" dark:bg-black ">
+      {/* lg:pb-20 lg:pt-[120px] pb-10 pt-20 */}
       <div className="container mx-auto">
-        <div className="-mx-4 flex flex-wrap">
+        <div className=" flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[510px] text-center">
               <span className="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
@@ -65,9 +98,10 @@ const Team = () => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap justify-center dark:bg-black">
+        <div className="mx-4 flex flex-wrap justify-center dark:bg-black">
           {currentTeamMembers.map((member, index) => (
-            <TeamCard className="dark:bg-white"
+            <TeamCard
+              className="dark:bg-white"
               key={index}
               name={member.name}
               profession={member.profession}
@@ -82,7 +116,9 @@ const Team = () => {
               <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-white">
                 <li>
                   <button
-                    onClick={() => paginate(currentPage > 1 ? currentPage - 1 : 1)}
+                    onClick={() =>
+                      paginate(currentPage > 1 ? currentPage - 1 : 1)
+                    }
                     className="flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark  dark:border-white/10 dark:text-white dark:hover:bg-white/20"
                   >
                     <svg
@@ -104,7 +140,11 @@ const Team = () => {
                   <li key={page}>
                     <button
                       onClick={() => paginate(page + 1)}
-                      className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-10 dark:border-white/10 dark:text-white dark:hover:bg-green/5 ${currentPage === page + 1 ? "bg-gray-200 dark:bg-dark-3" : ""}`}
+                      className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-10 dark:border-white/10 dark:text-white dark:hover:bg-green/5 ${
+                        currentPage === page + 1
+                          ? "bg-gray-200 dark:bg-dark-3"
+                          : ""
+                      }`}
                     >
                       {page + 1}
                     </button>
@@ -113,7 +153,11 @@ const Team = () => {
 
                 <li>
                   <button
-                    onClick={() => paginate(currentPage < totalPages ? currentPage + 1 : totalPages)}
+                    onClick={() =>
+                      paginate(
+                        currentPage < totalPages ? currentPage + 1 : totalPages
+                      )
+                    }
                     className="flex h-10 min-w-10 items-center justify-center px-2 text-base font-medium text-dark hover:bg-gray-2 dark:border-white/10 dark:text-white dark:hover:bg-white/5"
                   >
                     <svg
