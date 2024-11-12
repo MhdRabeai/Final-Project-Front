@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 const TeamCard = ({ imageSrc, name, profession }) => {
   return (
-    <div className="w-full px-4 md:w-1/2 xl:w-1/4">
-    <div className="mx-auto mb-10 w-full max-w-[370px] transition-transform transform hover:-translate-y-2 duration-300">
-      <div className="relative overflow-hidden rounded-lg">
+    <div className="w-full px-4 md:w-1/2 xl:w-1/4  ">
+    <div className="mx-auto mb-10 w-full max-w-[370px] transition-transform transform hover:-translate-y-2 duration-300 dark:border-white">
+      <div className="relative overflow-hidden rounded-lg ">
         <img src={imageSrc} alt="" className="w-full" />
-        <div className="absolute bottom-5 left-0 w-full text-center">
-          <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-black">
+        <div className="absolute bottom-5 left-0 w-full text-center ">
+          <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-black ">
             <h3 className="text-base font-semibold text-dark dark:text-white">
               {name}
             </h3>
@@ -69,7 +69,7 @@ const Team = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 4;
 
-  const totalPages = Math.ceil(teamData.length / itemsPerPage);
+  const totalPages = Math.min(Math.ceil(teamData.length / itemsPerPage), 4);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -98,7 +98,19 @@ const Team = () => {
           </div>
         </div>
 
-        <div className="mx-4 flex flex-wrap justify-center dark:bg-black">
+        <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
+          {currentTeamMembers.map((member, index) => (
+            <TeamCard
+              className="dark:bg-white"
+              key={index}
+              name={member.name}
+              profession={member.profession}
+              imageSrc={member.imageSrc}
+            />
+          ))}
+        </div>
+
+        <div className="mx-4 flex flex-wrap justify-center dark:bg-black ">
           {currentTeamMembers.map((member, index) => (
             <TeamCard
               className="dark:bg-white"
@@ -111,16 +123,16 @@ const Team = () => {
         </div>
 
         {teamData.length > itemsPerPage && (
-          <div className="bg-white py-10 text-center dark:bg-black dark:border-white">
-            <div className="mb-12 inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black">
-              <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-white">
-                <li>
+          <div className="bg-white py-10 text-center dark:bg-black ">
+      <div className="mb-12 inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black dark:border">
+      <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-gray">
+      <li>
                   <button
                     onClick={() =>
                       paginate(currentPage > 1 ? currentPage - 1 : 1)
                     }
-                    className="flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark  dark:border-white/10 dark:text-white dark:hover:bg-white/20"
-                  >
+                     className="flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-2 dark:border-white/10 dark:text-white dark:hover:bg-white/5">
+                  
                     <svg
                       width="20"
                       height="21"
