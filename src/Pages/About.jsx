@@ -606,8 +606,22 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
+            <div className="w-full px-6 lg:w-1/2 xl:w-5/12">
               <div className="w-full">
+                <span
+                  className="block mb-4 text-lg font-semibold"
+                  style={{ color: "#4F9451" }}
+                >
+                  Why Choose Us
+                </span>
+                <h2 className="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
+                  Make your customers happy by giving services.
+                </h2>
+                <p className="mb-5 text-base text-gray-600 dark:text-gray-700">
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                  The point of using Lorem Ipsum is that it has a more-or-less.
+                </p>
                 <ol className="flex space-x-4">
                   <div className="w-1/2 pr-2">
                     <ListItem
