@@ -26,18 +26,21 @@ const Blog = () => {
           <div className="-mx-4 flex flex-wrap">
             <BlogCard
               date="Dec 22, 2023"
+              name="Dr.Smith"
               CardTitle="Meet AutoManage, the best AI management tools"
               CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               image="https://i.ibb.co/Cnwd4q6/image-01.jpg"
             />
             <BlogCard
               date="Dec 22, 2023"
+              name="Dr.Smith"
               CardTitle="Meet AutoManage, the best AI management tools"
               CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               image="https://i.ibb.co/Y23YC07/image-02.jpg"
             />
             <BlogCard
               date="Dec 22, 2023"
+              name="Dr.Smith"
               CardTitle="Meet AutoManage, the best AI management tools"
               CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               image="https://i.ibb.co/7jdcnwn/image-03.jpg"
@@ -48,18 +51,21 @@ const Blog = () => {
           <div className="-mx-4 flex flex-wrap">
             <BlogCard
               date="Dec 22, 2023"
+              name="Dr.Smith"
               CardTitle="Meet AutoManage, the best AI management tools"
               CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               image="https://i.ibb.co/Cnwd4q6/image-01.jpg"
             />
             <BlogCard
               date="Dec 22, 2023"
+              name="Dr.Smith"
               CardTitle="Meet AutoManage, the best AI management tools"
               CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               image="https://i.ibb.co/Y23YC07/image-02.jpg"
             />
             <BlogCard
               date="Dec 22, 2023"
+              name="Dr.Smith"
               CardTitle="Meet AutoManage, the best AI management tools"
               CardDescription="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
               image="https://i.ibb.co/7jdcnwn/image-03.jpg"
@@ -78,7 +84,7 @@ const Blog = () => {
 export default Blog;
 
 // Blog Card Component
-const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
+const BlogCard = ({ image, date, CardTitle, CardDescription,name }) => {
   return (
     <div className="w-full px-4 md:w-1/2 lg:w-1/3 transition-transform transform hover:-translate-y-2 duration-300">
       <div className="mb-10 w-full border border-gray-200 dark:border-sky-100 rounded-lg shadow-lg">
@@ -89,8 +95,11 @@ const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
           {date && (
             <span className="mb-5 inline-block rounded bg-[#4F9451] px-4 py-1 text-center text-xs font-semibold leading-loose text-white">
               {date}
-            </span>
+            </span>           
           )}
+           <span className="mb-5 inline-block rounded bg-[#4F9451] px-4 py-1 text-center text-xs font-semibold leading-loose text-white ml-2">
+              {name}
+            </span>
           <h3>
             <a
               href="/#"
@@ -102,7 +111,7 @@ const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
           <p className="text-base text-body-color dark:text-dark-6">
             {CardDescription}
           </p>
-          <a
+          <a 
             href="javascript:void(0)"
             className="bg-[#4F9451] dark:bg-dark-2 border-[#4F9451] dark:border-dark-2 border rounded-full inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-white hover:bg-body-color hover:border-body-color mt-5"
           >
