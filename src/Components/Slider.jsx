@@ -14,7 +14,6 @@ const Slider = () => {
         slidesPerView={1}
         spaceBetween={10}
         navigation={true}
-        onSwiper={(e) => console.log(e)}
         pagination={{
           clickable: true,
         }}
