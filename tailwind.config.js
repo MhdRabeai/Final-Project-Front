@@ -6,7 +6,11 @@ module.exports = {
     "./node_modules/preline/preline.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customGreen: '#4F9451',
+      }
+    },
   },
   plugins: [require("@tailwindcss/forms"), require("preline/plugin")],
 };

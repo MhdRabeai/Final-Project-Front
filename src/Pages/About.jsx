@@ -2,6 +2,7 @@ import React from "react";
 import ListItem from "../Components/ListItem";
 
 const About = () => {
+<<<<<<< HEAD
   return <div className="max-w-[86rem] mx-auto px-4">
     <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
         <div className="container mx-auto">
@@ -635,6 +636,9 @@ const About = () => {
         </div>
       </section>
   </div>;
+=======
+  return <div className="max-w-[86rem] mx-auto px-4">About...yara</div>;
+>>>>>>> cff1931b3556dbdc02cce5fbc2d8c6bc1ff80cd7
 };
 
 export default About;
