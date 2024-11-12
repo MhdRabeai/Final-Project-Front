@@ -90,7 +90,7 @@ const Team = () => {
                 Our Awesome Team  
               </h2>  
               <p className="text-base text-body-color dark:text-dark-6">  
-                There are many variations of passages of                available, but the majority have suffered alteration...  
+                There are many variations of passages of  available, but the majority have suffered alteration...  
               </p>  
             </div>  
           </div>  
