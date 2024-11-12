@@ -4,7 +4,7 @@ import React from "react";
 export const Home = () => {
   return (
     <div class="max-w-[86rem] mx-auto px-4">
-      <div class="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center">
+      <div class="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-10">
         <div class="lg:col-span-3 flex flex-col ">
           <h1 class="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white text-center lg:text-left">
             Your Journey to Mental Clarity
@@ -37,7 +37,7 @@ export const Home = () => {
           <img class="w-full rounded-3xl " src="hero.png" alt="Hero Image" />
         </div>
       </div>
-      <div class="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center">
+      <div class="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-10">
         <div class="lg:col-span-4 flex  ">left</div>
 
         <div class="lg:col-span-3 mt-10 lg:mt-0">right</div>
