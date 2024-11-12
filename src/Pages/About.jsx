@@ -662,28 +662,32 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="flex items-center justify-center pb-10">
+      <section className="flex flex-col items-center justify-center pb-10">
         <div className="text-center">
-          <span className="block mb-4 text-lg font-semibold text-[#4F9451]">
+          <span className="block mb-2 text-lg font-semibold text-[#4F9451]">
             Our Features
           </span>
-          <h1 className="mb-5 text-4xl font-bold text-black">Why choose Us</h1>
+          <h1 className=" text-4xl font-bold text-black">Why choose Us</h1>
+        </div>
+        <div className="pt-10 pb-10 w-full">
+          <div className="flex justify-center  gap-2  flex-wrap ">
+            {CardsData.map((card, index) => (
+              <Card
+                key={index}
+                headline={card.headline}
+                content={card.content}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="p-6 pb-10">
-        <div className="flex justify-between space-x-4">
-          {CardsData.map((card, index) => (
-            <Card key={index} headline={card.headline} content={card.content} />
-          ))}
-        </div>
-      </section>
       <section className="flex items-center justify-center">
         <div className="text-center">
-          <span className="block mb-4 text-lg font-semibold text-[#4F9451]">
+          <span className="block mb-2 text-lg font-semibold text-[#4F9451]">
             Our Testimonial
           </span>
-          <h1 className="mb-5 text-4xl font-bold text-black">
+          <h1 className=" text-4xl font-bold text-black">
             What Our Patients Are Saying
           </h1>
         </div>
