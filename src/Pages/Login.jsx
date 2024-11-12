@@ -8,6 +8,6 @@ export const Login = () => {
     //   inputPlaceHolder={"Enter Full name"}
     //   inputName={"name"}
     // />
-    <div>Login</div>
+    <div className="max-w-[86rem] mx-auto px-4">Login</div>
   );
 };

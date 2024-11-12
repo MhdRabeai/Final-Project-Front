@@ -1,9 +1,8 @@
 import React from "react";
-import TogglePasswordItem from "../Components/TogglePasswordItem";
 
 export const Register = () => {
   return (
-    <div className="max-w-sm">
+    <div className="max-w-[86rem] mx-auto px-4">
       <div className="flex mb-2">
         <div className="flex-1">
           <input
@@ -236,10 +235,6 @@ export const Register = () => {
             Should contain special characters.
           </li>
         </ul>
-      </div>
-      <div className="mb-10">
-        <h2 className="mb-2">Toggle Password 1</h2>
-        <TogglePasswordItem groupId="first-group" />
       </div>
     </div>
   );
