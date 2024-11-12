@@ -12,17 +12,17 @@ const Footer = () => {
               to="/"
               aria-label="Brand"
             >
-              Logo
+              <img src="logo.png" alt="logo" width={200} />
             </Link>
           </div>
 
           <div class="col-span-1">
             <h4 class="font-semibold text-gray-100">Sections</h4>
 
-            <div class="mt-3 grid space-y-3">
+            <div class="mt-3 grid space-y-1">
               <p>
                 <Link
-                  class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                  class="inline-flex gap-x-2 text-gray-300 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                   to="/"
                 >
                   Home
@@ -30,7 +30,7 @@ const Footer = () => {
               </p>
               <p>
                 <Link
-                  class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                  class="inline-flex gap-x-2 text-gray-300 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                   to="/about"
                 >
                   About
@@ -38,7 +38,7 @@ const Footer = () => {
               </p>
               <p>
                 <Link
-                  class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                  class="inline-flex gap-x-2 text-gray-300 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                   to="/team"
                 >
                   Team
@@ -46,7 +46,7 @@ const Footer = () => {
               </p>
               <p>
                 <Link
-                  class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                  class="inline-flex gap-x-2 text-gray-300 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                   to="/blogs"
                 >
                   Blogs
@@ -54,7 +54,7 @@ const Footer = () => {
               </p>
               <p>
                 <Link
-                  class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                  class="inline-flex gap-x-2 text-gray-300 hover:text-gray-200 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                   to="/contact"
                 >
                   Contact
@@ -65,7 +65,7 @@ const Footer = () => {
           <div class="col-span-1">
             <h4 class="font-semibold text-gray-100">Contact Us:</h4>
 
-            <div class="mt-3 grid space-y-3 text-md">
+            <div class="mt-3 grid space-y-2 text-md">
               <p class="inline-flex gap-x-2 text-gray-300 focus:outline-none focus:text-gray-200 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200">
                 Phone: <span>+963 932 144 432</span>
               </p>
