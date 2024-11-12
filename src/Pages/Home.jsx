@@ -4,7 +4,7 @@ import React from "react";
 export const Home = () => {
   return (
     <div class="max-w-[86rem] mx-auto px-4">
-      <div class="grid lg:grid-cols-8 lg:gap-x-4 xl:gap-x-12  lg:items-center">
+      <div class="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center">
         <div class="lg:col-span-3 flex flex-col ">
           <h1 class="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white text-center lg:text-left">
             Your Journey to Mental Clarity
@@ -32,14 +32,15 @@ export const Home = () => {
             </button>
           </div>
         </div>
-        <div className="lg:col-span-1"></div>
+
         <div class="lg:col-span-4 mt-10 lg:mt-0">
-          <img
-            class="w-full rounded-3xl border-2 border-[#4f9451]"
-            src="hero.webp"
-            alt="Hero Image"
-          />
+          <img class="w-full rounded-3xl " src="hero.png" alt="Hero Image" />
         </div>
+      </div>
+      <div class="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center">
+        <div class="lg:col-span-4 flex  ">left</div>
+
+        <div class="lg:col-span-3 mt-10 lg:mt-0">right</div>
       </div>
     </div>
   );
