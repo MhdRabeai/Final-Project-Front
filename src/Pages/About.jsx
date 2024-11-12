@@ -1,9 +1,11 @@
 import React from "react";
 import ListItem from "../Components/ListItem";
+import Card from "../Components/card";
+import CardsData from "../Components/cardsData";
 
 const About = () => {
   return (
-    <div className="max-w-[86rem] mx-auto px-4">
+    <div className="max-w-[86rem] mx-auto px-5 m-3">
       <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center justify-between -mx-4">
@@ -612,15 +614,16 @@ const About = () => {
                   className="block mb-4 text-lg font-semibold"
                   style={{ color: "#4F9451" }}
                 >
-                  Why Choose Us
+                  What About Us
                 </span>
                 <h2 className="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
-                  Make your customers happy by giving services.
+                  We Help people From wrong Psychology
                 </h2>
                 <p className="mb-5 text-base text-gray-600 dark:text-gray-700">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less.
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour or randomised words which don't
+                  look...
                 </p>
                 <ol className="flex space-x-4">
                   <div className="w-1/2 pr-2">
@@ -651,6 +654,7 @@ const About = () => {
                 <a
                   href="/"
                   className="inline-flex items-center justify-center py-3 mt-5 text-base font-medium text-center text-white border border-transparent rounded-md px-10 bg-[#4F9451] hover:bg-opacity-90"
+                  
                 >
                   Get Started
                 </a>
@@ -659,6 +663,27 @@ const About = () => {
           </div>
         </div>
       </section>
+      <section className="flex items-center justify-center">
+        <div className="text-center">
+          <span
+            className="block mb-4 text-lg font-semibold"
+            style={{ color: "#4F9451" }}
+          >
+            Our Features
+          </span>
+          <h1 className="mb-5 text-4xl font-bold text-black">
+            Why choose Us
+          </h1>
+        </div>
+      </section>
+      
+      <section className="p-6">  
+            <div className="flex justify-between space-x-4">  
+                {CardsData.map((card, index) => (  
+                    <Card key={index} headline={card.headline} content={card.content} />  
+                ))}  
+            </div>  
+        </section>
     </div>
   );
 };
