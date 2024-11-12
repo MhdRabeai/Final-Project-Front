@@ -7,7 +7,7 @@ const TeamCard = ({ imageSrc, name, profession }) => {
         <div className="relative overflow-hidden rounded-lg">
           <img src={imageSrc} alt="" className="w-full" />
           <div className="absolute bottom-5 left-0 w-full text-center">
-            <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-dark-2">
+            <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-black">
               <h3 className="text-base font-semibold text-dark dark:text-white">
                 {name}
               </h3>
@@ -46,7 +46,7 @@ const Team = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <section className="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
+    <section className="pb-10 pt-20 dark:bg-black lg:pb-20 lg:pt-[120px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -65,9 +65,9 @@ const Team = () => {
           </div>
         </div>
 
-        <div className="-mx-4 flex flex-wrap justify-center">
+        <div className="-mx-4 flex flex-wrap justify-center dark:bg-black">
           {currentTeamMembers.map((member, index) => (
-            <TeamCard
+            <TeamCard className="dark:bg-white"
               key={index}
               name={member.name}
               profession={member.profession}
@@ -77,13 +77,13 @@ const Team = () => {
         </div>
 
         {teamData.length > itemsPerPage && (
-          <div className="bg-white py-10 text-center dark:bg-dark">
-            <div className="mb-12 inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-dark-2">
-              <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-white/5">
+          <div className="bg-white py-10 text-center dark:bg-black dark:border-white">
+            <div className="mb-12 inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black">
+              <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-white">
                 <li>
                   <button
                     onClick={() => paginate(currentPage > 1 ? currentPage - 1 : 1)}
-                    className="flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-2 dark:border-white/10 dark:text-white dark:hover:bg-white/5"
+                    className="flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark  dark:border-white/10 dark:text-white dark:hover:bg-white/20"
                   >
                     <svg
                       width="20"
@@ -104,7 +104,7 @@ const Team = () => {
                   <li key={page}>
                     <button
                       onClick={() => paginate(page + 1)}
-                      className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-2 dark:border-white/10 dark:text-white dark:hover:bg-white/5 ${currentPage === page + 1 ? "bg-gray-200 dark:bg-dark-3" : ""}`}
+                      className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-10 dark:border-white/10 dark:text-white dark:hover:bg-green/5 ${currentPage === page + 1 ? "bg-gray-200 dark:bg-dark-3" : ""}`}
                     >
                       {page + 1}
                     </button>
