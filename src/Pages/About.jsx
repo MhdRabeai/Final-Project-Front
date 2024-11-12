@@ -3,6 +3,7 @@ import ListItem from "../Components/ListItem";
 import Card from "../Components/card";
 import CardsData from "../Components/cardsData";
 
+
 const About = () => {
   return (
     <div className="max-w-[86rem] mx-auto px-5 m-3">
@@ -684,6 +685,22 @@ const About = () => {
                 ))}  
             </div>  
         </section>
+        <section className="flex items-center justify-center">
+        <div className="text-center">
+          <span
+            className="block mb-4 text-lg font-semibold"
+            style={{ color: "#4F9451" }}
+          >
+            Our Testimonial
+          </span>
+          <h1 className="mb-5 text-4xl font-bold text-black">
+          What Our Patients Are Saying
+          </h1>
+        </div>
+      </section>
+      <section>
+        
+      </section>
     </div>
   );
 };
