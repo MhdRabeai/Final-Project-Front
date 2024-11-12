@@ -1,23 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import {
-  Navigation,
-  Pagination,
-  Mousewheel,
-  Keyboard,
-  Virtual,
-} from "swiper/modules";
+import "swiper/css/navigation";
+import { Navigation, Pagination, Virtual } from "swiper/modules";
 
 const Slider = () => {
-  //   const [swiperRef, setSwiperRef] = useState(null);
-  //   const slideTo = (index) => {
-  //     swiperRef.slideTo(index - 1, 0);
-  //   };
   return (
     <>
       <Swiper
