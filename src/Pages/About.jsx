@@ -2,9 +2,9 @@ import React from "react";
 import ListItem from "../Components/ListItem";
 
 const About = () => {
-<<<<<<< HEAD
-  return <div className="max-w-[86rem] mx-auto px-4">
-    <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
+  return (
+    <div className="max-w-[86rem] mx-auto px-4">
+      <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
@@ -607,38 +607,46 @@ const About = () => {
               </div>
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-  <div className="w-full">
-    <ol className="flex space-x-4">
-  
-      <div className="w-1/2 pr-2">
-        <ListItem count={1} text="It is a long established fact reader" />
-        <ListItem count={2} text="It is a long established fact reader" />
-        <ListItem count={3} text="The point of using Lorem Ipsum" />
-      </div>
-  
-      <div className="w-1/2 pl-2">
-        <ListItem count={4} text="There are many variations  " />
-        <ListItem count={5} text="If you are going to use a of Lorem" />
-        <ListItem count={6} text="If you are going to use a of Lorem" />
-      </div>
-    </ol>
+              <div className="w-full">
+                <ol className="flex space-x-4">
+                  <div className="w-1/2 pr-2">
+                    <ListItem
+                      count={1}
+                      text="It is a long established fact reader"
+                    />
+                    <ListItem
+                      count={2}
+                      text="It is a long established fact reader"
+                    />
+                    <ListItem count={3} text="The point of using Lorem Ipsum" />
+                  </div>
 
-    <a
-      href="/"
-      className="inline-flex items-center justify-center py-3 mt-5 text-base font-medium text-center text-white border border-transparent rounded-md px-10 bg-[#4F9451] hover:bg-opacity-90"
-    >
-      Get Started
-    </a>
-  </div>
-</div>
+                  <div className="w-1/2 pl-2">
+                    <ListItem count={4} text="There are many variations  " />
+                    <ListItem
+                      count={5}
+                      text="If you are going to use a of Lorem"
+                    />
+                    <ListItem
+                      count={6}
+                      text="If you are going to use a of Lorem"
+                    />
+                  </div>
+                </ol>
 
+                <a
+                  href="/"
+                  className="inline-flex items-center justify-center py-3 mt-5 text-base font-medium text-center text-white border border-transparent rounded-md px-10 bg-[#4F9451] hover:bg-opacity-90"
+                >
+                  Get Started
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-  </div>;
-=======
-  return <div className="max-w-[86rem] mx-auto px-4">About...yara</div>;
->>>>>>> cff1931b3556dbdc02cce5fbc2d8c6bc1ff80cd7
+    </div>
+  );
 };
 
 export default About;
