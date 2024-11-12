@@ -4,7 +4,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 export const Root = () => {
   return (
-    <div className="dark:bg-black dark:text-white min-h-screen">
+    <div className="dark:bg-black dark:text-white min-h-screen bg-[#F6F6F6]">
       <Navbar />
 
       <div className="container mx-auto">

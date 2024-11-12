@@ -10,7 +10,7 @@ const Navbar = () => {
     document.documentElement.classList.toggle("dark");
   };
   return (
-    <header className="flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#4f9451] text-sm py-5 shadow-2xl mb-8 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)]">
+    <header className="rounded-b-3xl flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#4f9451] text-sm py-5 shadow-2xl mb-10 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)]">
       <nav className="max-w-[86rem] w-full mx-auto px-4 sm:flex items-baseline sm:justify-between ">
         <div className="flex items-center justify-between">
           <a
