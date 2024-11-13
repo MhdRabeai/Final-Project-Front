@@ -12,8 +12,8 @@ import TeamCard from "../Components/TeamCard";
 export const Home = () => {
   return (
     <div className="">
-      <div className="container max-w-[86rem] w-full mx-auto px-4">
-        <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-10">
+      <div className="container max-w-[86rem] w-full mx-auto px-4 ">
+        <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-6 mb-6 border-b-2 border-[#ddd]">
           <div className="lg:col-span-3 flex flex-col ">
             <h1 className="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white text-center lg:text-left">
               Your Journey to Mental Clarity
@@ -47,7 +47,7 @@ export const Home = () => {
             />
           </div>
         </div>
-        <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-10 justify-between">
+        <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center  justify-between pb-6 mb-6 border-b-2 border-[#ddd]">
           <div className="lg:col-span-2 flex  ">
             <div>
               <div className="w-full">
@@ -91,7 +91,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <div className="homeTeam">
+        <div className="homeTeam pb-6 mb-6 border-b-2 border-[#ddd]">
           <div class="flex flex-wrap pb-6">
             <div class="w-full px-4">
               <div class="mx-auto  max-w-[510px] text-center">
@@ -124,11 +124,21 @@ export const Home = () => {
             <div className="hs-carousel w-full overflow-hidden rounded-lg">
               <div className="relative min-h-[450px] -mx-1">
                 <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-                  <BodySlide />
-                  <BodySlide />
-                  <BodySlide />
-                  <BodySlide />
-                  <BodySlide />
+                  <div className="hs-carousel-slide px-1 ">
+                    <BodySlide />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    <BodySlide />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    <BodySlide />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    <BodySlide />
+                  </div>
+                  <div className="hs-carousel-slide px-1 ">
+                    <BodySlide />
+                  </div>
                 </div>
               </div>
             </div>
@@ -180,8 +190,16 @@ export const Home = () => {
 
             <div className="hs-carousel-pagination flex justify-center absolute bottom-[-25px] start-0 end-0 space-x-2"></div>
           </div>
+          <div class="flex justify-center pt-6">
+            <Link
+              class="bg-[#4F9451] dark:bg-dark-2 border-[#4F9451] dark:border-dark-2 border rounded-full inline-flex items-center justify-center py-2 px-5 text-center text-base font-medium text-white hover:bg-body-color hover:border-body-color mt-5 transition hover:scale-105"
+              to="/team"
+            >
+              View
+            </Link>
+          </div>
         </div>
-        <div className="pt-20 pb-10">
+        <div className=" pb-6 mb-6  ">
           <div class="flex flex-wrap">
             <div class="w-full px-4">
               <div class="mx-auto  max-w-[510px] text-center">
@@ -203,7 +221,7 @@ export const Home = () => {
         </div>
       </div>
       <div className={`relative Facts mb-10`}>
-        <div className=" -inset-0 w-full h-full py-8">
+        <div className=" -inset-0 w-full h-full pt-8 pb-10">
           <div class="mx-auto  max-w-[510px] text-center ">
             <span class="mb-2 block text-base font-semibold text-primary text-[#4F9451]">
               Fun Facts
@@ -249,7 +267,7 @@ export const Home = () => {
         </div>
       </div>
       <div className="container max-w-[86rem] w-full mx-auto px-4">
-        <div className="blogs pb-10">
+        <div className="blogs pb-6 mb-4 border-b-2 border-[#ddd]">
           <div class=" mx-auto  max-w-[510px] text-center pb-6">
             <span class="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
               Our Blogs
@@ -300,7 +318,7 @@ export const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="">
+        <div className="pb-6 mb-6 border-b-2 border-[#ddd]">
           <div class=" mx-auto  max-w-[510px] text-center pb-6">
             <span class="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
               FAQs
@@ -664,11 +682,19 @@ export const Home = () => {
             </p>
           </div>
 
-          <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
-            <BodySlide />
-            <BodySlide />
-            <BodySlide />
-            <BodySlide />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+            <div className="hover:scale-105 transition">
+              <BodySlide />
+            </div>
+            <div className="hover:scale-105 transition">
+              <BodySlide />
+            </div>
+            <div className="hover:scale-105 transition">
+              <BodySlide />
+            </div>
+            <div className="hover:scale-105 transition">
+              <BodySlide />
+            </div>
           </div>
         </div>
       </div>
