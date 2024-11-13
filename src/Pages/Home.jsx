@@ -119,7 +119,7 @@ export const Home = () => {
 }'
             className="relative "
           >
-            <div className="hs-carousel w-full overflow-hidden bg-white rounded-lg">
+            <div className="hs-carousel w-full overflow-hidden rounded-lg">
               <div className="relative min-h-[450px] -mx-1">
                 <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
                   <BodySlide />
@@ -246,48 +246,49 @@ export const Home = () => {
           </div>
         </div>
       </div>
-
-      <div className="blogs">
-        <div class="mx-auto  max-w-[510px] text-center pb-6">
-          <span class="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
-            Our Blogs
-          </span>
-          <h2 class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
-            Our Recent Articles
-          </h2>
-          <p class="text-base text-body-color dark:text-dark-6">
-            Discover expert advice and personal stories.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <BlogCard
-            id={1}
-            date={new Date().toLocaleDateString()}
-            CardTitle={"title"}
-            CardDescription={"lorem ...."}
-            image="https://via.placeholder.com/150"
-          />
-          <BlogCard
-            id={1}
-            date={new Date().toLocaleDateString()}
-            CardTitle={"title"}
-            CardDescription={"lorem ...."}
-            image="https://via.placeholder.com/150"
-          />
-          <BlogCard
-            id={1}
-            date={new Date().toLocaleDateString()}
-            CardTitle={"title"}
-            CardDescription={"lorem ...."}
-            image="https://via.placeholder.com/150"
-          />
-          <BlogCard
-            id={1}
-            date={new Date().toLocaleDateString()}
-            CardTitle={"title"}
-            CardDescription={"lorem ...."}
-            image="https://via.placeholder.com/150"
-          />
+      <div className="container max-w-[86rem] w-full mx-auto px-4">
+        <div className="blogs">
+          <div class=" mx-auto  max-w-[510px] text-center pb-6">
+            <span class="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
+              Our Blogs
+            </span>
+            <h2 class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
+              Our Recent Articles
+            </h2>
+            <p class="text-base text-body-color dark:text-dark-6">
+              Discover expert advice and personal stories.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
+            <BlogCard
+              id={1}
+              date={new Date().toLocaleDateString()}
+              CardTitle={"title"}
+              CardDescription={"lorem ...."}
+              image="https://via.placeholder.com/150"
+            />
+            <BlogCard
+              id={1}
+              date={new Date().toLocaleDateString()}
+              CardTitle={"title"}
+              CardDescription={"lorem ...."}
+              image="https://via.placeholder.com/150"
+            />
+            <BlogCard
+              id={1}
+              date={new Date().toLocaleDateString()}
+              CardTitle={"title"}
+              CardDescription={"lorem ...."}
+              image="https://via.placeholder.com/150"
+            />
+            <BlogCard
+              id={1}
+              date={new Date().toLocaleDateString()}
+              CardTitle={"title"}
+              CardDescription={"lorem ...."}
+              image="https://via.placeholder.com/150"
+            />
+          </div>
         </div>
       </div>
     </div>
