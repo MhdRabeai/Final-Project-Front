@@ -7,7 +7,7 @@ const Blogs = () => {
   const [data, setData] = useState([]);  
   const [loading, setLoading] = useState(true);  
   const [currentPage, setCurrentPage] = useState(1);  
-  const itemsPerPage = 6;  
+  const itemsPerPage = 8;  
 
   useEffect(() => {  
     const fetchData = async () => {  
@@ -25,7 +25,7 @@ const Blogs = () => {
     fetchData();  
   }, []);  
 
-  const totalPages = Math.min(Math.ceil(data.length / itemsPerPage), 6);  
+  const totalPages = Math.min(Math.ceil(data.length / itemsPerPage), 8);  
   const indexOfLastItem = currentPage * itemsPerPage;  
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;  
   const currentTeamMembers = data.slice(indexOfFirstItem, indexOfLastItem);  
@@ -65,7 +65,7 @@ const Blogs = () => {
               CardTitle={post.title}  
               CardDescription={post.body.substring(0, 100) + "..."}  
               image="https://via.placeholder.com/150"  
-              doctorName="Dr. John Doe" // Example static doctor name  
+              doctorName="Dr. John Doe"  
             />  
           ))}  
         </div>  
