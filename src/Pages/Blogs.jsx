@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from "../Components/BlogCard";
+import { Loading } from "../Components/Loading";
 
 const Blogs = () => {
   const [data, setData] = useState([]);
@@ -33,7 +34,7 @@ const Blogs = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>{<Loading/>}</div>;
   }
 
   return (
