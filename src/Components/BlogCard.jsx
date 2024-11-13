@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
   return (
-    <div className="container mx-auto p-6">
-    <div className="flex flex-wrap gap-6">
+    <div className="container mx-auto p-3">
+    <div className="flex flex-wrap gap-4">
       <div className="max-w-sm mx-auto rounded-lg shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 dark:bg-gray-900 bg-white transition-transform transform hover:scale-105 flex flex-col">
         <img src={image} alt="blog image" className="w-full h-48 object-cover" />
         <div className="p-6 flex flex-col flex-grow">
