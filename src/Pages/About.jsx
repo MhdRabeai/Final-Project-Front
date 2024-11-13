@@ -2,12 +2,12 @@ import React from "react";
 import ListItem from "../Components/ListItem";
 import Card from "../Components/card";
 import CardsData from "../Components/cardsData";
-
+import Testimonial from "../Components/Testimonial"
 
 const About = () => {
   return (
     <div className="max-w-[86rem] mx-auto px-4">
-      <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
+      <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]  ">
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
@@ -699,7 +699,7 @@ const About = () => {
         </div>
       </section>
       <section>
-        
+        <Testimonial/>
       </section>
     </div>
   );
