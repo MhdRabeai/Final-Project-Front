@@ -7,7 +7,7 @@ import Testimonial from "../Components/Testimonial";
 const About = () => {
   return (
     <div className="max-w-[86rem] mx-auto px-4">
-      <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] bg-white dark:bg-dark">
+      <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]  dark:bg-dark">
         <div className="container mx-auto">
           <div className=" flex  flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
@@ -623,29 +623,17 @@ const About = () => {
                   form, by injected humour or randomised words which don't
                   look...
                 </p>
-                <ol className="flex space-x-4">
-                  <div className="w-1/2 pr-2">
-                    <ListItem
-                      count={1}
-                      text="It is a long established fact reader"
-                    />
-                    <ListItem
-                      count={2}
-                      text="It is a long established fact reader"
-                    />
-                    <ListItem count={3} text="The point of using Lorem Ipsum" />
+                <ol className="flex gap-2">
+                  <div className="w-1/2  space-y-2">
+                    <ListItem text="There are many variations" />
+                    <ListItem text="There are many variations" />
+                    <ListItem text="There are many variations" />
                   </div>
 
-                  <div className="w-1/2 pl-2">
-                    <ListItem count={4} text="There are many variations  " />
-                    <ListItem
-                      count={5}
-                      text="If you are going to use a of Lorem"
-                    />
-                    <ListItem
-                      count={6}
-                      text="If you are going to use a of Lorem"
-                    />
+                  <div className="w-1/2  space-y-2">
+                    <ListItem text="There are many variations" />
+                    <ListItem text="There are many variations" />
+                    <ListItem text="There are many variations" />
                   </div>
                 </ol>
 

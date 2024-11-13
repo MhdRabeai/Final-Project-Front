@@ -7,7 +7,7 @@ export const Root = () => {
     <div className="dark:bg-black dark:text-white min-h-screen  bg-[#F6F6F6] flex flex-col justify-between font-sans">
       <Navbar />
 
-      <div className="container mx-auto ">
+      <div className=" ">
         <Outlet />
       </div>
       <Footer />

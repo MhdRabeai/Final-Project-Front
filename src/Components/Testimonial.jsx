@@ -23,7 +23,8 @@ const Testimonial = () => {
   }, []);
 
   return (
-    <section className="pb-20 pt-20 dark:bg-dark lg:pb-[120px] lg:pt-[120px]">
+    <section className="pb-10 pt-10 dark:bg-dark ">
+      {/* lg:pb-[120px] lg:pt-[120px] */}
       <div className="container mx-auto">
         <Swiper slidesPerView={1} ref={sliderRef}>
           <SwiperSlide>
@@ -64,7 +65,7 @@ const Testimonial = () => {
 
 const SingleTestimonial = ({ image, details, name, position, rating }) => {
   return (
-    <div className="relative flex justify-center">
+    <div className="relative flex justify-center w-full">
       <div className="relative w-full pb-16 md:w-11/12 lg:w-10/12 xl:w-8/12">
         <div className="w-full items-center md:flex">
           <div className="relative mb-12 w-full  md:mb-0 md:mr-12 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16">
