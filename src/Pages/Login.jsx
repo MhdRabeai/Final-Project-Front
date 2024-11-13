@@ -117,7 +117,7 @@ const Login = () => {
           </div>
           <div className="hidden md:flex items-center justify-center max-h-screen">
             <img
-              src="green.png" // Update this to the correct path to your image
+              src="green.png" 
               alt="Login"
               className="w-full h-full object-cover rounded-lg shadow-lg"
             />
