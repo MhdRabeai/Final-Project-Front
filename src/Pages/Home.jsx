@@ -8,7 +8,7 @@ import Testimonial from "../Components/Testimonial";
 import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="">
       <div className="container max-w-[86rem] w-full mx-auto px-4 ">
@@ -700,3 +700,4 @@ export const Home = () => {
     </div>
   );
 };
+export default Home;

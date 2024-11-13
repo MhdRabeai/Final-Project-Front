@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import reviewsData from "../Components/ReviewsData";
 
-export const Profile = () => {
+const Profile = () => {
   const [rating, setRating] = useState(0);
 
   const handleStarClick = (index) => {
@@ -128,3 +128,4 @@ export const Profile = () => {
     </div>
   );
 };
+export default Profile;

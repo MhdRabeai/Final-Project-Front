@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Register = () => {
+const Register = () => {
   return (
     <div className="max-w-[86rem] mx-auto px-4">
       <div className="flex mb-2">
@@ -239,3 +239,4 @@ export const Register = () => {
     </div>
   );
 };
+export default Register;
