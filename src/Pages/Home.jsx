@@ -5,6 +5,7 @@ import cardsData from "../Components/cardsData";
 import Card from "../Components/card";
 import BodySlide from "../Components/BodySlide";
 import Testimonial from "../Components/Testimonial";
+import BlogCard from "../Components/BlogCard";
 
 export const Home = () => {
   return (
@@ -178,7 +179,7 @@ export const Home = () => {
             <div className="hs-carousel-pagination flex justify-center absolute bottom-[-25px] start-0 end-0 space-x-2"></div>
           </div>
         </div>
-        <div className="pt-20">
+        <div className="pt-20 pb-10">
           <div class="flex flex-wrap">
             <div class="w-full px-4">
               <div class="mx-auto  max-w-[510px] text-center">
@@ -199,8 +200,95 @@ export const Home = () => {
           <Testimonial />
         </div>
       </div>
-      <div>
-        <img src="Facts.png" alt="img" className="w-full" />
+      <div className={`relative Facts mb-10`}>
+        <div className=" -inset-0 w-full h-full py-8">
+          <div class="mx-auto  max-w-[510px] text-center ">
+            <span class="mb-2 block text-base font-semibold text-primary text-[#4F9451]">
+              Fun Facts
+            </span>
+            <h2 class="mb-3 text-xl font-semibold leading-[1.2] text-white dark:text-white sm:text-4xl md:text-[40px]">
+              Our achievements
+            </h2>
+          </div>
+          <div className="pt-4 container grid justify-center gap-4 max-w-[800px] mx-auto lg:grid-cols-2 xl:grid-cols-4 text-white">
+            <div className="flex flex-col items-center">
+              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font dark:text-gray-800">
+                50+
+              </h2>
+              <p className="flex-1  text-light text-base leading-relaxed dark:text-gray-600">
+                Happy Patients
+              </p>
+            </div>
+            <div className="flex flex-col  items-center">
+              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font dark:text-gray-800">
+                15+
+              </h2>
+              <p className="flex-1  text-light text-base leading-relaxed dark:text-gray-600">
+                Campaign Complete
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font dark:text-gray-800">
+                30+
+              </h2>
+              <p className="flex-1  text-light text-base leading-relaxed dark:text-gray-600">
+                Award Won
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font dark:text-gray-800">
+                25+
+              </h2>
+              <p className="flex-1  text-light text-base leading-relaxed dark:text-gray-600">
+                Expert Doctors
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="blogs">
+        <div class="mx-auto  max-w-[510px] text-center pb-6">
+          <span class="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
+            Our Blogs
+          </span>
+          <h2 class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
+            Our Recent Articles
+          </h2>
+          <p class="text-base text-body-color dark:text-dark-6">
+            Discover expert advice and personal stories.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <BlogCard
+            id={1}
+            date={new Date().toLocaleDateString()}
+            CardTitle={"title"}
+            CardDescription={"lorem ...."}
+            image="https://via.placeholder.com/150"
+          />
+          <BlogCard
+            id={1}
+            date={new Date().toLocaleDateString()}
+            CardTitle={"title"}
+            CardDescription={"lorem ...."}
+            image="https://via.placeholder.com/150"
+          />
+          <BlogCard
+            id={1}
+            date={new Date().toLocaleDateString()}
+            CardTitle={"title"}
+            CardDescription={"lorem ...."}
+            image="https://via.placeholder.com/150"
+          />
+          <BlogCard
+            id={1}
+            date={new Date().toLocaleDateString()}
+            CardTitle={"title"}
+            CardDescription={"lorem ...."}
+            image="https://via.placeholder.com/150"
+          />
+        </div>
       </div>
     </div>
   );
