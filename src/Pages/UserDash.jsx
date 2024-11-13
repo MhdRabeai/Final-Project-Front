@@ -6,7 +6,7 @@ const UserDash = () => {
     <div>
       <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
-          <div class="me-5 lg:me-0 lg:hidden">
+          {/* <div class="me-5 lg:me-0 lg:hidden">
             <a
               class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
               href="/"
@@ -46,7 +46,7 @@ const UserDash = () => {
                 />
               </svg>
             </a>
-          </div>
+          </div> */}
 
           <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <div class="hidden md:block">
@@ -85,7 +85,7 @@ const UserDash = () => {
             <div class="flex flex-row items-center justify-end gap-1">
               <button
                 type="button"
-                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-green-500  disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
               >
                 <svg
                   class="shrink-0 size-4"
@@ -107,7 +107,7 @@ const UserDash = () => {
 
               <button
                 type="button"
-                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-green-500   disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
               >
                 <svg
                   class="shrink-0 size-4"
@@ -387,7 +387,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
               <ul class="flex flex-col space-y-1">
                 <li>
                   <a
-                    class="flex items-center gap-x-3.5 py-2 px-2.5 bg-green-500 shadow text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-green-500 dark:bg-neutral-700 dark:text-white"
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 bg-green-500 shadow text-sm text-white rounded-lg hover:bg-green-500   dark:bg-neutral-700 dark:text-white"
                     href="/"
                   >
                     <svg
@@ -412,7 +412,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="users-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 "
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 "
                     aria-expanded="true"
                     aria-controls="users-accordion-child"
                   >
@@ -625,7 +625,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="account-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="account-accordion-child"
                   >
@@ -722,7 +722,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="projects-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="projects-accordion-child"
                   >
