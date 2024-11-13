@@ -54,7 +54,6 @@ const Blogs = () => {
           </div>
         </div>
 
-        {/* عرض الكروت باستخدام grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {currentTeamMembers.map((post) => (
             <BlogCard
@@ -68,7 +67,6 @@ const Blogs = () => {
           ))}
         </div>
 
-        {/* التصفح بين الصفحات */}
         {data.length >= itemsPerPage && (
           <div className="pt-10 text-center dark:bg-black">
             <div className="inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black dark:border">
