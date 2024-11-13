@@ -44,7 +44,7 @@ const Testimonial = () => {
               rating={5}
             />
           </SwiperSlide>
-          <div className="absolute left-0 right-0 z-10 flex items-center justify-center gap-5 sm:bottom-0 mt-5">
+          <div className="absolute left-0 right-0 z-10 flex items-center justify-center gap-5 bottom-[0px] ">
             <div className="prev-arrow cursor-pointer" onClick={handlePrev}>
               <button className="flex h-[60px] w-[60px] items-center justify-center rounded-full border bg-white text-dark dark:border-dark-3 dark:bg-dark-2 dark:text-white">
                 <FaChevronLeft size={20} />
@@ -67,18 +67,15 @@ const SingleTestimonial = ({ image, details, name, position, rating }) => {
     <div className="relative flex justify-center">
       <div className="relative w-full pb-16 md:w-11/12 lg:w-10/12 xl:w-8/12">
         <div className="w-full items-center md:flex">
-          <div className="relative mb-12 w-full max-w-[310px] md:mb-0 md:mr-12 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16">
+          <div className="relative mb-12 w-full  md:mb-0 md:mr-12 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16">
             <img src={image} alt="image" className="w-full" />
             <span className="absolute -left-6 -top-6 z-[-1] hidden sm:block">
               <DotShape />
             </span>
           </div>
-          <div className="w-full">
+          <div className="w-full mb-6">
             <div>
-              <div className="mt-4 flex items-center">
-                {renderRating(rating)}
-              </div>
-              <p className="mb-11 text-base font-normal italic leading-[1.81] text-body-color dark:text-dark-6 sm:text-[22px]">
+              <p className="  mb-6 text-base font-normal italic leading-[1.4] text-body-color dark:text-dark-6 sm:text-[22px]">
                 {details}
               </p>
               <h4 className="mb-2 text-[22px] font-semibold leading-[27px] text-dark dark:text-white">
@@ -87,6 +84,7 @@ const SingleTestimonial = ({ image, details, name, position, rating }) => {
               <p className="text-base text-body-color dark:text-dark-6">
                 {position}
               </p>
+              <div className=" flex items-center">{renderRating(rating)}</div>
             </div>
           </div>
         </div>
@@ -96,9 +94,9 @@ const SingleTestimonial = ({ image, details, name, position, rating }) => {
 };
 
 const renderRating = (rating) => {
-  const fullStars = Math.floor(rating); // عدد النجوم الكاملة
-  const halfStar = rating % 1 !== 0; // هل يوجد نصف نجمة
-  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0); // عدد النجوم الفارغة
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 !== 0;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
   return (
     <>

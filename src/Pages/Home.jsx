@@ -97,132 +97,1150 @@ export const Home = () => {
     "lg": 3
   }
 }'
-        class="relative"
-      >
-        <div class="hs-carousel w-full overflow-hidden bg-white rounded-lg">
-          <div class="relative min-h-72 -mx-1">
-            <div class="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-              <div class="hs-carousel-slide px-1 ">
-                <div class="flex justify-center h-full bg-gray-100 p-6 dark:bg-neutral-900">
-                  <span class="self-center text-sm text-gray-800 transition duration-700 dark:text-white">
-                    First slide
-                  </span>
-                </div>
-              </div>
-              <div class="hs-carousel-slide px-1">
-                <div class="flex justify-center h-full bg-gray-200 p-6 dark:bg-neutral-800">
-                  <span class="self-center text-sm text-gray-800 transition duration-700 dark:text-white">
-                    Second slide
-                  </span>
-                </div>
-              </div>
-              <div class="hs-carousel-slide px-1">
-                <div class="flex justify-center h-full bg-gray-300 p-6 dark:bg-neutral-700">
-                  <span class="self-center text-sm text-gray-800 transition duration-700 dark:text-white">
-                    Third slide
-                  </span>
-                </div>
-              </div>
-              <div class="hs-carousel-slide px-1">
-                <div class="flex justify-center h-full bg-gray-100 p-6 dark:bg-neutral-900">
-                  <span class="self-center text-sm text-gray-800 transition duration-700 dark:text-white">
-                    Fourth slide
-                  </span>
-                </div>
-              </div>
-              <div class="hs-carousel-slide px-1">
-                <div class="flex justify-center h-full bg-gray-200 p-6 dark:bg-neutral-800">
-                  <span class="self-center text-sm text-gray-800 transition duration-700 dark:text-white">
-                    Fifth slide
-                  </span>
-                </div>
-              </div>
-              <div class="hs-carousel-slide px-1">
-                <div class="flex justify-center h-full bg-gray-300 p-6 dark:bg-neutral-700">
-                  <span class="self-center text-sm text-gray-800 transition duration-700 dark:text-white">
-                    Sixth slide
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button
-          type="button"
-          class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
-        >
-          <span class="text-2xl" aria-hidden="true">
-            <svg
-              class="shrink-0 size-5"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m15 18-6-6 6-6"></path>
-            </svg>
-          </span>
-          <span class="sr-only">Previous</span>
-        </button>
-        <button
-          type="button"
-          class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
-        >
-          <span class="sr-only">Next</span>
-          <span class="text-2xl" aria-hidden="true">
-            <svg
-              class="shrink-0 size-5"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="m9 18 6-6-6-6"></path>
-            </svg>
-          </span>
-        </button>
-
-        <div class="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 space-x-2"></div>
-      </div>
-
-      {/* <div
-        data-hs-carousel='{
-        "loadingclassNamees": "opacity-0"
-      }'
         className="relative"
       >
-        <div className="hs-carousel relative overflow-hidden w-full min-h-[350px] bg-white rounded-lg">
-          <div className="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
-            <div className="hs-carousel-slide">
-              <div className="flex justify-center h-full bg-gray-100 p-6">
-                <span className="self-center text-4xl transition duration-700">
-                  First slide
-                </span>
+        <div className="hs-carousel w-full overflow-hidden bg-white rounded-lg">
+          <div className="relative min-h-[450px] -mx-1">
+            <div className="hs-carousel-body  absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
+              <div className="hs-carousel-slide px-1 ">
+                <div className="mx-auto mb-10 w-full max-w-[370px]">
+                  <div className="relative  rounded-lg overflow-hidden">
+                    <img
+                      src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-01.jpg"
+                      alt="image"
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-5 left-0 w-full text-center">
+                      <div className="relative mx-5 overflow-hidden rounded-lg bg-white dark:bg-dark-2 py-5 px-3">
+                        <h3 className="text-dark dark:text-white text-base font-semibold">
+                          Coriss Ambady
+                        </h3>
+                        <p className="text-body-color dark:text-dark-6 text-xs">
+                          Web Developer
+                        </p>
+                        <div>
+                          <span className="absolute left-0 bottom-0">
+                            <svg
+                              width="61"
+                              height="30"
+                              viewBox="0 0 61 30"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="45"
+                                r="45"
+                                fill="#13C296"
+                                fill-opacity="0.11"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <span className="absolute top-0 right-0">
+                            <svg
+                              width="20"
+                              height="25"
+                              viewBox="0 0 20 25"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="0.706257"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="hs-carousel-slide">
-              <div className="flex justify-center h-full bg-gray-200 p-6">
-                <span className="self-center text-4xl transition duration-700">
-                  Second slide
-                </span>
+              <div className="hs-carousel-slide px-1 ">
+                <div className="mx-auto mb-10 w-full max-w-[370px]">
+                  <div className="relative  rounded-lg overflow-hidden">
+                    <img
+                      src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-01.jpg"
+                      alt="image"
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-5 left-0 w-full text-center">
+                      <div className="relative mx-5 overflow-hidden rounded-lg bg-white dark:bg-dark-2 py-5 px-3">
+                        <h3 className="text-dark dark:text-white text-base font-semibold">
+                          Coriss Ambady
+                        </h3>
+                        <p className="text-body-color dark:text-dark-6 text-xs">
+                          Web Developer
+                        </p>
+                        <div>
+                          <span className="absolute left-0 bottom-0">
+                            <svg
+                              width="61"
+                              height="30"
+                              viewBox="0 0 61 30"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="45"
+                                r="45"
+                                fill="#13C296"
+                                fill-opacity="0.11"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <span className="absolute top-0 right-0">
+                            <svg
+                              width="20"
+                              height="25"
+                              viewBox="0 0 20 25"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="0.706257"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="hs-carousel-slide">
-              <div className="flex justify-center h-full bg-gray-300 p-6">
-                <span className="self-center text-4xl transition duration-700">
-                  Third slide
-                </span>
+              <div className="hs-carousel-slide px-1 ">
+                <div className="mx-auto mb-10 w-full max-w-[370px]">
+                  <div className="relative  rounded-lg overflow-hidden">
+                    <img
+                      src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-01.jpg"
+                      alt="image"
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-5 left-0 w-full text-center">
+                      <div className="relative mx-5 overflow-hidden rounded-lg bg-white dark:bg-dark-2 py-5 px-3">
+                        <h3 className="text-dark dark:text-white text-base font-semibold">
+                          Coriss Ambady
+                        </h3>
+                        <p className="text-body-color dark:text-dark-6 text-xs">
+                          Web Developer
+                        </p>
+                        <div>
+                          <span className="absolute left-0 bottom-0">
+                            <svg
+                              width="61"
+                              height="30"
+                              viewBox="0 0 61 30"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="45"
+                                r="45"
+                                fill="#13C296"
+                                fill-opacity="0.11"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <span className="absolute top-0 right-0">
+                            <svg
+                              width="20"
+                              height="25"
+                              viewBox="0 0 20 25"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="0.706257"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="hs-carousel-slide px-1 ">
+                <div className="mx-auto mb-10 w-full max-w-[370px]">
+                  <div className="relative  rounded-lg overflow-hidden">
+                    <img
+                      src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-01.jpg"
+                      alt="image"
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-5 left-0 w-full text-center">
+                      <div className="relative mx-5 overflow-hidden rounded-lg bg-white dark:bg-dark-2 py-5 px-3">
+                        <h3 className="text-dark dark:text-white text-base font-semibold">
+                          Coriss Ambady
+                        </h3>
+                        <p className="text-body-color dark:text-dark-6 text-xs">
+                          Web Developer
+                        </p>
+                        <div>
+                          <span className="absolute left-0 bottom-0">
+                            <svg
+                              width="61"
+                              height="30"
+                              viewBox="0 0 61 30"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="45"
+                                r="45"
+                                fill="#13C296"
+                                fill-opacity="0.11"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <span className="absolute top-0 right-0">
+                            <svg
+                              width="20"
+                              height="25"
+                              viewBox="0 0 20 25"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="0.706257"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="hs-carousel-slide px-1 ">
+                <div className="mx-auto mb-10 w-full max-w-[370px]">
+                  <div className="relative  rounded-lg overflow-hidden">
+                    <img
+                      src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-01.jpg"
+                      alt="image"
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-5 left-0 w-full text-center">
+                      <div className="relative mx-5 overflow-hidden rounded-lg bg-white dark:bg-dark-2 py-5 px-3">
+                        <h3 className="text-dark dark:text-white text-base font-semibold">
+                          Coriss Ambady
+                        </h3>
+                        <p className="text-body-color dark:text-dark-6 text-xs">
+                          Web Developer
+                        </p>
+                        <div>
+                          <span className="absolute left-0 bottom-0">
+                            <svg
+                              width="61"
+                              height="30"
+                              viewBox="0 0 61 30"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="45"
+                                r="45"
+                                fill="#13C296"
+                                fill-opacity="0.11"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <span className="absolute top-0 right-0">
+                            <svg
+                              width="20"
+                              height="25"
+                              viewBox="0 0 20 25"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="0.706257"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="hs-carousel-slide px-1 ">
+                <div className="mx-auto mb-10 w-full max-w-[370px]">
+                  <div className="relative  rounded-lg overflow-hidden">
+                    <img
+                      src="https://cdn.tailgrids.com/1.0/assets/images/team/team-01/image-01.jpg"
+                      alt="image"
+                      className="w-full"
+                    />
+                    <div className="absolute bottom-5 left-0 w-full text-center">
+                      <div className="relative mx-5 overflow-hidden rounded-lg bg-white dark:bg-dark-2 py-5 px-3">
+                        <h3 className="text-dark dark:text-white text-base font-semibold">
+                          Coriss Ambady
+                        </h3>
+                        <p className="text-body-color dark:text-dark-6 text-xs">
+                          Web Developer
+                        </p>
+                        <div>
+                          <span className="absolute left-0 bottom-0">
+                            <svg
+                              width="61"
+                              height="30"
+                              viewBox="0 0 61 30"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="16"
+                                cy="45"
+                                r="45"
+                                fill="#13C296"
+                                fill-opacity="0.11"
+                              ></circle>
+                            </svg>
+                          </span>
+                          <span className="absolute top-0 right-0">
+                            <svg
+                              width="20"
+                              height="25"
+                              viewBox="0 0 20 25"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx="0.706257"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="24.3533"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 24.3533)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="18.6624"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 18.6624)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="12.9717"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 12.9717)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="7.28077"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 7.28077)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="0.706257"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 0.706257 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="6.39669"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 6.39669 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="12.0881"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 12.0881 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                              <circle
+                                cx="17.7785"
+                                cy="1.58989"
+                                r="0.646687"
+                                transform="rotate(-90 17.7785 1.58989)"
+                                fill="#3056D3"
+                              ></circle>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -230,47 +1248,51 @@ export const Home = () => {
 
         <button
           type="button"
-          className="hs-carousel-prev hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/[.1]"
+          className="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-start items-center w-[25px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
         >
           <span className="text-2xl" aria-hidden="true">
             <svg
-              className="w-4 h-4"
+              className="shrink-0 size-5"
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              viewBox="0 0 16 16"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#4f9451"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <path
-                fillRule="evenodd"
-                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-              />
+              <path d="m15 18-6-6 6-6"></path>
             </svg>
           </span>
           <span className="sr-only">Previous</span>
         </button>
         <button
           type="button"
-          className="hs-carousel-next hs-carousel:disabled:opacity-50 disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-[46px] h-full text-gray-800 hover:bg-gray-800/[.1]"
+          className="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-end items-center w-[25px] h-full text-gray-800 hover:bg-gray-800/10 focus:outline-none focus:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
         >
           <span className="sr-only">Next</span>
           <span className="text-2xl" aria-hidden="true">
             <svg
-              className="w-4 h-4"
+              className="shrink-0 size-5"
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              viewBox="0 0 16 16"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#4f9451"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
-              <path
-                fillRule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-              />
+              <path d="m9 18 6-6-6-6"></path>
             </svg>
           </span>
         </button>
-      </div> */}
+
+        <div className="hs-carousel-pagination flex justify-center absolute bottom-[-25px] start-0 end-0 space-x-2"></div>
+      </div>
     </div>
   );
 };

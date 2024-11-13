@@ -611,10 +611,7 @@ const About = () => {
             </div>
             <div className="w-full px-6 lg:w-1/2 xl:w-5/12">
               <div className="w-full">
-                <span
-                  className="block mb-4 text-lg font-semibold"
-                  style={{ color: "#4F9451" }}
-                >
+                <span className="block mb-4 text-lg font-semibold text-[#4F9451]">
                   What About Us
                 </span>
                 <h2 className="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
@@ -694,7 +691,7 @@ const About = () => {
         </div>
       </section>
       <section>
-        <Testimonial/>
+        <Testimonial />
       </section>
     </div>
   );
