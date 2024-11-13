@@ -1,14 +1,7 @@
 import React, { useCallback, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import {
-  FaStar,
-  FaStarHalfAlt,
-  FaRegStar,
-  FaChevronLeft,
-  FaChevronRight
-} from "react-icons/fa";
-
+import { FaStar, FaStarHalfAlt, FaRegStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Testimonial = () => {
   const sliderRef = useRef(null);
@@ -97,9 +90,9 @@ const SingleTestimonial = ({ image, details, name, position, rating }) => {
 };
 
 const renderRating = (rating) => {
-  const fullStars = Math.floor(rating);
-  const halfStar = rating % 1 !== 0; 
-  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+    const fullStars = Math.floor(rating); // عدد النجوم الكاملة
+    const halfStar = rating % 1 !== 0; // هل يوجد نصف نجمة
+    const emptyStars = 5 - fullStars - (halfStar ? 1 : 0); // عدد النجوم الفارغة
 
   return (
     <>
