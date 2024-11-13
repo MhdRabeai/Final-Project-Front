@@ -199,8 +199,51 @@ export const Home = () => {
           <Testimonial />
         </div>
       </div>
-      <div>
-        <img src="Facts.png" alt="img" className="w-full" />
+      <div className={`relative Facts`}>
+        <div className=" -inset-0 w-full h-full py-8">
+          <div class="mx-auto  max-w-[510px] text-center ">
+            <span class="mb-2 block text-base font-semibold text-primary text-[#4F9451]">
+              Fun Facts
+            </span>
+            <h2 class="mb-3 text-xl font-semibold leading-[1.2] text-white dark:text-white sm:text-4xl md:text-[40px]">
+              Our achievements
+            </h2>
+          </div>
+          <div className="pt-4 container grid justify-center gap-4 max-w-[800px] mx-auto lg:grid-cols-2 xl:grid-cols-4 text-white">
+            <div className="flex flex-col items-center">
+              <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font dark:text-gray-800">
+                50+
+              </h2>
+              <p className="flex-1 mb-4 text-base leading-relaxed dark:text-gray-600">
+                Happy Patients
+              </p>
+            </div>
+            <div className="flex flex-col  items-center">
+              <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font dark:text-gray-800">
+                15+
+              </h2>
+              <p className="flex-1 mb-4 text-base leading-relaxed dark:text-gray-600">
+                Campaign Complete
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font dark:text-gray-800">
+                30+
+              </h2>
+              <p className="flex-1 mb-4 text-base leading-relaxed dark:text-gray-600">
+                Award Won
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <h2 className="mb-2 text-lg font-semibold sm:text-xl title-font dark:text-gray-800">
+                +25
+              </h2>
+              <p className="flex-1 mb-4 text-base leading-relaxed dark:text-gray-600">
+                Expert Doctors
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
