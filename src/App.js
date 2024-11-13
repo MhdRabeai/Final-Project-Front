@@ -3,12 +3,12 @@ import "./App.css";
 import { Root } from "./Pages/Root";
 import { Home } from "./Pages/Home";
 import { NotFound } from "./Pages/NotFound";
-import { Login } from "./Pages/Login";
 import { Register } from "./Pages/Register";
 import "preline/preline";
 import { HSStaticMethods } from "preline/preline";
 import { lazy, useEffect } from "react";
 import AuthRoot from "./Pages/AuthRoot";
+import Login from "./Pages/Login";
 
 const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
