@@ -9,7 +9,7 @@ import Testimonial from "../Components/Testimonial";
 export const Home = () => {
   return (
     <div className="">
-      <div className="max-w-[86rem] mx-auto px-4">
+      <div className="container max-w-[86rem] w-full mx-auto px-4">
         <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center pb-10">
           <div className="lg:col-span-3 flex flex-col ">
             <h1 className="block text-3xl font-semibold text-gray-800 sm:text-4xl md:text-5xl lg:text-6xl dark:text-white text-center lg:text-left">
@@ -89,7 +89,7 @@ export const Home = () => {
           </div>
         </div>
         <div className="homeTeam">
-          <div class="flex flex-wrap">
+          <div class="flex flex-wrap pb-6">
             <div class="w-full px-4">
               <div class="mx-auto  max-w-[510px] text-center">
                 <span class="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
@@ -116,7 +116,7 @@ export const Home = () => {
     "lg": 3
   }
 }'
-            className="relative pt-6"
+            className="relative "
           >
             <div className="hs-carousel w-full overflow-hidden bg-white rounded-lg">
               <div className="relative min-h-[450px] -mx-1">
@@ -200,7 +200,7 @@ export const Home = () => {
         </div>
       </div>
       <div>
-        <img src="Facts.png" alt="img" />
+        <img src="Facts.png" alt="img" className="w-full" />
       </div>
     </div>
   );

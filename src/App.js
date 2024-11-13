@@ -20,7 +20,7 @@ const Team = lazy(() => import("./Pages/Team"));
 function App() {
   const location = useLocation();
 
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     // @ts-ignore
@@ -32,12 +32,8 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-
-        <Route path="blogs" element={<Blogs />}>
-        <Route path="/blogs/:id" element={<BlogDetail />} />
-        
-          <Route path=":id" element={<div>blogId</div>} />
-        </Route>
+        <Route path="blogs" element={<Blogs />} />
+        <Route path="blogs/:id" element={<div>blogId</div>} />
         <Route path="contact" element={<Contact />} />
         <Route path="team" element={<Team />} />
 
