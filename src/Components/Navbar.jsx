@@ -1,24 +1,39 @@
-import React, { useState } from "react";
-import { MdDarkMode } from "react-icons/md";
-import { GoSun } from "react-icons/go";
-import { NavLink } from "react-router-dom";
+import React from "react";
+// import { MdDarkMode } from "react-icons/md";
+// import { GoSun } from "react-icons/go";
+import { Link, NavLink } from "react-router-dom";
+import { Dropdown } from "antd";
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
-  };
+  const items = [
+    {
+      label: <Link to={"/login"}>Login</Link>,
+      key: "0",
+    },
+
+    {
+      type: "divider",
+    },
+    {
+      label: <Link to={"/register"}>Register</Link>,
+      key: "1",
+    },
+  ];
+  // const [isDark, setIsDark] = useState(false);
+  // const toggleTheme = () => {
+  //   setIsDark(!isDark);
+  //   document.documentElement.classList.toggle("dark");
+  // };
   return (
-    <header className="rounded-b-3xl flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#4f9451] text-sm py-5 shadow-2xl mb-10 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)]">
-      <nav className="max-w-[86rem] w-full mx-auto px-4 sm:flex items-baseline sm:justify-between ">
-        <div className="flex items-center justify-between">
-          <a
+    <header className="rounded-b-3xl flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#4f9451] text-sm py-2 shadow-2xl mb-10 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)]">
+      <nav className="max-w-[86rem] w-full mx-auto px-4 sm:flex items-center sm:justify-between ">
+        <div className="flex justify-between items-center md:flex-none">
+          <NavLink
             className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80"
-            href="/"
+            to="/"
           >
-            Logo
-          </a>
+            <img src="logo.png" alt="logo" width={200} />
+          </NavLink>
           <div className="sm:hidden">
             <button
               type="button"
@@ -81,7 +96,6 @@ const Navbar = () => {
               Home
             </NavLink>
             <NavLink
-              // className="font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white"
               className={({ isActive }) =>
                 isActive
                   ? "active font-medium text-white focus:outline-none"
@@ -121,19 +135,38 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
-            <button onClick={toggleTheme} className="transition  p-1 sm:pr-2">
+            {/* <button onClick={toggleTheme} className="transition  p-1 sm:pr-2">
               {isDark ? (
                 <MdDarkMode className="fill-white scale-150 transition" />
               ) : (
                 <GoSun className="fill-white scale-150 transition" />
               )}
-            </button>
-            <button
-              type="button"
-              class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent hover:border-white bg-white text-[#4f9451] hover:bg-[#4f9451] hover:text-white transition "
-            >
-              Button
-            </button>
+            </button> */}
+
+            <Dropdown menu={{ items }} trigger={["click"]}>
+              <button
+                id="hs-dropdown-custom-icon-trigger"
+                type="button"
+                className=" flex justify-center items-center size-9 rounded-lg border-2 border-white/20 font-medium bg-[#4f9451] text-white shadow-sm align-middle hover:bg-white/10 focus:outline-none  text-sm"
+              >
+                <svg
+                  className="flex-none size-4 text-white dark:text-neutral-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="1" />
+                  <circle cx="12" cy="5" r="1" />
+                  <circle cx="12" cy="19" r="1" />
+                </svg>
+              </button>
+            </Dropdown>
           </div>
         </div>
       </nav>

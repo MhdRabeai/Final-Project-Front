@@ -1,6 +1,11 @@
-.ship {
-  background-color: red;
-  width: 100%;
-  height: 100%;
-  
+.homeFeatures .homeFeature {
+  width: 48%;
+  padding: 1.5rem 1rem;
+}
+.homeFeatures .homeFeature h3 {
+  font-size: 15px;
+}
+.homeFeatures .homeFeature p {
+  font-size: 13px;
+  margin-top: 5px;
 }
