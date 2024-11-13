@@ -18,3 +18,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.auth footer{
+  margin-top: 0;
+  border-top-right-radius: 0;
+}

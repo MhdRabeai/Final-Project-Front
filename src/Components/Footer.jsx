@@ -170,7 +170,7 @@ const Footer = () => {
     //       </div>
     //     </footer>
 
-    <footer className="relative overflow-hidden bg-[#4f9451] mt-10 rounded-t-3xl">
+    <footer className=" relative overflow-hidden bg-[#4f9451] mt-10 rounded-t-3xl">
       <svg
         className="absolute -bottom-20 start-1/2 w-[1900px] transform -translate-x-1/2"
         width="2745"

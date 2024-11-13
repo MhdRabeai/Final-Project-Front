@@ -670,10 +670,10 @@ const Home = () => {
         <div className=" pb-10">
           <div class=" mx-auto  max-w-[510px] text-center pb-6">
             <span class="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
-              Our Awesome our Leadership
+              Our Leadership
             </span>
             <h2 class="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
-              Our Recent Articles
+              Our Awesome our Leadership
             </h2>
             <p class="text-base text-body-color dark:text-dark-6">
               There are many variations of passages of Lorem Ipsum available but
