@@ -70,18 +70,18 @@
     }
   
     return (
-      <div className="container mx-auto px-4 py-10">
-        <h2 className="text-3xl font-bold">{blogData.CardTitle}</h2>
-        <p className="text-gray-500 mt-2">{blogData.date}</p>
-        <img
-          src={blogData.image}
-          alt={blogData.CardTitle}
-          className="mt-6 w-full rounded-lg"
-        />
-        <div className="mt-6 prose dark:prose-dark">
-          {blogData.content}
-        </div>
-      </div>
+      <div className="container mx-auto px-4 py-10 flex flex-col items-center">
+  <h2 className="text-3xl font-bold text-gray-800">{blogData.CardTitle}</h2>
+  <p className="text-gray-500 mt-2">{blogData.date}</p>
+  <img
+    src={blogData.image}
+    alt={blogData.CardTitle}
+    className="mt-6 w-full rounded-lg max-w-[400px]"
+  />
+  <div className="mt-6 prose dark:prose-dark">
+    {blogData.content}
+  </div>
+</div>
     );
   };
   
