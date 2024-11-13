@@ -6,7 +6,7 @@ import Footer from "../Components/Footer";
 
 const AuthRoot = () => {
   return (
-    <div className="auth">
+    <div className="auth flex flex-col justify-between min-h-screen ">
       <AuthNavbar />
       <Suspense fallback={<Loading />}>
         <Outlet />
