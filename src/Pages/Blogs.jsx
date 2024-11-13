@@ -58,7 +58,7 @@ const Blog = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
   return (
     <section className="dark:bg-black">
-      <div className="container">
+      <div className="container mx-auto">
         <div className=" flex flex-wrap pb-10">
           <div className="w-full px-4">
             <div className="mx-auto  max-w-[510px] text-center ">
