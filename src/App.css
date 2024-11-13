@@ -13,3 +13,7 @@
   background-color: #4f9451;
   border: none;
 }
+.Facts {
+  background-image: url(/public/Facts.png);
+  background-size: cover;
+}
