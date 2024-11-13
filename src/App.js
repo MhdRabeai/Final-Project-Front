@@ -10,6 +10,7 @@ import { lazy, useEffect } from "react";
 import AuthRoot from "./Pages/AuthRoot";
 import Login from "./Pages/Login";
 import { Profile } from "./Pages/profile";
+import BlogDetail from "./Pages/BlogDetail";
 
 const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
@@ -31,7 +32,10 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
+
         <Route path="blogs" element={<Blogs />}>
+        <Route path="/blogs/:id" element={<BlogDetail />} />
+        
           <Route path=":id" element={<div>blogId</div>} />
         </Route>
         <Route path="contact" element={<Contact />} />
