@@ -5,12 +5,14 @@ const Blogs = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 8;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -23,7 +25,7 @@ const Blogs = () => {
     fetchData();
   }, []);
 
-  const totalPages = Math.min(Math.ceil(data.length / itemsPerPage), 6);
+  const totalPages = Math.min(Math.ceil(data.length / itemsPerPage), 8);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentTeamMembers = data.slice(indexOfFirstItem, indexOfLastItem);
