@@ -58,6 +58,22 @@
         image: "https://i.ibb.co/ZH1s2K4/image-06.jpg",
         content: "Learn how IoT is revolutionizing the way cities operate, making them smarter, safer, and more efficient.",
       },
+      {
+        id: "7",
+        date: "Dec 26, 2023",
+        CardTitle: "The Impact of Blockchain on Financial Services",
+        CardDescription: "Blockchain technology is disrupting the financial sector by increasing transparency and security.",
+        image: "https://i.ibb.co/X8HFzHJ/image-05.jpg",
+        content: "Blockchain offers a new paradigm for secure and transparent financial transactions, reducing fraud and enhancing trust.",
+      },
+      {
+        id: "8",
+        date: "Dec 27, 2023",
+        CardTitle: "Smart Cities: The Role of IoT in Urban Development",
+        CardDescription: "Internet of Things (IoT) is transforming cities into smart, connected environments for better urban living.",
+        image: "https://i.ibb.co/ZH1s2K4/image-06.jpg",
+        content: "Learn how IoT is revolutionizing the way cities operate, making them smarter, safer, and more efficient.",
+      },
     ];
   
     useEffect(() => {
