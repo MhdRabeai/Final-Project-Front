@@ -7,7 +7,6 @@ import BodySlide from "../Components/BodySlide";
 import Testimonial from "../Components/Testimonial";
 import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
-import TeamCard from "../Components/TeamCard";
 
 export const Home = () => {
   return (
