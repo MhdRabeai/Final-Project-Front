@@ -8,11 +8,10 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!email.trim() || !password.trim()) {
       setError("Please fill in all fields");
     } else {
-      
       console.log("Logged in with:", { email, password, rememberMe });
       setError("");
     }
@@ -21,17 +20,25 @@ const Login = () => {
   return (
     <>
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-6 py-8 mx-auto md:h-screen lg:py-0">
+        <div className="grid grid-cols-1 md:grid-cols-2  px-0 py-8 mx-auto md:h-screen lg:py-0">
           <div className="flex flex-col items-center justify-center">
             <div className="w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                   Log in
                 </h1>
-                <h3 className="font-light">Welcome back! Please enter your details.</h3>
-                <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+                <h3 className="font-light">
+                  Welcome back! Please enter your details.
+                </h3>
+                <form
+                  className="space-y-4 md:space-y-6"
+                  onSubmit={handleSubmit}
+                >
                   <div>
-                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <label
+                      htmlFor="email"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
                       Email
                     </label>
                     <input
@@ -46,7 +53,10 @@ const Login = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    <label
+                      htmlFor="password"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
                       Password
                     </label>
                     <input
@@ -73,7 +83,10 @@ const Login = () => {
                         />
                       </div>
                       <div className="ml-3 text-sm">
-                        <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">
+                        <label
+                          htmlFor="remember"
+                          className="text-gray-500 dark:text-gray-300"
+                        >
                           Remember me
                         </label>
                       </div>
@@ -107,7 +120,7 @@ const Login = () => {
           </div>
           <div className="flex items-center justify-center">
             <img
-              src="C:\Users\Sdraa\OneDrive\Pictures\Screenshots\Screenshot 2024-11-13 135155.png"
+              src="green.png"
               alt="Login"
               className="w-full h-full object-cover rounded-lg shadow-lg"
             />
