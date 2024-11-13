@@ -1,14 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogCard = ({
-  id,
-  date,
-  CardTitle,
-  CardDescription,
-  image,
-  doctorName,
-}) => {
+const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
   return (
     <div className="container mx-auto p-3">
       <div className="flex flex-wrap gap-4">
@@ -19,17 +12,10 @@ const BlogCard = ({
             className="w-full h-48 object-cover"
           />
           <div className="p-6 flex flex-col flex-grow">
-            <div className="flex items-center mb-4">
-              <div className="border border-gray-300 dark:border-gray-600 p-2 rounded-2xl mr-3 bg-[#4F9451]">
-                <span className="text-xs text-white dark:text-gray-400 ">
-                  {date}
-                </span>
-              </div>
-              <div  className="border border-gray-300 dark:border-gray-600 p-2 rounded-2xl mr-3 bg-[#4F9451] ">
-              <span className="text-xs text-white dark:text-gray-400 " >
-                {doctorName}
+            <div className="flex justify-between items-center mb-4">
+              <span className="text-sm text-gray-600 dark:text-gray-400">
+                {date}
               </span>
-              </div>
             </div>
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2 truncate">
               {CardTitle}

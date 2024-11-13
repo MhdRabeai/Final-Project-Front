@@ -58,6 +58,22 @@
         image: "https://i.ibb.co/ZH1s2K4/image-06.jpg",
         content: "Learn how IoT is revolutionizing the way cities operate, making them smarter, safer, and more efficient.",
       },
+      {
+        id: "7",
+        date: "Dec 26, 2023",
+        CardTitle: "The Impact of Blockchain on Financial Services",
+        CardDescription: "Blockchain technology is disrupting the financial sector by increasing transparency and security.",
+        image: "https://i.ibb.co/X8HFzHJ/image-05.jpg",
+        content: "Blockchain offers a new paradigm for secure and transparent financial transactions, reducing fraud and enhancing trust.",
+      },
+      {
+        id: "8",
+        date: "Dec 27, 2023",
+        CardTitle: "Smart Cities: The Role of IoT in Urban Development",
+        CardDescription: "Internet of Things (IoT) is transforming cities into smart, connected environments for better urban living.",
+        image: "https://i.ibb.co/ZH1s2K4/image-06.jpg",
+        content: "Learn how IoT is revolutionizing the way cities operate, making them smarter, safer, and more efficient.",
+      },
     ];
   
     useEffect(() => {
@@ -70,18 +86,18 @@
     }
   
     return (
-      <div className="container mx-auto px-4 py-10">
-        <h2 className="text-3xl font-bold">{blogData.CardTitle}</h2>
-        <p className="text-gray-500 mt-2">{blogData.date}</p>
-        <img
-          src={blogData.image}
-          alt={blogData.CardTitle}
-          className="mt-6 w-full rounded-lg"
-        />
-        <div className="mt-6 prose dark:prose-dark">
-          {blogData.content}
-        </div>
-      </div>
+      <div className="container mx-auto px-4 py-10 flex flex-col items-center">
+  <h2 className="text-3xl font-bold text-gray-800">{blogData.CardTitle}</h2>
+  <p className="text-gray-500 mt-2">{blogData.date}</p>
+  <img
+    src={blogData.image}
+    alt={blogData.CardTitle}
+    className="mt-6 w-full rounded-lg max-w-[400px]"
+  />
+  <div className="mt-6 prose dark:prose-dark">
+    {blogData.content}
+  </div>
+</div>
     );
   };
   
