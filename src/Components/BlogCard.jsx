@@ -25,8 +25,8 @@ const BlogCard = ({
                   {date}
                 </span>
               </div>
-              <div  className="border border-gray-300 dark:border-gray-600 p-2 rounded-2xl mr-3 bg-[#4F9451]">
-              <span  className=" text-white dark:text-gray-400 text-xs " >
+              <div  className="border border-gray-300 dark:border-gray-600 p-2 rounded-2xl mr-3 bg-[#4F9451] ">
+              <span className="text-xs text-white dark:text-gray-400 " >
                 {doctorName}
               </span>
               </div>
