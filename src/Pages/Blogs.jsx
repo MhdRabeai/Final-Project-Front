@@ -1,6 +1,6 @@
 // src/pages/Blog.js
-import React, { useState, useEffect } from 'react';
-import BlogCard from '../Components/BlogCard';
+import React, { useState, useEffect } from "react";
+import BlogCard from "../Components/BlogCard";
 
 const Blog = () => {
   const [data, setData] = useState([]);
@@ -11,7 +11,9 @@ const Blog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -32,7 +34,7 @@ const Blog = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   return (
@@ -48,7 +50,8 @@ const Blog = () => {
                 Our Recent News
               </h2>
               <p className="text-base text-body-color dark:text-dark-6">
-                There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form.
+                There are many variations of passages of Lorem Ipsum available
+                but the majority have suffered alteration in some form.
               </p>
             </div>
           </div>
@@ -58,11 +61,10 @@ const Blog = () => {
           {currentTeamMembers.map((post, index) => (
             <BlogCard
               key={index}
-              id={post.id} 
-              date={new Date().toLocaleDateString()}     
+              date={new Date().toLocaleDateString()}
               CardTitle={post.title}
-              CardDescription={post.body.substring(0, 100) + '...'}     
-              image="https://via.placeholder.com/150"   
+              CardDescription={post.body.substring(0, 100) + "..."}
+              image="https://via.placeholder.com/150"
             />
           ))}
         </div>
@@ -97,7 +99,11 @@ const Blog = () => {
                   <li key={page}>
                     <button
                       onClick={() => paginate(page + 1)}
-                      className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-10 dark:border-white/10 dark:text-white dark:hover:bg-green/5 ${currentPage === page + 1 ? 'bg-gray-200 dark:bg-dark-3' : ''}`}
+                      className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-10 dark:border-white/10 dark:text-white dark:hover:bg-green/5 ${
+                        currentPage === page + 1
+                          ? "bg-gray-200 dark:bg-dark-3"
+                          : ""
+                      }`}
                     >
                       {page + 1}
                     </button>
@@ -107,7 +113,9 @@ const Blog = () => {
                 <li>
                   <button
                     onClick={() =>
-                      paginate(currentPage < totalPages ? currentPage + 1 : totalPages)
+                      paginate(
+                        currentPage < totalPages ? currentPage + 1 : totalPages
+                      )
                     }
                     className="flex h-10 min-w-10 items-center justify-center px-2 text-base font-medium text-dark hover:bg-gray-2 dark:border-white/10 dark:text-white dark:hover:bg-white/5"
                   >
