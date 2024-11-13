@@ -20,8 +20,8 @@ const Login = () => {
 
   return (
     <>
-      <section className="">
-        <div className="grid grid-cols-1 md:grid-cols-2 px-0 mx-auto md:h-screen lg:py-0 ">
+      <section className="flex items-center justify-center min-h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-0 mx-auto md:h-screen lg:py-0">
           <div className="flex flex-col items-center justify-center">
             <div className="w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -31,10 +31,7 @@ const Login = () => {
                 <h3 className="font-light">
                   Welcome back! Please enter your details.
                 </h3>
-                <form
-                  className="space-y-4 md:space-y-6"
-                  onSubmit={handleSubmit}
-                >
+                <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
                   <div>
                     <label
                       htmlFor="email"
