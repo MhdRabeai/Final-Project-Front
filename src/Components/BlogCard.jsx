@@ -25,7 +25,7 @@ const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
             {CardDescription}
           </p>
           <Link
-            to={"/blogs/10"}
+            to={"10"}
             className="bg-[#4F9451] dark:bg-dark-2 border-[#4F9451] dark:border-dark-2 border rounded-full inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-white hover:bg-body-color hover:border-body-color mt-5"
           >
             View Details

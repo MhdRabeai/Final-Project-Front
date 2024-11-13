@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -20,8 +20,8 @@ const Login = () => {
 
   return (
     <>
-      <section>
-        <div className="grid grid-cols-1 md:grid-cols-2 px-0 mx-auto md:h-screen lg:py-0">
+      <section className="">
+        <div className="grid grid-cols-1 md:grid-cols-2 px-0 mx-auto md:h-screen lg:py-0 ">
           <div className="flex flex-col items-center justify-center">
             <div className="w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -31,7 +31,10 @@ const Login = () => {
                 <h3 className="font-light">
                   Welcome back! Please enter your details.
                 </h3>
-                <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
+                <form
+                  className="space-y-4 md:space-y-6"
+                  onSubmit={handleSubmit}
+                >
                   <div>
                     <label
                       htmlFor="email"
@@ -106,7 +109,7 @@ const Login = () => {
                   <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                     Don't have an account yet?{" "}
                     <Link
-                      to="/Register"  
+                      to="/Register"
                       className="font-medium text-primary-600 hover:underline dark:text-primary-500 text-[#4F9451]"
                     >
                       Sign up
@@ -118,7 +121,7 @@ const Login = () => {
           </div>
           <div className="hidden md:flex items-center justify-center max-h-screen">
             <img
-              src="green.png" 
+              src="green.png"
               alt="Login"
               className="w-full h-full object-cover rounded-lg shadow-lg"
             />
@@ -128,5 +131,5 @@ const Login = () => {
     </>
   );
 };
-     
+
 export default Login;
