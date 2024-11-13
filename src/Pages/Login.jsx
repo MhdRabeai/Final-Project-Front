@@ -20,7 +20,7 @@ const Login = () => {
   return (
     <>
       <section>
-        <div className="grid grid-cols-1 md:grid-cols-2  px-0 py-8 mx-auto md:h-screen lg:py-0">
+        <div className="grid grid-cols-1 md:grid-cols-2  px-0  mx-auto md:h-screen lg:py-0">
           <div className="flex flex-col items-center justify-center">
             <div className="w-full bg-white rounded-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
               <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -118,7 +118,7 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center max-h-screen">
             <img
               src="green.png"
               alt="Login"
