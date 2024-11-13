@@ -116,6 +116,7 @@ const Blogs = () => {
                       paginate(
                         currentPage < totalPages ? currentPage + 1 : totalPages
                       )
+                      
                     }
                     className="flex h-10 min-w-10 items-center justify-center px-2 text-base font-medium text-dark hover:bg-gray-2 dark:border-white/10 dark:text-white dark:hover:bg-white/5"
                   >
