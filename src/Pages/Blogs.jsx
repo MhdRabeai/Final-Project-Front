@@ -1,67 +1,48 @@
-import React, { useState } from "react";
+// src/pages/Blog.js
+import React, { useState, useEffect } from "react";
 import BlogCard from "../Components/BlogCard";
 
 const Blog = () => {
-  const data = [
-    {
-      date: "Dec 22, 2023",
-      CardTitle: "Meet AutoManage, the best AI management tools",
-      CardDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "https://i.ibb.co/Cnwd4q6/image-01.jpg",
-    },
-    {
-      date: "Dec 22, 2023",
-      CardTitle: "Meet AutoManage, the best AI management tools",
-      CardDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "https://i.ibb.co/Y23YC07/image-02.jpg",
-    },
-    {
-      date: "Dec 22, 2023",
-      CardTitle: "Meet AutoManage, the best AI management tools",
-      CardDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "https://i.ibb.co/7jdcnwn/image-03.jpg",
-    },
-    {
-      date: "Dec 22, 2023",
-      CardTitle: "Meet AutoManage, the best AI management tools",
-      CardDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "https://i.ibb.co/Cnwd4q6/image-01.jpg",
-    },
-    {
-      date: "Dec 22, 2023",
-      CardTitle: "Meet AutoManage, the best AI management tools",
-      CardDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "https://i.ibb.co/Y23YC07/image-02.jpg",
-    },
-    {
-      date: "Dec 22, 2023",
-      CardTitle: "Meet AutoManage, the best AI management tools",
-      CardDescription:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      image: "https://i.ibb.co/7jdcnwn/image-03.jpg",
-    },
-  ];
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  const totalPages = Math.min(Math.ceil(data.length / itemsPerPage), 6);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchData();
+  }, []);
+
+  const totalPages = Math.min(Math.ceil(data.length / itemsPerPage), 6);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentTeamMembers = data.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <section className="dark:bg-black">
-      <div className="container mx-auto">
-        <div className=" flex flex-wrap pb-10">
+      <div className="container">
+        <div className="flex flex-wrap pb-10">
           <div className="w-full px-4">
-            <div className="mx-auto  max-w-[510px] text-center ">
+            <div className="mx-auto max-w-[510px] text-center">
               <span className="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
                 Our Blogs
               </span>
@@ -76,21 +57,21 @@ const Blog = () => {
           </div>
         </div>
 
-        <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white ">
-          {currentTeamMembers.map((member, index) => (
+        <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
+          {currentTeamMembers.map((post, index) => (
             <BlogCard
               key={index}
-              date={member.date}
-              CardTitle={member.CardTitle}
-              CardDescription={member.CardDescription}
-              image={member.image}
+              date={new Date().toLocaleDateString()}
+              CardTitle={post.title}
+              CardDescription={post.body.substring(0, 100) + "..."}
+              image="https://via.placeholder.com/150"
             />
           ))}
         </div>
 
         {data.length >= itemsPerPage && (
-          <div className=" pt-10 text-center dark:bg-black ">
-            <div className=" inline-flex justify-center rounded bg-white  p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black dark:border">
+          <div className="pt-10 text-center dark:bg-black">
+            <div className="inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black dark:border">
               <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-gray">
                 <li>
                   <button

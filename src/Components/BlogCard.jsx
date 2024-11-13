@@ -1,11 +1,12 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogCard = ({ image, date, CardTitle, CardDescription }) => {
+const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
   return (
     <div className="w-full px-4 md-px-0 md:w-1/2 xl:w-1/4 transition-transform transform hover:-translate-y-2 duration-300">
       <div className="mb-10 w-full border border-gray-200 dark:border-sky-100 rounded-lg shadow-lg">
         <div className="mb-8 overflow-hidden rounded-t-lg">
-          <img src={image} alt="" className="w-full" />
+          <img src={image} alt="Blog" className="w-full" />
         </div>
         <div className="p-5">
           {date && (
