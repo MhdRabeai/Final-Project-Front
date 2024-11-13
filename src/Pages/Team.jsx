@@ -7,64 +7,67 @@ const Team = () => {
       name: "Coriss Ambady",
       profession: "Web Developer",
       imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-    },
-    {
+      },
+      {
       name: "John Doe",
       profession: "UI/UX Designer",
       imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-    },
-    {
+      },
+      {
       name: "Jane Smith",
       profession: "Backend Developer",
       imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-    },
-    {
+      },
+      {
       name: "Samuel Green",
       profession: "Frontend Developer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-    },
-    {
+      },
+      {
       name: "Robert Williams",
       profession: "Project Manager",
       imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-    },
-    {
+      },
+      {
       name: "Alice Johnson",
       profession: "QA Engineer",
       imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-    },
-    {
+      },
+      {
       name: "Lucas Martin",
       profession: "Web Developer",
       imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-    },
-    {
+      },
+      {
       name: "Sophia Davis",
       profession: "DevOps Engineer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-    },
-    {
+      },
+      {
       name: "Sophia Davis",
       profession: "DevOps Engineer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-    },
-  ];
+      },
+      ];
+  ;
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
   const totalPages = Math.min(Math.ceil(teamData.length / itemsPerPage), 8);
 
-  const indexOfLastItem = currentPage * itemsPerPage;  
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;  
-  const currentTeamMembers = teamData.slice(indexOfFirstItem, indexOfLastItem);  
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentTeamMembers = teamData.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);  
+  const paginate = (pageNumber) => {
+    setCurrentPage(Math.min(pageNumber, totalPages));
+  };
 
   return (
-    <section className=" dark:bg-black ">
+    <section className="dark:bg-black">
       <div className="container mx-auto">
-        <div className=" flex flex-wrap">
+        <div className="flex flex-wrap">
           <div className="w-full px-4">
             <div className="mx-auto mb-[60px] max-w-[510px] text-center">
               <span className="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
@@ -84,18 +87,18 @@ const Team = () => {
         <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
           {currentTeamMembers.map((member, index) => (
             <TeamCard
-              className="dark:bg-white"
               key={index}
               name={member.name}
               profession={member.profession}
               imageSrc={member.imageSrc}
+              className="dark:bg-white"
             />
           ))}
         </div>
 
         {teamData.length > itemsPerPage && (
-          <div className=" pt-10 text-center dark:bg-black ">
-            <div className=" inline-flex justify-center rounded bg-white  p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black dark:border">
+          <div className="pt-10 text-center dark:bg-black">
+            <div className="inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black dark:border">
               <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-gray">
                 <li>
                   <button
@@ -119,47 +122,48 @@ const Team = () => {
                   </button>
                 </li>
 
-            {[...Array(totalPages).keys()].map((page) => (  
-              <li key={page}>  
-                <button  
-                  onClick={() => paginate(page + 1)}  
-                  className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-200 dark:border-white/10 dark:text-white dark:hover:bg-white/5 ${  
-                    currentPage === page + 1 ? "bg-gray-200 dark:bg-dark-3" : ""  
-                  }`}  
-                >  
-                  {page + 1}  
-                </button>  
-              </li>  
-            ))}  
+                {[...Array(totalPages).keys()].map((page) => (
+                  <li key={page}>
+                    <button
+                      onClick={() => paginate(page + 1)}
+                      className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-200 dark:border-white/10 dark:text-white dark:hover:bg-white/5 ${
+                        currentPage === page + 1 ? "bg-gray-200 dark:bg-dark-3" : ""
+                      }`}
+                    >
+                      {page + 1}
+                    </button>
+                  </li>
+                ))}
 
-            <li>  
-              <button  
-                onClick={() =>  
-                  paginate(Math.min(totalPages, currentPage + 1))  
-                }  
-                className="flex h-10 min-w-10 items-center justify-center px-2 text-base font-medium text-dark hover:bg-gray-200 dark:border-white/10 dark:text-white dark:hover:bg-white/5"  
-                disabled={currentPage === totalPages}  
-              >  
-                <svg  
-                  width="20"  
-                  height="21"  
-                  viewBox="0 0 20 21"  
-                  fill="none"  
-                  xmlns="http://www.w3.org/2000/svg"  
-                >  
-                  <path  
-                    d="M18 10L11.5312 3.4375C11.25 3.15625 10.8125 3.15625 10.5312 3.4375C10.25 3.71875 10.25 4.15625 10.5312 4.4375L15.7812 9.78125H2.5C2.125 9.78125 1.8125 10.0937 1.8125 10.4688C1.8125 10.8438 2.125 11.1875 2.5 11.1875H15.8437L10.5312 16.5938C10.25 16.875 10.25 17.3125 10.5312 17.5938C10.6562 17.7188 10.8437 17.7812 11.0312 17.7812C11.2187 17.7812 11.4062 17.7188 11.5312 17.5625L18 11C18.2812 10.7187 18.2812 10.2812 18 10Z"  
-                    fill="currentColor"  
-                  />  
-                </svg>  
-              </button>  
-            </li>  
-          </ul>  
-        </div>  
-      </div>  
-    </section>  
-            
-  );  
-};  
+                <li>
+                  <button
+                    onClick={() =>
+                      paginate(Math.min(totalPages, currentPage + 1))
+                    }
+                    className="flex h-10 min-w-10 items-center justify-center px-2 text-base font-medium text-dark hover:bg-gray-200 dark:border-white/10 dark:text-white dark:hover:bg-white/5"
+                    disabled={currentPage === totalPages}
+                  >
+                    <svg
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M18 10L11.5312 3.4375C11.25 3.15625 10.8125 3.15625 10.5312 3.4375C10.25 3.71875 10.25 4.15625 10.5312 4.4375L15.7812 9.78125H2.5C2.125 9.78125 1.8125 10.0937 1.8125 10.4688C1.8125 10.8438 2.125 11.1875 2.5 11.1875H15.8437L10.5312 16.5938C10.25 16.875 10.25 17.3125 10.5312 17.5938C10.6562 17.7188 10.8437 17.7812 11.0312 17.7812C11.2187 17.7812 11.4062 17.7188 11.5312 17.5625L18 11C18.2812 10.7187 18.2812 10.2812 18 10Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
 
 export default Team;
