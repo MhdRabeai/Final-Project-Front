@@ -6,7 +6,7 @@ const Sessions = () => {
       title: 'Event 1',
       description: 'This is the first event.',
       date: '2023-11-14',
-    }, 
+    },  
     {
       title: 'Event 2',
       description: 'This is the second event.',
