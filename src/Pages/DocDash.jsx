@@ -4,6 +4,7 @@ import logo from "../Assets/logo.png";
 import Sessions from "../Components/Sessions"
 import DocProfile from "../Components/docProfile";
 import AddArticle from "../Components/AddArticle"
+import Perspective  from "../Components/Persprective"
 
 const DocDash = () => {
   return (
@@ -641,6 +642,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
           <Sessions/>
           <DocProfile/>
           <AddArticle/>
+          <Perspective/>
         </div>
       </div>
     </div>
