@@ -4,7 +4,7 @@ import logo from "../Assets/logo.png";
 import Sessions from "../Components/Sessions"
 import DocProfile from "../Components/docProfile";
 import AddArticle from "../Components/AddArticle"
-import Perspective  from "../Components/Persprective"
+import Perspective  from "../Components/Perscription"
 
 const DocDash = () => {
   return (
@@ -627,7 +627,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                     </svg>
-                    Subscription page
+                    Give a Perscription
                   </a>
                 </li>
               </ul>
