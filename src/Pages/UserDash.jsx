@@ -1,7 +1,7 @@
 import React,{ useState }  from "react";
 import { Link } from "react-router-dom";
 import logo from "../Assets/logo.png";
-import ProfilePage from "./userprofile";
+import ProfilePage from "../Components/userprofile";
 const UserDash = () => {
   return (
     <div>
@@ -763,6 +763,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
       </div>
 
      {<ProfilePage/>}
+
 </div>
   );
 };
