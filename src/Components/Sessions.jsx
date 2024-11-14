@@ -25,9 +25,9 @@ const Sessions = () => {
         <li key={index} className="timeline-item">
           <div className="timeline-marker bg-blue-500 rounded-full"></div>
           <div className="timeline-content p-4 border border-gray-200 rounded-lg shadow-sm">
-            <h3 className="text-lg font-bold">{event.title}</h3>
+            <h3 className="text-lg font-bold text-green-700">{event.title}</h3>
             <p className="text-gray-700">{event.description}</p>
-            <p className="text-gray-500 text-sm">{event.date}</p>
+            <p className="text-green-600 text-sm ">{event.date}</p>
           </div>
         </li>
       ))}
