@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';  
-import StarRating from './starrating';   
+// import StarRating from './starrating';   
 
 const ComplaintsForm = () => {  
   const [name, setName] = useState('');  
