@@ -12,13 +12,11 @@ const CalendarPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentEvent, setCurrentEvent] = useState(null);
 
-  // عند تحميل الصفحة، نقوم بتحميل الأحداث من الـ localStorage
   useEffect(() => {
     const loadedEvents = JSON.parse(localStorage.getItem('events')) || [];
     setEvents(loadedEvents);
   }, []);
 
-  // حفظ الأحداث المعدلة أو المضافة في الـ localStorage
   const saveEventsToLocalStorage = useCallback((updatedEvents) => {
     localStorage.setItem('events', JSON.stringify(updatedEvents));
   }, []);
