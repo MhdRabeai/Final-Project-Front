@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import Sessions from "../Components/Sessions"
 import DocProfile from "../Components/docProfile";
+import AddArticle from "../Components/AddArticle"
 
 const DocDash = () => {
   return (
@@ -482,39 +483,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     </svg>
                   </button>
 
-                  <div
-                    id="account-accordion-child"
-                    class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-                    role="region"
-                    aria-labelledby="account-accordion"
-                  >
-                    <ul class="ps-8 pt-1 space-y-1">
-                      <li>
-                        <a
-                          class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="/"
-                        >
-                          Link 1
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="/"
-                        >
-                          Link 2
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="/"
-                        >
-                          Link 3
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                  
                 </li>
 
                 <li class="hs-accordion" id="projects-accordion">
@@ -539,7 +508,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
-                    Post review
+                    Add Article
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -671,6 +640,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
 
           <Sessions/>
           <DocProfile/>
+          <AddArticle/>
         </div>
       </div>
     </div>
