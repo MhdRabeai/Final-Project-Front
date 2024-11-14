@@ -4,6 +4,7 @@ const DocProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [firstName, setFirstName] = useState('John');
   const [lastName, setLastName] = useState('Doe');
+  const [bio, setBio] = useState('Depression Expert');
   const [email, setEmail] = useState('john.doe@example.com');
   const [password, setPassword] = useState('password123');
   const [profilePhoto, setProfilePhoto] = useState(null);
@@ -25,7 +26,7 @@ const DocProfile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', { firstName, lastName, email, password, profilePhoto });
+    console.log('Form submitted:', { firstName, lastName, email, password, profilePhoto,bio });
   };
 
   return (
@@ -98,6 +99,18 @@ const DocProfile = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-indigo-300"
             placeholder="Password"
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700">Bio</label>
+          <input
+            type="text"
+            value={bio}
+            disabled={!isEditing}
+            onChange={(e) => setBio(e.target.value)}
+            className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-indigo-300"
+            placeholder="Bio"
           />
         </div>
 
