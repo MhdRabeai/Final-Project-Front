@@ -4,6 +4,7 @@ import logo from "../Assets/logo.png";
 import Sessions from "../Components/Sessions"
 import DocProfile from "../Components/docProfile";
 import AddArticle from "../Components/AddArticle"
+import Perspective  from "../Components/Persprective"
 
 const DocDash = () => {
   return (
@@ -496,7 +497,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                         
                 <li>
                 <Link
-                    to="/dashboard/doct/calendar"       
+                    to="/dashboard/doct/calendarpage"       
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
@@ -561,6 +562,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
           <Sessions/>
           <DocProfile/>
           <AddArticle/>
+          <Perspective/>
         </div>
       </div>
     </div>
