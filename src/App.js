@@ -18,7 +18,7 @@ import NotFound from "./Pages/NotFound";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 
-import Sessions from "./Pages/Sessions"
+import Sessions from "./Components/Sessions"
 
 const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
@@ -63,7 +63,7 @@ function App() {
       <Route path="dashboard/pharmacy" element={<PharDash />} />
       <Route path="dashboard/user" element={<UserDash />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="dashboard/sessions" element={<Sessions />} />
+      <Route path="dashboard/doc/sessions" element={<Sessions />} />
     </Routes>
   );
 }
