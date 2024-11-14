@@ -67,7 +67,7 @@ const Blogs = () => {
               CardTitle={post.title}
               CardDescription={post.body.substring(0, 100) + "..."}
               image="https://via.placeholder.com/150"
-              doctorName="Dr. John Doe" // Example static doctor name
+              doctorName="Dr. John Doe" 
             />
           ))}
         </div>

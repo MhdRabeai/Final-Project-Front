@@ -408,20 +408,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                     </svg>
                     Sessions
-                    <svg
-                      class="hs-accordion-active:block ms-auto hidden size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
+
                     <svg
                       class="hs-accordion-active:hidden ms-auto block size-4"
                       xmlns="http://www.w3.org/2000/svg"
