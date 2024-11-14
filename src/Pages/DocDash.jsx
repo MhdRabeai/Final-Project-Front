@@ -6,7 +6,7 @@ const DocDash = () => {
     <div>
       <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
-          <div class="me-5 lg:me-0 lg:hidden">
+          {/* <div class="me-5 lg:me-0 lg:hidden">
             <a
               class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
               href="/"
@@ -46,7 +46,7 @@ const DocDash = () => {
                 />
               </svg>
             </a>
-          </div>
+          </div> */}
 
           <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <div class="hidden md:block">
@@ -767,11 +767,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     </ul>
                   </div>
                 </li>
-
+                        
                 <li>
-                  <a
-                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
-                    href="/"
+                <Link
+                    to="/dashboard/doct/calendar"       
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
                       class="shrink-0 size-4"
@@ -796,9 +796,10 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-                    Complaints page
-                  </a>
+                    calander 
+                  </Link>
                 </li>
+
                 <li>
                   <a
                     class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
