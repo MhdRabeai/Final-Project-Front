@@ -4,6 +4,7 @@ import logo from "../Assets/logo.png";
 import ProfilePage from "../Components/userprofile";
 import Sessions from "../Components/Sessions";
 import ReviewForm from "../Components/reviewform";
+import ComplaintsForm from "../Components/complaints";
 
 const UserDash = () => {
   return (
@@ -733,32 +734,10 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-                    Complaints page
+                    Help Us Get Better
                   </a>
                 </li>
-                <li>
-                  <a
-                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-                    href="/"
-                  >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                    </svg>
-                    Subscription page
-                  </a>
-                </li>
+              
               </ul>
             </nav>
           </div>
@@ -770,6 +749,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
            <ProfilePage/>
           <Sessions/>
           <ReviewForm/>
+          <ComplaintsForm/>
         </div>
       </div>
     </div>
