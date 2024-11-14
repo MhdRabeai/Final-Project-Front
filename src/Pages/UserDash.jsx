@@ -2,6 +2,9 @@ import React,{ useState }  from "react";
 import { Link } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import ProfilePage from "../Components/userprofile";
+import Sessions from "../Components/Sessions";
+import ReviewForm from "../Components/reviewform";
+
 const UserDash = () => {
   return (
     <div>
@@ -762,9 +765,15 @@ dark:bg-neutral-800 dark:border-neutral-700"
         </div>
       </div>
 
-     {<ProfilePage/>}
+      <div class="w-full lg:ps-64">
+        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+           <ProfilePage/>
+          <Sessions/>
+          <ReviewForm/>
+        </div>
+      </div>
+    </div>
 
-</div>
   );
 };
 
