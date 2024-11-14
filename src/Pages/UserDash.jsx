@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../Assets/logo.png";
 const UserDash = () => {
   return (
     <div>
@@ -52,33 +52,6 @@ const UserDash = () => {
             <div class="hidden md:block">
               <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5"></div>
-
-                {/* <div class="hidden absolute inset-y-0 end-0  items-center pointer-events-none z-20 pe-1">
-              <button
-                type="button"
-                class="inline-flex shrink-0 justify-center items-center size-6 rounded-full text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                aria-label="Close"
-              >
-                <span class="sr-only">Close</span>
-                <svg
-                  class="shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m15 9-6 6" />
-                  <path d="m9 9 6 6" />
-                </svg>
-              </button>
-            </div> */}
-           
               </div>
             </div>
 
@@ -369,15 +342,16 @@ dark:bg-neutral-800 dark:border-neutral-700"
               </svg>
             </a>
           </div> */}
-           <div className="relative z-10">
-        <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
-          <div className="inline-flex items-center border-x px-5 mx-5">
-            <Link to={"/"}>
-              <img src="logo.png" alt="logo" width={175} />
-            </Link>
+          <div className="relative z-10">
+            <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
+              <div className="inline-flex items-center border-x px-5 mx-5">
+                <Link to={"/"}>
+                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src="logo.png" alt="logo" width={175} /> */}
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
           <div class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
             <nav

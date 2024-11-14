@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import logo from "../Assets/logo.png";
 const DocDash = () => {
   return (
     <div>
@@ -52,15 +52,13 @@ const DocDash = () => {
             <div class="hidden md:block">
               <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5"></div>
-
-               
               </div>
             </div>
 
             <div class="flex flex-row items-center justify-end gap-1">
               <button
                 type="button"
-                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-green-500  disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
               >
                 <svg
                   class="shrink-0 size-4"
@@ -82,7 +80,7 @@ const DocDash = () => {
 
               <button
                 type="button"
-                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-green-500   disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
               >
                 <svg
                   class="shrink-0 size-4"
@@ -344,15 +342,16 @@ dark:bg-neutral-800 dark:border-neutral-700"
               </svg>
             </a>
           </div> */}
-           <div className="relative z-10">
-        <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
-          <div className="inline-flex items-center border-x px-5 mx-5">
-            <Link to={"/"}>
-              <img src="logo.png" alt="logo" width={175} />
-            </Link>
+          <div className="relative z-10">
+            <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
+              <div className="inline-flex items-center border-x px-5 mx-5">
+                <Link to={"/"}>
+                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src="logo.png" alt="logo" width={175} /> */}
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
           <div class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
             <nav
@@ -362,7 +361,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
               <ul class="flex flex-col space-y-1">
                 <li>
                   <a
-                    class="flex items-center gap-x-3.5 py-2 px-2.5 bg-green-500 shadow text-sm text-white rounded-lg hover:bg-green-500   dark:bg-neutral-700 dark:text-white"
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 bg-green-500 shadow text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-green-500 dark:bg-neutral-700 dark:text-white"
                     href="/"
                   >
                     <svg
@@ -387,7 +386,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="users-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 "
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 "
                     aria-expanded="true"
                     aria-controls="users-accordion-child"
                   >
@@ -408,7 +407,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                       <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                     </svg>
-                    My Sessions
+                    Sessions
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -600,7 +599,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="account-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="account-accordion-child"
                   >
@@ -697,7 +696,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="projects-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="projects-accordion-child"
                   >
@@ -716,7 +715,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
-                    Patients
+                    Post review
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -810,7 +809,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-                    Calender
+                    Complaints page
                   </a>
                 </li>
                 <li>
@@ -833,30 +832,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                     </svg>
-                    Add Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-                    href="/"
-                  >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                    </svg>
-                    Payments
+                    Subscription page
                   </a>
                 </li>
               </ul>

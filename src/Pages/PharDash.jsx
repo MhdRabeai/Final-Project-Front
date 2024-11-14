@@ -1,9 +1,10 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import logo from "../Assets/logo.png";
 const PharDash = () => {
   return (
     <div>
-      <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-white border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
+      <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
           <div class="me-5 lg:me-0 lg:hidden">
             <a
@@ -51,39 +52,13 @@ const PharDash = () => {
             <div class="hidden md:block">
               <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5"></div>
-
-                {/* <div class="hidden absolute inset-y-0 end-0  items-center pointer-events-none z-20 pe-1">
-              <button
-                type="button"
-                class="inline-flex shrink-0 justify-center items-center size-6 rounded-full text-gray-500 hover:text-blue-600 focus:outline-none focus:text-blue-600 dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:text-blue-500"
-                aria-label="Close"
-              >
-                <span class="sr-only">Close</span>
-                <svg
-                  class="shrink-0 size-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m15 9-6 6" />
-                  <path d="m9 9 6 6" />
-                </svg>
-              </button>
-            </div> */}
               </div>
             </div>
 
             <div class="flex flex-row items-center justify-end gap-1">
               <button
                 type="button"
-                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
               >
                 <svg
                   class="shrink-0 size-4"
@@ -105,7 +80,7 @@ const PharDash = () => {
 
               <button
                 type="button"
-                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                class="size-[38px] relative inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-white hover:bg-gray-100 hover:text-black focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
               >
                 <svg
                   class="shrink-0 size-4"
@@ -318,15 +293,15 @@ hs-overlay-open:translate-x-0
 w-[260px] h-full
 hidden
 fixed inset-y-0 start-0 z-[60]
-bg-white border-e border-gray-200
+bg-white border-e border-[#4F9451]
 lg:block lg:translate-x-0 lg:end-auto lg:bottom-0
 dark:bg-neutral-800 dark:border-neutral-700"
         role="dialog"
         tabindex="-1"
         aria-label="Sidebar"
       >
-        <div class="relative flex flex-col h-full max-h-full">
-          <div class="px-6 pt-4">
+        <div class="relative flex flex-col h-full max-h-full bg-[#4F9451] ">
+          {/* <div class="px-6 pt-4">
             <a
               class="flex-none rounded-xl text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
               href="/"
@@ -366,6 +341,16 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 />
               </svg>
             </a>
+          </div> */}
+          <div className="relative z-10">
+            <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
+              <div className="inline-flex items-center border-x px-5 mx-5">
+                <Link to={"/"}>
+                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src="logo.png" alt="logo" width={175} /> */}
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
@@ -376,7 +361,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
               <ul class="flex flex-col space-y-1">
                 <li>
                   <a
-                    class="flex items-center gap-x-3.5 py-2 px-2.5 bg-gray-100 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-700 dark:text-white"
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 bg-green-500 shadow text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-green-500 dark:bg-neutral-700 dark:text-white"
                     href="/"
                   >
                     <svg
@@ -394,14 +379,14 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                       <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
-                    Dashboard
+                    Profile
                   </a>
                 </li>
 
                 <li class="hs-accordion" id="users-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 "
                     aria-expanded="true"
                     aria-controls="users-accordion-child"
                   >
@@ -422,7 +407,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                       <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                     </svg>
-                    Users
+                    Sessions
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -614,7 +599,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="account-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="account-accordion-child"
                   >
@@ -642,7 +627,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="m14.3 16.6 1-.4" />
                       <path d="m20.7 13.8 1-.4" />
                     </svg>
-                    Account
+                    Chat Room
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -711,7 +696,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 <li class="hs-accordion" id="projects-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="projects-accordion-child"
                   >
@@ -730,7 +715,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
-                    Projects
+                    Post review
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -798,7 +783,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
 
                 <li>
                   <a
-                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
+                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
                     href="/"
                   >
                     <svg
@@ -824,12 +809,12 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-                    Calendar
+                    Complaints page
                   </a>
                 </li>
                 <li>
                   <a
-                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                     href="/"
                   >
                     <svg
@@ -847,7 +832,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                       <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
                     </svg>
-                    Documentation
+                    Subscription page
                   </a>
                 </li>
               </ul>
