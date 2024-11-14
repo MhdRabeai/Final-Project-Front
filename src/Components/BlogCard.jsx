@@ -33,7 +33,7 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
             </div>
           </div>
         </div>
-        {/* Add more cards here */}
+        
       </div>
     </div>
   );
