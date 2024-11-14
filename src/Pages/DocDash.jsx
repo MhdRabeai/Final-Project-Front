@@ -780,11 +780,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     </ul>
                   </div>
                 </li>
-
+                        
                 <li>
-                  <a
-                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
-                    href="/"
+                <Link
+                    to="/dashboard/doct/calendar"       
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
                       class="shrink-0 size-4"
@@ -809,9 +809,10 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-                    Complaints page
-                  </a>
+                    calander 
+                  </Link>
                 </li>
+
                 <li>
                   <a
                     class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
