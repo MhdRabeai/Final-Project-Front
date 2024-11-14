@@ -12,18 +12,15 @@ const CalendarPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentEvent, setCurrentEvent] = useState(null);
 
-  // عند تحميل الصفحة، نقوم بتحميل الأحداث من الـ localStorage
   useEffect(() => {
     const loadedEvents = JSON.parse(localStorage.getItem('events')) || [];
     setEvents(loadedEvents);
   }, []);
 
-  // حفظ الأحداث المعدلة أو المضافة في الـ localStorage
   const saveEventsToLocalStorage = useCallback((updatedEvents) => {
     localStorage.setItem('events', JSON.stringify(updatedEvents));
   }, []);
 
-  // دالة لإضافة حدث جديد
   const handleCreateEvent = (newEvent) => {
     const validStart = moment(newEvent.start).isValid() ? newEvent.start : moment().toDate();
     const validEnd = moment(newEvent.end).isValid() ? newEvent.end : moment().add(1, 'hour').toDate();
@@ -35,7 +32,6 @@ const CalendarPage = () => {
     closeModal();
   };
 
-  // دالة لتعديل حدث موجود
   const handleUpdateEvent = (updatedEvent) => {
     const validStart = moment(updatedEvent.start).isValid() ? updatedEvent.start : moment().toDate();
     const validEnd = moment(updatedEvent.end).isValid() ? updatedEvent.end : moment().add(1, 'hour').toDate();
@@ -48,7 +44,6 @@ const CalendarPage = () => {
     closeModal();
   };
 
-  // دالة لحذف حدث
   const handleDeleteEvent = (eventId) => {
     const updatedEvents = events.filter((event) => event.id !== eventId);
     setEvents(updatedEvents);
@@ -56,9 +51,7 @@ const CalendarPage = () => {
     closeModal();
   };
 
-  // فتح نافذة الـ Modal لإضافة أو تعديل حدث
   const openModal = (slotInfo) => {
-    // إذا كان الحدث جديدًا نضبط قيمه الافتراضية
     if (!slotInfo.hasOwnProperty('id')) {
       slotInfo.id = moment().format('x');
       slotInfo.title = '';
@@ -71,18 +64,15 @@ const CalendarPage = () => {
     setIsModalOpen(true);
   };
 
-  // إغلاق نافذة الـ Modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
-  // عند تحديد حدث، نقوم بفتح نافذة الـ Modal لعرض أو تعديل الحدث
   const handleSelectEvent = (slotInfo) => {
     setCurrentEvent(slotInfo);
     setIsModalOpen(true);
   };
 
-  // عند تحديد خانة جديدة (ليس حدثًا موجودًا)، نقوم بفتح نافذة الـ Modal لإضافة حدث جديد
   const handleSelectSlot = (slotInfo) => {
     const eventSlotInfo = {
       start: slotInfo.start,
@@ -94,7 +84,6 @@ const CalendarPage = () => {
     openModal(eventSlotInfo);
   };
 
-  // تخصيص ستايل الحدث بناءً على تاريخ الحدث
   const eventStyleGetter = (event, start, end, isSelected) => {
     const currentTime = moment().format('YYYY MM DD');
     const eventTime = moment(event.start).format('YYYY MM DD');
@@ -106,7 +95,6 @@ const CalendarPage = () => {
     };
   };
 
-  // تحديث قيم الحدث في الـ Modal
   const handleInputChange = (field, value) => {
     setCurrentEvent((prevEvent) => ({
       ...prevEvent,
@@ -157,9 +145,9 @@ const CalendarPage = () => {
             className="bg-green-500 text-white py-2 px-4 rounded-md"
             onClick={() => {
               if (currentEvent?.id) {
-                handleUpdateEvent(currentEvent); // تعديل الحدث
+                handleUpdateEvent(currentEvent);   
               } else {
-                handleCreateEvent(currentEvent); // إضافة حدث جديد
+                handleCreateEvent(currentEvent);    
               }
             }}
           >
