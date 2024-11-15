@@ -18,8 +18,10 @@ import NotFound from "./Pages/NotFound";
 import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import CalendarPage from "./Pages/calendar";
-import { Calendar } from "antd";
+// import { Calendar } from "antd";
 import TabelPataints from "./Pages/TabelPataints";
+import TabelDoctors from "./Pages/TabelDoctors";
+import TabelDrugs from "./Pages/TabelDrugs";
 // import TablePatients from "./Pages/TablePatients";
 const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
@@ -67,6 +69,8 @@ function App() {
       <Route path="dashboard/user" element={<UserDash />} />
       <Route path="dashboard/doct/calendarpage" element={<CalendarPage />} />
       <Route path="dashboard/admin/TabelPataints" element={<TabelPataints />} />
+      <Route path="dashboard/admin/TabelDoctors" element={<TabelDoctors />} />
+      <Route path="dashboard/admin/TabelDrugs" element={<TabelDrugs />} />
       <Route path="dashboard/admin/calendarpage" element={<CalendarPage />} />
       <Route path="dashboard/user/calendarpage" element={<CalendarPage />} />
       <Route path="*" element={<NotFound />} />
