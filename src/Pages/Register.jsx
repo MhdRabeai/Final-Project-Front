@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 const Register = () => {
   const [isVisible, setIsVisible] = useState(false);
-
+  const [isOneVisible, setIsOne] = useState(false);
+  const [isTwoVisible, setIsTwo] = useState(false);
   function togglePass() {
     setIsVisible((prevState) => !prevState);
   }
@@ -36,222 +37,222 @@ const Register = () => {
           encType="multipart/form-data"
         >
           <div data-hs-stepper="">
-            <ul class="relative flex flex-row gap-x-2">
+            <ul className="relative flex flex-row gap-x-2">
               <li
-                class="flex items-center gap-x-2 shrink basis-0 flex-1 group active"
+                className="flex items-center gap-x-2 shrink basis-0 flex-1 group active"
                 data-hs-stepper-nav-item='{
       "index": 1,
       "isOptional": true
     }'
               >
-                <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-                  <span class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
-                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">
+                <span className="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+                  <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span className="hs-stepper-success:hidden hs-stepper-completed:hidden">
                       1
                     </span>
                     <svg
-                      class="hidden shrink-0 size-3 hs-stepper-success:block"
+                      className="hidden shrink-0 size-3 hs-stepper-success:block"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </span>
-                  <span class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
+                  <span className="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
                     Step
                   </span>
                 </span>
-                <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-[#4f9451] hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500"></div>
+                <div className="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-[#4f9451] hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500"></div>
               </li>
 
               <li
-                class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
+                className="flex items-center gap-x-2 shrink basis-0 flex-1 group"
                 data-hs-stepper-nav-item='{
       "index": 2,
       "isOptional": true
     }'
               >
-                <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-                  <span class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
-                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">
+                <span className="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+                  <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span className="hs-stepper-success:hidden hs-stepper-completed:hidden">
                       2
                     </span>
                     <svg
-                      class="hidden shrink-0 size-3 hs-stepper-success:block"
+                      className="hidden shrink-0 size-3 hs-stepper-success:block"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </span>
-                  <span class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
+                  <span className="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
                     Step
                   </span>
                 </span>
-                <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-[#4f9451] hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500"></div>
+                <div className="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-[#4f9451] hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500"></div>
               </li>
 
               <li
-                class="flex items-center gap-x-2 shrink basis-0 flex-1 group"
+                className="flex items-center gap-x-2 shrink basis-0 flex-1 group"
                 data-hs-stepper-nav-item='{
       "index": 3
     }'
               >
-                <span class="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
-                  <span class="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
-                    <span class="hs-stepper-success:hidden hs-stepper-completed:hidden">
+                <span className="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
+                  <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
+                    <span className="hs-stepper-success:hidden hs-stepper-completed:hidden">
                       3
                     </span>
                     <svg
-                      class="hidden shrink-0 size-3 hs-stepper-success:block"
+                      className="hidden shrink-0 size-3 hs-stepper-success:block"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     >
                       <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
                   </span>
-                  <span class="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
+                  <span className="ms-2 text-sm font-medium text-gray-800 group-focus:text-gray-500 dark:text-white dark:group-focus:text-gray-400">
                     Step
                   </span>
                 </span>
-                <div class="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-[#4f9451] hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500"></div>
+                <div className="w-full h-px flex-1 bg-gray-200 group-last:hidden hs-stepper-success:bg-[#4f9451] hs-stepper-completed:bg-teal-600 dark:bg-neutral-700 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500"></div>
               </li>
             </ul>
 
-            <div class="mt-5 sm:mt-8">
+            <div className="mt-5 sm:mt-8">
               <div
                 data-hs-stepper-content-item='{
       "index": 1
     }'
                 style={{ display: "none" }}
               >
-                <div class="hs-accordion-group w-full divide divide-gray-200 dark:divide-neutral-700 border rounded-xl shadow-sm p-6 dark:bg-neutral-800 dark:border-neutral-700">
+                <div className="hs-accordion-group w-full divide divide-gray-200 dark:divide-neutral-700 border rounded-xl shadow-sm p-6 dark:bg-neutral-800 dark:border-neutral-700">
                   <div
-                    class="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border  rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent border-gray-200 active"
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border  rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent border-gray-200 active"
                     id="hs-basic-with-title-and-arrow-stretched-heading-one"
                   >
                     <button
                       type="button"
-                      class="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
                     >
                       How are you feeling today?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6"></path>
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6"></path>
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-one"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
                       style={{ display: "block" }}
                     >
-                      <div class="py-4 px-5 ">
-                        <div class="flex gap-x-6 flex-wrap">
-                          <div class="flex">
+                      <div className="py-4 px-5 ">
+                        <div className="flex gap-x-6 flex-wrap">
+                          <div className="flex">
                             <input
                               type="radio"
                               name="feeling"
                               value={"Great"}
-                              class="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
                               id="hs-radio-group-1"
                             />
                             <label
-                              for="hs-radio-group-1"
-                              class="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                              htmlFor="hs-radio-group-1"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
                             >
                               Great
                             </label>
                           </div>
-                          <div class="flex">
+                          <div className="flex">
                             <input
                               type="radio"
                               name="feeling"
                               value={"Good"}
-                              class="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
                               id="hs-radio-group-2"
                             />
                             <label
-                              for="hs-radio-group-2"
-                              class="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                              htmlFor="hs-radio-group-2"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
                             >
                               Good
                             </label>
                           </div>
-                          <div class="flex">
+                          <div className="flex">
                             <input
                               type="radio"
                               name="feeling"
                               value={"So-so"}
-                              class="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
                               id="hs-radio-group-3"
                             />
                             <label
-                              for="hs-radio-group-3"
-                              class="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                              htmlFor="hs-radio-group-3"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
                             >
                               So-so
                             </label>
                           </div>
-                          <div class="flex">
+                          <div className="flex">
                             <input
                               type="radio"
                               name="feeling"
                               value={"Bad"}
-                              class="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
                               id="hs-radio-group-4"
                             />
                             <label
-                              for="hs-radio-group-4"
-                              class="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                              htmlFor="hs-radio-group-4"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
                             >
                               Bad
                             </label>
@@ -261,206 +262,206 @@ const Register = () => {
                     </div>
                   </div>
                   <div
-                    class="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
                     id="hs-basic-with-title-and-arrow-stretched-heading-two"
                   >
                     <button
                       type="button"
-                      class="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
                     >
                       Select any of these challenges you are facing.
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6"></path>
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6"></path>
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-two"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
                       style={{ height: "0px" }}
                     >
-                      <div class="py-4 px-5 ">
-                        <div class="grid lg:grid-cols-4 lg:gap-x-4 xl:gap-x-12  lg:items-center  justify-between ">
+                      <div className="py-4 px-5 ">
+                        <div className="grid lg:grid-cols-4 lg:gap-x-4 xl:gap-x-12  lg:items-center  justify-between ">
                           <div className="lg:col-span-2 divide divide-y-8 divide-transparent mb-2 lg:mb-0">
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 type="checkbox"
                                 name="challenges"
                                 value={"Family"}
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-1"
-                                checked
+                                defaultChecked
                               />
                               <label
-                                for="hs-checkbox-group-1"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-1"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Family
                               </label>
                             </div>
 
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-2"
                                 value={"Gender identity"}
                               />
                               <label
-                                for="hs-checkbox-group-2"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-2"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Gender identity
                               </label>
                             </div>
 
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-3"
                                 value={"Relationships"}
                               />
                               <label
-                                for="hs-checkbox-group-3"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-3"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Relationships
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-4"
                                 value={"Social Anxiety"}
                               />
                               <label
-                                for="hs-checkbox-group-4"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-4"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Social Anxiety
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-5"
                                 value={"Trauma/PTSD"}
                               />
                               <label
-                                for="hs-checkbox-group-5"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-5"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Trauma/PTSD
                               </label>
                             </div>
                           </div>
                           <div className="lg:col-span-2 divide divide-y-8 divide-transparent">
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-6"
                                 value={"Anger"}
                               />
                               <label
-                                for="hs-checkbox-group-6"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-6"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Anger
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-7"
                                 value={"Depression"}
                               />
                               <label
-                                for="hs-checkbox-group-7"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-7"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Depression
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-8"
                                 value={"Weight"}
                               />
                               <label
-                                for="hs-checkbox-group-8"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-8"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Weight
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-9"
                                 value={"Anxiety"}
                               />
                               <label
-                                for="hs-checkbox-group-9"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-9"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Anxiety
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="challenges"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-10"
                                 value={"Other"}
                               />
                               <label
-                                for="hs-checkbox-group-10"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-10"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Other
                               </label>
@@ -471,206 +472,206 @@ const Register = () => {
                     </div>
                   </div>
                   <div
-                    class="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
                     id="hs-basic-with-title-and-arrow-stretched-heading-three"
                   >
                     <button
                       type="button"
-                      class="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
                     >
                       What areas of life you are hoping to improve?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6"></path>
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6"></path>
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-three"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
                       style={{ height: "0px" }}
                     >
-                      <div class="py-4 px-5 ">
-                        <div class="grid lg:grid-cols-4 lg:gap-x-4 xl:gap-x-12  lg:items-center  justify-between ">
+                      <div className="py-4 px-5 ">
+                        <div className="grid lg:grid-cols-4 lg:gap-x-4 xl:gap-x-12  lg:items-center  justify-between ">
                           <div className="lg:col-span-2 divide divide-y-8 divide-transparent mb-2 lg:mb-0">
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 type="checkbox"
                                 name="areas"
                                 value={"Eating habits"}
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-1"
-                                checked
+                                defaultChecked
                               />
                               <label
-                                for="hs-checkbox-group-1"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-1"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Eating habits
                               </label>
                             </div>
 
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-2"
                                 value={"Exercise"}
                               />
                               <label
-                                for="hs-checkbox-group-2"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-2"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Exercise
                               </label>
                             </div>
 
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-3"
                                 value={"Health"}
                               />
                               <label
-                                for="hs-checkbox-group-3"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-3"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Health
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-4"
                                 value={"Home life"}
                               />
                               <label
-                                for="hs-checkbox-group-4"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-4"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Home life
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-5"
                                 value={"Relationships"}
                               />
                               <label
-                                for="hs-checkbox-group-5"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-5"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Relationships
                               </label>
                             </div>
                           </div>
                           <div className="lg:col-span-2 divide divide-y-8 divide-transparent">
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-6"
                                 value={"Sleeping habis"}
                               />
                               <label
-                                for="hs-checkbox-group-6"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-6"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Sleeping habis
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-7"
                                 value={"Work-life balance"}
                               />
                               <label
-                                for="hs-checkbox-group-7"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-7"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Work-life balance
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-8"
                                 value={"Social life"}
                               />
                               <label
-                                for="hs-checkbox-group-8"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-8"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Social life
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-9"
                                 value={"Work"}
                               />
                               <label
-                                for="hs-checkbox-group-9"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-9"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Work
                               </label>
                             </div>
-                            <div class="flex">
+                            <div className="flex">
                               <input
                                 name="areas"
                                 type="checkbox"
-                                class="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
                                 id="hs-checkbox-group-10"
                                 value={"Other"}
                               />
                               <label
-                                for="hs-checkbox-group-10"
-                                class="text-sm text-gray-500 ms-3 dark:text-neutral-400"
+                                htmlFor="hs-checkbox-group-10"
+                                className="text-sm text-gray-500 ms-3 dark:text-neutral-400"
                               >
                                 Other
                               </label>
@@ -681,80 +682,80 @@ const Register = () => {
                     </div>
                   </div>
                   <div
-                    class="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
                     id="hs-basic-with-title-and-arrow-stretched-heading-four"
                   >
                     <button
                       type="button"
-                      class="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
                     >
                       Have you ever been in therapy or counseling befor?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6"></path>
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6"></path>
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-four"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
                       style={{ height: "0px" }}
                     >
-                      <div class="py-4 px-5 ">
-                        <div class="flex gap-x-6 flex-wrap">
-                          <div class="flex">
+                      <div className="py-4 px-5 ">
+                        <div className="flex gap-x-6 flex-wrap">
+                          <div className="flex">
                             <input
                               type="radio"
                               name="prev_therapy"
                               value={"Yes"}
-                              class="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
                               id="hs-radio-group-1"
                             />
                             <label
-                              for="hs-radio-group-1"
-                              class="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                              htmlFor="hs-radio-group-1"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
                             >
                               Yes
                             </label>
                           </div>
-                          <div class="flex">
+                          <div className="flex">
                             <input
                               type="radio"
                               name="prev_therapy"
                               value={"No"}
-                              class="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
                               id="hs-radio-group-2"
                             />
                             <label
-                              for="hs-radio-group-2"
-                              class="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                              htmlFor="hs-radio-group-2"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
                             >
                               No
                             </label>
@@ -764,116 +765,170 @@ const Register = () => {
                     </div>
                   </div>
                   <div
-                    class="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
                     id="hs-basic-with-title-and-arrow-stretched-heading-five"
                   >
                     <button
                       type="button"
-                      class="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five"
                     >
-                      How do I get access to a theme I purchased?
+                      Have you recently had any thoughts of self-harm or sucide?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6"></path>
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        style={{ position: "s" }}
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6"></path>
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-five"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
                       style={{ height: "0px" }}
                     >
-                      <p class="pb-4 px-5 text-gray-800 dark:text-neutral-200">
-                        If you lose the link for a theme you purchased, don't
-                        panic! We've got you covered. You can login to your
-                        account, tap your avatar in the upper right corner, and
-                        tap Purchases. If you didn't create a login or can't
-                        remember the information, you can use our handy
-                        Redownload page, just remember to use the same email you
-                        originally made your purchases with.
-                      </p>
+                      <div className="py-4 px-5 ">
+                        <div className="flex gap-x-6 flex-wrap">
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="self_harm"
+                              value={"Yes"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-1"
+                            />
+                            <label
+                              htmlFor="hs-radio-group-1"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="self_harm"
+                              value={"No"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-2"
+                            />
+                            <label
+                              htmlFor="hs-radio-group-2"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              No
+                            </label>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div
-                    class="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
                     id="hs-basic-with-title-and-arrow-stretched-heading-six"
                   >
                     <button
                       type="button"
-                      class="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
                       aria-expanded="true"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six"
                     >
-                      Upgrade License Type
+                      Are you havig any chronic pail or illness?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6"></path>
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6"></path>
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-six"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
                       style={{ height: "0px" }}
                     >
-                      <p class="pb-4 px-5 text-gray-800 dark:text-neutral-200">
-                        There may be times when you need to upgrade your license
-                        from the original type you purchased and we have a
-                        solution that ensures you can apply your original
-                        purchase cost to the new license purchase.
-                      </p>
+                      <div className="py-4 px-5 ">
+                        <div className="flex gap-x-6 flex-wrap">
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="illness"
+                              value={"Yes"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-1"
+                            />
+                            <label
+                              htmlFor="hs-radio-group-1"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="illness"
+                              value={"No"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-2"
+                            />
+                            <label
+                              htmlFor="hs-radio-group-2"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              No
+                            </label>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -885,10 +940,219 @@ const Register = () => {
     }'
                 style={{ display: "none" }}
               >
-                <div class="p-4 h-48 bg-gray-50 flex justify-center items-center border border-dashed border-gray-200 rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-                  <h3 class="text-gray-500 dark:text-neutral-500">
-                    Second content
-                  </h3>
+                <div className="hs-accordion-group w-full divide divide-gray-200 dark:divide-neutral-700 border rounded-xl shadow-sm p-6 dark:bg-neutral-800 dark:border-neutral-700">
+                  <div
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border  rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent border-gray-200 "
+                    id="hs-basic-with-title-and-arrow-stretched-heading-five"
+                  >
+                    <button
+                      type="button"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      aria-expanded="false"
+                      aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five"
+                    >
+                      Are you currently taking any medication?
+                      <svg
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6"></path>
+                      </svg>
+                      <svg
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m18 15-6-6-6 6"></path>
+                      </svg>
+                    </button>
+                    <div
+                      id="hs-basic-with-title-and-arrow-stretched-collapse-five"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      role="region"
+                      aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
+                      style={{ height: "0px" }}
+                    >
+                      <div className="py-4 px-5 ">
+                        <div className="flex gap-6 flex-wrap">
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="any_medication"
+                              value={"Yes"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-1"
+                              onClick={() => setIsOne(true)}
+                            />
+                            <label
+                              htmlFor="hs-radio-group-1"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="any_medication"
+                              value={"No"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-2"
+                              onClick={() => setIsOne(false)}
+                            />
+                            <label
+                              htmlFor="hs-radio-group-2"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              No
+                            </label>
+                          </div>
+                          <div className="overflow-hidden w-full">
+                            <div
+                              className={` flex-col  animate-[slideDown_1s_ease]  ${
+                                isOneVisible ? "flex" : "hidden"
+                              }`}
+                            >
+                              <label
+                                htmlFor="textarea-label"
+                                className="block text-sm font-medium text-[#4f9451] mb-2 dark:text-white"
+                              >
+                                Mention them:
+                              </label>
+                              <textarea
+                                id="textarea-label"
+                                className="resize-none py-3 px-4 block w-full border-2 border-gray-300 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                rows="3"
+                                name="any_medication"
+                                placeholder="Write here..."
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="mb-2 hs-accordion hs-accordion hs-accordion-active:border-gray-200 bg-white border border-transparent rounded-xl dark:hs-accordion-active:border-neutral-700 dark:bg-neutral-800 dark:border-transparent"
+                    id="hs-basic-with-title-and-arrow-stretched-heading-six"
+                  >
+                    <button
+                      type="button"
+                      className="hs-accordion-toggle hs-accordion-active:text-[#4f9451] inline-flex justify-between items-center gap-x-3 w-full font-semibold text-start text-gray-800 py-4 px-5 hover:text-gray-500 disabled:opacity-50 disabled:pointer-events-none dark:hs-accordion-active:text-blue-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:outline-none dark:focus:text-neutral-400"
+                      aria-expanded="true"
+                      aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six"
+                    >
+                      Are you havig any chronic pail or illness?
+                      <svg
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m6 9 6 6 6-6"></path>
+                      </svg>
+                      <svg
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="m18 15-6-6-6 6"></path>
+                      </svg>
+                    </button>
+                    <div
+                      id="hs-basic-with-title-and-arrow-stretched-collapse-six"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      role="region"
+                      aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
+                      style={{ height: "0px" }}
+                    >
+                      <div className="py-4 px-5 ">
+                        <div className="flex gap-6 flex-wrap">
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="illness"
+                              value={"Yes"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-1"
+                              onClick={() => setIsTwo(true)}
+                            />
+                            <label
+                              htmlFor="hs-radio-group-1"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              Yes
+                            </label>
+                          </div>
+                          <div className="flex">
+                            <input
+                              type="radio"
+                              name="illness"
+                              value={"No"}
+                              className="shrink-0 mt-0.5 ring-0 border-gray-200 rounded-full focus:ring-offset-[#4f9451]  text-[#4f9451]  focus:bg-[#4f9451] checked:bg-[#4f9451]   disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800 focus:ring-0"
+                              id="hs-radio-group-2"
+                              onClick={() => setIsTwo(false)}
+                            />
+                            <label
+                              htmlFor="hs-radio-group-2"
+                              className="text-sm text-gray-500 ms-2 dark:text-neutral-400"
+                            >
+                              No
+                            </label>
+                          </div>
+                          <div className="overflow-hidden w-full">
+                            <div
+                              className={` flex-col  animate-[slideDown_1s_ease]  ${
+                                isTwoVisible ? "flex" : "hidden"
+                              }`}
+                            >
+                              <label
+                                htmlFor="textarea-label"
+                                className="block text-sm font-medium text-[#4f9451] mb-2 dark:text-white"
+                              >
+                                What do you feel?
+                              </label>
+                              <textarea
+                                id="textarea-label"
+                                className="resize-none py-3 px-4 block w-full border-2 border-gray-300 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                rows="3"
+                                name="illness"
+                                placeholder="Write here..."
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -898,8 +1162,8 @@ const Register = () => {
     }'
                 style={{ display: "none" }}
               >
-                <div class="p-4 h-48 bg-gray-50 flex justify-center items-center border border-dashed border-gray-200 rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-                  <h3 class="text-gray-500 dark:text-neutral-500">
+                <div className="p-4 h-48 bg-gray-50 flex justify-center items-center border border-dashed border-gray-200 rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                  <h3 className="text-gray-500 dark:text-neutral-500">
                     Third content
                   </h3>
                 </div>
@@ -910,30 +1174,30 @@ const Register = () => {
       "isFinal": true
     }'
               >
-                <div class="p-4 h-48 bg-gray-50 flex justify-center items-center border border-dashed border-gray-200 rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
-                  <h3 class="text-gray-500 dark:text-neutral-500">
+                <div className="p-4 h-48 bg-gray-50 flex justify-center items-center border border-dashed border-gray-200 rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                  <h3 className="text-gray-500 dark:text-neutral-500">
                     Final content
                   </h3>
                 </div>
               </div>
 
-              <div class="mt-5 flex justify-between items-center gap-x-2">
+              <div className="mt-5 flex justify-between items-center gap-x-2">
                 <button
                   type="button"
-                  class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                  className="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                   data-hs-stepper-back-btn=""
                 >
                   <svg
-                    class="shrink-0 size-4"
+                    className="shrink-0 size-4"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="m15 18-6-6 6-6"></path>
                   </svg>
@@ -942,28 +1206,28 @@ const Register = () => {
 
                 <button
                   type="button"
-                  class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
+                  className="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
                   data-hs-stepper-next-btn=""
                 >
                   Next
                   <svg
-                    class="shrink-0 size-4"
+                    className="shrink-0 size-4"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="m9 18 6-6-6-6"></path>
                   </svg>
                 </button>
                 <button
                   type="button"
-                  class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
+                  className="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
                   data-hs-stepper-finish-btn=""
                   style={{ display: "none" }}
                 >
@@ -971,7 +1235,7 @@ const Register = () => {
                 </button>
                 <button
                   type="reset"
-                  class="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
+                  className="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
                   data-hs-stepper-reset-btn=""
                   style={{ display: "none" }}
                 >

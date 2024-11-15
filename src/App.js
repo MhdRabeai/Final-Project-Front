@@ -26,7 +26,7 @@ const Team = lazy(() => import("./Pages/Team"));
 function App() {
   const location = useLocation();
 
-  useEffect(() => { }, []);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     // @ts-ignore
@@ -45,6 +45,7 @@ function App() {
 
         <Route path="team/:doctorId" element={<div>doctorId</div>} />
         <Route path="profile" element={<Profile />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
       <Route element={<AuthRoot />}>
         <Route path="login" element={<Login />} />
@@ -55,6 +56,7 @@ function App() {
         <Route path="doct" element={<DocDash />} />
         <Route path="pharmacy" element={<PharDash />} />
         <Route path="user" element={<UserDash />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Route>
       <Route path="/dashboard/admin" element={<AdminDash />} />
       <Route path="dashboard/doct" element={<DocDash />} />
