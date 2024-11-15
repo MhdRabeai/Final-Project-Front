@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 
-const TabelPataints = () => {
+const TabelDoctors = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [data, setData] = useState([
         {
@@ -108,7 +108,7 @@ const TabelPataints = () => {
                     <div className="py-3 px-4">
 
                         <h1 className="text-2xl font-bold text-center  ">
-                            All Patients
+                            All Doctors
                         </h1>
                         <div className="relative max-w-xs">
                             <label htmlFor="search-input" className="sr-only">Search</label>
@@ -296,4 +296,4 @@ const TabelPataints = () => {
     );
 };
 
-export default TabelPataints;
+export default TabelDoctors;
