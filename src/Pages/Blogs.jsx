@@ -58,7 +58,7 @@ const Blogs = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 xl:grid-cols-4 xl:gap-4">
           {currentTeamMembers.map((post) => (
             <BlogCard
               key={post.id}
@@ -67,7 +67,7 @@ const Blogs = () => {
               CardTitle={post.title}
               CardDescription={post.body.substring(0, 100) + "..."}
               image="https://via.placeholder.com/150"
-              doctorName="Dr. John Doe" 
+              doctorName="Dr. John Doe"
             />
           ))}
         </div>
