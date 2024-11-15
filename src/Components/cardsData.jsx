@@ -1,4 +1,4 @@
-import { faComments, faBookOpen, faUsers, faChartLine } from "@fortawesome/free-solid-svg-icons"; 
+import { faComments, faBookOpen, faUsers, faLeaf } from "@fortawesome/free-solid-svg-icons"; 
 const cardsData = [
     {
       headline: "Online Therapy Sessions",
@@ -18,7 +18,7 @@ const cardsData = [
     {
       headline: "Personalized Wellness Plans",
       content: "Receive tailored wellness plans that cater to your individual needs and goals. Our resources will guide you on your journey to better mental health.",
-      icon: faChartLine,
+      icon: faLeaf,
     },
   ];
   
