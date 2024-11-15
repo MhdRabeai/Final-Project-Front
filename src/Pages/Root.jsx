@@ -3,13 +3,14 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { LuBrainCircuit } from "react-icons/lu";
-
+<LuBrainCircuit />
 export const Root = () => {
   return (
     <div className="dark:bg-black dark:text-white min-h-screen  bg-[#F6F6F6] flex flex-col justify-between font-sans">
       <Navbar />     
       <div className=" ">
-      <button type="button"  class="sticky top-4 bg-[#4F9451] text-white px-4 py-2 rounded-full hover:bg-green-500 mt-20" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-example" data-hs-overlay="#hs-offcanvas-example">
+        <div className="flex justify-end sticky">
+      <button type="button"  class="sticky top-4 ml-400   bg-[#4F9451] text-white px-4 py-2 rounded-full hover:bg-green-500 mt-20" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-offcanvas-example" data-hs-overlay="#hs-offcanvas-example">
       <LuBrainCircuit />
 </button>
 
@@ -109,7 +110,7 @@ export const Root = () => {
         </button>
     </div>
 </form>
-
+</div>
 </div>
         <Outlet />      
       </div>
