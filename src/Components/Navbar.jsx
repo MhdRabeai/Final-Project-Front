@@ -1,6 +1,4 @@
 import React from "react";
-// import { MdDarkMode } from "react-icons/md";
-// import { GoSun } from "react-icons/go";
 import { Link, NavLink } from "react-router-dom";
 import { Dropdown } from "antd";
 
