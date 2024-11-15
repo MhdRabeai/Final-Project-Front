@@ -9,28 +9,7 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-  const cardsData = [
-    {
-      headline: "Online Therapy Sessions",
-      content: "Access licensed therapists from the comfort of your home through secure video sessions. Personalized support is just a click away.",
-      icon: faComments,
-    },
-    {
-      headline: "Self-Help Resources",
-      content: "Explore a wide range of articles, guides, and tools designed to help you manage stress, anxiety, and other mental health challenges effectively.",
-      icon: faBookOpen,
-    },
-    {
-      headline: "Community Support Forum",
-      content: "Connect with others facing similar challenges in our safe and supportive community forum. Share experiences, advice, and encouragement.",
-      icon: faUsers,
-    },
-    {
-      headline: "Mood Tracking Tool",
-      content: "Use our interactive mood tracking tool to monitor your emotions over time, helping you identify patterns and triggers for better self-awareness.",
-      icon: faChartLine,
-    },
-  ];
+
   return (
     <div className="">
       <div className="container max-w-[86rem] w-full mx-auto px-4 ">
