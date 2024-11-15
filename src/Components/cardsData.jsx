@@ -1,4 +1,4 @@
-import { faComments, faBookOpen, faUsers, faChartLine } from "@fortawesome/free-solid-svg-icons"
+import { faComments, faBookOpen, faChartLine, faLeaf  } from '@fortawesome/free-solid-svg-icons'
 const cardsData = [
     {
       headline: "Online Therapy Sessions",
@@ -13,7 +13,7 @@ const cardsData = [
     {
       headline: "Mindfulness and Meditation",
       content: "Discover mindfulness and meditation techniques that can help reduce stress and improve your overall mental well-being. Start your journey to tranquility today.",
-      icon: faUsers, 
+      icon: faLeaf , 
     },
     {
       headline: "Personalized Wellness Plans",
