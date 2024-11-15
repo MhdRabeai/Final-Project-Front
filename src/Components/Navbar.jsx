@@ -7,7 +7,7 @@ import { Dropdown } from "antd";
 const Navbar = () => {
   const items = [
     {
-      label: <Link to={"/login"}>Login nada</Link>,
+      label: <Link to={"/login"}>Login</Link>,
       key: "0",
     },
 
