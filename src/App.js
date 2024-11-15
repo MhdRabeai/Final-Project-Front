@@ -19,6 +19,7 @@ import Register from "./Pages/Register";
 import Home from "./Pages/Home";
 import CalendarPage from "./Pages/calendar";
 import { Calendar } from "antd";
+import TabelPataints from "./Pages/TabelPataints";
 // import TablePatients from "./Pages/TablePatients";
 const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
@@ -63,7 +64,7 @@ function App() {
       <Route path="dashboard/pharmacy" element={<PharDash />} />
       <Route path="dashboard/user" element={<UserDash />} />
       <Route path="dashboard/doct/calendarpage" element={<CalendarPage />} />
-      {/* <Route path="dashboard/admin/dataTabelPataint" element={<TablePatients />} /> */}
+      <Route path="dashboard/admin/TabelPataints" element={<TabelPataints />} />
       <Route path="dashboard/admin/calendarpage" element={<Calendar />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
