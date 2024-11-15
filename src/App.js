@@ -67,7 +67,8 @@ function App() {
       <Route path="dashboard/user" element={<UserDash />} />
       <Route path="dashboard/doct/calendarpage" element={<CalendarPage />} />
       <Route path="dashboard/admin/TabelPataints" element={<TabelPataints />} />
-      <Route path="dashboard/admin/calendarpage" element={<Calendar />} />
+      <Route path="dashboard/admin/calendarpage" element={<CalendarPage />} />
+      <Route path="dashboard/user/calendarpage" element={<CalendarPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
