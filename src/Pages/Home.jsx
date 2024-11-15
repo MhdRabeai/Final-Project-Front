@@ -9,6 +9,28 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const cardsData = [
+    {
+      headline: "Online Therapy Sessions",
+      content: "Access licensed therapists from the comfort of your home through secure video sessions. Personalized support is just a click away.",
+      icon: faComments,
+    },
+    {
+      headline: "Self-Help Resources",
+      content: "Explore a wide range of articles, guides, and tools designed to help you manage stress, anxiety, and other mental health challenges effectively.",
+      icon: faBookOpen,
+    },
+    {
+      headline: "Community Support Forum",
+      content: "Connect with others facing similar challenges in our safe and supportive community forum. Share experiences, advice, and encouragement.",
+      icon: faUsers,
+    },
+    {
+      headline: "Mood Tracking Tool",
+      content: "Use our interactive mood tracking tool to monitor your emotions over time, helping you identify patterns and triggers for better self-awareness.",
+      icon: faChartLine,
+    },
+  ];
   return (
     <div className="">
       <div className="container max-w-[86rem] w-full mx-auto px-4 ">
@@ -77,17 +99,16 @@ const Home = () => {
           <div className="md:block hidden "></div>
           <div className="md:block hidden "></div>
           <div class="lg:col-span-3 mt-10 lg:mt-0">
-            <div className="flex justify-between  gap-y-6  flex-wrap homeFeatures">
-              {cardsData.map((card, index) => (
-                <Card
-                  key={index}
-                  headline={card.headline}
-                  content={
-                    "Access to licensed mental health professionals who provide personalized care and support."
-                  }
-                />
-              ))}
-            </div>
+          <div className="flex justify-between gap-y-6 flex-wrap homeFeatures">
+        {cardsData.map((card, index) => (
+          <Card
+            key={index}
+            headline={card.headline}
+            content={card.content}
+            icon={card.icon}
+          />
+        ))}
+      </div>
           </div>
         </div>
         <div className="homeTeam pb-6 mb-6 border-b-2 border-[#ddd]">
@@ -350,7 +371,7 @@ const Home = () => {
                       aria-expanded="true"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
                     >
-                      Can I cancel at anytime?
+                      What services does this website offer?
                       <svg
                         class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
@@ -387,9 +408,7 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                        Yes, you can cancel anytime no questions are asked while
-                        you cancel but we would highly appreciate if you will
-                        give us some feedback.
+                      Our website provides online therapy, self-help resources, articles, and support for mental health.
                       </p>
                     </div>
                   </div>
@@ -403,7 +422,7 @@ const Home = () => {
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
                     >
-                      My team has credits. How do we use them?
+                      How can I access online therapy or counseling?
                       <svg
                         class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
@@ -440,9 +459,7 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                        Once your team signs up for a subscription plan. This is
-                        where we sit down, grab a cup of coffee and dial in the
-                        details.
+                      Simply create an account, browse available therapists, and schedule a session that fits your needs.
                       </p>
                     </div>
                   </div>
@@ -456,7 +473,7 @@ const Home = () => {
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
                     >
-                      How does Preline's pricing work?
+                      Are the resources on this website free to use?
                       <svg
                         class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
@@ -493,8 +510,7 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                        Our subscriptions are tiered. Understanding the task at
-                        hand and ironing out the wrinkles is key.
+                      Many resources, including articles and self-assessments, are free, while some services may require a subscription.
                       </p>
                     </div>
                   </div>
@@ -508,7 +524,7 @@ const Home = () => {
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
                     >
-                      How secure is Preline?
+                      How can I provide feedback about my experience on the website?
                       <svg
                         class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
@@ -545,9 +561,7 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                        Protecting the data you trust to Preline is our first
-                        priority. This part is really crucial in keeping the
-                        project in line to completion.
+                      You can share your feedback through our contact form or in the reviews section in each doctor's profile.
                       </p>
                     </div>
                   </div>
@@ -561,7 +575,7 @@ const Home = () => {
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five"
                     >
-                      How do I get access to a theme I purchased?
+                      Is my communication with the doctor is secure and private?
                       <svg
                         class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
@@ -598,13 +612,7 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                        If you lose the link for a theme you purchased, don't
-                        panic! We've got you covered. You can login to your
-                        account, tap your avatar in the upper right corner, and
-                        tap Purchases. If you didn't create a login or can't
-                        remember the information, you can use our handy
-                        Redownload page, just remember to use the same email you
-                        originally made your purchases with.
+                        Yes, it is definetly secured and private and everything that is said during the session no one except for the doctor and you will have access to 
                       </p>
                     </div>
                   </div>
@@ -618,7 +626,7 @@ const Home = () => {
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six"
                     >
-                      Upgrade License Type
+                      What should I do in case of a mental health crisis?
                       <svg
                         class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
@@ -655,10 +663,7 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                        There may be times when you need to upgrade your license
-                        from the original type you purchased and we have a
-                        solution that ensures you can apply your original
-                        purchase cost to the new license purchase.
+                      If you are in crisis, please contact emergency services or a crisis hotline immediately for immediate support and assistance.
                       </p>
                     </div>
                   </div>
