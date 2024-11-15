@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import AiChat from "../Components/AiChat";
 
 const DashRoot = () => {
   return (
-    <div>
+    <div className="relative">
       <ul>
         <li>
           <Link to="admin">Admin</Link>
@@ -18,6 +19,7 @@ const DashRoot = () => {
           <Link to="user">user</Link>
         </li>
       </ul>
+      <AiChat />
     </div>
   );
 };
