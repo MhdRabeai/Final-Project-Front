@@ -19,6 +19,8 @@ const TabelPataints = () => {
             address: "3 Grace Dr, New Mexico",
         },
     ]);
+    const [editRow, setEditRow] = useState(null);  // لتخزين الصف الذي يتم تعديله
+    const [editedData, setEditedData] = useState({ name: "", age: "", address: "" });  // البيانات المعدلة
 
     const filteredData = data.filter((row) =>
         row.name.toLowerCase().includes(searchQuery.toLowerCase())
@@ -30,6 +32,24 @@ const TabelPataints = () => {
 
     const handleDelete = (name) => {
         setData(data.filter((row) => row.name !== name));
+    };
+
+    const handleEdit = (row) => {
+        setEditRow(row.name);  // تعيين الصف الذي يتم تعديله
+        setEditedData({ name: row.name, age: row.age, address: row.address });  // تعيين البيانات المعدلة
+    };
+
+    const handleSave = (name) => {
+        const updatedData = data.map((row) =>
+            row.name === name ? { ...row, ...editedData } : row
+        );
+        setData(updatedData);
+        setEditRow(null);  // إلغاء وضع التعديل بعد حفظ البيانات
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setEditedData({ ...editedData, [name]: value });
     };
 
     return (
@@ -81,16 +101,69 @@ const TabelPataints = () => {
                                                 />
                                             </div>
                                         </td>
-                                        <td className="p-3 text-sm font-medium text-gray-800 dark:text-neutral-200">{row.name}</td>
-                                        <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">{row.age}</td>
-                                        <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">{row.address}</td>
+                                        <td className="p-3 text-sm font-medium text-gray-800 dark:text-neutral-200">
+                                            {editRow === row.name ? (
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    value={editedData.name}
+                                                    onChange={handleChange}
+                                                    className="text-sm"
+                                                />
+                                            ) : (
+                                                row.name
+                                            )}
+                                        </td>
+                                        <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            {editRow === row.name ? (
+                                                <input
+                                                    type="number"
+                                                    name="age"
+                                                    value={editedData.age}
+                                                    onChange={handleChange}
+                                                    className="text-sm"
+                                                />
+                                            ) : (
+                                                row.age
+                                            )}
+                                        </td>
+                                        <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            {editRow === row.name ? (
+                                                <input
+                                                    type="text"
+                                                    name="address"
+                                                    value={editedData.address}
+                                                    onChange={handleChange}
+                                                    className="text-sm"
+                                                />
+                                            ) : (
+                                                row.address
+                                            )}
+                                        </td>
                                         <td className="p-3 text-right text-sm font-medium">
-                                            <button
-                                                onClick={() => handleDelete(row.name)}
-                                                className="text-blue-600 hover:text-blue-800 focus:outline-none dark:text-blue-500 dark:hover:text-blue-400"
-                                            >
-                                                Delete
-                                            </button>
+                                            {editRow === row.name ? (
+                                                <button
+                                                    onClick={() => handleSave(row.name)}
+                                                    className="text-green-600 hover:text-green-800"
+                                                >
+                                                    Save
+                                                </button>
+                                            ) : (
+                                                <>
+                                                    <button
+                                                        onClick={() => handleEdit(row)}
+                                                        className="text-blue-600 hover:text-blue-800"
+                                                    >
+                                                        Edit
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleDelete(row.name)}
+                                                        className="text-red-600 hover:text-red-800 ml-2"
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </>
+                                            )}
                                         </td>
                                     </tr>
                                 ))}
