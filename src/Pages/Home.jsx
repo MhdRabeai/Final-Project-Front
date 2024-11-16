@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 
-import React from "react";
+import React, { useEffect } from "react";
 import cardsData from "../Components/cardsData";
 import Card from "../Components/card";
 import BodySlide from "../Components/BodySlide";
@@ -9,6 +9,21 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const handleInitPage = async () => {
+    try {
+      const res = await fetch("http://localhost:4000/", {
+        credentials: "include",
+      });
+
+      console.log(res);
+    } catch (err) {
+      console.log("fetch err", err.message);
+    }
+  };
+  useEffect(() => {
+    handleInitPage();
+  }, []);
+
   return (
     <div className="">
       <div className="container max-w-[86rem] w-full mx-auto px-4 ">
@@ -76,18 +91,16 @@ const Home = () => {
           </div>
           <div className="md:block hidden "></div>
           <div className="md:block hidden "></div>
-          <div class="lg:col-span-3 mt-10 lg:mt-0">
-            <div className="lg:col-span-3 mt-10 lg:mt-0">
-              <div className="flex  justify-center   gap-4 flex-wrap ">
-                {cardsData.map((card, index) => (
-                  <Card
-                    key={index}
-                    headline={card.headline}
-                    content={card.content}
-                    icon={card.icon}
-                  />
-                ))}
-              </div>
+          <div className="lg:col-span-3 mt-6 lg:mt-0">
+            <div className="flex  justify-center   gap-2 flex-wrap ">
+              {cardsData.map((card, index) => (
+                <Card
+                  key={index}
+                  headline={card.headline}
+                  content={card.content}
+                  icon={card.icon}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -230,7 +243,7 @@ const Home = () => {
               Our achievements
             </h2>
           </div>
-          <div className="pt-4 container grid justify-center gap-4 max-w-[800px] mx-auto lg:grid-cols-2 xl:grid-cols-4 text-white">
+          <div className="pt-4 container grid justify-center gap-4 max-w-[800px] mx-auto grid-cols-2 lg:grid-cols-4 text-white">
             <div className="flex flex-col items-center">
               <h2 className="mb-1 md:text-4xl font-semibold sm:text-xl title-font dark:text-gray-800">
                 50+

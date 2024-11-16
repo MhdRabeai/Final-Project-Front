@@ -4,8 +4,10 @@ import { MdOutlineEmail } from "react-icons/md";
 import { IoKeyOutline } from "react-icons/io5";
 import { Bounce, toast } from "react-toastify";
 import { Loading } from "../Components/Loading";
+// import { useUser } from './../Services/UserContext';
 
 const Login = () => {
+  // const {user, setUser } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -18,9 +20,10 @@ const Login = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify({ email: email, password: password }),
         credentials: "include",
+        body: JSON.stringify({ email: email, password: password }),
       });
+      console.log();
       const msg = await res.json();
       console.log(msg["message"]);
       if (res.ok) {
@@ -33,8 +36,8 @@ const Login = () => {
           autoClose: 2500,
           hideProgressBar: false,
           closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+          pauseOnHover: false,
+          draggable: false,
           progress: undefined,
           theme: "light",
           transition: Bounce,
@@ -47,7 +50,7 @@ const Login = () => {
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "light",
