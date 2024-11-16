@@ -62,8 +62,8 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="team" element={<Team />} />
 
-          <Route path="team/:doctorId" element={<div>doctorId</div>} />
-          <Route path="profile" element={<Profile />} />
+          <Route path="team/profile/:doctorId" element={<Profile />} />
+
           <Route path="*" element={<NotFound />} />
         </Route>
         <Route element={<AuthRoot />}>
