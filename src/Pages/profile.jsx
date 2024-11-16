@@ -16,16 +16,15 @@ const Profile = () => {
           <div className="relative">
             <img
               className="w-full h-56 object-cover"
-              src="https://your-background-image-url.jpg"
+              src="/https://your-background-image-url.jpg"
               alt="Background"
             />
             <img
               className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border-4 border-white shadow-lg"
-              src="https://your-profile-image-url.jpg"
+              src="/public/Testimonial.png"
               alt="Profile"
             />
           </div>
-
           <div className="text-center py-6 px-4">
             <h1 className="text-2xl font-semibold">Danish Hebo</h1>
             <h2 className="text-gray-500 mt-1">Professional UI/UX Designer</h2>
