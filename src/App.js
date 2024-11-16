@@ -33,8 +33,6 @@ const Team = lazy(() => import("./Pages/Team"));
 function App() {
   const location = useLocation();
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     // @ts-ignore
     require("preline/preline");
@@ -72,9 +70,15 @@ function App() {
       <Route path="dashboard/doct/calendarpage" element={<CalendarPage />} />
       <Route path="dashboard/admin/TabelPataints" element={<TabelPataints />} />
       <Route path="dashboard/admin/TabelDoctors" element={<TabelDoctors />} />
-      <Route path="dashboard/admin/CreateAccountDoctor" element={<CreateAccountDoctor />} />
+      <Route
+        path="dashboard/admin/CreateAccountDoctor"
+        element={<CreateAccountDoctor />}
+      />
       <Route path="dashboard/admin/TabelDrugs" element={<TabelDrugs />} />
-      <Route path="dashboard/admin/TabelPharmaceutical" element={<TabelPharmaceutical />} />
+      <Route
+        path="dashboard/admin/TabelPharmaceutical"
+        element={<TabelPharmaceutical />}
+      />
       <Route path="dashboard/admin/calendarpage" element={<CalendarPage />} />
       <Route path="dashboard/user/calendarpage" element={<CalendarPage />} />
       <Route path="*" element={<NotFound />} />

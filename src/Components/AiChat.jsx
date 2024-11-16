@@ -11,7 +11,6 @@ const AiChat = () => {
         aria-controls="hs-offcanvas-example"
         data-hs-overlay="#hs-offcanvas-example"
       >
-        {/* <LuBrainCircuit /> */}
         <div
           className="p-3 rounded-[50%_0%_0%_50%] border-4 border-white
            bg-[#4f9451]"
@@ -33,7 +32,7 @@ const AiChat = () => {
 
       <div
         id="hs-offcanvas-example"
-        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700"
+        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full  sm:max-w-xs w-[80%] z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700"
         role="dialog"
         tabIndex="-1"
         aria-labelledby="hs-offcanvas-example-label"
