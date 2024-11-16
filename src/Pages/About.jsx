@@ -1,7 +1,7 @@
 import React from "react";
 import ListItem from "../Components/ListItem";
 import Card from "../Components/card";
-import CardsData from "../Components/cardsData";
+import cardsData from "../Components/cardsData";
 import Testimonial from "../Components/Testimonial";
 
 const About = () => {
@@ -655,16 +655,17 @@ const About = () => {
           </span>
           <h1 className=" text-4xl font-bold text-black">Why choose Us</h1>
         </div>
-        <div className="pt-10 pb-10 w-full">
-          <div className="flex justify-center  gap-2  flex-wrap ">
-            {CardsData.map((card, index) => (
-              <Card
-                key={index}
-                headline={card.headline}
-                content={card.content}
-              />
-            ))}
-          </div>
+        <div className="pt-10 pb-10 w-full"> 
+        <div className="flex  justify-center   gap-4 flex-wrap ">
+                {cardsData.map((card, index) => (
+                  <Card
+                    key={index}
+                    headline={card.headline}
+                    content={card.content}
+                    icon={card.icon}
+                  />
+                ))}
+              </div>
         </div>
       </section>
 
