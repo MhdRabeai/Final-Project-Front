@@ -15,7 +15,7 @@ const StarRating = ({ rating, onRatingChange }) => {
             className={`h-6 w-6 cursor-pointer ${
               rating >= starRating ? 'text-yellow-500' : 'text-gray-300'
             }`}
-            fill="currentColor"
+            fill="currentcolor"
             viewBox="0 0 24 24"
             onClick={() => onRatingChange(starRating)}
           >
