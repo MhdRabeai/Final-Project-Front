@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { MdOutlineEmail, MdPassword } from "react-icons/md";
 import { IoPhonePortraitOutline } from "react-icons/io5";
-
+import { Bounce, toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { Loading } from "../Components/Loading";
 const Register = () => {
   const [isOneVisible, setIsOne] = useState(false);
   const [isTwoVisible, setIsTwo] = useState(false);
   const [email, setEmail] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   async function handleSubmit(e) {
     e.preventDefault();
     const formElement = document.getElementById("uploadForm");
@@ -22,8 +25,11 @@ const Register = () => {
           body: formData,
           credentials: "include",
         });
-        console.log(res);
+        if (res.ok) {
+          setIsLoading(false);
+        }
       } catch (err) {
+        setIsLoading(false);
         console.log(err);
       }
     }
@@ -46,15 +52,44 @@ const Register = () => {
           body: JSON.stringify({ email: email, confirmationCode: myArr }),
           credentials: "include",
         });
-
-        console.log(res);
+        const msg = await res.json();
+        if (res.ok) {
+          setIsLoading(false);
+          setTimeout(() => {
+            navigate("/login");
+          }, 3000);
+          return toast.success(msg["message"], {
+            position: "bottom-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          });
+        }
       } catch (err) {
-        console.log(err);
+        setIsLoading(false);
+        return toast.error(err.message, {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       }
     }
   }
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div className="container mx-auto">
       <div className="max-w-[60rem] mx-auto px-4 flex-none my-8">
         <div data-hs-stepper="">
@@ -62,9 +97,9 @@ const Register = () => {
             <li
               className="flex items-center gap-x-2 shrink basis-0 flex-1 group active"
               data-hs-stepper-nav-item='{
-      "index": 1,
-      "isOptional": true
-    }'
+    "index": 1,
+    "isOptional": true
+  }'
             >
               <span className="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
                 <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
@@ -96,9 +131,9 @@ const Register = () => {
             <li
               className="flex items-center gap-x-2 shrink basis-0 flex-1 group"
               data-hs-stepper-nav-item='{
-      "index": 2,
-      "isOptional": true
-    }'
+    "index": 2,
+    "isOptional": true
+  }'
             >
               <span className="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
                 <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
@@ -130,8 +165,8 @@ const Register = () => {
             <li
               className="block group"
               data-hs-stepper-nav-item='{
-      "index": 3
-    }'
+    "index": 3
+  }'
             >
               <span className="min-w-7 min-h-7 group inline-flex items-center text-xs align-middle focus:outline-none disabled:opacity-50 disabled:pointer-events-none">
                 <span className="size-7 flex justify-center items-center shrink-0 bg-gray-100 font-medium text-gray-800 rounded-full group-focus:bg-gray-200 hs-stepper-active:bg-[#4f9451] hs-stepper-active:text-white hs-stepper-success:bg-[#4f9451] hs-stepper-success:text-white hs-stepper-completed:bg-[#355a36] hs-stepper-completed:group-focus:bg-[#4f7750] dark:bg-neutral-700 dark:text-white dark:group-focus:bg-gray-600 dark:hs-stepper-active:bg-blue-500 dark:hs-stepper-success:bg-blue-500 dark:hs-stepper-completed:bg-teal-500 dark:hs-stepper-completed:group-focus:bg-teal-600">
@@ -169,8 +204,8 @@ const Register = () => {
             >
               <div
                 data-hs-stepper-content-item='{
-      "index": 1
-    }'
+    "index": 1
+  }'
                 style={{ display: "none" }}
               >
                 <div className="hs-accordion-group w-full divide divide-gray-200 dark:divide-neutral-700 border rounded-xl shadow-sm p-6 dark:bg-neutral-800 dark:border-neutral-700">
@@ -882,8 +917,8 @@ const Register = () => {
 
               <div
                 data-hs-stepper-content-item='{
-      "index": 2
-    }'
+    "index": 2
+  }'
                 style={{ display: "none" }}
               >
                 <div className="hs-accordion-group w-full divide divide-gray-200 dark:divide-neutral-700 border rounded-xl shadow-sm p-6 dark:bg-neutral-800 dark:border-neutral-700">
@@ -990,21 +1025,21 @@ const Register = () => {
                                   name="any_medication"
                                   type="text"
                                   className="peer py-2 px-4  block w-full
- border-2  border-gray-200 rounded-lg text-sm 
- focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
- dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+border-2  border-gray-200 rounded-lg text-sm 
+focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                                   placeholder="Enter medication's name"
                                 />
                               </div>
 
-                              <p class="mt-3 text-end">
+                              <p className="mt-3 text-end">
                                 <button
                                   type="button"
                                   data-hs-copy-markup='{
-      "targetSelector": "#hs-content-for-copy",
-      "wrapperSelector": "#hs-wrapper-for-copy",
-      "limit": 5
-    }'
+    "targetSelector": "#hs-content-for-copy",
+    "wrapperSelector": "#hs-wrapper-for-copy",
+    "limit": 5
+  }'
                                   className="py-1.5 px-2 inline-flex items-center gap-x-1 text-xs font-medium rounded-full border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
                                 >
                                   <svg
@@ -1026,12 +1061,12 @@ const Register = () => {
                                 </button>
                               </p>
                               {/* <textarea
-                                id="textarea-label0"
-                                className="resize-none py-3 px-4 block w-full border-2 border-gray-300 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                rows="3"
-                                name="any_medication"
-                                placeholder="Write here..."
-                              ></textarea> */}
+                              id="textarea-label0"
+                              className="resize-none py-3 px-4 block w-full border-2 border-gray-300 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                              rows="3"
+                              name="any_medication"
+                              placeholder="Write here..."
+                            ></textarea> */}
                             </div>
                           </div>
                         </div>
@@ -1217,9 +1252,9 @@ const Register = () => {
 
               <div
                 data-hs-stepper-content-item='{
-                "isCompleted":false,
-      "index": 3
-    }'
+              "isCompleted":false,
+    "index": 3
+  }'
                 style={{ display: "none" }}
               >
                 <div className="bg-white rounded-xl shadow p-4 sm:p-7 dark:bg-neutral-800">
@@ -1310,9 +1345,9 @@ const Register = () => {
                           id="registerForm"
                           type="text"
                           className="peer py-2 px-4 ps-11 block w-full
-                            border-2  border-gray-200 rounded-lg text-sm 
-                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
-                             dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                           dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                           placeholder="Enter Name..."
                           name="name"
                         />
@@ -1351,9 +1386,9 @@ const Register = () => {
                           id="registerEmail"
                           type="email"
                           className="peer py-2 px-4 ps-11 block w-full
-                            border-2  border-gray-200 rounded-lg text-sm 
-                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
-                             dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                           dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                           placeholder="Enter Email..."
                           name="email"
                         />
@@ -1379,9 +1414,9 @@ const Register = () => {
                           id="account"
                           type="text"
                           className="peer py-2 px-4 ps-11 block w-full
- border-2  border-gray-200 rounded-lg text-sm 
- focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
- dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+border-2  border-gray-200 rounded-lg text-sm 
+focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                           placeholder="Enter Number..."
                           name="phone"
                         />
@@ -1407,9 +1442,9 @@ const Register = () => {
                               type="password"
                               id="hs-strong-password-with-indicator-and-hint"
                               className="peer py-2 px-4 ps-11 block w-full
-                            border-2  border-gray-200 rounded-lg text-sm 
-                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
-                             dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                           dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                               placeholder="Enter Password..."
                               name="password"
                             />
@@ -1432,10 +1467,10 @@ const Register = () => {
                           <div
                             id="hs-strong-password"
                             data-hs-strong-password='{
-              "target": "#hs-strong-password-with-indicator-and-hint",
-              "hints": "#hs-strong-password-hints",
-              "stripClasses": "hs-strong-password:opacity-100 hs-strong-password-accepted:bg-[#3f7441] h-2 flex-auto rounded-full bg-[#4f9451] opacity-50 mx-1"
-            }'
+            "target": "#hs-strong-password-with-indicator-and-hint",
+            "hints": "#hs-strong-password-hints",
+            "stripClasses": "hs-strong-password:opacity-100 hs-strong-password-accepted:bg-[#3f7441] h-2 flex-auto rounded-full bg-[#4f9451] opacity-50 mx-1"
+          }'
                             className="flex mt-2 -mx-1"
                           ></div>
                         </div>
@@ -1454,14 +1489,14 @@ const Register = () => {
                     <div className="sm:col-span-9">
                       <div
                         className="
-                            "
+                          "
                         data-hs-input-number=""
                       >
                         <div className="relative">
                           <input
                             id="registerAge"
                             className="w-full peer py-2 px-4  
-                            border-2  border-gray-200 rounded-lg text-sm  focus:border-[#4f9451] focus:ring-0 flex justify-between items-center gap-x-5 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none dark:text-white"
+                          border-2  border-gray-200 rounded-lg text-sm  focus:border-[#4f9451] focus:ring-0 flex justify-between items-center gap-x-5 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none dark:text-white"
                             style={{ appearance: "textfield" }}
                             type="number"
                             aria-roledescription="Number field"
@@ -1571,71 +1606,76 @@ const Register = () => {
 
             <div
               data-hs-stepper-content-item='{
-      "isFinal": true
-    }'
+    "isFinal": true
+  }'
             >
               <div className="flex flex-col items-center hs-accordion-group w-full divide mx-auto divide-gray-200 dark:divide-neutral-700 border rounded-xl shadow-sm p-6 dark:bg-neutral-800 dark:border-neutral-700">
-                <header class="mb-8 text-center">
-                  <h1 class="text-2xl font-bold mb-1">Enter Verification</h1>
-                  <p class="text-[15px] text-slate-500">
+                <header className="mb-8 text-center">
+                  <h1 className="text-2xl font-bold mb-1">
+                    Enter Verification
+                  </h1>
+                  <p className="text-[15px] text-slate-500">
                     Enter the 6-digit verification code that was sent to your
                     Email.
                   </p>
                 </header>
                 <form id="otp-form" onSubmit={handleVerify}>
-                  <div class="flex gap-x-3" data-hs-pin-input="">
+                  <div className="flex gap-x-3" data-hs-pin-input="">
                     <input
                       type="text"
                       name="code"
-                      class="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       data-hs-pin-input-item=""
-                      autofocus
+                      autoFocus
                     />
                     <input
                       type="text"
                       name="code"
-                      class="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                      data-hs-pin-input-item=""
-                    />
-                    <input
-                      type="text"
-                      name="code"
-                      class="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       data-hs-pin-input-item=""
                     />
                     <input
                       type="text"
                       name="code"
-                      class="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       data-hs-pin-input-item=""
                     />
                     <input
                       type="text"
                       name="code"
-                      class="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       data-hs-pin-input-item=""
                     />
                     <input
                       type="text"
                       name="code"
-                      class="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      className="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                      data-hs-pin-input-item=""
+                    />
+                    <input
+                      type="text"
+                      name="code"
+                      className="block w-[38px] text-center border-2 border-gray-200 rounded-md text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                       data-hs-pin-input-item=""
                     />
                   </div>
-                  <div class="max-w-[260px] mx-auto mt-4">
+                  <div className="max-w-[260px] mx-auto mt-4">
                     <button
                       type="button"
-                      class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-[#4f9451] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-[#427744] focus:outline-none focus:ring-0 focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring-0  transition-colors duration-150"
-                      onClick={handleVerify}
+                      className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-[#4f9451] px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-[#427744] focus:outline-none focus:ring-0 focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring-0  transition-colors duration-150"
+                      onClick={(e) => {
+                        setIsLoading(true);
+                        handleVerify(e);
+                      }}
                     >
                       Verify Account
                     </button>
                   </div>
                 </form>
-                <div class="text-sm text-slate-500 mt-4">
+                <div className="text-sm text-slate-500 mt-4">
                   Didn't receive code?{" "}
                   <a
-                    class="font-medium text-[#4f9451] hover:text-[#427744]"
+                    className="font-medium text-[#4f9451] hover:text-[#427744]"
                     href="/"
                   >
                     Resend
@@ -1698,14 +1738,27 @@ const Register = () => {
                 Finish
               </button>
               {/* <button
-                  type="reset"
-                  className="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
-                  data-hs-stepper-reset-btn=""
-                  style={{ display: "none" }}
-                >
-                  Reset
-                </button> */}
+                type="reset"
+                className="py-2 px-3 inline-flex items-center gap-x-1 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[#345735] focus:outline-none focus:bg-[#4f9451] disabled:opacity-50 disabled:pointer-events-none"
+                data-hs-stepper-reset-btn=""
+                style={{ display: "none" }}
+              >
+                Reset
+              </button> */}
             </div>
+          </div>
+          <div className="flex justify-center items-center">
+            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+              you have an account ?
+              <Link
+                to="/login"
+                className="font-medium text-primary-600 hover:underline dark:text-primary-500 text-[#4F9451]"
+              >
+                {" "}
+                Login
+              </Link>
+              ...
+            </p>
           </div>
         </div>
       </div>
