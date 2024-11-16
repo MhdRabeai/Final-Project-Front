@@ -72,6 +72,7 @@ const Register = () => {
         }
       } catch (err) {
         setIsLoading(false);
+        navigate("/register");
         return toast.error(err.message, {
           position: "bottom-right",
           autoClose: 5000,

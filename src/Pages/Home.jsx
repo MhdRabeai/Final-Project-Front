@@ -7,15 +7,19 @@ import BodySlide from "../Components/BodySlide";
 import Testimonial from "../Components/Testimonial";
 import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
-
+import { useUserInfo } from "./../Services/UserContext";
 const Home = () => {
+  const { user, setUser } = useUserInfo();
   const handleInitPage = async () => {
     try {
       const res = await fetch("http://localhost:4000/", {
         credentials: "include",
       });
-
-      console.log(res);
+      const data = await res.json();
+      if (data) {
+        setUser(data);
+        console.log(user);
+      }
     } catch (err) {
       console.log("fetch err", err.message);
     }
@@ -353,54 +357,54 @@ const Home = () => {
                 </div>
               </div>
 
-              <div class="md:col-span-3">
-                <div class="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700">
+              <div className="md:col-span-3">
+                <div className="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700">
                   <div
-                    class="hs-accordion pb-3 active"
+                    className="hs-accordion pb-3 active"
                     id="hs-basic-with-title-and-arrow-stretched-heading-one"
                   >
                     <button
-                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="true"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
                     >
                       What services does this website offer?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-one"
-                      class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
                     >
-                      <p class="text-gray-600 dark:text-neutral-400">
+                      <p className="text-gray-600 dark:text-neutral-400">
                         Our website provides online therapy, self-help
                         resources, articles, and support for mental health.
                       </p>
@@ -408,51 +412,51 @@ const Home = () => {
                   </div>
 
                   <div
-                    class="hs-accordion pt-6 pb-3"
+                    className="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-two"
                   >
                     <button
-                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
                     >
                       How can I access online therapy or counseling?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-two"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
                     >
-                      <p class="text-gray-600 dark:text-neutral-400">
+                      <p className="text-gray-600 dark:text-neutral-400">
                         Simply create an account, browse available therapists,
                         and schedule a session that fits your needs.
                       </p>
@@ -460,51 +464,51 @@ const Home = () => {
                   </div>
 
                   <div
-                    class="hs-accordion pt-6 pb-3"
+                    className="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-three"
                   >
                     <button
-                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
                     >
                       Are the resources on this website free to use?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-three"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
                     >
-                      <p class="text-gray-600 dark:text-neutral-400">
+                      <p className="text-gray-600 dark:text-neutral-400">
                         Many resources, including articles and self-assessments,
                         are free, while some services may require a
                         subscription.
@@ -513,52 +517,52 @@ const Home = () => {
                   </div>
 
                   <div
-                    class="hs-accordion pt-6 pb-3"
+                    className="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-four"
                   >
                     <button
-                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
                     >
                       How can I provide feedback about my experience on the
                       website?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-four"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
                     >
-                      <p class="text-gray-600 dark:text-neutral-400">
+                      <p className="text-gray-600 dark:text-neutral-400">
                         You can share your feedback through our contact form or
                         in the reviews section in each doctor's profile.
                       </p>
@@ -566,51 +570,51 @@ const Home = () => {
                   </div>
 
                   <div
-                    class="hs-accordion pt-6 pb-3"
+                    className="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-five"
                   >
                     <button
-                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five"
                     >
                       Is my communication with the doctor is secure and private?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-five"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
                     >
-                      <p class="text-gray-600 dark:text-neutral-400">
+                      <p className="text-gray-600 dark:text-neutral-400">
                         Yes, it is definetly secured and private and everything
                         that is said during the session no one except for the
                         doctor and you will have access to
@@ -619,51 +623,51 @@ const Home = () => {
                   </div>
 
                   <div
-                    class="hs-accordion pt-6 pb-3"
+                    className="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-six"
                   >
                     <button
-                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six"
                     >
                       What should I do in case of a mental health crisis?
                       <svg
-                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-six"
-                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
                     >
-                      <p class="text-gray-600 dark:text-neutral-400">
+                      <p className="text-gray-600 dark:text-neutral-400">
                         If you are in crisis, please contact emergency services
                         or a crisis hotline immediately for immediate support
                         and assistance.

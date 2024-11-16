@@ -4,10 +4,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { IoKeyOutline } from "react-icons/io5";
 import { Bounce, toast } from "react-toastify";
 import { Loading } from "../Components/Loading";
-// import { useUser } from './../Services/UserContext';
-
 const Login = () => {
-  // const {user, setUser } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -27,13 +24,10 @@ const Login = () => {
       const msg = await res.json();
       console.log(msg["message"]);
       if (res.ok) {
-        setIsLoading(false);
-        setTimeout(() => {
-          navigate("/");
-        }, 3000);
+        navigate("/");
         return toast.success(msg["message"], {
           position: "bottom-right",
-          autoClose: 2500,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: false,
@@ -45,9 +39,11 @@ const Login = () => {
       }
     } catch (err) {
       setIsLoading(false);
+      navigate("/login");
+
       return toast.error(err.message, {
         position: "bottom-right",
-        autoClose: 5000,
+        autoClose: 750,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
