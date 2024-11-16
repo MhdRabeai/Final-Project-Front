@@ -12,6 +12,8 @@ const Card = ({ headline, content, icon }) => {
       </h3>
       <p className="mt-2 lg:mt-1 text-gray-600 lg:text-sm ">{content}</p>
     </div>
+    </div>
+    </div>
   );
 };
 
