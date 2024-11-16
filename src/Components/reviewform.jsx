@@ -5,7 +5,7 @@ import StarRating from './starrating';
 const ReviewForm = () => {  
   const [name, setName] = useState('');  
   const [review, setReview] = useState('');  
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState(0);
   const handleSubmit = (e) => {  
     e.preventDefault();  
     console.log({ name, review, rating });  
@@ -13,6 +13,10 @@ const ReviewForm = () => {
     setReview('');  
     setRating(5); 
   };  
+  const handleRatingChange = (newRating) => {
+    setRating(newRating); 
+  };
+
 
   return (  
     <div className="max-w-md mx-auto p-4 rounded-lg ">  
@@ -30,10 +34,11 @@ const ReviewForm = () => {
           />  
         </div>  
 
-        <div className="mb-4">  
-          <label className="block mb-1">Rating</label>  
-          <StarRating rating={rating} onRatingChange={setRating} />
-        </div>  
+        <div className="p-4">
+      <h1 className="text-xl mb-4">Rate The session :</h1>
+      <StarRating rating={rating} onRatingChange={handleRatingChange} />
+      <p className="mt-4">Your rating: {rating}</p>
+    </div>
 
         <div className="mb-4">  
           <label className="block mb-1" htmlFor="review">Your Review</label>  

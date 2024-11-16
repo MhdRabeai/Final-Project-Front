@@ -46,7 +46,7 @@ const AdminDash = () => {
                 />
               </svg>
             </a>
-          </div>
+          </div> 
 
           <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <div class="hidden md:block">

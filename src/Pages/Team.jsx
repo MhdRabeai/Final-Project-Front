@@ -1,7 +1,23 @@
 import React, { useState } from "react";
 import TeamCard from "../Components/TeamCard";
+import { AudioOutlined } from '@ant-design/icons';
+// import { Input, Space } from 'antd';
+// const { Search } = Input;
+import SearchComponent from "./searchbar";
+
+const suffix = (
+  <AudioOutlined
+    style={{
+      fontSize: 16,
+      color: '#1677ff',
+    }}
+  />
+);
+// const onSearch = (value, _e, info) => console.log(info?.source, value);
+
 
 const Team = () => {
+  
   const teamData = [
     {
       name: "Coriss Ambady",
@@ -83,7 +99,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-
+            <SearchComponent/>
         <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
           {currentTeamMembers.map((member, index) => (
             <TeamCard

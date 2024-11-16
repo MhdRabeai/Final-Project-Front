@@ -430,34 +430,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
                     Add Article
-                    <svg
-                      class="hs-accordion-active:block ms-auto hidden size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      class="hs-accordion-active:hidden ms-auto block size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
+                  
                   </button>
 
                   <div
@@ -467,30 +440,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     aria-labelledby="projects-accordion"
                   >
                     <ul class="ps-8 pt-1 space-y-1">
-                      <li>
-                        <a
-                          class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="/"
-                        >
-                          Link 1
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="/"
-                        >
-                          Link 2
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:text-neutral-200"
-                          href="/"
-                        >
-                          Link 3
-                        </a>
-                      </li>
+                     
                     </ul>
                   </div>
                 </li>
