@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from "../Components/BlogCard";
 import { Loading } from "../Components/Loading";
-import SearchComponent from "./searchbar";
+import SearchComponent from "./SearchPage";
 
 const Blogs = () => {
   const [data, setData] = useState([]);
@@ -13,7 +13,9 @@ const Blogs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const response = await fetch(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
         const result = await response.json();
         setData(result);
       } catch (error) {
@@ -31,9 +33,10 @@ const Blogs = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
   // Filter the data based on the search term
-  const filteredData = data.filter(post => 
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    "Dr. John Doe".toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredData = data.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      "Dr. John Doe".toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const currentBlogs = filteredData.slice(indexOfFirstItem, indexOfLastItem);
@@ -61,7 +64,7 @@ const Blogs = () => {
                 but the majority have suffered alteration in some form.
               </p>
               {/* Search Bar */}
-              <SearchComponent/>
+              <SearchComponent />
             </div>
           </div>
         </div>
@@ -114,7 +117,9 @@ const Blogs = () => {
                 <li>
                   <button
                     onClick={() =>
-                      paginate(currentPage < totalPages ? currentPage + 1 : totalPages)
+                      paginate(
+                        currentPage < totalPages ? currentPage + 1 : totalPages
+                      )
                     }
                     className="flex h-10 min-w-10 items-center justify-center px-2 text-base font-medium text-dark hover:bg-gray-2 dark:border-white/10 dark:text-white dark:hover:bg-white/5"
                   >

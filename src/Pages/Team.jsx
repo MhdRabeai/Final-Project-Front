@@ -1,72 +1,68 @@
 import React, { useState } from "react";
 import TeamCard from "../Components/TeamCard";
-import { AudioOutlined } from '@ant-design/icons';
+import { AudioOutlined } from "@ant-design/icons";
 // import { Input, Space } from 'antd';
 // const { Search } = Input;
-import SearchComponent from "./searchbar";
+import SearchComponent from "./SearchPage";
 
 const suffix = (
   <AudioOutlined
     style={{
       fontSize: 16,
-      color: '#1677ff',
+      color: "#1677ff",
     }}
   />
 );
 // const onSearch = (value, _e, info) => console.log(info?.source, value);
 
-
 const Team = () => {
-  
   const teamData = [
     {
       name: "Coriss Ambady",
       profession: "Web Developer",
       imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-      },
-      {
+    },
+    {
       name: "John Doe",
       profession: "UI/UX Designer",
       imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-      },
-      {
+    },
+    {
       name: "Jane Smith",
       profession: "Backend Developer",
       imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-      },
-      {
+    },
+    {
       name: "Samuel Green",
       profession: "Frontend Developer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-      },
-      {
+    },
+    {
       name: "Robert Williams",
       profession: "Project Manager",
       imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-      },
-      {
+    },
+    {
       name: "Alice Johnson",
       profession: "QA Engineer",
       imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-      },
-      {
+    },
+    {
       name: "Lucas Martin",
       profession: "Web Developer",
       imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-      },
-      {
+    },
+    {
       name: "Sophia Davis",
       profession: "DevOps Engineer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-      },
-      {
+    },
+    {
       name: "Sophia Davis",
       profession: "DevOps Engineer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-      },
-      ];
-  ;
-
+    },
+  ];
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
@@ -99,7 +95,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-            <SearchComponent/>
+        <SearchComponent />
         <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
           {currentTeamMembers.map((member, index) => (
             <TeamCard
@@ -143,7 +139,9 @@ const Team = () => {
                     <button
                       onClick={() => paginate(page + 1)}
                       className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-200 dark:border-white/10 dark:text-white dark:hover:bg-white/5 ${
-                        currentPage === page + 1 ? "bg-gray-200 dark:bg-dark-3" : ""
+                        currentPage === page + 1
+                          ? "bg-gray-200 dark:bg-dark-3"
+                          : ""
                       }`}
                     >
                       {page + 1}
