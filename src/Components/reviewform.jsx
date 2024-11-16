@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';  
 import StarRating from './starrating';   
+import { Rate } from 'antd';
 
 const ReviewForm = () => {  
   const [name, setName] = useState('');  
@@ -33,13 +34,8 @@ const ReviewForm = () => {
             required  
           />  
         </div>  
-
-        <div className="p-4">
-      <h1 className="text-xl mb-4">Rate The session :</h1>
-      <StarRating rating={rating} onRatingChange={handleRatingChange} />
-      <p className="mt-4">Your rating: {rating}</p>
-    </div>
-
+        <label className="block mb-1" htmlFor="review">Rate the session :</label>  
+   <Rate/>
         <div className="mb-4">  
           <label className="block mb-1" htmlFor="review">Your Review</label>  
           <textarea  
