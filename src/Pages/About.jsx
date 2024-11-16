@@ -7,7 +7,7 @@ import Testimonial from "../Components/Testimonial";
 const About = () => {
   return (
     <div className="max-w-[86rem] mx-auto px-4">
-      <section className="overflow-hidden pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]  dark:bg-dark">
+      <section className="overflow-hidden   pb-6 mb-6 border-b-2 border-[#ddd]">
         <div className="container mx-auto">
           <div className=" flex  flex-wrap items-center justify-between -mx-4">
             <div className="w-full px-4 lg:w-6/12">
@@ -648,7 +648,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col items-center justify-center pb-10">
+      <section className="flex flex-col items-center justify-center  pb-6 mb-6 border-b-2 border-[#ddd]">
         <div className="text-center">
           <span className="block mb-2 text-lg font-semibold text-[#4F9451]">
             Our Features
