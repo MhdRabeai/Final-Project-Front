@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BlogCard from "../Components/BlogCard";
 import { Loading } from "../Components/Loading";
+import SearchComponent from "./searchbar";
 
 const Blogs = () => {
   const [data, setData] = useState([]);
@@ -60,13 +61,7 @@ const Blogs = () => {
                 but the majority have suffered alteration in some form.
               </p>
               {/* Search Bar */}
-              <input
-                type="text"
-                placeholder="Search by title or doctor name..."
-                className="mt-4 p-2 border rounded w-full"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
+              <SearchComponent/>
             </div>
           </div>
         </div>
