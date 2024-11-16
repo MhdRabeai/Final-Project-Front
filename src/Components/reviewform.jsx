@@ -35,7 +35,7 @@ const ReviewForm = () => {
         </div>  
 
         <div className="p-4">
-      <h1 className="text-xl mb-4">Rate our service:</h1>
+      <h1 className="text-xl mb-4">Rate The session :</h1>
       <StarRating rating={rating} onRatingChange={handleRatingChange} />
       <p className="mt-4">Your rating: {rating}</p>
     </div>
