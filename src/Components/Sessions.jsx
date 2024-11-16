@@ -1,4 +1,5 @@
 import React from 'react';
+import { Timeline } from 'antd';
 
 const Sessions = () => {
   const events = [
@@ -6,7 +7,7 @@ const Sessions = () => {
       title: 'Event 1',
       description: 'This is the first event.',
       date: '2023-11-14',
-    },  
+    },
     {
       title: 'Event 2',
       description: 'This is the second event.',
@@ -19,19 +20,18 @@ const Sessions = () => {
     },
   ];
 
+  const items = events.map(event => ({
+    label: event.date,
+    children: (
+      <div>
+        <h3 style={{ fontWeight: 'bold', color: '#4CAF50' }}>{event.title}</h3>
+        <p style={{ color: '#555' }}>{event.description}</p>
+      </div>
+    ),
+  }));
+
   return (
-    <ul className="timeline">
-      {events.map((event, index) => (
-        <li key={index} className="timeline-item">
-          <div className="timeline-marker bg-blue-500 rounded-full"></div>
-          <div className="timeline-content p-4 border border-gray-200 rounded-lg shadow-sm">
-            <h3 className="text-lg font-bold text-green-700">{event.title}</h3>
-            <p className="text-gray-700">{event.description}</p>
-            <p className="text-green-600 text-sm ">{event.date}</p>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <Timeline mode="left" items={items} />
   );
 };
 
