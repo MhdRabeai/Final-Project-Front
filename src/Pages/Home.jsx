@@ -9,7 +9,11 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+
+
+=======
  
+
   return (
     <div className="">
       <div className="container max-w-[86rem] w-full mx-auto px-4 ">
@@ -77,7 +81,11 @@ const Home = () => {
           </div>
           <div className="md:block hidden "></div>
           <div className="md:block hidden "></div>
+
+          <div class="lg:col-span-3 mt-10 lg:mt-0">
+=======
           <div className="lg:col-span-3 mt-10 lg:mt-0">
+
           <div className="flex justify-between gap-y-6 flex-wrap homeFeatures">
         {cardsData.map((card, index) => (
           <Card
