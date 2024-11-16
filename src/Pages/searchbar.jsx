@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { Input } from 'antd'; 
 
 const dataArray = [  
-  { id: 1, name: "Alice" },  
-  { id: 2, name: "Bob" },  
-  { id: 3, name: "Charlie" },  
+  { id: 1, name: "Coriss Ambady" },  
+  { id: 2, name: "John Doe" },  
+  { id: 3, name: "Jane Smith" },  
+  { id: 4, name: "Samuel Green" },
+  { id: 5, name: "Robert Williams" },
+  { id: 6, name: "Alice johnson" },
+  { id: 7, name: "Lucas Martin" },
+  { id: 8, name: "Sophia Davis" },
 ];  
 
 const { Search } = Input; 
