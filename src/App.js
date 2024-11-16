@@ -65,7 +65,7 @@ function App() {
         <Route path="user" element={<UserDash />} /> */}
         <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="/dashboard/admin" element={<AdminDash />} />
+      <Route path="dashboard/admin" element={<AdminDash />} />
       <Route path="dashboard/doct" element={<DocDash />} />
       <Route path="dashboard/pharmacy" element={<PharDash />} />
       <Route path="dashboard/user" element={<UserDash />} />
