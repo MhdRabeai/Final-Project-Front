@@ -1,11 +1,12 @@
 
 import React, { useState } from 'react';  
 import StarRating from './starrating';   
+import { Rate } from 'antd';
 
 const ReviewForm = () => {  
   const [name, setName] = useState('');  
   const [review, setReview] = useState('');  
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState(0);
   const handleSubmit = (e) => {  
     e.preventDefault();  
     console.log({ name, review, rating });  
@@ -13,6 +14,10 @@ const ReviewForm = () => {
     setReview('');  
     setRating(5); 
   };  
+  const handleRatingChange = (newRating) => {
+    setRating(newRating); 
+  };
+
 
   return (  
     <div className="max-w-md mx-auto p-4 rounded-lg ">  
@@ -29,12 +34,8 @@ const ReviewForm = () => {
             required  
           />  
         </div>  
-
-        <div className="mb-4">  
-          <label className="block mb-1">Rating</label>  
-          <StarRating rating={rating} onRatingChange={setRating} />
-        </div>  
-
+        <label className="block mb-1" htmlFor="review">Rate the session :</label>  
+   <Rate/>
         <div className="mb-4">  
           <label className="block mb-1" htmlFor="review">Your Review</label>  
           <textarea  
