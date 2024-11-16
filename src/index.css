@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 body::-webkit-scrollbar {
   width: 10px;
 }
@@ -14,4 +13,9 @@ body::-webkit-scrollbar-thumb {
 }
 body::-webkit-scrollbar-thumb:hover {
   background-color: #4f9451;
+}
+@media (min-width: 1023px) {
+  .my-card {
+    width: calc((100% / 2) - 0.5rem);
+  }
 }

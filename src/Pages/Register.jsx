@@ -1576,9 +1576,7 @@ const Register = () => {
             >
               <div className="flex flex-col items-center hs-accordion-group w-full divide mx-auto divide-gray-200 dark:divide-neutral-700 border rounded-xl shadow-sm p-6 dark:bg-neutral-800 dark:border-neutral-700">
                 <header class="mb-8 text-center">
-                  <h1 class="text-2xl font-bold mb-1">
-                    Mobile Phone Verification
-                  </h1>
+                  <h1 class="text-2xl font-bold mb-1">Enter Verification</h1>
                   <p class="text-[15px] text-slate-500">
                     Enter the 6-digit verification code that was sent to your
                     Email.

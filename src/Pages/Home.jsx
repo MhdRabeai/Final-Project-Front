@@ -9,7 +9,6 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 
 const Home = () => {
- 
   return (
     <div className="">
       <div className="container max-w-[86rem] w-full mx-auto px-4 ">
@@ -47,7 +46,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center  justify-between pb-6 mb-6 border-b-2 border-[#ddd]">
+        <div className="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center  justify-between  pb-6 mb-6 border-b-2 border-[#ddd]">
           <div className="lg:col-span-2 flex  ">
             <div>
               <div className="w-full">
@@ -77,17 +76,19 @@ const Home = () => {
           </div>
           <div className="md:block hidden "></div>
           <div className="md:block hidden "></div>
-          <div className="lg:col-span-3 mt-10 lg:mt-0">
-          <div className="flex justify-between gap-y-6 flex-wrap homeFeatures">
-        {cardsData.map((card, index) => (
-          <Card
-            key={index}
-            headline={card.headline}
-            content={card.content}
-            icon={card.icon}
-          />
-        ))}
-      </div>
+          <div class="lg:col-span-3 mt-10 lg:mt-0">
+            <div className="lg:col-span-3 mt-10 lg:mt-0">
+              <div className="flex  justify-center   gap-4 flex-wrap ">
+                {cardsData.map((card, index) => (
+                  <Card
+                    key={index}
+                    headline={card.headline}
+                    content={card.content}
+                    icon={card.icon}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <div className="homeTeam pb-6 mb-6 border-b-2 border-[#ddd]">
@@ -387,7 +388,8 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                      Our website provides online therapy, self-help resources, articles, and support for mental health.
+                        Our website provides online therapy, self-help
+                        resources, articles, and support for mental health.
                       </p>
                     </div>
                   </div>
@@ -438,7 +440,8 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                      Simply create an account, browse available therapists, and schedule a session that fits your needs.
+                        Simply create an account, browse available therapists,
+                        and schedule a session that fits your needs.
                       </p>
                     </div>
                   </div>
@@ -489,7 +492,9 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                      Many resources, including articles and self-assessments, are free, while some services may require a subscription.
+                        Many resources, including articles and self-assessments,
+                        are free, while some services may require a
+                        subscription.
                       </p>
                     </div>
                   </div>
@@ -503,7 +508,8 @@ const Home = () => {
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
                     >
-                      How can I provide feedback about my experience on the website?
+                      How can I provide feedback about my experience on the
+                      website?
                       <svg
                         class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
@@ -540,7 +546,8 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                      You can share your feedback through our contact form or in the reviews section in each doctor's profile.
+                        You can share your feedback through our contact form or
+                        in the reviews section in each doctor's profile.
                       </p>
                     </div>
                   </div>
@@ -591,7 +598,9 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                        Yes, it is definetly secured and private and everything that is said during the session no one except for the doctor and you will have access to 
+                        Yes, it is definetly secured and private and everything
+                        that is said during the session no one except for the
+                        doctor and you will have access to
                       </p>
                     </div>
                   </div>
@@ -642,7 +651,9 @@ const Home = () => {
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
                     >
                       <p class="text-gray-600 dark:text-neutral-400">
-                      If you are in crisis, please contact emergency services or a crisis hotline immediately for immediate support and assistance.
+                        If you are in crisis, please contact emergency services
+                        or a crisis hotline immediately for immediate support
+                        and assistance.
                       </p>
                     </div>
                   </div>

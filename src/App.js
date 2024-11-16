@@ -33,8 +33,6 @@ const Team = lazy(() => import("./Pages/Team"));
 function App() {
   const location = useLocation();
 
-  useEffect(() => {}, []);
-
   useEffect(() => {
     // @ts-ignore
     require("preline/preline");
@@ -65,16 +63,22 @@ function App() {
         <Route path="user" element={<UserDash />} /> */}
         <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="/dashboard/admin" element={<AdminDash />} />
+      <Route path="dashboard/admin" element={<AdminDash />} />
       <Route path="dashboard/doct" element={<DocDash />} />
       <Route path="dashboard/pharmacy" element={<PharDash />} />
       <Route path="dashboard/user" element={<UserDash />} />
       <Route path="dashboard/doct/calendarpage" element={<CalendarPage />} />
       <Route path="dashboard/admin/TabelPataints" element={<TabelPataints />} />
       <Route path="dashboard/admin/TabelDoctors" element={<TabelDoctors />} />
-      <Route path="dashboard/admin/CreateAccountDoctor" element={<CreateAccountDoctor />} />
+      <Route
+        path="dashboard/admin/CreateAccountDoctor"
+        element={<CreateAccountDoctor />}
+      />
       <Route path="dashboard/admin/TabelDrugs" element={<TabelDrugs />} />
-      <Route path="dashboard/admin/TabelPharmaceutical" element={<TabelPharmaceutical />} />
+      <Route
+        path="dashboard/admin/TabelPharmaceutical"
+        element={<TabelPharmaceutical />}
+      />
       <Route path="dashboard/admin/calendarpage" element={<CalendarPage />} />
       <Route path="dashboard/user/calendarpage" element={<CalendarPage />} />
       <Route path="*" element={<NotFound />} />
