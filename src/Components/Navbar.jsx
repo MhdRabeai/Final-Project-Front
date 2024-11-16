@@ -21,7 +21,7 @@ const Navbar = () => {
     },
   ];
   const navigate = useNavigate();
-  const { user, setUser } = useUserInfo();
+  const { logoutUser, user } = useUserInfo();
   const handleLogout = async () => {
     try {
       const res = await fetch("http://localhost:4000/logout", {
@@ -30,7 +30,7 @@ const Navbar = () => {
       });
 
       if (res.ok) {
-        setUser(null);
+        await logoutUser();
         navigate("/");
         return toast.success("Logout successful", {
           position: "bottom-right",
@@ -64,6 +64,7 @@ const Navbar = () => {
   //   setIsDark(!isDark);
   //   document.documentElement.classList.toggle("dark");
   // };
+
   return (
     <header className="rounded-b-3xl flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-[#4f9451] text-sm py-2 shadow-2xl mb-10 dark:drop-shadow-[0_5px_10px_rgba(255,255,255,0.5)]">
       <nav className="max-w-[86rem] w-full mx-auto px-4 sm:flex items-center sm:justify-between ">
@@ -193,13 +194,25 @@ const Navbar = () => {
               )}
             </button> */}
 
-            {user ? (
-              <button
-                className="font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition scale-125"
-                onClick={handleLogout}
-              >
-                <MdLogout />
-              </button>
+            {user !== null ? (
+              <>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? "active font-medium text-white focus:outline-none"
+                      : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
+                  }
+                  to="/dashboard"
+                >
+                  Dashboard
+                </NavLink>
+                <button
+                  className="font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition scale-125"
+                  onClick={handleLogout}
+                >
+                  <MdLogout />
+                </button>
+              </>
             ) : (
               <Dropdown menu={{ items }} trigger={["click"]}>
                 <button

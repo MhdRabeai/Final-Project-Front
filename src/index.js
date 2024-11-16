@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
+import { UserProvider } from "./Services/UserContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -15,7 +16,9 @@ root.render(
       }}
     >
       <ConfigProvider theme={{ token: { colorPrimary: "#4f9451" } }}>
-        <App />
+        <UserProvider>
+          <App />
+        </UserProvider>
       </ConfigProvider>
     </BrowserRouter>
   </React.StrictMode>

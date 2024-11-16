@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import cardsData from "../Components/cardsData";
 import Card from "../Components/card";
 import BodySlide from "../Components/BodySlide";
@@ -9,24 +9,15 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 import { useUserInfo } from "./../Services/UserContext";
 const Home = () => {
-  const { user, setUser } = useUserInfo();
-  const handleInitPage = async () => {
-    try {
-      const res = await fetch("http://localhost:4000/", {
-        credentials: "include",
-      });
-      const data = await res.json();
-      if (data) {
-        setUser(data);
-        console.log(user);
-      }
-    } catch (err) {
-      console.log("fetch err", err.message);
-    }
-  };
+  const { user } = useUserInfo();
+  const [currentUser, setCurrentUser] = useState(null);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
-    handleInitPage();
-  }, []);
+    console.log("Home");
+    setCurrentUser(user);
+  }, [user]);
 
   return (
     <div className="">
