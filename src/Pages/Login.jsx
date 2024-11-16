@@ -8,7 +8,6 @@ import { Loading } from "../Components/Loading";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rememberMe, setRememberMe] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -25,7 +24,7 @@ const Login = () => {
       const msg = await res.json();
       console.log(msg["message"]);
       if (res.ok) {
-        setIsLoading(true);
+        setIsLoading(false);
         setTimeout(() => {
           navigate("/");
         }, 3000);
@@ -42,6 +41,7 @@ const Login = () => {
         });
       }
     } catch (err) {
+      setIsLoading(false);
       return toast.error(err.message, {
         position: "bottom-right",
         autoClose: 5000,
@@ -183,8 +183,7 @@ const Login = () => {
                           aria-describedby="remember"
                           type="checkbox"
                           className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-0  dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                          checked={rememberMe}
-                          onChange={(e) => setRememberMe(e.target.checked)}
+                          disabled
                         />
                       </div>
                       <div className="ml-3 text-sm">
@@ -205,8 +204,12 @@ const Login = () => {
                   </div>
 
                   <button
-                    type="submit"
+                    type="button"
                     className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-0 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 bg-[#4F9451]"
+                    onClick={(e) => {
+                      handleSubmit(e);
+                      setIsLoading(true);
+                    }}
                   >
                     Login
                   </button>
