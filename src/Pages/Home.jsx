@@ -9,6 +9,7 @@ import BlogCard from "../Components/BlogCard";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+ 
   return (
     <div className="">
       <div className="container max-w-[86rem] w-full mx-auto px-4 ">
@@ -77,17 +78,16 @@ const Home = () => {
           <div className="md:block hidden "></div>
           <div className="md:block hidden "></div>
           <div className="lg:col-span-3 mt-10 lg:mt-0">
-            <div className="flex justify-between  gap-y-6  flex-wrap homeFeatures">
-              {cardsData.map((card, index) => (
-                <Card
-                  key={index}
-                  headline={card.headline}
-                  content={
-                    "Access to licensed mental health professionals who provide personalized care and support."
-                  }
-                />
-              ))}
-            </div>
+          <div className="flex justify-between gap-y-6 flex-wrap homeFeatures">
+        {cardsData.map((card, index) => (
+          <Card
+            key={index}
+            headline={card.headline}
+            content={card.content}
+            icon={card.icon}
+          />
+        ))}
+      </div>
           </div>
         </div>
         <div className="homeTeam pb-6 mb-6 border-b-2 border-[#ddd]">
@@ -339,326 +339,310 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="md:col-span-3">
-                <div className="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700">
+              <div class="md:col-span-3">
+                <div class="hs-accordion-group divide-y divide-gray-200 dark:divide-neutral-700">
                   <div
-                    className="hs-accordion pb-3 active"
+                    class="hs-accordion pb-3 active"
                     id="hs-basic-with-title-and-arrow-stretched-heading-one"
                   >
                     <button
-                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="true"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-one"
                     >
-                      Can I cancel at anytime?
+                      What services does this website offer?
                       <svg
-                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-one"
-                      className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
+                      class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-one"
                     >
-                      <p className="text-gray-600 dark:text-neutral-400">
-                        Yes, you can cancel anytime no questions are asked while
-                        you cancel but we would highly appreciate if you will
-                        give us some feedback.
+                      <p class="text-gray-600 dark:text-neutral-400">
+                      Our website provides online therapy, self-help resources, articles, and support for mental health.
                       </p>
                     </div>
                   </div>
 
                   <div
-                    className="hs-accordion pt-6 pb-3"
+                    class="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-two"
                   >
                     <button
-                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-two"
                     >
-                      My team has credits. How do we use them?
+                      How can I access online therapy or counseling?
                       <svg
-                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-two"
-                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-two"
                     >
-                      <p className="text-gray-600 dark:text-neutral-400">
-                        Once your team signs up for a subscription plan. This is
-                        where we sit down, grab a cup of coffee and dial in the
-                        details.
+                      <p class="text-gray-600 dark:text-neutral-400">
+                      Simply create an account, browse available therapists, and schedule a session that fits your needs.
                       </p>
                     </div>
                   </div>
 
                   <div
-                    className="hs-accordion pt-6 pb-3"
+                    class="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-three"
                   >
                     <button
-                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-three"
                     >
-                      How does Preline's pricing work?
+                      Are the resources on this website free to use?
                       <svg
-                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-three"
-                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-three"
                     >
-                      <p className="text-gray-600 dark:text-neutral-400">
-                        Our subscriptions are tiered. Understanding the task at
-                        hand and ironing out the wrinkles is key.
+                      <p class="text-gray-600 dark:text-neutral-400">
+                      Many resources, including articles and self-assessments, are free, while some services may require a subscription.
                       </p>
                     </div>
                   </div>
 
                   <div
-                    className="hs-accordion pt-6 pb-3"
+                    class="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-four"
                   >
                     <button
-                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-four"
                     >
-                      How secure is Preline?
+                      How can I provide feedback about my experience on the website?
                       <svg
-                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-four"
-                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-four"
                     >
-                      <p className="text-gray-600 dark:text-neutral-400">
-                        Protecting the data you trust to Preline is our first
-                        priority. This part is really crucial in keeping the
-                        project in line to completion.
+                      <p class="text-gray-600 dark:text-neutral-400">
+                      You can share your feedback through our contact form or in the reviews section in each doctor's profile.
                       </p>
                     </div>
                   </div>
 
                   <div
-                    className="hs-accordion pt-6 pb-3"
+                    class="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-five"
                   >
                     <button
-                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-five"
                     >
-                      How do I get access to a theme I purchased?
+                      Is my communication with the doctor is secure and private?
                       <svg
-                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-five"
-                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-five"
                     >
-                      <p className="text-gray-600 dark:text-neutral-400">
-                        If you lose the link for a theme you purchased, don't
-                        panic! We've got you covered. You can login to your
-                        account, tap your avatar in the upper right corner, and
-                        tap Purchases. If you didn't create a login or can't
-                        remember the information, you can use our handy
-                        Redownload page, just remember to use the same email you
-                        originally made your purchases with.
+                      <p class="text-gray-600 dark:text-neutral-400">
+                        Yes, it is definetly secured and private and everything that is said during the session no one except for the doctor and you will have access to 
                       </p>
                     </div>
                   </div>
 
                   <div
-                    className="hs-accordion pt-6 pb-3"
+                    class="hs-accordion pt-6 pb-3"
                     id="hs-basic-with-title-and-arrow-stretched-heading-six"
                   >
                     <button
-                      className="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                      class="hs-accordion-toggle group pb-3 inline-flex items-center justify-between gap-x-3 w-full md:text-lg font-semibold text-start text-gray-800 rounded-lg transition hover:text-gray-500 focus:outline-none focus:text-gray-500 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
                       aria-expanded="false"
                       aria-controls="hs-basic-with-title-and-arrow-stretched-collapse-six"
                     >
-                      Upgrade License Type
+                      What should I do in case of a mental health crisis?
                       <svg
-                        className="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:hidden block shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m6 9 6 6 6-6" />
                       </svg>
                       <svg
-                        className="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
+                        class="hs-accordion-active:block hidden shrink-0 size-5 text-gray-600 group-hover:text-gray-500 dark:text-neutral-400"
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                       >
                         <path d="m18 15-6-6-6 6" />
                       </svg>
                     </button>
                     <div
                       id="hs-basic-with-title-and-arrow-stretched-collapse-six"
-                      className="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
+                      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
                       role="region"
                       aria-labelledby="hs-basic-with-title-and-arrow-stretched-heading-six"
                     >
-                      <p className="text-gray-600 dark:text-neutral-400">
-                        There may be times when you need to upgrade your license
-                        from the original type you purchased and we have a
-                        solution that ensures you can apply your original
-                        purchase cost to the new license purchase.
+                      <p class="text-gray-600 dark:text-neutral-400">
+                      If you are in crisis, please contact emergency services or a crisis hotline immediately for immediate support and assistance.
                       </p>
                     </div>
                   </div>
