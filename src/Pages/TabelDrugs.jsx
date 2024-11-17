@@ -203,6 +203,8 @@
 
 // export default TabelDrugs;
 import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencilAlt, faTrash, faSave } from '@fortawesome/free-solid-svg-icons'; 
 
 const TabelDrugs = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -286,7 +288,7 @@ const TabelDrugs = () => {
 
     return (
         <div className="flex justify-center my-6">
-            <div className="overflow-x-auto min-h-[631px] w-full max-w-4xl">
+            <div className="overflow-x-auto min-h-[631px] w-full max-w-7xl">
                 <div className="min-w-full inline-block align-middle border border-gray-300 rounded-lg">
                     <div className="py-3 px-4">
                         <h1 className="text-2xl font-bold text-center">
@@ -411,26 +413,26 @@ const TabelDrugs = () => {
                                             </td>
                                             <td className="p-3 text-right">
                                                 {editRow === row.name ? (
-                                                    <button
+                                                    <span
                                                         onClick={() => handleSave(row.name)}
-                                                        className="px-4 py-2 text-green-600 border-2 border-green-600 rounded hover:bg-green-600 hover:text-white"
+                                                        className="text-green-600 cursor-pointer hover:text-green-800"
                                                     >
-                                                        Save
-                                                    </button>
+                                                        <FontAwesomeIcon icon={faSave} />
+                                                    </span>
                                                 ) : (
                                                     <>
-                                                        <button
+                                                        <span
                                                             onClick={() => handleEdit(row)}
-                                                            className="px-4 py-2 text-blue-600 border-2 border-blue-600 rounded hover:bg-blue-600 hover:text-white mx-4"
+                                                            className="text-blue-600 cursor-pointer hover:text-blue-800 mx-4"
                                                         >
-                                                            Edit
-                                                        </button>
-                                                        <button
+                                                            <FontAwesomeIcon icon={faPencilAlt} />
+                                                        </span>
+                                                        <span
                                                             onClick={() => handleDelete(row.name)}
-                                                            className="px-4 py-2 text-red-600 border-2 border-red-600 rounded hover:bg-red-600 hover:text-white"
+                                                            className="text-red-600 cursor-pointer hover:text-red-800"
                                                         >
-                                                            Delete
-                                                        </button>
+                                                            <FontAwesomeIcon icon={faTrash} />
+                                                        </span>
                                                     </>
                                                 )}
                                             </td>
