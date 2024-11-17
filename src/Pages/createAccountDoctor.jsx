@@ -9,7 +9,7 @@ const CreateAccountDoctor = () => {
         password: "",
     });
     const [previewImage, setPreviewImage] = useState(null);
-    const [socialLinks, setSocialLinks] = useState([""]); // روابط السوشيال ميديا
+    const [socialLinks, setSocialLinks] = useState([""]);
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
