@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import format from "date-fns/format";
@@ -56,24 +55,38 @@ const CalendarPage = () => {
   const [newEvent, setNewEvent] = useState({
     title: "",
     description: "",
+    patientName: "",
     start: null,
     end: null,
     color: "",
-    patientName: "",
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
 
+  // Define working hours
+  const startWorkHour = 9; // Adjust this to your actual start hour (24-hour format)
+  const endWorkHour = 17; // Adjust this to your actual end hour (24-hour format)
+
+  const isDisabled = (date) => {
+    const hour = date.getHours();
+    return hour < startWorkHour || hour > endWorkHour;
+  };
+
   const handleSelectSlot = (slotInfo) => {
-    setNewEvent({
-      title: "",
-      description: "",
-      patientName: "",
-      start: slotInfo.start,
-      end: slotInfo.end,
-      color: getRandomColor(),
-    });
-    setSelectedEvent(null);
-    setShowModal(true);
+    // Check if slot falls within working hours before allowing selection
+    if (!isDisabled(slotInfo.start)) {
+      setNewEvent({
+        title: "",
+        description: "",
+        patientName: "",
+        start: slotInfo.start,
+        end: slotInfo.end,
+        color: getRandomColor(),
+      });
+      setSelectedEvent(null);
+      setShowModal(true);
+    } else {
+      alert("This time slot is outside your working hours");
+    }
   };
 
   const handleSelectEvent = (event) => {
