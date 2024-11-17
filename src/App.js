@@ -37,9 +37,13 @@ import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CreateAccountPataint from "./Pages/createAccountDoctor";
-import Profile from "./Pages/profile";
-import ProfilePage from "./Pages/ProfilePage";
+
 import PatientBills from "./Pages/Bills";
+
+import Profile from "./Pages/Profile";
+import ProfilePage from "./Pages/ProfilePage";
+
+
 function App() {
   const location = useLocation();
 
