@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import TeamCard from "../Components/TeamCard";
-import { AudioOutlined } from "@ant-design/icons";
+import SearchComponent from './SearchPage';
+
+// import { AudioOutlined } from "@ant-design/icons";
 // import { Input, Space } from 'antd';
 // const { Search } = Input;
-import SearchComponent from "./SearchPage";
-
 // const suffix = (
 //   <AudioOutlined
 //     style={{
@@ -16,6 +16,8 @@ import SearchComponent from "./SearchPage";
 // const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 const Team = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   const teamData = [
     {
       name: "Coriss Ambady",
@@ -61,7 +63,7 @@ const Team = () => {
       name: "Sophia Davis",
       profession: "DevOps Engineer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-    },
+    },     
   ];
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
@@ -95,7 +97,10 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <SearchComponent />
+        <SearchComponent
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            />
         <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
           {currentTeamMembers.map((member, index) => (
             <TeamCard
