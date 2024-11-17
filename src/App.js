@@ -15,7 +15,7 @@ import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/BlogDetail";
 import Contact from "./Pages/Contact";
 import Team from "./Pages/Team";
-import Profile from "./Pages/profile";
+
 import NotFound from "./Pages/NotFound";
 import AdminDash from "./Pages/AdminDash";
 import DocDash from "./Pages/DocDash";
@@ -38,6 +38,7 @@ import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CreateAccountPataint from "./Pages/createAccountDoctor";
+import Profile from "./Pages/profile";
 
 function App() {
   const location = useLocation();
@@ -95,21 +96,10 @@ function App() {
             <Route path="*" element={<NotFound />} /> */}
           </Route>
 
-          <Route path="dashboard/admin" element={<AdminDash />} >
-
-            <Route
-              index
-              element={<CalendarAdmin />}
-            />
-            <Route
-
-              path="TabelPataints"
-              element={<TabelPataints />}
-            />
-            <Route
-              path="TabelDoctors"
-              element={<TabelDoctors />}
-            />
+          <Route path="dashboard/admin" element={<AdminDash />}>
+            <Route index element={<CalendarAdmin />} />
+            <Route path="TabelPataints" element={<TabelPataints />} />
+            <Route path="TabelDoctors" element={<TabelDoctors />} />
             <Route
               path="CreateAccountDoctor"
               element={<CreateAccountDoctor />}
@@ -118,53 +108,27 @@ function App() {
               path="CreateAccountPataint"
               element={<CreateAccountPataint />}
             />
-            <Route path="TabelDrugs"
-              element={<TabelDrugs />}
-            />
+            <Route path="TabelDrugs" element={<TabelDrugs />} />
 
             <Route
               path="TabelPharmaceutical"
               element={<TabelPharmaceutical />}
             />
-          </ Route>
-          <Route path="dashboard/doct" element={<DocDash />} >
-            <Route
-              path="calendarpage"
-              element={<CalendarPage />}
-            />
-            <Route
-              path="DocProfile"
-              element={<DocProfile />}
-            />
-            <Route
-              path="AddArticle"
-              element={<DoctorArticleForm />}
-            />
-            <Route
-              path="PrescriptionForm"
-              element={<PrescriptionForm />}
-            />
-
+          </Route>
+          <Route path="dashboard/doct" element={<DocDash />}>
+            <Route index element={<CalendarPage />} />
+            <Route path="DocProfile" element={<DocProfile />} />
+            <Route path="AddArticle" element={<DoctorArticleForm />} />
+            <Route path="PrescriptionForm" element={<PrescriptionForm />} />
           </Route>
           <Route path="dashboard/pharmacy" element={<PharDash />} />
           <Route path="dashboard/user" element={<UserDash />}>
-            <Route
-              path="profile"
-              element={<ProfilePage />}
-            />
-            <Route
-              path="session"
-              element={<Sessions />}
-            />
-            <Route
-              path="review"
-              element={<ReviewForm />}
-            />
-            <Route
-              path="complain"
-              element={<ComplaintsForm />}
-            />
-
+          {/* <Route index element={<ProfilePage />} /> */}
+            <Route path="Setting" element={<ProfilePage />} />
+            <Route index element={<Sessions />} />
+            <Route path="session" element={<Sessions />} />
+            <Route path="review" element={<ReviewForm />} />
+            <Route path="complain" element={<ComplaintsForm />} />
           </Route>
 
           <Route
