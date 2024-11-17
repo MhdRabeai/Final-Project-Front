@@ -259,7 +259,7 @@ const ProfilePage = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300"
+            className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-green-500 transition duration-300"
           >
             Update Profile
           </button>
