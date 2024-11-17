@@ -15,7 +15,7 @@ import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/BlogDetail";
 import Contact from "./Pages/Contact";
 import Team from "./Pages/Team";
-
+import PrescriptionPage from "./Pages/PercpectionPage"
 import NotFound from "./Pages/NotFound";
 import AdminDash from "./Pages/AdminDash";
 import DocDash from "./Pages/DocDash";
@@ -37,8 +37,12 @@ import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CreateAccountPataint from "./Pages/createAccountDoctor";
+
+import PatientBills from "./Pages/Bills";
+
 import Profile from "./Pages/Profile";
 import ProfilePage from "./Pages/ProfilePage";
+
 
 function App() {
   const location = useLocation();
@@ -127,6 +131,8 @@ function App() {
             <Route path="Setting" element={<ProfilePage />} />
             <Route index element={<Sessions />} />
             <Route path="session" element={<Sessions />} />
+            <Route path="Perspections" element={<PrescriptionPage/>} />
+            <Route path="Bills" element={<PatientBills/>} />
             <Route path="review" element={<ReviewForm />} />
             <Route path="complain" element={<ComplaintsForm />} />
           </Route>
