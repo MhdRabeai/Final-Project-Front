@@ -143,7 +143,6 @@ const ProfilePage = () => {
                     Doctor Profile
                 </h2>
                 <form onSubmit={handleSubmit}>
-                    {/* Profile Image */}
                     <div className="mb-4 text-center">
                         <label
                             htmlFor="profileImage"
