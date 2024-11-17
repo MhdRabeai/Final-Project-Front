@@ -1,4 +1,5 @@
 import React from "react";
+import { FaDownload } from "react-icons/fa6";
 
 const PrescriptionPage = () => {
   const patient = {
@@ -62,8 +63,8 @@ const PrescriptionPage = () => {
                 <th className="px-4 py-2 text-left text-white">#</th>
                 <th className="px-4 py-2 text-left text-white">Doctor</th>
                 <th className="px-4 py-2 text-left text-white">PDF</th>
-                <th className="px-4 py-2 text-left text-white">Download File</th>
                 <th className="px-4 py-2 text-left text-white">Received Date</th>
+                <th className="px-4 py-2 text-left text-white">Download File</th>
               </tr>
             </thead>
             <tbody>
@@ -78,29 +79,19 @@ const PrescriptionPage = () => {
                       className="w-6 h-6"
                     />
                   </td>
+                  <td className="px-4 py-2">{prescription.receivedDate}</td>
                   <td className="px-4 py-2">
                     <button
                       onClick={() => window.open(prescription.pdfLink, "_blank")}
-                      className="flex items-center bg-[#4F9451] text-white px-4 py-2 rounded-lg hover:bg-[#3C7B41] transition"
+                      className="text-[#4F9451] hover:text-[#3C7B41] transition"
                     >
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="w-5 h-5 mr-2"
+                        className="w-6 h-6 ml-7"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 16.5v-9m0 9l-3.75-3.75M12 16.5l3.75-3.75M3.75 12h16.5M4.5 19.5h15"
-                        />
+                      <FaDownload />
                       </svg>
-                      Download PDF
                     </button>
                   </td>
-                  <td className="px-4 py-2">{prescription.receivedDate}</td>
                 </tr>
               ))}
             </tbody>
