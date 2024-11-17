@@ -15,26 +15,19 @@ import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/BlogDetail";
 import Contact from "./Pages/Contact";
 import Team from "./Pages/Team";
-<<<<<<< HEAD
 import Profile from "./Pages/profile";
-=======
->>>>>>> 9b73311f44b7c11ebfff36434e23aac725e08356
 import NotFound from "./Pages/NotFound";
 import AdminDash from "./Pages/AdminDash";
 import DocDash from "./Pages/DocDash";
 import PharDash from "./Pages/PharDash";
 import UserDash from "./Pages/UserDash";
 import CalendarPage from "./Pages/CalendarPage";
-<<<<<<< HEAD
 import CreateAccountDoctor from "./Pages/createAccountDoctor"
-=======
->>>>>>> 9b73311f44b7c11ebfff36434e23aac725e08356
 import TabelPataints from "./Pages/TabelPataints";
 import TabelDoctors from "./Pages/TabelDoctors";
 import TabelDrugs from "./Pages/TabelDrugs";
 import TabelPharmaceutical from "./Pages/TabelPharmaceutical";
-import Profile from "./Pages/profile";
-import CreateAccountDoctor from "./Pages/createAccountDoctor";
+
 
 function App() {
   const location = useLocation();
