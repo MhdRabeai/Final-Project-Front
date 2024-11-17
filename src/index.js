@@ -1,27 +1,27 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import { UserProvider } from "./Services/UserContext";
-import { Loading } from "./Components/Loading";
 
-ReactDOM.render(
+
+
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
+root.render(
   <React.StrictMode>
     <BrowserRouter
       future={{
         v7_startTransition: true,
       }}
     >
-      <Suspense fallback={<Loading />}>
-        <ConfigProvider theme={{ token: { colorPrimary: "#4f9451" } }}>
-          <UserProvider>
-            <App />
-          </UserProvider>
-        </ConfigProvider>
-      </Suspense>
+      <ConfigProvider theme={{ token: { colorPrimary: "#4f9451" } }}>
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </ConfigProvider>
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

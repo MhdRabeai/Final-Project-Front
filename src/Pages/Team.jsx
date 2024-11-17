@@ -5,14 +5,14 @@ import { AudioOutlined } from "@ant-design/icons";
 // const { Search } = Input;
 import SearchComponent from "./SearchPage";
 
-const suffix = (
-  <AudioOutlined
-    style={{
-      fontSize: 16,
-      color: "#1677ff",
-    }}
-  />
-);
+// const suffix = (
+//   <AudioOutlined
+//     style={{
+//       fontSize: 16,
+//       color: "#1677ff",
+//     }}
+//   />
+// );
 // const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 const Team = () => {

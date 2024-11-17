@@ -6,9 +6,8 @@ import Card from "../Components/card";
 import BodySlide from "../Components/BodySlide";
 import Testimonial from "../Components/Testimonial";
 import BlogCard from "../Components/BlogCard";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useUserInfo } from "./../Services/UserContext";
-import { to } from "./../../node_modules/typescript/lib/tsc";
 const Home = () => {
   const { user } = useUserInfo();
   const [currentUser, setCurrentUser] = useState(null);
@@ -40,12 +39,12 @@ const Home = () => {
               <li>Recieve Support with Doctor X</li>
             </ul>
             <div className="mt-5 lg:mt-8 flex ">
-              {/* <NavLink
+              <Link
                 className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[rgba(79,148,81,0.84)] focus:outline-none focus:bg-[rgba(79,148,81,0.84)]  "
                 to={currentUser ? `/team` : "/login"}
               >
                 Start therapy
-              </NavLink> */}
+              </Link>
             </div>
           </div>
 
@@ -75,12 +74,12 @@ const Home = () => {
                   every aspect of your life.
                 </p>
                 <div className="mt-5 lg:mt-8 flex ">
-                  <button
-                    type="button"
+                  <Link
+                    to='/about'
                     className=" py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[rgba(79,148,81,0.84)] focus:outline-none focus:bg-[rgba(79,148,81,0.84)] disabled:opacity-50 disabled:pointer-events-none"
                   >
                     Read More
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
