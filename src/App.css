@@ -31,4 +31,12 @@
 }
 .my-section {
   height: calc(100vh - 60px);
+  margin-inline: 25px;
 }
+@media (max-width:600px){
+  .test{
+    width: 80%;
+    margin: 0px auto;
+  }
+}
+
