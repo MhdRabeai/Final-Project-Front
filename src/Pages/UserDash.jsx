@@ -389,16 +389,13 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     Bills
                   </Link>
                 </li>
-
-                <li class="hs-accordion" id="account-accordion">
-                  <button
-                    type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
-                    aria-expanded="true"
-                    aria-controls="account-accordion-child"
+                <li>
+                <Link
+                    to="/dashboard/user/chatroom"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
-                      class="shrink-0 mt-0.5 size-4"
+                      class="shrink-0 size-4"
                       xmlns="http://www.w3.org/2000/svg"
                       width="24"
                       height="24"
@@ -409,32 +406,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     >
-                      <circle cx="18" cy="15" r="3" />
-                      <circle cx="9" cy="7" r="4" />
-                      <path d="M10 15H6a4 4 0 0 0-4 4v2" />
-                      <path d="m21.7 16.4-.9-.3" />
-                      <path d="m15.2 13.9-.9-.3" />
-                      <path d="m16.6 18.7.3-.9" />
-                      <path d="m19.1 12.2.3-.9" />
-                      <path d="m19.6 18.7-.4-1" />
-                      <path d="m16.8 12.3-.4-1" />
-                      <path d="m14.3 16.6 1-.4" />
-                      <path d="m20.7 13.8 1-.4" />
+                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                      <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
                     Chat Room
-                  
-                  </button>
-
-                  <div
-                    id="account-accordion-child"
-                    class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-                    role="region"
-                    aria-labelledby="account-accordion"
-                  >
-                    <ul class="ps-8 pt-1 space-y-1">
-                     
-                    </ul>
-                  </div>
+                  </Link>
                 </li>
                
                 
