@@ -27,8 +27,8 @@ import TabelPataints from "./Pages/TabelPataints";
 import TabelDoctors from "./Pages/TabelDoctors";
 import TabelDrugs from "./Pages/TabelDrugs";
 import TabelPharmaceutical from "./Pages/TabelPharmaceutical";
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import BlogsAdmin from "./Pages/BlogsAdmin";
@@ -37,7 +37,7 @@ const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
 const Contact = lazy(() => import("./Pages/Contact"));
 const Team = lazy(() => import("./Pages/Team"));
->>>>>>> 9744a899d4a7a8e80328c0e087252fa5d7339cc7
+// >>>>>>> 9744a899d4a7a8e80328c0e087252fa5d7339cc7
 
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
       });
   }, [location.pathname]);
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
   return (
     <>
       <ToastContainer
@@ -165,7 +165,7 @@ function App() {
       <Route path="dashboard/user/calendarpage" element={<CalendarPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
->>>>>>> 9744a899d4a7a8e80328c0e087252fa5d7339cc7
+// >>>>>>> 9744a899d4a7a8e80328c0e087252fa5d7339cc7
   );
 }
 
