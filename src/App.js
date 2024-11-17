@@ -76,7 +76,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           </Route>
-
+                        
           <Route path="/dashboard" element={<DashRoot />}>
             {/* <Route path="admin" element={<AdminDash />} />
             <Route path="doct" element={<DocDash />} />
