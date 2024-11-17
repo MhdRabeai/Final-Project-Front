@@ -64,7 +64,7 @@ function PrescriptionForm() {
           Submit Prescription
         </button>
       </div>
-    </form>
+    </form>  
   );
 }
 
