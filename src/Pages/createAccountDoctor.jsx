@@ -1,4 +1,7 @@
+
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const CreateAccountDoctor = () => {
     const [formData, setFormData] = useState({
@@ -34,7 +37,9 @@ const CreateAccountDoctor = () => {
     };
 
     const addSocialLink = () => {
-        setSocialLinks([...socialLinks, ""]);
+        if (socialLinks.length < 4) {
+            setSocialLinks([...socialLinks, ""]);
+        }
     };
 
     const handleSubmit = (e) => {
@@ -99,8 +104,8 @@ const CreateAccountDoctor = () => {
                             name="firstName"
                             value={formData.firstName}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter first name"
+                            className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                            placeholder="Enter Name..."
                             required
                         />
                     </div>
@@ -119,28 +124,31 @@ const CreateAccountDoctor = () => {
                             name="lastName"
                             value={formData.lastName}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter last name"
+                            className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                            placeholder="Enter Name..."
                             required
                         />
                     </div>
 
                     {/* Email */}
-                    <div className="mb-4">
+                    <div className="mb-4 relative">
                         <label
                             htmlFor="email"
                             className="block mb-2 font-medium text-gray-600"
                         >
                             Email
                         </label>
+                        <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+                            <i className="fa fa-envelope"></i>
+                        </span>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            placeholder="Enter email"
+                            className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                            placeholder="Enter Email..."
                             required
                         />
                     </div>
@@ -159,7 +167,7 @@ const CreateAccountDoctor = () => {
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                             placeholder="Enter password"
                             required
                         />
@@ -171,27 +179,29 @@ const CreateAccountDoctor = () => {
                             Social Media Links
                         </label>
                         {socialLinks.map((link, index) => (
-                            <input
-                                key={index}
-                                type="url"
-                                value={link}
-                                onChange={(e) =>
-                                    handleSocialLinkChange(index, e.target.value)
-                                }
-                                className="w-full px-3 py-2 mb-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                placeholder={`Social Link ${index + 1}`}
-                                required
-                            />
+                            <div key={index} className="mb-2">
+                                <input
+                                    type="url"
+                                    value={link}
+                                    onChange={(e) =>
+                                        handleSocialLinkChange(index, e.target.value)
+                                    }
+                                    className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                    placeholder={`Social Link ${index + 1}`}
+                                    required
+                                />
+                            </div>
                         ))}
                         <button
                             type="button"
                             onClick={addSocialLink}
-                            className="w-full  bg-[#4F9451]  text-white py-2 rounded-lg hover:bg-[#4F9451]  transition duration-300 mt-2"
+                            className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300 mt-2"
+                            disabled={socialLinks.length >= 4} // تعطيل الزر عند الوصول إلى 4 روابط
                         >
                             Add Social Link
                         </button>
                     </div>
-                    
+
                     <button
                         type="submit"
                         className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300"

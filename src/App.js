@@ -77,11 +77,11 @@ function App() {
           </Route>
 
           <Route path="/dashboard" element={<DashRoot />}>
-            <Route path="admin" element={<AdminDash />} />
+            {/* <Route path="admin" element={<AdminDash />} />
             <Route path="doct" element={<DocDash />} />
             <Route path="pharmacy" element={<PharDash />} />
             <Route path="user" element={<UserDash />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} /> */}
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />} />
