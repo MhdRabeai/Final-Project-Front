@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from 'react-router-dom';
 import {
   faPencilAlt,
   faTrash,
   faSave,
 } from "@fortawesome/free-solid-svg-icons";
+
 const TabelPataints = () => {
+    const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [data, setData] = useState([
     {
@@ -16,51 +19,6 @@ const TabelPataints = () => {
       password: "******",
       gender: "Female",
       phonenumber: "123-456-7890",
-    },
-    {
-      name: "Endy Ruiz",
-      age: 45,
-      address: "1818 H St NW, Washington",
-      email: "endy@example.com",
-      password: "******",
-      gender: "Male",
-      phonenumber: "987-654-3210",
-    },
-    {
-      name: "Jack Li",
-      age: 27,
-      address: "3 Grace Dr, New Mexico",
-      email: "jack@example.com",
-      password: "******",
-      gender: "Male",
-      phonenumber: "555-123-4567",
-    },
-    {
-      name: "Jack Li",
-      age: 27,
-      address: "3 Grace Dr, New Mexico",
-      email: "jack@example.com",
-      password: "******",
-      gender: "Male",
-      phonenumber: "555-123-4567",
-    },
-    {
-      name: "Jack Li",
-      age: 27,
-      address: "3 Grace Dr, New Mexico",
-      email: "jack@example.com",
-      password: "******",
-      gender: "Male",
-      phonenumber: "555-123-4567",
-    },
-    {
-      name: "Jack Li",
-      age: 27,
-      address: "3 Grace Dr, New Mexico",
-      email: "jack@example.com",
-      password: "******",
-      gender: "Male",
-      phonenumber: "555-123-4567",
     },
   ]);
   const [editRow, setEditRow] = useState(null);
@@ -129,13 +87,22 @@ const TabelPataints = () => {
     }
     setSortConfig({ key, direction });
   };
-
+  const handleAddPataint = () => {
+    navigate("/dashboard/admin/CreateAccountDoctor");
+};
   return (
-    <div className="flex justify-center  h-full">
+    <div className="flex justify-center px-5 h-full">
       <div className="overflow-x-auto content-center w-full max-w-7xl">
         <div className="min-w-full inline-block align-middle border border-gray-300 rounded-lg">
-          <div className="py-3 px-4">
-            <h1 className="text-2xl font-bold text-center  ">All Patients</h1>
+        <div className="py-5 px-4 relative">
+                            <h1 className="text-2xl font-bold text-center">All Doctors</h1>
+                            <button
+                                onClick={handleAddPataint}
+                                className="px-4 py-2 text-white bg-[#4F9451] rounded-lg hover:bg-[#4F9451] transition duration-300 absolute top-4 right-4"
+                            >
+                                Add Pataint
+                            </button>
+                        </div>
             <div className="relative max-w-xs">
               <label htmlFor="search-input" className="sr-only">
                 Search
@@ -149,7 +116,7 @@ const TabelPataints = () => {
                 placeholder="Search for items"
               />
             </div>
-          </div>
+         
 
           <div className="overflow-hidden ">
             {sortedData.length === 0 ? (
@@ -328,13 +295,13 @@ const TabelPataints = () => {
                           <>
                             <span
                               onClick={() => handleEdit(row)}
-                              className="text-blue-500 cursor-pointer hover:text-blue-700 mx-4"
+                              className="text-blue-500 text-lg cursor-pointer hover:text-blue-700 mx-4"
                             >
                               <FontAwesomeIcon icon={faPencilAlt} />
                             </span>
                             <span
                               onClick={() => handleDelete(row.name)}
-                              className="text-red-500 cursor-pointer hover:text-red-700"
+                              className="text-gray-500 text-lg cursor-pointer hover:text-gray-700"
                             >
                               <FontAwesomeIcon icon={faTrash} />
                             </span>

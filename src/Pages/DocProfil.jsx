@@ -99,8 +99,8 @@
 // export default ProfilePage;
 
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const DocProfile = () => {
   const [formData, setFormData] = useState({
