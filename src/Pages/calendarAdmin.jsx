@@ -19,7 +19,6 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
-// إضافة قائمة منسدلة لاختيار الدكتور
 const doctors = [
   { id: 1, name: "Dr. John Doe" },
   { id: 2, name: "Dr. Jane Smith" },
@@ -32,14 +31,14 @@ const initialEvents = [
     start: new Date(2024, 10, 15, 10, 0),
     end: new Date(2024, 10, 15, 12, 0),
     allDay: false,
-    doctorId: 1, // تخصيص الدكتور
+    doctorId: 1,
   },
   {
     title: "Conference",
     start: new Date(2024, 10, 20, 9, 0),
     end: new Date(2024, 10, 20, 11, 0),
     allDay: false,
-    doctorId: 2, // تخصيص الدكتور
+    doctorId: 2, 
   },
 ];
 
@@ -56,7 +55,6 @@ const CalendarAdmin = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
 
-  // تصفية الأحداث بناءً على الدكتور المختار
   const filteredEvents = selectedDoctor
     ? events.filter((event) => event.doctorId === selectedDoctor.id)
     : events;
@@ -109,7 +107,6 @@ const CalendarAdmin = () => {
 
   return (
     <div className="container mx-auto p-4">
-      {/* حقل اختيار الدكتور */}
       <div className="mb-4">
         <label htmlFor="doctor" className="block text-lg font-medium">
           Select Doctor
@@ -145,7 +142,6 @@ const CalendarAdmin = () => {
         />
       </div>
 
-      {/* نافذة الإدخال */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white rounded-lg shadow-lg w-1/3 p-6 relative z-50">

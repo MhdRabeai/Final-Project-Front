@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import reviewsData from "../Components/ReviewsData";
+import { FaTwitter } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Profile = () => {
   const [rating, setRating] = useState(0);
@@ -11,21 +15,21 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="max-w-4xl mx-auto mt-8 bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="flex flex-col space-y-8">
-          <div className="relative">
+      <div className="max-w-2xl mx-auto  bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="flex flex-col ">
+          <div className="relative ">
             <img
-              className="w-full h-56 object-cover"
-              src="/https://your-background-image-url.jpg"
+              className="w-full h-40 object-cover"
+              src="profile.png"
               alt="Background"
             />
             <img
-              className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border-4 border-white shadow-lg"
-              src="/public/Testimonial.png"
+              className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-4 border-white shadow-lg"
+              src="Testimonial.png"
               alt="Profile"
             />
           </div>
-          <div className="text-center py-6 px-4">
+          <div className="text-center py-6 px-4  mt-10  border-b-2 border-[#ddd]">
             <h1 className="text-2xl font-semibold">Danish Hebo</h1>
             <h2 className="text-gray-500 mt-1">Professional UI/UX Designer</h2>
             <p className="mt-2 text-gray-600">
@@ -33,25 +37,23 @@ const Profile = () => {
               Pellentesque posuere fermentum urna, eu condimentum mauris tempus
               ut.
             </p>
-            <div className="mt-4 space-x-4">
-              <a href="#" className="text-blue-500 hover:underline">
-                Facebook
+            <div className="mt-4 flex justify-center space-x-4">
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaFacebook />
               </a>
-              <a href="#" className="text-blue-500 hover:underline">
-                Twitter
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaTwitter />
               </a>
-              <a href="#" className="text-blue-500 hover:underline">
-                LinkedIn
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaLinkedinIn />
               </a>
-              <a href="#" className="text-blue-500 hover:underline">
-                GitHub
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaGithub />
               </a>
             </div>
           </div>
-
-          {/* Customer Reviews */}
-          <div className="px-6 py-8">
-            <h2 className="text-2xl font-semibold mb-6">Customer Reviews</h2>
+          <div className="px-6 py-8 pb-0 m-0">
+            <h2 className="text-xl font-semibold mb-2">Some Reviews:</h2>
             {reviewsData.map((review, index) => (
               <div key={index} className="border-b py-4">
                 <div className="flex items-center mb-3">
@@ -83,15 +85,11 @@ const Profile = () => {
                   </div>
                 </div>
                 <p className="mt-2 text-gray-700">{review.comment}</p>
-                <button className="mt-2 text-[#4f9451] hover:underline">
-                  Reply
-                </button>
               </div>
             ))}
           </div>
 
-          {/* Write a Review */}
-          <div className="bg-gray-50 px-6 py-8 rounded-lg mt-6">
+          <div className="bg-gray-50 px-6 py-8 rounded-lg ">
             <h3 className="text-lg font-semibold mb-4">Write a Review</h3>
             <div className="flex items-center mb-4">
               <span className="mr-2">Click on star to review:</span>
@@ -113,12 +111,14 @@ const Profile = () => {
             </div>
             <div className="space-y-4">
               <textarea
-                placeholder="Write your Review"
-                className="w-full p-2 border border-gray-300 rounded-md mb-4"
-                rows="4"
-              />
+                id="textarea-label2"
+                class="resize-none py-3 px-4 block w-full border-2 border-gray-300 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                rows="3"
+                name="review"
+                placeholder="Write Your review..."
+              ></textarea>
               <button className="w-full bg-[#4f9451] text-white py-2 rounded-md">
-                Submit Review
+                Send
               </button>
             </div>
           </div>

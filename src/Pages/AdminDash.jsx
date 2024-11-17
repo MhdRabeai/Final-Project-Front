@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
 const AdminDash = () => {
   return (
@@ -114,7 +114,7 @@ const AdminDash = () => {
                     alt="Avatar"
                   />
                 </button>
-                
+
                 <div
                   class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
                   role="menu"
@@ -318,31 +318,9 @@ const AdminDash = () => {
               data-hs-accordion-always-open
             >
               <ul class="flex flex-col space-y-1">
-                <li>
-                  <Link
-                    to="/dashboard/admin/CreateAccountDoctor"
-                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-                  >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
-                    </svg>
-                    Create Account Doctor
-                  </Link>
-                </li>
+            
 
-                <li>
+                {/* <li>
                   <Link
                     to="/dashboard/admin/CalendarAdmin"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
@@ -372,8 +350,8 @@ const AdminDash = () => {
                     </svg>
                     calander
                   </Link>
-                </li>
-               
+                </li> */}
+
                 <li>
                   <Link
                     to="/dashboard/admin/TabelDrugs"
@@ -405,13 +383,11 @@ const AdminDash = () => {
                     All Drug
                   </Link>
                 </li>
-             
-              
 
                 <li class="hs-accordion" id="projects-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="projects-accordion-child"
                   >
@@ -430,7 +406,7 @@ const AdminDash = () => {
                       <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
-                   All Users
+                    All Users
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -481,7 +457,7 @@ const AdminDash = () => {
                           to="/dashboard/admin/TabelDoctors"
                           className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                         >
-                         all Doctors
+                          all Doctors
                         </Link>
                       </li>
                       <li>
@@ -527,7 +503,6 @@ const AdminDash = () => {
                     Artivcles
                   </Link>
                 </li>
-              
               </ul>
             </nav>
           </div>
@@ -535,7 +510,10 @@ const AdminDash = () => {
       </div>
 
       <div class="w-full lg:ps-64">
-        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">Content</div>
+        <div class="my-section">
+          {/* p-4 sm:p-6 space-y-4 sm:space-y-6 */}
+          <Outlet />
+        </div>
       </div>
     </div>
   );

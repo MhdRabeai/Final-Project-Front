@@ -65,7 +65,7 @@
 //             value={lastName}  
 //             onChange={(e) => setLastName(e.target.value)}  
 //             className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-indigo-300"  
-//             placeholder="Last Name"  
+//             placeholder="Last Name"  al
 //           />  
 //         </div>  
 //         <div className="mb-4">  
@@ -176,6 +176,8 @@ const ProfilePage = () => {
                             className="hidden"
                         />
                     </div>
+
+                    {/* First Name */}
                     <div className="mb-4">
                         <label
                             htmlFor="firstName"
@@ -194,6 +196,8 @@ const ProfilePage = () => {
                             required
                         />
                     </div>
+
+                    {/* Last Name */}
                     <div className="mb-4">
                         <label
                             htmlFor="lastName"
@@ -212,6 +216,8 @@ const ProfilePage = () => {
                             required
                         />
                     </div>
+
+                    {/* Email */}
                     <div className="mb-4 relative">
                         <label
                             htmlFor="email"
@@ -233,6 +239,8 @@ const ProfilePage = () => {
                             required
                         />
                     </div>
+
+                    {/* Password */}
                     <div className="mb-4">
                         <label
                             htmlFor="password"
@@ -251,6 +259,10 @@ const ProfilePage = () => {
                             required
                         />
                     </div>
+
+                    {/* Social Media Links */}
+                 
+
                     <button
                         type="submit"
                         className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300"

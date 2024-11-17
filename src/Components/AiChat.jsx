@@ -11,7 +11,6 @@ const AiChat = () => {
         aria-controls="hs-offcanvas-example"
         data-hs-overlay="#hs-offcanvas-example"
       >
-        {/* <LuBrainCircuit /> */}
         <div
           className="p-3 rounded-[50%_0%_0%_50%] border-4 border-white
            bg-[#4f9451]"
@@ -23,9 +22,9 @@ const AiChat = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </div>
@@ -33,7 +32,7 @@ const AiChat = () => {
 
       <div
         id="hs-offcanvas-example"
-        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full max-w-xs w-full z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700"
+        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full  sm:max-w-xs w-[80%] z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700"
         role="dialog"
         tabIndex="-1"
         aria-labelledby="hs-offcanvas-example-label"
@@ -121,7 +120,7 @@ const AiChat = () => {
         </div>
 
         <form>
-          <label for="chat" className="sr-only">
+          <label htmlFor="chat" className="sr-only">
             Your message
           </label>
           <div className="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 mt-60">
