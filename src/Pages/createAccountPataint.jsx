@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-// import { MdOutlineEmail } from "react-icons/md";
-import { MdOutlineEmail, MdPerson, MdCalendarToday, MdPhone, MdLock } from 'react-icons/md';
-const CreateAccountPataint = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+
+const CreateAccountDoctor = () => {
   const [formData, setFormData] = useState({
     profileImage: "",
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
-    gender:"",
-    phone_number:"",
-    Age:""
   });
   const [previewImage, setPreviewImage] = useState(null);
   const [socialLinks, setSocialLinks] = useState([""]);
@@ -95,9 +92,8 @@ const CreateAccountPataint = () => {
               htmlFor="firstName"
               className="block mb-2 font-medium text-gray-600"
             >
-              Full Name
+              First Name
             </label>
-            <div className="relative">
             <input
               type="text"
               id="firstName"
@@ -108,86 +104,35 @@ const CreateAccountPataint = () => {
               placeholder="Enter Name..."
               required
             />
-            <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-              <MdPerson className="fill-gray-500" />
-            </div>  
-            </div>
           </div>
           <div className="mb-4">
             <label
               htmlFor="lastName"
               className="block mb-2 font-medium text-gray-600"
             >
-              Age
+              Last Name
             </label>
-            <div className="relative">
             <input
-              type="number"
-              id="Age"
-              name="Age"
-              value={formData.Age}
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
               onChange={handleChange}
               className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
               placeholder="Enter Name..."
               required
             />
-             <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-          <MdCalendarToday className="fill-gray-500" />
-        </div>
-        </div>
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="lastName"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Phone Number
-            </label>
-            <div className="relative"></div>
-            <input
-              type="number"
-              id="phone_number"
-              name="phone_number"
-              value={formData.phone_number}
-              onChange={handleChange}
-              className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Phone Number"
-              maxLength={10} 
-              required
-            />
-          <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-          <MdPhone className="fill-gray-500" />
-        </div>
-          </div>
-                <div className="mb-4">
-                <label
-                  htmlFor="gender"
-                  className="block mb-2 font-medium text-gray-600"
-                >
-                  Gender
-                </label>
-                <select
-                  id="gender"
-                  name="gender"
-                  value={formData.gender}
-                  onChange={handleChange}
-                  className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                  required
-                >
-                  <option value="">Select Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-              </div>
-
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <label
               htmlFor="email"
               className="block mb-2 font-medium text-gray-600"
             >
               Email
             </label>
-            <div className="relative">
+            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+              <i className="fa fa-envelope"></i>
+            </span>
             <input
               type="email"
               id="email"
@@ -198,10 +143,6 @@ const CreateAccountPataint = () => {
               placeholder="Enter Email..."
               required
             />
-             <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
-                <MdOutlineEmail className="fill-gray-500" />
-              </div>
-            </div>
           </div>
           <div className="mb-4">
             <label
@@ -210,10 +151,6 @@ const CreateAccountPataint = () => {
             >
               Password
             </label>
-            <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-          <MdLock className="fill-gray-500" />
-        </div>
-        <div className="relative">
             <input
               type="password"
               id="password"
@@ -225,7 +162,34 @@ const CreateAccountPataint = () => {
               required
             />
           </div>
-      </div>
+          <div className="mb-4">
+            <label className="block mb-2 font-medium text-gray-600">
+              Social Media Links
+            </label>
+            {socialLinks.map((link, index) => (
+              <div key={index} className="mb-2">
+                <input
+                  type="url"
+                  value={link}
+                  onChange={(e) =>
+                    handleSocialLinkChange(index, e.target.value)
+                  }
+                  className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                  placeholder={`Social Link ${index + 1}`}
+                  required
+                />
+              </div>
+            ))}
+            <button
+              type="button"
+              onClick={addSocialLink}
+              className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300 mt-2"
+              disabled={socialLinks.length >= 4}
+            >
+              Add Social Link
+            </button>
+          </div>
+
           <button
             type="submit"
             className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300"
@@ -238,4 +202,4 @@ const CreateAccountPataint = () => {
   );
 };
 
-export default CreateAccountPataint;
+export default CreateAccountDoctor;
