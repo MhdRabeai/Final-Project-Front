@@ -102,7 +102,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
-const CreateAccountDoctor = () => {
+const ProfilePage = () => {
     const [formData, setFormData] = useState({
         profileImage: "",
         firstName: "",
@@ -276,4 +276,4 @@ const CreateAccountDoctor = () => {
     );
 };
 
-export default CreateAccountDoctor;
+export default ProfilePage;
