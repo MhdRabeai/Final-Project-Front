@@ -176,16 +176,7 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                isActive
-                  ? "active font-medium text-white focus:outline-none"
-                  : "font-medium text-gray-300 hover:text-white focus:outline-none focus:text-white transition"
-              }
-              to="/profile"
-            >
-              Profile
-            </NavLink>
+
             {/* <button onClick={toggleTheme} className="transition  p-1 sm:pr-2">
               {isDark ? (
                 <MdDarkMode className="fill-white scale-150 transition" />
