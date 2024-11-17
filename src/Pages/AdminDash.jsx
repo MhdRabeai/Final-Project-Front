@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
 const AdminDash = () => {
   return (
@@ -536,7 +536,7 @@ const AdminDash = () => {
 
       <div class="w-full lg:ps-64">
         <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
-          
+          <Outlet />
         </div>
       </div>
     </div>
