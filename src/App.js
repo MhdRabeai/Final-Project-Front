@@ -40,7 +40,7 @@ import CreateAccountPataint from "./Pages/createAccountDoctor";
 // import VideoChat from "./Pages/chatroom";
 import PatientBills from "./Pages/Bills";
 
-import Profile from "./Pages/Profile";
+import Profile from "./Pages/profile";
 import ProfilePage from "./Pages/ProfilePage";
 import VideoChat from "./Pages/chatroom";
 
