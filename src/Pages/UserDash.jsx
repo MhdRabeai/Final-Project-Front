@@ -1,6 +1,12 @@
 import React,{ useState }  from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
+import { IoMdSettings } from "react-icons/io";
+import { MdVideoChat } from "react-icons/md";
+import { LiaMoneyBillSolid } from "react-icons/lia";
+import { FaClipboardList } from "react-icons/fa6";
+import { FaListUl } from "react-icons/fa";
+
 // import ProfilePage from "./userprofile";
 // import Sessions from "./Sessions";
 // import ReviewForm from "../Components/reviewform";
@@ -324,19 +330,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
+                      class="shrink-0 size-4 ml-2"
                       width="24"
                       height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
                     >
-                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
+                     <FaListUl />
                     </svg>
                     Sessions
                   </Link>
@@ -348,19 +346,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
+                      class="shrink-0 size-4 ml-2"
                       width="24"
                       height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
                     >
-                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
+                     <FaClipboardList />
                     </svg>
                     Percpections
                   </Link>
@@ -372,19 +362,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
+                      class="shrink-0 size-4 ml-2"
                       width="24"
                       height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
                     >
-                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
+                      <LiaMoneyBillSolid />
                     </svg>
                     Bills
                   </Link>
@@ -395,19 +377,9 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      class="shrink-5 size-4 ml-2"
                     >
-                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
+                    <MdVideoChat />
                     </svg>
                     Chat Room
                   </Link>
@@ -420,19 +392,9 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      class="shrink-0 size-4 ml-2"                   
                     >
-                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                      <polyline points="9 22 9 12 15 12 15 22" />
+                      <IoMdSettings />
                     </svg>
                     Setting
                   </Link>
