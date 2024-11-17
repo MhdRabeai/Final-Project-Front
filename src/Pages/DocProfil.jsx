@@ -136,7 +136,7 @@ const DocProfile = () => {
   const hours = [...Array(24).keys()].map((hour) => hour.toString().padStart(2, "0"));
 
   return (
-    <div className="flex items-center justify-center h-full bg-gray-100">
+    <div className="flex items-center justify-center h-full px-6 bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl lg:max-w-3xl">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
           Doctor Profile
