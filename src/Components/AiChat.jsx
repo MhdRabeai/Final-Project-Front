@@ -69,7 +69,7 @@ const AiChat = () => {
           </button>
         </div>
         <div className="p-4">
-          <ul className="space-y-5">
+          <ul className="space-y-5 ">
             <li className="max-w-lg flex gap-x-2 sm:gap-x-4">
               <div className="bg-white border border-gray-200 rounded-2xl p-4 space-y-3 dark:bg-neutral-900 dark:border-neutral-700">
                 <h2 className="font-medium text-gray-800 dark:text-white">
@@ -123,7 +123,7 @@ const AiChat = () => {
           <label htmlFor="chat" className="sr-only">
             Your message
           </label>
-          <div className="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 mt-60">
+          <div className="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 mt-50">
             <button
               type="button"
               className="inline-flex justify-center p-2 text-gray-500 rounded-lg cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600"
