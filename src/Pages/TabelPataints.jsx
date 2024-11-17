@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import {
   faPencilAlt,
   faTrash,
@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const TabelPataints = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [data, setData] = useState([
     {
@@ -89,35 +89,33 @@ const TabelPataints = () => {
   };
   const handleAddPataint = () => {
     navigate("/dashboard/admin/CreateAccountDoctor");
-};
+  };
   return (
     <div className="flex justify-center px-5 h-full">
       <div className="overflow-x-auto content-center w-full max-w-7xl">
         <div className="min-w-full inline-block align-middle border border-gray-300 rounded-lg">
-        <div className="py-5 px-4 relative">
-                            <h1 className="text-2xl font-bold text-center">All Doctors</h1>
-                            <button
-                                onClick={handleAddPataint}
-                                className="px-4 py-2 text-white bg-[#4F9451] rounded-lg hover:bg-[#4F9451] transition duration-300 absolute top-4 right-4"
-                            >
-                                Add Pataint
-                            </button>
-                        </div>
-            <div className="relative max-w-xs">
-              <label htmlFor="search-input" className="sr-only">
-                Search
-              </label>
-              <input
-                type="text"
-                id="search-input"
-                value={searchQuery}
-                onChange={handleSearchChange}
-                className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                placeholder="Search for items"
-              />
-            </div>
-         
-
+          <div className="py-5 px-4 relative">
+            <h1 className="text-2xl font-bold text-center">All Doctors</h1>
+            <button
+              onClick={handleAddPataint}
+              className="px-4 py-2 text-white bg-[#4F9451] rounded-lg hover:bg-[#4F9451] transition duration-300 absolute top-4 right-4"
+            >
+              Add Pataint
+            </button>
+          </div>
+          <div className="relative max-w-xs">
+            <label htmlFor="search-input" className="sr-only">
+              Search
+            </label>
+            <input
+              type="text"
+              id="search-input"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              placeholder="Search for items"
+            />
+          </div>
           <div className="overflow-hidden ">
             {sortedData.length === 0 ? (
               <div className="flex justify-center items-center h-full">
@@ -193,14 +191,14 @@ const TabelPataints = () => {
                     >
                       <td className="py-3 px-3">
                         <div className="flex items-center h-5">
-                        <input
-                                type="checkbox"
-                                name="challenges"
-                                value={"Family"}
-                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
-                                id="checkbox-group-12"
-                                defaultChecked
-                              />
+                          <input
+                            type="checkbox"
+                            name="challenges"
+                            value={"Family"}
+                            className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                            id="checkbox-group-12"
+                            defaultChecked
+                          />
                         </div>
                       </td>
                       <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
