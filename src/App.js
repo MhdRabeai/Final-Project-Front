@@ -15,14 +15,14 @@ import Blogs from "./Pages/Blogs";
 import BlogDetail from "./Pages/BlogDetail";
 import Contact from "./Pages/Contact";
 import Team from "./Pages/Team";
-import Profile from "./Pages/Profile";
+import Profile from "./Pages/profile";
 import NotFound from "./Pages/NotFound";
 import AdminDash from "./Pages/AdminDash";
 import DocDash from "./Pages/DocDash";
 import PharDash from "./Pages/PharDash";
 import UserDash from "./Pages/UserDash";
 import CalendarPage from "./Pages/CalendarPage";
-import CreateAccountDoctor from "./Pages/CreateAccountDoctor";
+import CreateAccountDoctor from "./Pages/createAccountDoctor"
 import TabelPataints from "./Pages/TabelPataints";
 import TabelDoctors from "./Pages/TabelDoctors";
 import TabelDrugs from "./Pages/TabelDrugs";
@@ -77,11 +77,11 @@ function App() {
           </Route>
 
           <Route path="/dashboard" element={<DashRoot />}>
-            <Route path="admin" element={<AdminDash />} />
+            {/* <Route path="admin" element={<AdminDash />} />
             <Route path="doct" element={<DocDash />} />
             <Route path="pharmacy" element={<PharDash />} />
             <Route path="user" element={<UserDash />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} /> */}
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />} />
