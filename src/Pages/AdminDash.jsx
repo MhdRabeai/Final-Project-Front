@@ -411,7 +411,7 @@ const AdminDash = () => {
                 <li class="hs-accordion" id="projects-accordion">
                   <button
                     type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
                     aria-expanded="true"
                     aria-controls="projects-accordion-child"
                   >
