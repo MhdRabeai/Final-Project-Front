@@ -19,7 +19,7 @@ const DocProfile = () => {
       reader.readAsDataURL(file);
     }
   };
-
+       
   const handleEditClick = () => {
     setIsEditing(!isEditing);
   };

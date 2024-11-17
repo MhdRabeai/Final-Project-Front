@@ -5,8 +5,10 @@ import ProfilePage from "../Components/userprofile";
 import Sessions from "../Components/Sessions";
 import ReviewForm from "../Components/reviewform";
 import ComplaintsForm from "../Components/complaints";
+import DocProfile from "../Components/docProfile";
 
 const UserDash = () => {
+
   return (
     <div>
       <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
@@ -507,7 +509,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
 
       <div class="w-full lg:ps-64">
         <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
-           <ProfilePage/>
+           <DocProfile/>
           <Sessions/>
           <ReviewForm/>
           <ComplaintsForm/>
