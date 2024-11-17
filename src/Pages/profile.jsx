@@ -37,20 +37,20 @@ const Profile = () => {
               Pellentesque posuere fermentum urna, eu condimentum mauris tempus
               ut.
             </p>
-            <div  className="mt-4 flex justify-center space-x-4">  
-  <a href="#" className="text-[#4F9451] hover:text-green-500">  
-    <FaFacebook />  
-  </a>  
-  <a href="#" className="text-[#4F9451] hover:text-green-500">  
-    <FaTwitter />  
-  </a>  
-  <a href="#" className="text-[#4F9451] hover:text-green-500">  
-    <FaLinkedinIn />  
-  </a>  
-  <a href="#" className="text-[#4F9451] hover:text-green-500">  
-    <FaGithub />  
-  </a>  
-</div>
+            <div className="mt-4 flex justify-center space-x-4">
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaFacebook />
+              </a>
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaTwitter />
+              </a>
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaLinkedinIn />
+              </a>
+              <a href="#" className="text-[#4F9451] hover:text-green-500">
+                <FaGithub />
+              </a>
+            </div>
           </div>
           <div className="px-6 py-8 pb-0 m-0">
             <h2 className="text-xl font-semibold mb-2">Some Reviews:</h2>

@@ -4,50 +4,48 @@ import { MdOutlineEmail } from "react-icons/md";
 import { IoKeyOutline } from "react-icons/io5";
 import { Bounce, toast } from "react-toastify";
 import { Loading } from "../Components/Loading";
-
+import { useUserInfo } from "../Services/UserContext";
 const Login = () => {
+  const { loginUser } = useUserInfo();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch("http://localhost:4000/login", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ email: email, password: password }),
-        credentials: "include",
-      });
-      const msg = await res.json();
-      console.log(msg["message"]);
-      if (res.ok) {
-        setIsLoading(false);
-        setTimeout(() => {
-          navigate("/");
-        }, 3000);
-        return toast.success(msg["message"], {
-          position: "bottom-right",
-          autoClose: 2500,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Bounce,
-        });
-      }
-    } catch (err) {
-      setIsLoading(false);
-      return toast.error(err.message, {
+    const res = await fetch("http://localhost:4000/login", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ email: email, password: password }),
+    });
+
+    const msg = await res.json();
+    if (res.ok) {
+      await loginUser();
+      navigate("/");
+      return toast.success(msg["message"], {
         position: "bottom-right",
-        autoClose: 5000,
+        autoClose: 1000,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    } else {
+      setIsLoading(false);
+      navigate("/login");
+
+      return toast.error(msg["message"], {
+        position: "bottom-right",
+        autoClose: 750,
         hideProgressBar: false,
         closeOnClick: true,
-        pauseOnHover: true,
+        pauseOnHover: false,
         draggable: true,
         progress: undefined,
         theme: "light",
