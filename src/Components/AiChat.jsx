@@ -69,8 +69,8 @@ const AiChat = () => {
               </svg>
             </button>
           </div>
-          <div className="p-2">
-            <ul className="space-y-5 max-h-[75vh] py-2 overflow-auto my-chat">
+          <div className="">
+            <ul className="space-y-5 max-h-[75vh] p-2 overflow-auto my-chat">
               <li className="max-w-lg flex gap-x-2 sm:gap-x-4">
                 <div className="bg-white border border-gray-200 rounded-2xl p-4 space-y-3 dark:bg-neutral-900 dark:border-neutral-700">
                   <h2 className="font-medium text-gray-800 dark:text-white">
