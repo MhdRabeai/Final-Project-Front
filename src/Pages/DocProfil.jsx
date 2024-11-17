@@ -133,6 +133,8 @@ const DocProfile = () => {
     console.log("Profile Updated:", formData);
   };
 
+  const hours = [...Array(24).keys()].map((hour) => hour.toString().padStart(2, "0"));
+
   return (
     <div className="flex items-center justify-center my-section bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl lg:max-w-3xl">
@@ -141,134 +143,141 @@ const DocProfile = () => {
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 text-center">
-            <label
-              htmlFor="profileImage"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Profile Image
-            </label>
-            <div
-              className="flex justify-center mb-4 cursor-pointer"
-              onClick={() =>
-                document.getElementById("profileImageInput").click()
-              }
-            >
-              {previewImage ? (
-                <img
-                  src={previewImage}
-                  alt="Profile Preview"
-                  className="w-24 h-24 rounded-full object-cover border-2 border-gray-300 shadow-md"
-                />
-              ) : (
-                <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
-                  No Image
-                </div>
-              )}
-            </div>
-            <input
-              type="file"
-              id="profileImageInput"
-              name="profileImage"
-              onChange={handleImageChange}
-              className="hidden"
-            />
+            {/* ... profile image input ... */}
           </div>
 
-          {/* First Name */}
           <div className="mb-4">
-            <label
-              htmlFor="firstName"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              First Name
+            <label htmlFor="fullName" className="block mb-2 font-medium text-gray-600">
+              Full Name
             </label>
             <input
               type="text"
-              id="firstName"
-              name="firstName"
-              value={formData.firstName}
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
               onChange={handleChange}
-              className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Name..."
+              className="peer   
+ py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              placeholder="Enter Full Name"
               required
             />
           </div>
-
-          {/* Last Name */}
           <div className="mb-4">
-            <label
-              htmlFor="lastName"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Last Name
-            </label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Name..."
-              required
-            />
-          </div>
+  <label htmlFor="email" className="block mb-2 font-medium text-gray-600">
+    Email
+  </label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    value={formData.email}
+    onChange={handleChange}
+    className="peer   
+ py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+    placeholder="Enter Email..."
+    required
+  />
+</div>
 
-          {/* Email */}
-          <div className="mb-4 relative">
-            <label
-              htmlFor="email"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Email
-            </label>
-            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <i className="fa fa-envelope"></i>
-            </span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Email..."
-              required
-            />
-          </div>
+<div className="mb-4">
+  <label htmlFor="currentPassword" className="block mb-2 font-medium text-gray-600">
+    Current Password
+  </label>
+  <input
+    type="password"
+    id="currentPassword"
+    name="currentPassword"
+    value={formData.currentPassword}
+    onChange={handleChange}   
 
-          {/* Password */}
+    className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+    placeholder="Enter Current Password"
+    required
+  />
+</div>
+
+<div className="mb-4">
+  <label htmlFor="newPassword" className="block mb-2 font-medium text-gray-600">
+    New Password
+  </label>
+  <input
+    type="password"
+    id="newPassword"
+    name="newPassword"
+    value={formData.newPassword}
+    onChange={handleChange}   
+
+    className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+    placeholder="Enter New Password"
+    required
+  />
+</div>
+
+<div className="mb-4">
+  <label htmlFor="confirmPassword" className="block mb-2 font-medium text-gray-600">
+    Confirm Password
+  </label>
+  <input
+    type="password"
+    id="confirmPassword"
+    name="confirmPassword"
+    value={formData.confirmPassword}
+    onChange={handleChange}   
+
+    className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+    placeholder="Confirm Password"
+    required
+  />
+  </div>
+
           <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Password
+            <h3 className="text-lg font-semibold mb-2">Select Your Working Hours</h3>
+            <label htmlFor="startTime" className="block mb-2 font-medium text-gray-600">
+              Start Time
             </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
+            <select
+              id="startTime"
+              name="startTime"
+              value={formData.startTime}
               onChange={handleChange}
-              className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter password"
-              required
-            />
+              className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            >
+              {hours.map((hour) => (
+                <option key={hour} value={hour}>
+                  {hour}:00
+                </option>
+              ))}
+            </select>
           </div>
 
-          {/* Social Media Links */}
-
+          <div className="mb-4">
+            <label htmlFor="endTime" className="block mb-2 font-medium text-gray-600">
+              End Time
+            </label>
+            <select
+              id="endTime"
+              name="endTime"
+              value={formData.endTime}
+              onChange={handleChange}
+              className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+            >
+              {hours.map((hour) => (
+                <option key={hour} value={hour}>
+                  {hour}:00
+                </option>
+              ))}
+            </select>
+          </div>
           <button
-            type="submit"
-            className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300"
-          >
-            Update Profile
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+  type="submit"
+  className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300"
+>
+  Update Profile
+</button>
+</form>
+</div>
+</div>
+);
 };
 
 export default DocProfile;
