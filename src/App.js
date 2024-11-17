@@ -27,7 +27,6 @@ import TabelPataints from "./Pages/TabelPataints";
 import TabelDoctors from "./Pages/TabelDoctors";
 import TabelDrugs from "./Pages/TabelDrugs";
 import TabelPharmaceutical from "./Pages/TabelPharmaceutical";
-import ProfilePage from "./Pages/ProfilePage";
 import Sessions from "./Pages/Sessions";
 import ReviewForm from "./Pages/reviewform";
 import ComplaintsForm from "./Pages/complaints";
@@ -38,8 +37,12 @@ import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CreateAccountPataint from "./Pages/createAccountDoctor";
-import Profile from "./Pages/profile";
+
 import PatientBills from "./Pages/Bills";
+
+import Profile from "./Pages/Profile";
+import ProfilePage from "./Pages/ProfilePage";
+
 
 function App() {
   const location = useLocation();
@@ -124,7 +127,7 @@ function App() {
           </Route>
           <Route path="dashboard/pharmacy" element={<PharDash />} />
           <Route path="dashboard/user" element={<UserDash />}>
-          {/* <Route index element={<ProfilePage />} /> */}
+            {/* <Route index element={<ProfilePage />} /> */}
             <Route path="Setting" element={<ProfilePage />} />
             <Route index element={<Sessions />} />
             <Route path="session" element={<Sessions />} />
