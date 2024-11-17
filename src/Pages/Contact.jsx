@@ -128,9 +128,9 @@ const Contact = () => {
                         id="registerForm"
                         type="text"
                         className="peer py-2 px-4 ps-11 block w-full
- border-2  border-gray-200 rounded-lg text-sm 
- focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
- dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                          dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                         placeholder="Enter Name..."
                         name="name"
                       />
@@ -158,9 +158,9 @@ const Contact = () => {
                         id="registerEmail"
                         type="email"
                         class="peer py-2 px-4 ps-11 block w-full
- border-2  border-gray-200 rounded-lg text-sm 
- focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
- dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                            border-2  border-gray-200 rounded-lg text-sm 
+                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                            dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
                         placeholder="Enter Email..."
                         name="email"
                       />
