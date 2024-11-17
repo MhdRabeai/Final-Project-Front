@@ -65,7 +65,7 @@
 //             value={lastName}  
 //             onChange={(e) => setLastName(e.target.value)}  
 //             className="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring focus:ring-indigo-300"  
-//             placeholder="Last Name"  
+//             placeholder="Last Name"  al
 //           />  
 //         </div>  
 //         <div className="mb-4">  
@@ -102,7 +102,7 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 
-const ProfilePage = () => {
+const DocProfile = () => {
     const [formData, setFormData] = useState({
         profileImage: "",
         firstName: "",
@@ -275,4 +275,4 @@ const ProfilePage = () => {
     );
 };
 
-export default ProfilePage;
+export default DocProfile;
