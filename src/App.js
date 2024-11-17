@@ -94,9 +94,14 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />} >
+          
+           <Route
+              index
+              element={<CalendarAdmin />}
+            />
             <Route
 
-              index
+               path="TabelPataints"
               element={<TabelPataints />}
             />
             <Route
@@ -110,10 +115,7 @@ function App() {
             <Route path="TabelDrugs"
               element={<TabelDrugs />}
             />
-            <Route
-              path="CalendarAdmin"
-              element={<CalendarAdmin />}
-            />
+           
             <Route
               path="TabelPharmaceutical"
               element={<TabelPharmaceutical />}
