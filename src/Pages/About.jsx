@@ -3,10 +3,12 @@ import ListItem from "../Components/ListItem";
 import Card from "../Components/card";
 import cardsData from "../Components/cardsData";
 import Testimonial from "../Components/Testimonial";
+import MultiStepForm from "../Components/MultiStepForm";
 const About = () => {
   return (
     <div className="max-w-[86rem] mx-auto px-4">
       {/* <Payment amount={10} /> */}
+      <MultiStepForm />
       <section className="overflow-hidden   pb-6 mb-6 border-b-2 border-[#ddd]">
         <div className="container mx-auto">
           <div className=" flex  flex-wrap items-center justify-between -mx-4">
