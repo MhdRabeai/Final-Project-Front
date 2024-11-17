@@ -83,7 +83,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
           </Route>
-                        
+
           <Route path="/dashboard" element={<DashRoot />}>
             {/* <Route path="admin" element={<AdminDash />} />
             <Route path="doct" element={<DocDash />} />
@@ -93,70 +93,71 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />} >
-          <Route
-            path="TabelPataints"
-            element={<TabelPataints />}
-          />
-          <Route
-            path="TabelDoctors"
-            element={<TabelDoctors />}
-          />
-           <Route
-            path="CreateAccountDoctor"
-            element={<CreateAccountDoctor />}
-          />
-           <Route path="TabelDrugs"
-           element={<TabelDrugs />}
-           />
-             <Route
-            path="calendarpage"
-            element={<CalendarPage />}
-          />
-           <Route
-            path="TabelPharmaceutical"
-            element={<TabelPharmaceutical />}
-          />
-        </ Route>
+            <Route
+
+              index
+              element={<TabelPataints />}
+            />
+            <Route
+              path="TabelDoctors"
+              element={<TabelDoctors />}
+            />
+            <Route
+              path="CreateAccountDoctor"
+              element={<CreateAccountDoctor />}
+            />
+            <Route path="TabelDrugs"
+              element={<TabelDrugs />}
+            />
+            <Route
+              path="calendarpage"
+              element={<CalendarPage />}
+            />
+            <Route
+              path="TabelPharmaceutical"
+              element={<TabelPharmaceutical />}
+            />
+          </ Route>
           <Route path="dashboard/doct" element={<DocDash />} >
-          <Route
-            path="calendarpage"
-            element={<CalendarPage />}
-          />
-          <Route
-            path="DocProfile"
-            element={<DocProfile />}
-          />
-          <Route
-            path="AddArticle"
-            element={<DoctorArticleForm />}
-          />
-          <Route
-            path="PrescriptionForm"
-            element={<PrescriptionForm />}
-          />
-    
+            <Route
+              path="calendarpage"
+              element={<CalendarPage />}
+            />
+            <Route
+              path="DocProfile"
+              element={<DocProfile />}
+            />
+            <Route
+              path="AddArticle"
+              element={<DoctorArticleForm />}
+            />
+            <Route
+              path="PrescriptionForm"
+              element={<PrescriptionForm />}
+            />
+
           </Route>
           <Route path="dashboard/pharmacy" element={<PharDash />} />
-          <Route path="dashboard/user" element={<UserDash />}> 
+          <Route path="dashboard/user" element={<UserDash />}>
             <Route
-            path="profile"
-            element={<ProfilePage />}
+              path="profile"
+              element={<ProfilePage />}
             />
             <Route
-            path="session"
-            element={<Sessions />}
+              path="session"
+              element={<Sessions />}
             />
             <Route
-            path="review"
-            element={<ReviewForm />}
+              path="review"
+              element={<ReviewForm />}
             />
             <Route
-            path="complain"
-            element={<ComplaintsForm />}
+              path="complain"
+              element={<ComplaintsForm />}
             />
-          
-            </Route>
-         
+
+          </Route>
+
           <Route
             path="dashboard/user/calendarpage"
             element={<CalendarPage />}

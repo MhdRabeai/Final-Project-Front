@@ -46,7 +46,7 @@ const AdminDash = () => {
                 />
               </svg>
             </a>
-          </div> 
+          </div>
 
           <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <div class="hidden md:block">
@@ -114,7 +114,7 @@ const AdminDash = () => {
                     alt="Avatar"
                   />
                 </button>
-                
+
                 <div
                   class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700 dark:divide-neutral-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full"
                   role="menu"
@@ -351,7 +351,7 @@ const AdminDash = () => {
                     calander
                   </Link>
                 </li>
-               
+
                 <li>
                   <Link
                     to="/dashboard/admin/TabelDrugs"
@@ -383,8 +383,6 @@ const AdminDash = () => {
                     All Drug
                   </Link>
                 </li>
-             
-              
 
                 <li class="hs-accordion" id="projects-accordion">
                   <button
@@ -408,7 +406,7 @@ const AdminDash = () => {
                       <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
                       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                     </svg>
-                   All Users
+                    All Users
                     <svg
                       class="hs-accordion-active:block ms-auto hidden size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -459,7 +457,7 @@ const AdminDash = () => {
                           to="/dashboard/admin/TabelDoctors"
                           className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                         >
-                         all Doctors
+                          all Doctors
                         </Link>
                       </li>
                       <li>
@@ -505,7 +503,6 @@ const AdminDash = () => {
                     Artivcles
                   </Link>
                 </li>
-              
               </ul>
             </nav>
           </div>
@@ -513,7 +510,8 @@ const AdminDash = () => {
       </div>
 
       <div class="w-full lg:ps-64">
-        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">
+        <div class="my-section">
+          {/* p-4 sm:p-6 space-y-4 sm:space-y-6 */}
           <Outlet />
         </div>
       </div>
