@@ -10,7 +10,7 @@ const AdminDash = () => {
             <a
               class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
               href="/"
-              aria-label="Preline"
+              aria-label="Hope Horizon"
             >
               <svg
                 class="w-28 h-auto"
