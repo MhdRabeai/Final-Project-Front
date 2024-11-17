@@ -59,12 +59,10 @@ const Blogs = () => {
               There are many variations of passages of Lorem Ipsum available
               but the majority have suffered alteration in some form.
             </p>
-            <div>
             <SearchComponent
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             />
-            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 xl:grid-cols-4 xl:gap-4">
             {currentBlogs.map((post) => (
