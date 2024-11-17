@@ -116,14 +116,16 @@ function App() {
             />
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
-            <Route path="calendarpage" element={<CalendarPage />} />
+            <Route index element={<CalendarPage />} />
             <Route path="DocProfile" element={<DocProfile />} />
             <Route path="AddArticle" element={<DoctorArticleForm />} />
             <Route path="PrescriptionForm" element={<PrescriptionForm />} />
           </Route>
           <Route path="dashboard/pharmacy" element={<PharDash />} />
           <Route path="dashboard/user" element={<UserDash />}>
-            <Route path="profile" element={<ProfilePage />} />
+          {/* <Route index element={<ProfilePage />} /> */}
+            <Route path="Setting" element={<ProfilePage />} />
+            <Route index element={<Sessions />} />
             <Route path="session" element={<Sessions />} />
             <Route path="review" element={<ReviewForm />} />
             <Route path="complain" element={<ComplaintsForm />} />
