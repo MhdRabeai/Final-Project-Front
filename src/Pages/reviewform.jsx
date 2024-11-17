@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';  
-import StarRating from './starrating';   
+// import StarRating from './starrating';   
 import { Rate } from 'antd';
 
 const ReviewForm = () => {  
@@ -35,7 +35,7 @@ const ReviewForm = () => {
           />  
         </div>  
         <label className="block mb-1" htmlFor="review">Rate the session :</label>  
-   <Rate/>
+            <Rate/>
         <div className="mb-4">  
           <label className="block mb-1" htmlFor="review">Your Review</label>  
           <textarea  

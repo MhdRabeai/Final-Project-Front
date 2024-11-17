@@ -258,29 +258,6 @@ const TabelDoctors = () => {
                                                     row.gender
                                                 )}
                                             </td>
-                                            {/* <td className="p-3 text-right">
-                                                {editRow === row.name ? (
-                                                    <button
-                                                        onClick={() => handleSave(row.name)}
-                                                        className="px-4 py-2 text-green-600 border-2 border-green-600 rounded hover:bg-green-600 hover:text-white"                                                    >
-                                                        Save
-                                                    </button>
-                                                ) : (
-                                                    <>
-                                                        <button
-                                                            onClick={() => handleEdit(row)}
-                                                            className="px-4 py-2 text-blue-600 border-2 border-blue-600 rounded hover:bg-blue-600 hover:text-white mx-4"                                                        >
-                                                            Edit
-                                                        </button>
-                                                        <button
-                                                            onClick={() => handleDelete(row.name)}
-                                                            className="px-4 py-2 text-red-600 border-2 border-red-600 rounded hover:bg-red-600 hover:text-white"
-                                                        >
-                                                            Delete
-                                                        </button>
-                                                    </>
-                                                )}
-                                            </td> */}
                                             <td className="p-3 text-right">
                                                 {editRow === row.name ? (
                                                     <span
