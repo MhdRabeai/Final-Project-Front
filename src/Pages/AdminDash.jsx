@@ -318,7 +318,7 @@ const AdminDash = () => {
               data-hs-accordion-always-open
             >
               <ul class="flex flex-col space-y-1">
-                <li>
+                {/* <li>
                   <Link
                     to="/dashboard/admin/CreateAccountDoctor"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
@@ -340,7 +340,7 @@ const AdminDash = () => {
                     </svg>
                     Create Account Doctor
                   </Link>
-                </li>
+                </li> */}
 
                 <li>
                   <Link

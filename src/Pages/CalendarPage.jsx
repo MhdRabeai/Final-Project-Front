@@ -106,7 +106,6 @@ const CalendarPage = () => {
     setShowModal(false);
   };
 
-  // حذف الحدث
   const handleDeleteEvent = () => {
     setEvents(events.filter((event) => event !== selectedEvent));
     setShowModal(false);
@@ -125,12 +124,11 @@ const CalendarPage = () => {
           // defaultView="week"
           selectable
           onSelectSlot={handleSelectSlot}
-          onSelectEvent={handleSelectEvent} // عند الضغط على الحدث
+          onSelectEvent={handleSelectEvent} 
         />
         
       </div>
 
-      {/* نافذة الإدخال */}
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white rounded-lg shadow-lg w-1/3 p-6 relative z-50">
