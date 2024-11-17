@@ -22,7 +22,7 @@ import DocDash from "./Pages/DocDash";
 import PharDash from "./Pages/PharDash";
 import UserDash from "./Pages/UserDash";
 import CalendarPage from "./Pages/CalendarPage";
-import CreateAccountDoctor from "./Pages/createAccountDoctor"
+// import createAccountPataint from "./Pages/createAccountPataint"
 import TabelPataints from "./Pages/TabelPataints";
 import TabelDoctors from "./Pages/TabelDoctors";
 import TabelDrugs from "./Pages/TabelDrugs";
@@ -36,6 +36,8 @@ import DoctorArticleForm from "./Pages/DoctorArticleForm";
 import PrescriptionForm from "./Pages/PrescriptionForm";
 import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
+import CreateAccountDoctor from "./Pages/createAccountDoctor";
+import CreateAccountPataint from "./Pages/createAccountDoctor";
 
 function App() {
   const location = useLocation();
@@ -94,9 +96,14 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />} >
+
+            <Route
+              index
+              element={<CalendarAdmin />}
+            />
             <Route
 
-              index
+              path="TabelPataints"
               element={<TabelPataints />}
             />
             <Route
@@ -107,13 +114,14 @@ function App() {
               path="CreateAccountDoctor"
               element={<CreateAccountDoctor />}
             />
+            <Route
+              path="CreateAccountPataint"
+              element={<CreateAccountPataint />}
+            />
             <Route path="TabelDrugs"
               element={<TabelDrugs />}
             />
-            <Route
-              path="CalendarAdmin"
-              element={<CalendarAdmin />}
-            />
+
             <Route
               path="TabelPharmaceutical"
               element={<TabelPharmaceutical />}
