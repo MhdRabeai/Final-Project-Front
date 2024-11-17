@@ -35,6 +35,33 @@ const TabelPataints = () => {
       gender: "Male",
       phonenumber: "555-123-4567",
     },
+    {
+      name: "Jack Li",
+      age: 27,
+      address: "3 Grace Dr, New Mexico",
+      email: "jack@example.com",
+      password: "******",
+      gender: "Male",
+      phonenumber: "555-123-4567",
+    },
+    {
+      name: "Jack Li",
+      age: 27,
+      address: "3 Grace Dr, New Mexico",
+      email: "jack@example.com",
+      password: "******",
+      gender: "Male",
+      phonenumber: "555-123-4567",
+    },
+    {
+      name: "Jack Li",
+      age: 27,
+      address: "3 Grace Dr, New Mexico",
+      email: "jack@example.com",
+      password: "******",
+      gender: "Male",
+      phonenumber: "555-123-4567",
+    },
   ]);
   const [editRow, setEditRow] = useState(null);
   const [editedData, setEditedData] = useState({
@@ -186,7 +213,7 @@ const TabelPataints = () => {
                         Gender
                       </button>
                     </th>
-                    <th className="py-3 pr-10 text-right font-medium text-[#4F9451]">
+                    <th className="py-3 px-5 text-right font-medium text-[#4F9451]">
                       Action
                     </th>
                   </tr>
@@ -199,10 +226,14 @@ const TabelPataints = () => {
                     >
                       <td className="py-3 px-3">
                         <div className="flex items-center h-5">
-                          <input
-                            type="checkbox"
-                            className="border-gray-300 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-600 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
-                          />
+                        <input
+                                type="checkbox"
+                                name="challenges"
+                                value={"Family"}
+                                className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-[#4f9451] dark:checked:border-[#4f9451] dark:focus:ring-offset-gray-800"
+                                id="checkbox-group-12"
+                                defaultChecked
+                              />
                         </div>
                       </td>
                       <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
@@ -285,11 +316,11 @@ const TabelPataints = () => {
                           row.gender
                         )}
                       </td>
-                      <td className="p-3 text-right">
+                      <td className="pr-5 p-2 text-right">
                         {editRow === row.name ? (
                           <span
                             onClick={() => handleSave(row.name)}
-                            className="text-green-600 cursor-pointer hover:text-green-800"
+                            className="text-green-600 cursor-pointer hover:text-green-700"
                           >
                             <FontAwesomeIcon icon={faSave} />
                           </span>
@@ -297,13 +328,13 @@ const TabelPataints = () => {
                           <>
                             <span
                               onClick={() => handleEdit(row)}
-                              className="text-blue-600 cursor-pointer hover:text-blue-800 mx-4"
+                              className="text-blue-500 cursor-pointer hover:text-blue-700 mx-4"
                             >
                               <FontAwesomeIcon icon={faPencilAlt} />
                             </span>
                             <span
                               onClick={() => handleDelete(row.name)}
-                              className="text-red-600 cursor-pointer hover:text-red-800"
+                              className="text-red-500 cursor-pointer hover:text-red-700"
                             >
                               <FontAwesomeIcon icon={faTrash} />
                             </span>
