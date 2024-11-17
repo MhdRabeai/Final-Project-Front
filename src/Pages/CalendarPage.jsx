@@ -6,7 +6,7 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
-
+import { v4 as uuidv4 } from 'uuid';
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
 };
@@ -34,6 +34,7 @@ const getRandomColor = () => {
 
 const initialEvents = [
   {
+    id: uuidv4(),
     title: "Meeting",
     start: new Date(2024, 10, 15, 10, 0),
     end: new Date(2024, 10, 15, 12, 0),
@@ -41,6 +42,7 @@ const initialEvents = [
     color: getRandomColor(),
   },
   {
+    id: uuidv4(),
     title: "Conference",
     start: new Date(2024, 10, 20, 9, 0),
     end: new Date(2024, 10, 20, 11, 0),
@@ -110,11 +112,11 @@ const CalendarPage = () => {
 
     if (selectedEvent) {
       setEvents(events.map((event) =>
-        event === selectedEvent ? { ...newEvent } : event
+        event.id === selectedEvent.id ? { ...newEvent, id: event.id } : event
       ));
+
     } else {
-      setEvents([...events, newEvent]);
-    }
+      setEvents([...events, { ...newEvent, id: uuidv4() }]);    }
 
     setShowModal(false);
   };
@@ -133,8 +135,8 @@ const CalendarPage = () => {
           startAccessor="start"
           endAccessor="end"
           style={{ height: "100%" }}
-          // views={['week', 'day', 'agenda']}
-          // defaultView="week"
+          views={['week', 'day', 'agenda']}
+          defaultView="week"
           selectable
           onSelectSlot={handleSelectSlot}
           onSelectEvent={handleSelectEvent} 
