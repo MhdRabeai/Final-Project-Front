@@ -3,10 +3,10 @@ import ListItem from "../Components/ListItem";
 import Card from "../Components/card";
 import cardsData from "../Components/cardsData";
 import Testimonial from "../Components/Testimonial";
-
 const About = () => {
   return (
     <div className="max-w-[86rem] mx-auto px-4">
+      {/* <Payment amount={10} /> */}
       <section className="overflow-hidden   pb-6 mb-6 border-b-2 border-[#ddd]">
         <div className="container mx-auto">
           <div className=" flex  flex-wrap items-center justify-between -mx-4">
@@ -655,17 +655,17 @@ const About = () => {
           </span>
           <h1 className=" text-4xl font-bold text-black">Why choose Us</h1>
         </div>
-        <div className="pt-10 pb-10 w-full"> 
-        <div className="flex  justify-center   gap-4 flex-wrap ">
-                {cardsData.map((card, index) => (
-                  <Card
-                    key={index}
-                    headline={card.headline}
-                    content={card.content}
-                    icon={card.icon}
-                  />
-                ))}
-              </div>
+        <div className="pt-10 pb-10 w-full">
+          <div className="flex  justify-center   gap-4 flex-wrap ">
+            {cardsData.map((card, index) => (
+              <Card
+                key={index}
+                headline={card.headline}
+                content={card.content}
+                icon={card.icon}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
