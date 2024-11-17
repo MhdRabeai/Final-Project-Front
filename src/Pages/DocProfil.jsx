@@ -143,7 +143,6 @@ const DocProfile = () => {
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 text-center">
-            {/* ... profile image input ... */}
           </div>
 
           <div className="mb-4">
