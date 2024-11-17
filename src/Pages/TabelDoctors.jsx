@@ -26,15 +26,6 @@ const TabelDoctors = () => {
             gender: "Male",
             phonenumber: "987-654-3210"
         },
-        {
-            name: "Jack Li",
-            age: 27,
-            address: "3 Grace Dr, New Mexico",
-            email: "jack@example.com",
-            password: "******",
-            gender: "Male",
-            phonenumber: "555-123-4567"
-        },
     ]);
     const [editRow, setEditRow] = useState(null);
     const [editedData, setEditedData] = useState({
@@ -119,7 +110,19 @@ const TabelDoctors = () => {
                                 Add Doctor
                             </button>
                         </div>
-
+                        <div className="relative max-w-xs">
+                            <label htmlFor="search-input" className="sr-only">
+                                Search
+                            </label>
+                            <input
+                                type="text"
+                                id="search-input"
+                                value={searchQuery}
+                                onChange={handleSearchChange}
+                                className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                                placeholder="Search for items"
+                            />
+                            </div>
                     <div className="overflow-hidden min-h-[509px]">
                         {sortedData.length === 0 ? (
                             <div className="flex justify-center items-center h-full">
