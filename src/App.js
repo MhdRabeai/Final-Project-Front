@@ -35,6 +35,7 @@ import DoctorArticleForm from "./Pages/DoctorArticleForm";
 // import DocProfile from "./Pages/docProfile";
 import PrescriptionForm from "./Pages/PrescriptionForm";
 import DocProfile from "./Pages/DocProfil";
+import CalendarAdmin from "./Pages/calendarAdmin";
 
 function App() {
   const location = useLocation();
@@ -110,8 +111,8 @@ function App() {
               element={<TabelDrugs />}
             />
             <Route
-              path="calendarpage"
-              element={<CalendarPage />}
+              path="CalendarAdmin"
+              element={<CalendarAdmin />}
             />
             <Route
               path="TabelPharmaceutical"
