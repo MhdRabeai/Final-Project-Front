@@ -497,9 +497,9 @@ const AdminDash = () => {
                 </li>
 
                 <li>
-                  <a
-                    class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300"
-                    href="/"
+                  <Link
+                    to="/dashboard/admin/BlogsAdmin"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg
                       class="shrink-0 size-4"
@@ -524,8 +524,8 @@ const AdminDash = () => {
                       <path d="M12 18h.01" />
                       <path d="M16 18h.01" />
                     </svg>
-                    Complaints page
-                  </a>
+                    Artivcles
+                  </Link>
                 </li>
               
               </ul>

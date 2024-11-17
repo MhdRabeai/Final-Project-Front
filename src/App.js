@@ -25,6 +25,7 @@ import TabelDrugs from "./Pages/TabelDrugs";
 import TabelPharmaceutical from "./Pages/TabelPharmaceutical";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CalendarAdmin from "./Pages/calendarAdmin";
+import BlogsAdmin from "./Pages/BlogsAdmin";
 // import TablePatients from "./Pages/TablePatients";
 const About = lazy(() => import("./Pages/About"));
 const Blogs = lazy(() => import("./Pages/Blogs"));
@@ -75,6 +76,7 @@ function App() {
       <Route path="dashboard/admin/TabelDoctors" element={<TabelDoctors />} />
       <Route path="dashboard/admin/CreateAccountDoctor" element={<CreateAccountDoctor />} />
       <Route path="dashboard/admin/TabelDrugs" element={<TabelDrugs />} />
+      <Route path="dashboard/admin/BlogsAdmin" element={<BlogsAdmin />} />
       <Route path="dashboard/admin/TabelPharmaceutical" element={<TabelPharmaceutical />} />
       <Route path="dashboard/admin/CalendarAdmin" element={<CalendarAdmin />} />
       <Route path="dashboard/user/calendarpage" element={<CalendarPage />} />
