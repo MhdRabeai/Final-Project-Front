@@ -1,38 +1,50 @@
-import React from 'react';
-import { Timeline } from 'antd';
+import React from "react";
+import { MdOutlineDownloadDone } from "react-icons/md";
 
-const Sessions = () => {
-  const events = [
-    {
-      title: 'Event 1',
-      description: 'This is the first event.',
-      date: '2023-11-14',
-    },
-    {
-      title: 'Event 2',
-      description: 'This is the second event.',
-      date: '2023-11-15',
-    },
-    {
-      title: 'Event 3',
-      description: 'This is the third event.',
-      date: '2023-11-16',
-    },
+const SessionTable = () => {
+  const sessions = [
+    { id: 1, sessionName: "Therapy Session 1", date: "2024-11-15", status: "Completed" },
+    { id: 2, sessionName: "Therapy Session 2", date: "2024-11-22", status: "Upcoming" },
+    { id: 3, sessionName: "Therapy Session 3", date: "2024-12-01", status: "Cancelled" },
   ];
 
-  const items = events.map(event => ({
-    label: event.date,
-    children: (
-      <div>
-        <h3 style={{ fontWeight: 'bold', color: '#4CAF50' }}>{event.title}</h3>
-        <p style={{ color: '#555' }}>{event.description}</p>
-      </div>
-    ),
-  }));
+  const statusColors = {
+    Completed: "bg-green-100 text-green-600",
+    Upcoming: "bg-green-100 text-green-600",
+    Cancelled: "bg-green-100 text-green-600",
+  };
 
   return (
-    <Timeline mode="left" items={items} />
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Patient Session Status</h1>
+      <div className="overflow-x-auto">
+        <table className="min-w-full border border-[#4F9451]">
+          <thead className="bg-[#4F9451]">
+            <tr>
+              <th className="px-4 py-2 text-left text-white">Session</th>
+              <th className="px-4 py-2 text-left text-white">Date</th>
+              <th className="px-4 py-2 text-left text-white">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sessions.map((session) => (
+              <tr key={session.id} className="border-b">
+                <td className="px-4 py-2">{session.sessionName}</td>
+                <td className="px-4 py-2">{session.date}</td>
+                <td className="px-4 py-2">
+                  <span
+                    className={`px-2 py-1 rounded ${statusColors[session.status]}`}
+                  >
+                    {session.status}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 
-export default Sessions;
+export default SessionTable;
