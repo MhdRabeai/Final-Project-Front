@@ -54,8 +54,6 @@ const CalendarAdmin = () => {
     doctorId: null,
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [showError, setShowError] = useState(false);
-  const alertRef = useRef(null);
 
   const workingHoursStart = 9;
   const workingHoursEnd = 17;
@@ -78,7 +76,7 @@ const CalendarAdmin = () => {
     } else {
       return toast.error('Event creation outside working hours is not allowed.', {
         position: "bottom-right",
-        autoClose: 750,
+        autoClose: 900,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
@@ -152,12 +150,6 @@ const CalendarAdmin = () => {
               <button onClick={() => setShowModal(false)} className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600">Cancel</button>
             </div>
           </div>
-        </div>
-      )}
-  
-      {showError && (
-        <div ref={alertRef} className="fixed bottom-10 right-10 bg-red-500 text-white p-4 rounded-md">
-          Event creation outside working hours is not allowed.
         </div>
       )}
     </div>
