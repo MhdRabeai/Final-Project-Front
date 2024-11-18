@@ -127,7 +127,7 @@ const Login = () => {
                         data-hs-toggle-password='{
         "target": "#hs-toggle-password"
       }'
-                        className="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-none focus:text-[#4f9451] dark:text-neutral-600 dark:focus:text-blue-500"
+                        className="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-none focus:text-[#4f9451] dark:text-neutral-600 dark:focus:text--500"
                       >
                         <svg
                           className="shrink-0 size-3.5"
