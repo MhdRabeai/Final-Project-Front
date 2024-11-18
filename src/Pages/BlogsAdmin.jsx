@@ -8,8 +8,8 @@ const BlogsAdmin = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState("");
   const itemsPerPage = 8;
 
   useEffect(() => {
@@ -34,8 +34,8 @@ const BlogsAdmin = () => {
 
   const filteredData = data.filter(
     (post) =>
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      'Dr. John Doe'.toLowerCase().includes(searchTerm.toLowerCase())
+      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      'Dr. John Doe'.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const currentBlogs = filteredData.slice(indexOfFirstItem, indexOfLastItem);
