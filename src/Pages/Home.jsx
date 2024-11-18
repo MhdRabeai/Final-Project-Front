@@ -75,7 +75,7 @@ const Home = () => {
                 </p>
                 <div className="mt-5 lg:mt-8 flex ">
                   <Link
-                    to='/about'
+                    to="/about"
                     className=" py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[rgba(79,148,81,0.84)] focus:outline-none focus:bg-[rgba(79,148,81,0.84)] disabled:opacity-50 disabled:pointer-events-none"
                   >
                     Read More
@@ -119,7 +119,7 @@ const Home = () => {
           <div
             data-hs-carousel='{
   "loadingClasses": "opacity-0",
-  "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
+  "dotsItemClasses": "hs-carousel-active:bg--700 hs-carousel-active:border--700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg--500 dark:hs-carousel-active:border--500",
   "isInfiniteLoop":true,
   "slidesQty": {
     "xs": 1,
@@ -296,21 +296,21 @@ const Home = () => {
               image="https://via.placeholder.com/150"
             />
             <BlogCard
-              id={1}
+              id={2}
               date={new Date().toLocaleDateString()}
               CardTitle={"title"}
               CardDescription={"lorem ...."}
               image="https://via.placeholder.com/150"
             />
             <BlogCard
-              id={1}
+              id={3}
               date={new Date().toLocaleDateString()}
               CardTitle={"title"}
               CardDescription={"lorem ...."}
               image="https://via.placeholder.com/150"
             />
             <BlogCard
-              id={1}
+              id={4}
               date={new Date().toLocaleDateString()}
               CardTitle={"title"}
               CardDescription={"lorem ...."}

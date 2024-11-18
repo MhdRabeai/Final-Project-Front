@@ -22,7 +22,6 @@ import DocDash from "./Pages/DocDash";
 import PharDash from "./Pages/PharDash";
 import UserDash from "./Pages/UserDash";
 import CalendarPage from "./Pages/CalendarPage";
-// import createAccountPataint from "./Pages/createAccountPataint"
 import TabelPataints from "./Pages/TabelPataints";
 import TabelDoctors from "./Pages/TabelDoctors";
 import TabelDrugs from "./Pages/TabelDrugs";
@@ -36,7 +35,7 @@ import PrescriptionForm from "./Pages/PrescriptionForm";
 import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
-import CreateAccountPataint from "./Pages/createAccountDoctor";
+import CreateAccountPataint from "./Pages/createAccountPataint";
 // import Profile from "./Pages/Profile";
 import PatientBills from "./Pages/PatientBills";
 import VideoChat from "./Pages/VideoChat";
@@ -45,9 +44,10 @@ import BlogDetailAdmin from "./Pages/BlogDetailAdmin";
 import ProfilePage from "./Pages/ProfilePage";
 import AddDrug from "./Pages/AddDrug";
 import CreateAccountPharmaceutical from "./Pages/CreateAccountPharmaceutical";
+import DoctorPage from "./Pages/DoctorPage";
+import HomeAdminPage from "./Pages/HomeAdminPage";
 
 function App() {
-
   const location = useLocation();
 
   useEffect(() => {
@@ -83,9 +83,11 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="blogs" element={<Blogs />} />
-            <Route path="blogs/:id" element={<BlogDetail />} />
+            <Route path="blogs/blog" element={<BlogDetail />} />
             <Route path="contact" element={<Contact />} />
             <Route path="team" element={<Team />} />
+
+            <Route path="team/:id" element={<DoctorPage />} />
             {/* <Route path="team/profile/:doctorId" element={<Profile />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
@@ -104,9 +106,14 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />}>
-            <Route index  path="CalendarAdmin" element={<CalendarAdmin />} />
+            <Route  path="CalendarAdmin" element={<CalendarAdmin />} />
             <Route path="TabelPataints" element={<TabelPataints />} />
             <Route path="TabelDoctors" element={<TabelDoctors />} />
+            <Route
+              index
+              path="HomeAdminPage"
+              element={<HomeAdminPage />}
+            />
             <Route
               path="createAccountDoctor"
               element={<CreateAccountDoctor />}
@@ -115,10 +122,7 @@ function App() {
               path="createAccountPataint"
               element={<CreateAccountPataint />}
             />
-            <Route
-              path="BlogsAdmin"
-              element={<BlogsAdmin />}
-            />
+            <Route path="BlogsAdmin" element={<BlogsAdmin />} />
             <Route path="blog-detail/:id" element={<BlogDetailAdmin />} />
             {/* <Route path="/blog-detail/:id" element={<BlogDetailAdmin/>} /> */}
 
@@ -128,14 +132,12 @@ function App() {
               path="TabelPharmaceutical"
               element={<TabelPharmaceutical />}
             />
-            <Route
-              path="AddDrug"
-              element={<AddDrug />}
-            />
+            <Route path="AddDrug" element={<AddDrug />} />
             <Route
               path="CreateAccountPharmaceutical"
               element={<CreateAccountPharmaceutical />}
             />
+           
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
             <Route index element={<CalendarPage />} />
@@ -155,8 +157,6 @@ function App() {
             <Route path="chatroom" element={<VideoChat />} />
             <Route path="review" element={<ReviewForm />} />
             <Route path="complain" element={<ComplaintsForm />} />
-          
-
           </Route>
 
           <Route
