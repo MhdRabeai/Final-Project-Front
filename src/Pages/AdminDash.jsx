@@ -1,7 +1,10 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
-import { FaHome, FaCalendarAlt, FaPills, FaUsers, FaClipboardList, FaRegNewspaper } from 'react-icons/fa'; // Importing icons from react-icons
+import { FaHome, FaCalendarAlt, FaPills, FaUsers } from 'react-icons/fa'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
+
 
 const AdminDash = () => {
   return (
@@ -389,8 +392,7 @@ const AdminDash = () => {
               to="/dashboard/admin/BlogsAdmin"
               className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
             >
-              <FaClipboardList className="shrink-0" />
-              Articles
+<FontAwesomeIcon icon={faFileAlt} className="text-sm shrink-0" />              Articles
             </Link>
           </li>
         </ul>
