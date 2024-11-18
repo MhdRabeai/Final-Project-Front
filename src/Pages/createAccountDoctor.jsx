@@ -1,17 +1,14 @@
 import React, { useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
-// import { MdOutlineEmail } from "react-icons/md";
-import { MdOutlineEmail, MdPerson, MdCalendarToday, MdPhone, MdLock } from 'react-icons/md';
-const CreateAccountDoctor = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+
+const CreateAccountPataint = () => {
   const [formData, setFormData] = useState({
     profileImage: "",
-    fullName: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
-    gender:"",
-    phone_number:"",
-    Age:""
   });
   const [previewImage, setPreviewImage] = useState(null);
   const [socialLinks, setSocialLinks] = useState([""]);
@@ -32,18 +29,6 @@ const CreateAccountDoctor = () => {
     }));
   };
 
-  const handleSocialLinkChange = (index, value) => {
-    const updatedLinks = [...socialLinks];
-    updatedLinks[index] = value;
-    setSocialLinks(updatedLinks);
-  };
-
-  const addSocialLink = () => {
-    if (socialLinks.length < 4) {
-      setSocialLinks([...socialLinks, ""]);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Profile Updated:", formData);
@@ -51,186 +36,105 @@ const CreateAccountDoctor = () => {
   };
 
   return (
-    <div className="flex items-center justify-center my-section bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl lg:max-w-3xl">
-        <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
-          D
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-2xl">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">
+          Create Doctor Account
         </h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4 text-center">
-            <label
-              htmlFor="profileImage"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Profile Image
-            </label>
-            <div
-              className="flex justify-center mb-4 cursor-pointer"
-              onClick={() =>
-                document.getElementById("profileImageInput").click()
-              }
-            >
-              {previewImage ? (
-                <img
-                  src={previewImage}
-                  alt="Profile Preview"
-                  className="w-24 h-24 rounded-full object-cover border-2 border-gray-300 shadow-md"
-                />
-              ) : (
-                <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
-                  No Image
-                </div>
-              )}
-            </div>
-            <input
-              type="file"
-              id="profileImageInput"
-              name="profileImage"
-              onChange={handleImageChange}
-              className="hidden"
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="flex items-center gap-4">
+            <img
+              className="w-16 h-16 rounded-full ring-2 ring-gray-200 object-cover"
+              src={previewImage || "https://via.placeholder.com/100"}
+              alt="Profile"
             />
+            <label className="cursor-pointer">
+              <span className="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700">
+                Upload Photo
+              </span>
+              <input
+                type="file"
+                className="hidden"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
+            </label>
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="firstName"
-              className="block mb-2 font-medium text-gray-600"
-            >
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Full Name
             </label>
-            <div className="relative">
             <input
               type="text"
-              id="firstName"
-              name="firstName"
-              value={formData.firstName}
+              name="fullName"
+              placeholder="Enter your name"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
               onChange={handleChange}
-              className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Name..."
-              required
             />
-            <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-              <MdPerson className="fill-gray-500" />
-            </div>  
-            </div>
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="lastName"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Age
-            </label>
-            <div className="relative">
-            <input
-              type="number"
-              id="Age"
-              name="Age"
-              value={formData.Age}
-              onChange={handleChange}
-              className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Name..."
-              required
-            />
-             <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-          <MdCalendarToday className="fill-gray-500" />
-        </div>
-        </div>
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="lastName"
-              className="block mb-2 font-medium text-gray-600"
-            >
-              Phone Number
-            </label>
-            <div className="relative"></div>
-            <input
-              type="number"
-              id="phone_number"
-              name="phone_number"
-              value={formData.phone_number}
-              onChange={handleChange}
-              className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Phone Number"
-              maxLength={10} 
-              required
-            />
-          <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-          <MdPhone className="fill-gray-500" />
-        </div>
-          </div>
-                <div className="mb-4">
-                <label
-                  htmlFor="gender"
-                  className="block mb-2 font-medium text-gray-600"
-                >
-                  Gender
-                </label>
-                <select
-                  id="gender"
-                  name="gender"
-                  value={formData.gender}
-                  onChange={handleChange}
-                  className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                  required
-                >
-                  <option value="">Select Gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-              </div>
 
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block mb-2 font-medium text-gray-600"
-            >
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Email
             </label>
-            <div className="relative">
             <input
               type="email"
-              id="email"
               name="email"
-              value={formData.email}
+              placeholder="Enter your email"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
               onChange={handleChange}
-              className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter Email..."
-              required
             />
-             <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
-                <MdOutlineEmail className="fill-gray-500" />
-              </div>
-            </div>
           </div>
-          <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block mb-2 font-medium text-gray-600"
-            >
+
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
               Password
             </label>
-            <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none ps-4">
-          <MdLock className="fill-gray-500" />
-        </div>
-        <div className="relative">
             <input
               type="password"
-              id="password"
               name="password"
-              value={formData.password}
+              placeholder="Enter your password"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
               onChange={handleChange}
-              className="peer py-2 px-4 pl-10 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Enter password"
-              required
             />
           </div>
-      </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Gender
+            </label>
+            <div className="flex gap-4">
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  className="mr-2 shrink-0 mt-0.5 rounded-full border-gray-200 text-green-600 focus:ring-green-600 dark:bg-neutral-800 dark:border-neutral-700 dark:text-blue-300 dark:focus:ring-blue-400"
+                  onChange={handleChange}
+                />
+                Male
+              </label>
+              <label className="flex items-center">
+  <input
+    type="radio"
+    name="gender"
+    value="female"
+    className="mr-2 shrink-0 mt-0.5 rounded-full border-gray-200 text-green-600 focus:ring-green-600 dark:bg-neutral-800 dark:border-neutral-700 dark:text-blue-300 dark:focus:ring-blue-400"
+    onChange={handleChange}
+  />
+  Female
+</label>
+            </div>
+          </div>
+
           <button
             type="submit"
-            className="w-full bg-[#4F9451] text-white py-2 rounded-lg hover:bg-[#4F9451] transition duration-300"
+            className="w-full bg-green-600 text-white py-2 rounded-lg shadow hover:bg-green-700"
           >
-            Update Profile
+            Create Account
           </button>
         </form>
       </div>
@@ -238,4 +142,4 @@ const CreateAccountDoctor = () => {
   );
 };
 
-export default CreateAccountDoctor;
+export default CreateAccountPataint;
