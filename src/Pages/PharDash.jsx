@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import MedicineCard from "../Components/medcin";
+import BillCard from "../Components/pharBill";
 
 const PharDash = () => {
   return (
@@ -807,6 +808,13 @@ dark:bg-neutral-800 dark:border-neutral-700"
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <MedicineCard />
     </div>
+
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <BillCard
+       
+      />
+    </div>
+
     </div>
   );
 };
