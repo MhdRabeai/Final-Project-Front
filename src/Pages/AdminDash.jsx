@@ -280,7 +280,6 @@ const AdminDash = () => {
               data-hs-accordion-always-open
             >
                <ul className="flex flex-col space-y-1">
-          {/* Overview Tab */}
           <li>
             <Link
               to="/dashboard/admin"
@@ -291,7 +290,6 @@ const AdminDash = () => {
             </Link>
           </li>
 
-          {/* Calendar Tab */}
           <li>
             <Link
               to="/dashboard/admin/CalendarAdmin"
@@ -302,7 +300,6 @@ const AdminDash = () => {
             </Link>
           </li>
 
-          {/* All Drugs Tab */}
           <li>
             <Link
               to="/dashboard/admin/TabelDrugs"
@@ -313,7 +310,6 @@ const AdminDash = () => {
             </Link>
           </li>
 
-          {/* All Users Accordion */}
           <li className="hs-accordion" id="projects-accordion">
             <button
               type="button"
@@ -323,7 +319,6 @@ const AdminDash = () => {
             >
               <FaUsers className="shrink-0" />
               All Users
-              {/* Arrow Icon for Accordion */}
               <svg
                 className="hs-accordion-active:block ms-auto hidden size-4"
                 xmlns="http://www.w3.org/2000/svg"
@@ -354,7 +349,6 @@ const AdminDash = () => {
               </svg>
             </button>
 
-            {/* User Sub-Links */}
             <div
               id="projects-accordion-child"
               className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
@@ -390,7 +384,6 @@ const AdminDash = () => {
             </div>
           </li>
 
-          {/* Articles Tab */}
           <li>
             <Link
               to="/dashboard/admin/BlogsAdmin"
@@ -408,7 +401,6 @@ const AdminDash = () => {
 
       <div class="w-full lg:ps-64">
         <div class="my-section">
-          {/* p-4 sm:p-6 space-y-4 sm:space-y-6 */}
           <Outlet />
         </div>
       </div>
