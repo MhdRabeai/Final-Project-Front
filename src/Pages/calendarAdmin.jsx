@@ -123,8 +123,8 @@ const CalendarAdmin = () => {
             const doctor = doctors.find((doc) => doc.id === +e.target.value);
             setSelectedDoctor(doctor);
           }}
-          className="w-full p-2 border border-gray-300 rounded-md"
-        >
+          className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+          >
           <option value="">All Doctors</option>
           {doctors.map((doctor) => (
             <option key={doctor.id} value={doctor.id}>
