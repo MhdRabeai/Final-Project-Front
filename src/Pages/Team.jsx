@@ -1,56 +1,72 @@
 import React, { useState } from "react";
 import TeamCard from "../Components/TeamCard";
+import { IoIosSearch } from "react-icons/io";
+
+import SearchComponent from './SearchPage';
+
+// import { AudioOutlined } from "@ant-design/icons";
+// import { Input, Space } from 'antd';
+// const { Search } = Input;
+// const suffix = (
+//   <AudioOutlined
+//     style={{
+//       fontSize: 16,
+//       color: "#1677ff",
+//     }}
+//   />
+// );
+// const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 const Team = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const teamData = [
     {
       name: "Coriss Ambady",
       profession: "Web Developer",
       imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-      },
-      {
+    },
+    {
       name: "John Doe",
       profession: "UI/UX Designer",
       imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-      },
-      {
+    },
+    {
       name: "Jane Smith",
       profession: "Backend Developer",
       imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-      },
-      {
+    },
+    {
       name: "Samuel Green",
       profession: "Frontend Developer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-      },
-      {
+    },
+    {
       name: "Robert Williams",
       profession: "Project Manager",
       imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-      },
-      {
+    },
+    {
       name: "Alice Johnson",
       profession: "QA Engineer",
       imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-      },
-      {
+    },
+    {
       name: "Lucas Martin",
       profession: "Web Developer",
       imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-      },
-      {
+    },
+    {
       name: "Sophia Davis",
       profession: "DevOps Engineer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-      },
-      {
+    },
+    {
       name: "Sophia Davis",
       profession: "DevOps Engineer",
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-      },
-      ];
-  ;
-
+    },     
+  ];
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
@@ -63,13 +79,15 @@ const Team = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(Math.min(pageNumber, totalPages));
   };
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <section className="dark:bg-black">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap">
-          <div className="w-full px-4">
-            <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col">
+            <div className="mx-auto max-w-[510px] text-center">
               <span className="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
                 Our Team
               </span>
@@ -83,7 +101,27 @@ const Team = () => {
             </div>
           </div>
         </div>
-
+        {/* <SearchComponent
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+            /> */}
+             <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
+  <label htmlFor="search-input" className="sr-only">
+    Search
+  </label>
+  <div className="relative">
+    <input
+      type="text"
+      id="search-input"
+      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
+      placeholder="Search..."
+    />
+    <IoIosSearch 
+      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+      size={20}
+    />
+  </div>
+</div>
         <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
           {currentTeamMembers.map((member, index) => (
             <TeamCard
@@ -127,7 +165,9 @@ const Team = () => {
                     <button
                       onClick={() => paginate(page + 1)}
                       className={`flex h-10 min-w-10 items-center justify-center border-r border-stroke px-2 text-base font-medium text-dark hover:bg-gray-200 dark:border-white/10 dark:text-white dark:hover:bg-white/5 ${
-                        currentPage === page + 1 ? "bg-gray-200 dark:bg-dark-3" : ""
+                        currentPage === page + 1
+                          ? "bg-gray-200 dark:bg-dark-3"
+                          : ""
                       }`}
                     >
                       {page + 1}
@@ -161,7 +201,6 @@ const Team = () => {
             </div>
           </div>
         )}
-      </div>
     </section>
   );
 };

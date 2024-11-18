@@ -1,6 +1,9 @@
 import React from "react";
 
 const Contact = () => {
+  const handleFeedBack = async (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <section className="relative z-10 overflow-hidden  dark:bg-dark min-g-screen">
@@ -9,21 +12,22 @@ const Contact = () => {
             <div class="grid lg:grid-cols-7 lg:gap-x-4 xl:gap-x-12  lg:items-center  ">
               <div class="lg:col-span-4 flex  h-full">
                 <div className="mb-12 max-w-[570px] lg:mb-0 flex flex-col justify-center">
-                  <span class="block mb-0 text-lg font-semibold text-[#4f9451]">
-                    Contact Us
-                  </span>
+                  <div class="w-full">
+                    <span class="block  text-lg font-semibold text-[#4F9451]">
+                      Contact Us
+                    </span>
+                    <h2 class="mb-3 text-xl font-semibold text-dark dark:text-white sm:text-[40px]/[48px]">
+                      GET IN TOUCH WITH US
+                    </h2>
+                    <p class="mb-5 text-base text-gray-600 dark:text-gray-700">
+                      We're here to help! Whether you have a question, need
+                      assistance, or simply want to share your thoughts, we are
+                      hear to listen to you. You can reach out to us via phone,
+                      email, or by filling out our contact form. We strive to
+                      respond to all inquiries promptly and efficiently.
+                    </p>
+                  </div>
 
-                  <h2 class="mb-5 text-3xl  text-dark dark:text-white sm:text-[40px]/[48px] font-semibold">
-                    GET IN TOUCH WITH US
-                  </h2>
-
-                  <p class="mb-5 text-base text-gray-600 dark:text-gray-700">
-                    We're here to help! Whether you have a question, need
-                    assistance, or simply want to share your thoughts, we are
-                    hear to listen to you. You can reach out to us via phone,
-                    email, or by filling out our contact form. We strive to
-                    respond to all inquiries promptly and efficiently.
-                  </p>
                   <div className="mb-6 flex w-full max-w-[370px] items-center">
                     <div className=" flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
                       <svg
@@ -117,28 +121,77 @@ const Contact = () => {
               </div>
 
               <div class="lg:col-span-3 mt-10 lg:mt-0 py-10">
-                <div className="relative rounded-lg bg-white p-8 shadow-lg dark:bg-gray-800 sm:p-12">
-                  <form>
-                    <ContactInputBox
-                      type="text"
-                      name="name"
-                      placeholder="Your Name"
-                    />
-                    <ContactInputBox
-                      type="text"
-                      name="email"
-                      placeholder="Your Email"
-                    />
-                    <ContactTextArea
-                      row="6"
-                      placeholder="Your Message"
-                      name="details"
-                      defaultValue=""
-                    />
+                <div className="relative rounded-lg bg-white  shadow-lg dark:bg-gray-800 px-8 py-10">
+                  <form onSubmit={handleFeedBack}>
+                    <div className="relative mb-4">
+                      <input
+                        id="registerForm"
+                        type="text"
+                        className="peer py-2 px-4 ps-11 block w-full
+                          border-2  border-gray-200 rounded-lg text-sm 
+                          focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                          dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                        placeholder="Enter Name..."
+                        name="name"
+                      />
+                      <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
+                        <svg
+                          id="registerIcon"
+                          className="shrink-0 size-4 text-gray-500 dark:text-neutral-500"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                          <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="relative mb-4">
+                      <input
+                        id="registerEmail"
+                        type="email"
+                        class="peer py-2 px-4 ps-11 block w-full
+                            border-2  border-gray-200 rounded-lg text-sm 
+                            focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                            dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                        placeholder="Enter Email..."
+                        name="email"
+                      />
+                      <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none ">
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          strokeWidth="0"
+                          viewBox="0 0 24 24"
+                          class="fill-gray-500"
+                          height="1em"
+                          width="1em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path fill="none" d="M0 0h24v24H0V0z"></path>
+                          <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <div className=" mb-6">
+                      <textarea
+                        class="resize-none py-3 px-4 block w-full border-2 border-gray-200 rounded-lg text-xs  text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                        rows="3"
+                        name="feedback"
+                        placeholder="Write Your Message..."
+                      ></textarea>
+                    </div>
                     <div>
                       <button
                         type="submit"
-                        className="w-full rounded border border-primary bg-customGreen p-3 text-white transition hover:bg-opacity-90"
+                        className="w-full rounded-lg border border-primary bg-customGreen py-2 text-white transition hover:bg-opacity-90 text-base"
                       >
                         Send Message
                       </button>
@@ -1297,34 +1350,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
-const ContactTextArea = ({ row, placeholder, name, defaultValue }) => {
-  return (
-    <>
-      <div className="mb-6">
-        <textarea
-          rows={row}
-          placeholder={placeholder}
-          name={name}
-          className="w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-dark-3 dark:bg-gray-400 dark:text-dark-6"
-          defaultValue={defaultValue}
-        />
-      </div>
-    </>
-  );
-};
-
-const ContactInputBox = ({ type, placeholder, name }) => {
-  return (
-    <>
-      <div className="mb-6">
-        <input
-          type={type}
-          placeholder={placeholder}
-          name={name}
-          className="w-full rounded border border-stroke px-[14px] py-3 text-base text-body-color outline-none focus:border-primary dark:border-dark-3 dark:bg-gray-400 dark:text-dark-6"
-        />
-      </div>
-    </>
-  );
-};

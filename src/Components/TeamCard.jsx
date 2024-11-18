@@ -1,9 +1,9 @@
 const TeamCard = ({ imageSrc, name, profession }) => {
   return (
     <div className="w-full px-4 md-px-0 md:w-1/2 xl:w-1/4 hover:scale-105 transition">
-      <div className="mx-auto mb-10 w-full max-w-[370px]">
-        <div className="relative overflow-hidden rounded-lg">
-          <img src={imageSrc} alt="img" className="w-full" />
+      <div className="mx-auto mb-10 w-full  max-w-[370px]">
+        <div className="relative overflow-hidden rounded-lg test sm-w-50px">
+          <img src={imageSrc} alt="img" className="w-full sm:w-60px" />
           <div className="absolute bottom-5 left-0 w-full text-center">
             <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-black">
               <h3 className="text-dark dark:text-white text-base font-semibold">
