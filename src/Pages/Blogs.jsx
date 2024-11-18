@@ -8,6 +8,8 @@ const Blogs = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+
   const itemsPerPage = 8;
 
   useEffect(() => {
@@ -43,6 +45,9 @@ const Blogs = () => {
   if (loading) {
     return <div><Loading /></div>;
   }
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <section className="dark:bg-black">
@@ -59,10 +64,23 @@ const Blogs = () => {
               There are many variations of passages of Lorem Ipsum available
               but the majority have suffered alteration in some form.
             </p>
-            <SearchComponent
+            {/* <SearchComponent
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
+            /> */}
+           <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
+            <label htmlFor="p-5 search-input" className="sr-only">
+              Search
+            </label>
+            <input
+              type="text"
+              id="search-input"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-green-500 focus:ring-green-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+              placeholder="Search for items"
             />
+          </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 xl:grid-cols-4 xl:gap-4">
             {currentBlogs.map((post) => (
