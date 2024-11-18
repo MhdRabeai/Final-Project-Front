@@ -12,7 +12,7 @@ const PharDash = () => {
               href="/"
               aria-label="Preline"
             >
-              <svg
+              {/* <svg
                 class="w-28 h-auto"
                 width="116"
                 height="32"
@@ -44,7 +44,11 @@ const PharDash = () => {
                   class="fill-blue-600 dark:fill-white"
                   fill="currentColor"
                 />
-              </svg>
+              </svg> */}
+               <Link to={"/"}>
+                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src="logo.png" alt="logo" width={175} /> */}
+                </Link>
             </a>
           </div>
 
