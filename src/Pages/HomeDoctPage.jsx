@@ -6,7 +6,7 @@ import BarChart from '../Components/BarChart';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
-const HomeAdminPage = () => {
+const HomeDoctPage = () => {
   const chartDataLine = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June'],
     datasets: [
@@ -21,11 +21,11 @@ const HomeAdminPage = () => {
   };
 
   const chartDataPie = {
-    labels: ['Visits', 'Sales', 'New Users'],
+    labels: ['Meal', 'famel'],
     datasets: [
       {
-        data: [300, 50, 100],
-        backgroundColor: ['#ff5733', "#4F9451", '#3357ff'],
+        data: [50, 100],
+        backgroundColor: ["#007BFF", "#4F9451"],
         hoverOffset: 4,
       },
     ],
@@ -98,4 +98,4 @@ const HomeAdminPage = () => {
   );
 };
 
-export default HomeAdminPage;
+export default HomeDoctPage;

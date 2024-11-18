@@ -46,6 +46,7 @@ import AddDrug from "./Pages/AddDrug";
 import CreateAccountPharmaceutical from "./Pages/CreateAccountPharmaceutical";
 import DoctorPage from "./Pages/DoctorPage";
 import HomeAdminPage from "./Pages/HomeAdminPage";
+import HomeDoctPage from "./Pages/HomeDoctPage";
 
 function App() {
   const location = useLocation();
@@ -136,7 +137,8 @@ function App() {
             />
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
-            <Route index element={<CalendarPage />} />
+          <Route index element={<HomeDoctPage />} />
+          <Route path="HomeDoctPage" element={<HomeDoctPage />} />
             <Route path="CalendarPage" element={<CalendarPage />} />
             <Route path="DocProfile" element={<DocProfile />} />
             <Route path="AddArticle" element={<DoctorArticleForm />} />
