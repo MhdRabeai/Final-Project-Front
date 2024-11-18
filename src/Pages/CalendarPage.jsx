@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import { Calendar, dateFnsLocalizer } from "react-big-calendar";
-import format from "date-fns/format";
-import parse from "date-fns/parse";
-import startOfWeek from "date-fns/startOfWeek";
-import getDay from "date-fns/getDay";
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState, useRef } from 'react';
+import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
+import format from 'date-fns/format';
+import parse from 'date-fns/parse';
+import startOfWeek from 'date-fns/startOfWeek';
+import getDay from 'date-fns/getDay';
+import 'react-big-calendar/lib/css/react-big-calendar.css'; 
+import 'react-datepicker/dist/react-datepicker.css';
 import { v4 as uuidv4 } from 'uuid';
+
+
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -19,6 +21,12 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 });
+
+const doctors = [
+  { id: 1, name: "Dr. John Doe" },
+  { id: 2, name: "Dr. Jane Smith" },
+  { id: 3, name: "Dr. Adam Johnson" },
+];
 
 const initialEvents = [
   {
@@ -43,13 +51,19 @@ const CalendarAdmin = () => {
   const [events, setEvents] = useState(initialEvents);
   const [showModal, setShowModal] = useState(false);
   const [newEvent, setNewEvent] = useState({
-    title: "",
-    description: "",
+    title: '',
+    description: '',
     start: null,
     end: null,
     doctorId: null,
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
+<<<<<<< HEAD
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+
+  const filteredEvents = selectedDoctor
+    ? events.filter((event) => event.doctorId === selectedDoctor.id)
+    : events;
 
   const handleSelectSlot = (slotInfo) => {
     setNewEvent({
@@ -57,10 +71,36 @@ const CalendarAdmin = () => {
       description: "",
       start: slotInfo.start,
       end: slotInfo.end,
-      doctorId: null,
+      doctorId: selectedDoctor ? selectedDoctor.id : null,
     });
     setSelectedEvent(null);
     setShowModal(true);
+=======
+  const [showError, setShowError] = useState(false);
+  const alertRef = useRef(null);
+
+  const workingHoursStart = 9;
+  const workingHoursEnd = 17;
+
+  const handleSelectSlot = (slotInfo) => {
+    const slotStartHour = slotInfo.start.getHours();
+    const slotEndHour = slotInfo.end.getHours();
+
+    if (slotStartHour >= workingHoursStart && slotEndHour <= workingHoursEnd) {
+      setNewEvent({
+        title: '',
+        description: '',
+        start: slotInfo.start,
+        end: slotInfo.end,
+        doctorId: null,
+      });
+      setSelectedEvent(null);
+      setShowModal(true);
+    } else {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 3000); // Hide error after 3 seconds
+    }
+>>>>>>> c4baeb531d87d156634397ce707d7c463ff41faa
   };
 
   const handleSelectEvent = (event) => {
@@ -76,19 +116,14 @@ const CalendarAdmin = () => {
   };
 
   const handleSaveEvent = () => {
-    if (newEvent.title.trim() === "") {
-      alert("Title is required!");
-      return;
-    }
-
     if (selectedEvent) {
       setEvents(events.map((event) =>
         event.id === selectedEvent.id ? { ...newEvent, id: event.id } : event
       ));
     } else {
       setEvents([...events, { ...newEvent, id: uuidv4() }]);
+    
     }
-
     setShowModal(false);
   };
 
@@ -97,12 +132,35 @@ const CalendarAdmin = () => {
     setShowModal(false);
   };
 
+
   return (
     <div className="container mx-auto p-4">
+      <div className="mb-4">
+        <label htmlFor="doctor" className="block text-lg font-medium">
+          Select Doctor
+        </label>
+        <select
+          id="doctor"
+          value={selectedDoctor ? selectedDoctor.id : ""}
+          onChange={(e) => {
+            const doctor = doctors.find((doc) => doc.id === +e.target.value);
+            setSelectedDoctor(doctor);
+          }}
+          className="w-full p-2 border border-gray-300 rounded-md"
+        >
+          <option value="">All Doctors</option>
+          {doctors.map((doctor) => (
+            <option key={doctor.id} value={doctor.id}>
+              {doctor.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className="h-[80vh]">
         <Calendar
           localizer={localizer}
-          events={events}
+          events={filteredEvents}
           startAccessor="start"
           endAccessor="end"
           style={{ height: "100%" }}
@@ -113,55 +171,28 @@ const CalendarAdmin = () => {
           onSelectEvent={handleSelectEvent}
         />
       </div>
-
+  
       {showModal && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white rounded-lg shadow-lg w-1/3 p-6 relative z-50">
             <h3 className="text-lg font-semibold mb-4">{selectedEvent ? "Edit Event" : "Add New Event"}</h3>
-            <input
-              type="text"
-              placeholder="Title"
-              value={newEvent.title}
-              onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
-            />
-            <input
-              type="text"
-              placeholder="Patient Name"
-              value={newEvent.patientName}
-              onChange={(e) => setNewEvent({ ...newEvent, patientName: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
-            />
-            <textarea
-              placeholder="Description"
-              value={newEvent.description}
-              onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })}
-              className="w-full p-2 border border-gray-300 rounded-md mb-4"
-            ></textarea>
-
+            <input type="text" placeholder="Title" value={newEvent.title} onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })} className="w-full p-2 border border-gray-300 rounded-md mb-4" />
+            <input type="text" placeholder="Patient Name" value={newEvent.patientName} onChange={(e) => setNewEvent({ ...newEvent, patientName: e.target.value })} className="w-full p-2 border border-gray-300 rounded-md mb-4" />
+            <textarea placeholder="Description" value={newEvent.description} onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })} className="w-full p-2 border border-gray-300 rounded-md mb-4"></textarea>
             <div className="flex justify-end space-x-4">
-              <button
-                onClick={handleSaveEvent}
-                className="bg-[#4F9451] text-white px-4 py-2 rounded-md hover:bg-[#4F9451]"
-              >
-                {selectedEvent ? "Save Changes" : "Save"}
-              </button>
+              <button onClick={handleSaveEvent} className="bg-[#4F9451] text-white px-4 py-2 rounded-md hover:bg-[#4F9451]">{selectedEvent ? "Save Changes" : "Save"}</button>
               {selectedEvent && (
-                <button
-                  onClick={handleDeleteEvent}
-                  className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
-                >
-                  Delete
-                </button>
+                <button onClick={handleDeleteEvent} className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Delete</button>
               )}
-              <button
-                onClick={() => setShowModal(false)}
-                className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
-              >
-                Cancel
-              </button>
+              <button onClick={() => setShowModal(false)} className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600">Cancel</button>
             </div>
           </div>
+        </div>
+      )}
+  
+      {showError && (
+        <div ref={alertRef} className="fixed bottom-10 right-10 bg-red-500 text-white p-4 rounded-md">
+          Event creation outside working hours is not allowed.
         </div>
       )}
     </div>
