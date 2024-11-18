@@ -32,7 +32,7 @@ const AiChat = () => {
 
       <div
         id="hs-offcanvas-example"
-        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full  sm:max-w-xs w-[80%] z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700 flex flex-col justify-between"
+        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full  sm:max-w-xs w-[80%] z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700 hs-overlay-open:flex flex-col justify-between"
         role="dialog"
         tabIndex="-1"
         aria-labelledby="hs-offcanvas-example-label"
@@ -69,8 +69,8 @@ const AiChat = () => {
               </svg>
             </button>
           </div>
-          <div className="p-2">
-            <ul className="space-y-5 max-h-[75vh] py-2 overflow-auto my-chat">
+          <div className="">
+            <ul className="space-y-5 max-h-[75vh] p-2 overflow-auto my-chat">
               <li className="max-w-lg flex gap-x-2 sm:gap-x-4">
                 <div className="bg-white border border-gray-200 rounded-2xl p-4 space-y-3 dark:bg-neutral-900 dark:border-neutral-700">
                   <h2 className="font-medium text-gray-800 dark:text-white">
