@@ -109,7 +109,7 @@ const Stepper = ({ amount }) => {
           className={`px-4 py-2 rounded-lg text-white ${
             currentStep === steps.length
               ? "bg-gray-300 cursor-not-allowed"
-              : "bg-[#4f9451] hover:bg-[#2e6430]"
+              : "bg-[#4f9451] hover:bg-green-500"
           } ${currentStep === steps.length ? "hidden" : "block"}`}
         >
           Next
