@@ -8,8 +8,6 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import { v4 as uuidv4 } from 'uuid';
 
-
-
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
 };
@@ -21,12 +19,6 @@ const localizer = dateFnsLocalizer({
   getDay,
   locales,
 });
-
-const doctors = [
-  { id: 1, name: "Dr. John Doe" },
-  { id: 2, name: "Dr. Jane Smith" },
-  { id: 3, name: "Dr. Adam Johnson" },
-];
 
 const initialEvents = [
   {
@@ -58,24 +50,6 @@ const CalendarAdmin = () => {
     doctorId: null,
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
-<<<<<<< HEAD
-  const [selectedDoctor, setSelectedDoctor] = useState(null);
-
-  const filteredEvents = selectedDoctor
-    ? events.filter((event) => event.doctorId === selectedDoctor.id)
-    : events;
-
-  const handleSelectSlot = (slotInfo) => {
-    setNewEvent({
-      title: "",
-      description: "",
-      start: slotInfo.start,
-      end: slotInfo.end,
-      doctorId: selectedDoctor ? selectedDoctor.id : null,
-    });
-    setSelectedEvent(null);
-    setShowModal(true);
-=======
   const [showError, setShowError] = useState(false);
   const alertRef = useRef(null);
 
@@ -100,7 +74,6 @@ const CalendarAdmin = () => {
       setShowError(true);
       setTimeout(() => setShowError(false), 3000); // Hide error after 3 seconds
     }
->>>>>>> c4baeb531d87d156634397ce707d7c463ff41faa
   };
 
   const handleSelectEvent = (event) => {
@@ -122,7 +95,6 @@ const CalendarAdmin = () => {
       ));
     } else {
       setEvents([...events, { ...newEvent, id: uuidv4() }]);
-    
     }
     setShowModal(false);
   };
@@ -132,35 +104,12 @@ const CalendarAdmin = () => {
     setShowModal(false);
   };
 
-
   return (
     <div className="container mx-auto p-4">
-      <div className="mb-4">
-        <label htmlFor="doctor" className="block text-lg font-medium">
-          Select Doctor
-        </label>
-        <select
-          id="doctor"
-          value={selectedDoctor ? selectedDoctor.id : ""}
-          onChange={(e) => {
-            const doctor = doctors.find((doc) => doc.id === +e.target.value);
-            setSelectedDoctor(doctor);
-          }}
-          className="w-full p-2 border border-gray-300 rounded-md"
-        >
-          <option value="">All Doctors</option>
-          {doctors.map((doctor) => (
-            <option key={doctor.id} value={doctor.id}>
-              {doctor.name}
-            </option>
-          ))}
-        </select>
-      </div>
-
       <div className="h-[80vh]">
         <Calendar
           localizer={localizer}
-          events={filteredEvents}
+          events={events}
           startAccessor="start"
           endAccessor="end"
           style={{ height: "100%" }}
