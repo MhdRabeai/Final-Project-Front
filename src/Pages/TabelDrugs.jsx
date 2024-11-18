@@ -87,7 +87,7 @@ const TabelDrugs = () => {
   };
 
   const handleAddDrugs = () => {
-    navigate("/dashboard/admin/AddDrag");
+    navigate("/dashboard/admin/AddDrug");
   };
 
   return (
