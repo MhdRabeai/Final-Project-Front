@@ -38,9 +38,11 @@ import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CreateAccountPataint from "./Pages/createAccountDoctor";
-import Profile from "./Pages/Profile";
+// import Profile from "./Pages/Profile";
+// import Profile from "./Pages/Profile";
 
 function App() {
+
   const location = useLocation();
 
   useEffect(() => {
@@ -79,7 +81,7 @@ function App() {
             <Route path="blogs/:id" element={<BlogDetail />} />
             <Route path="contact" element={<Contact />} />
             <Route path="team" element={<Team />} />
-            <Route path="team/profile/:doctorId" element={<Profile />} />
+            {/* <Route path="team/profile/:doctorId" element={<Profile />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
 

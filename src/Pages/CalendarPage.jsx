@@ -122,7 +122,7 @@ const CalendarPage = () => {
   };
 
   const handleDeleteEvent = () => {
-    setEvents(events.filter((event) => event !== selectedEvent));
+    setEvents(events.filter((event) => event.id !== selectedEvent.id));
     setShowModal(false);
   };
 
