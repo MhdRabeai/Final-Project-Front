@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 
 const DoctorArticleForm = () => {
   const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
   const [content, setContent] = useState('');
-  const [categories, setCategories] = useState([]);
-  const [tags, setTags] = useState([]);
   const [image, setImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -23,9 +22,8 @@ const DoctorArticleForm = () => {
 
     const articleData = {
       title,
+      description,
       content,
-      categories,
-      tags,
       image,
     };
 
@@ -36,66 +34,119 @@ const DoctorArticleForm = () => {
       },
       body: JSON.stringify(articleData),
     })
-    .then(response => {
-      console.log('Article posted successfully:', response);
-      setTitle('');
-      setContent('');
-      setCategories([]);
-      setTags([]);
-      setImage(null);
-    })
-    .catch(error => {
-      console.error('Error posting article:', error);
-    });
+      .then((response) => {
+        console.log('Article posted successfully:', response);
+        setTitle('');
+        setDescription('');
+        setContent('');
+        setImage(null);
+      })
+      .catch((error) => {
+        console.error('Error posting article:', error);
+      });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded px-8 py-10 mb-4">
-    <h2 className="text-xl font-bold mb-4 text-green-700">Share your Knowledge</h2>
-  
-    <div className="mb-4">
-      <label htmlFor="title" className="block text-gray-700 text-sm font-bold mb-2">
-        Title
-      </label>
-      <input
-        type="text"
-        id="title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-        placeholder="Enter Title..."
-      />
-    </div>
-  
-    <div className="mb-4">
-      <label htmlFor="content" className="block text-gray-700 text-sm font-bold mb-2">
-        Content
-      </label>
-      <textarea
-        id="content"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-xs text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-        placeholder="Enter Your Knowledge..."
-      />
-    </div>
-  
-    <div className="mb-4">
-      <label htmlFor="image" className="block text-gray-700 text-sm font-bold mb-2">
-        Image
-      </label>
-      <div className="relative">
-        <input type="file" id="image" onChange={handleImageChange} className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" />
-        
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-3xl md:p-8 lg:p-10">
+        <h2 className="text-xl md:text-2xl font-bold mb-6 text-center text-green-700">
+          Share Your Knowledge
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Image Upload */}
+          <div className="flex flex-col items-center">
+            <label className="block text-gray-700 text-sm font-bold mb-2">
+              Upload Image
+            </label>
+            <div className="w-32 h-32 md:w-40 md:h-40 mb-4 rounded-lg overflow-hidden border-2 border-gray-300 shadow-sm">
+              {image ? (
+                <img
+                  src={image}
+                  alt="Uploaded Preview"
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500">
+                  No Image
+                </div>
+              )}
+            </div>
+            <input
+              type="file"
+              onChange={handleImageChange}
+              className="text-xs md:text-sm text-gray-600"
+            />
+          </div>
+
+          {/* Title */}
+          <div>
+            <label
+              htmlFor="title"
+              className="block text-sm md:text-base font-medium text-gray-700 mb-2"
+            >
+              Title
+            </label>
+            <input
+              type="text"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="Enter Title..."
+              className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600"
+              required
+            />
+          </div>
+
+          {/* Description */}
+          <div>
+            <label
+              htmlFor="description"
+              className="block text-sm md:text-base font-medium text-gray-700 mb-2"
+            >
+              Description
+            </label>
+            <textarea
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Enter a brief description..."
+              className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600"
+              rows="3"
+              required
+            />
+          </div>
+
+          {/* Content */}
+          <div>
+            <label
+              htmlFor="content"
+              className="block text-sm md:text-base font-medium text-gray-700 mb-2"
+            >
+              Content
+            </label>
+            <textarea
+              id="content"
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="Enter detailed content..."
+              className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600"
+              rows="6"
+              required
+            />
+          </div>
+
+          {/* Submit Button */}
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-green-600 text-white py-2 md:py-3 rounded-lg shadow hover:bg-green-700"
+            >
+              Post Article
+            </button>
+          </div>
+        </form>
       </div>
     </div>
-  
-    <div className="flex justify-center">
-      <button type="submit" className="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
-        Post Article
-      </button>
-    </div>
-  </form>
   );
 };
 
