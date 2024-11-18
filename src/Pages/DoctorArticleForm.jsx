@@ -53,7 +53,7 @@ const DoctorArticleForm = () => {
           Share Your Knowledge
         </h2>
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Image Upload */}
+
           <div className="flex flex-col items-center">
             <label className="block text-gray-700 text-sm font-bold mb-2">
               Upload Image
@@ -78,7 +78,6 @@ const DoctorArticleForm = () => {
             />
           </div>
 
-          {/* Title */}
           <div>
             <label
               htmlFor="title"
@@ -97,7 +96,6 @@ const DoctorArticleForm = () => {
             />
           </div>
 
-          {/* Description */}
           <div>
             <label
               htmlFor="description"
@@ -115,8 +113,6 @@ const DoctorArticleForm = () => {
               required
             />
           </div>
-
-          {/* Content */}
           <div>
             <label
               htmlFor="content"
@@ -135,7 +131,6 @@ const DoctorArticleForm = () => {
             />
           </div>
 
-          {/* Submit Button */}
           <div>
             <button
               type="submit"
