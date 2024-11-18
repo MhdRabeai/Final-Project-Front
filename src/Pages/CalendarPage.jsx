@@ -20,6 +20,12 @@ const localizer = dateFnsLocalizer({
   locales,
 });
 
+const doctors = [
+  { id: 1, name: "Dr. John Doe" },
+  { id: 2, name: "Dr. Jane Smith" },
+  { id: 3, name: "Dr. Adam Johnson" },
+];
+
 const initialEvents = [
   {
     id: uuidv4(),
@@ -50,6 +56,11 @@ const CalendarAdmin = () => {
     doctorId: null,
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+
+  const filteredEvents = selectedDoctor
+    ? events.filter((event) => event.doctorId === selectedDoctor.id)
+    : events;
 
   const handleSelectSlot = (slotInfo) => {
     setNewEvent({
@@ -57,7 +68,7 @@ const CalendarAdmin = () => {
       description: "",
       start: slotInfo.start,
       end: slotInfo.end,
-      doctorId: null,
+      doctorId: selectedDoctor ? selectedDoctor.id : null,
     });
     setSelectedEvent(null);
     setShowModal(true);
@@ -87,6 +98,7 @@ const CalendarAdmin = () => {
       ));
     } else {
       setEvents([...events, { ...newEvent, id: uuidv4() }]);
+    
     }
 
     setShowModal(false);
@@ -97,12 +109,35 @@ const CalendarAdmin = () => {
     setShowModal(false);
   };
 
+
   return (
     <div className="container mx-auto p-4">
+      <div className="mb-4">
+        <label htmlFor="doctor" className="block text-lg font-medium">
+          Select Doctor
+        </label>
+        <select
+          id="doctor"
+          value={selectedDoctor ? selectedDoctor.id : ""}
+          onChange={(e) => {
+            const doctor = doctors.find((doc) => doc.id === +e.target.value);
+            setSelectedDoctor(doctor);
+          }}
+          className="w-full p-2 border border-gray-300 rounded-md"
+        >
+          <option value="">All Doctors</option>
+          {doctors.map((doctor) => (
+            <option key={doctor.id} value={doctor.id}>
+              {doctor.name}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className="h-[80vh]">
         <Calendar
           localizer={localizer}
-          events={events}
+          events={filteredEvents}
           startAccessor="start"
           endAccessor="end"
           style={{ height: "100%" }}
