@@ -40,6 +40,7 @@ import CreateAccountPataint from "./Pages/createAccountDoctor";
 // import Profile from "./Pages/Profile";
 import PatientBills from "./Pages/PatientBills";
 import VideoChat from "./Pages/VideoChat";
+import BlogsAdmin from "./Pages/BlogsAdmin";
 
 function App() {
 
@@ -110,11 +111,17 @@ function App() {
               path="CreateAccountPataint"
               element={<CreateAccountPataint />}
             />
+            <Route
+              path="BlogsAdmin"
+              element={<BlogsAdmin />}
+            />
             <Route path="TabelDrugs" element={<TabelDrugs />} />
 
             <Route
               path="TabelPharmaceutical"
               element={<TabelPharmaceutical />}
+            />
+            <Route path="/blog/:id" element={<BlogDetail />}
             />
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
