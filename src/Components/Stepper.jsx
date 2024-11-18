@@ -128,6 +128,8 @@ const Stepper = ({ amount }) => {
 };
 
 export default Stepper;
+
+
 const CheckoutForm = ({ amount }) => {
   const stripe = useStripe();
   const elements = useElements();
