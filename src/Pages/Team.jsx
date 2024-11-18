@@ -18,9 +18,9 @@ import SearchComponent from './SearchPage';
 // const onSearch = (value, _e, info) => console.log(info?.source, value);
 
 const Team = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  // const [searchTerm, setSearchTerm] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
-  const teamData = [
+  const data = [
     {
       name: "Coriss Ambady",
       profession: "Web Developer",
@@ -67,18 +67,35 @@ const Team = () => {
       imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
     },     
   ];
+  const filteredData = data.filter((row) =>
+    row.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
 
-  const totalPages = Math.min(Math.ceil(teamData.length / itemsPerPage), 8);
+  const totalPages = Math.min(Math.ceil(filteredData.length / itemsPerPage), 8);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentTeamMembers = teamData.slice(indexOfFirstItem, indexOfLastItem);
+  const currentTeamMembers = filteredData.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber) => {
     setCurrentPage(Math.min(pageNumber, totalPages));
   };
+  const [sortConfig, setSortConfig] = useState({
+    key: "name",
+    direction: "ascending",
+  });
+  const sortedData = [...filteredData].sort((a, b) => {
+    if (a[sortConfig.key] < b[sortConfig.key]) {
+      return sortConfig.direction === "ascending" ? -1 : 1;
+    }
+    if (a[sortConfig.key] > b[sortConfig.key]) {
+      return sortConfig.direction === "ascending" ? 1 : -1;
+    }
+    return 0;
+  });
+ 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
@@ -115,6 +132,7 @@ const Team = () => {
       id="search-input"
       className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
       placeholder="Search..."
+      onChange={handleSearchChange}
     />
     <IoIosSearch 
       className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
@@ -134,7 +152,7 @@ const Team = () => {
           ))}
         </div>
 
-        {teamData.length > itemsPerPage && (
+        {filteredData.length > itemsPerPage && (
           <div className="pt-10 text-center dark:bg-black">
             <div className="inline-flex justify-center rounded bg-white p-3 shadow-[0px_1px_3px_0px_rgba(0,0,0,0.13)] dark:bg-black dark:border">
               <ul className="inline-flex overflow-hidden rounded-lg border border-stroke dark:border-gray">

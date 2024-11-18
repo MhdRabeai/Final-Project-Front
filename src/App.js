@@ -44,6 +44,7 @@ import BlogsAdmin from "./Pages/BlogsAdmin";
 import BlogDetailAdmin from "./Pages/BlogDetailAdmin";
 import ProfilePage from "./Pages/ProfilePage";
 import AddDrug from "./Pages/AddDrug";
+import CreateAccountPharmaceutical from "./Pages/CreateAccountPharmaceutical";
 
 function App() {
 
@@ -107,11 +108,11 @@ function App() {
             <Route path="TabelPataints" element={<TabelPataints />} />
             <Route path="TabelDoctors" element={<TabelDoctors />} />
             <Route
-              path="CreateAccountDoctor"
+              path="createAccountDoctor"
               element={<CreateAccountDoctor />}
             />
             <Route
-              path="CreateAccountPataint"
+              path="createAccountPataint"
               element={<CreateAccountPataint />}
             />
             <Route
@@ -128,8 +129,12 @@ function App() {
               element={<TabelPharmaceutical />}
             />
             <Route
-              path="AddDrag"
+              path="AddDrug"
               element={<AddDrug />}
+            />
+            <Route
+              path="CreateAccountPharmaceutical"
+              element={<CreateAccountPharmaceutical />}
             />
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
