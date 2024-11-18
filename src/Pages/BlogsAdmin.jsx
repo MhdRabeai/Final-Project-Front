@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BlogCard from '../Components/BlogCard';
 import { Loading } from '../Components/Loading';
-import SearchComponent from './SearchPage';
+// import SearchComponent from './SearchPage';
 import { Link } from 'react-router-dom';
 
 const BlogsAdmin = () => {
