@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import Modal from 'react-modal';
-import Input from '../Components/InputEvent'; // تأكد من المسار الصحيح
+import React, { useState, useEffect, useCallback } from "react";
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import Modal from "react-modal";
+import Input from "../Components/InputEvent"; // تأكد من المسار الصحيح
 
 const localizer = momentLocalizer(moment);
 
@@ -13,18 +13,22 @@ const CalendarPage = () => {
   const [currentEvent, setCurrentEvent] = useState(null);
 
   useEffect(() => {
-    const loadedEvents = JSON.parse(localStorage.getItem('events')) || [];
+    const loadedEvents = JSON.parse(localStorage.getItem("events")) || [];
     setEvents(loadedEvents);
   }, []);
 
   const saveEventsToLocalStorage = useCallback((updatedEvents) => {
-    localStorage.setItem('events', JSON.stringify(updatedEvents));
+    localStorage.setItem("events", JSON.stringify(updatedEvents));
   }, []);
 
   const handleCreateEvent = (newEvent) => {
-    const validStart = moment(newEvent.start).isValid() ? newEvent.start : moment().toDate();
-    const validEnd = moment(newEvent.end).isValid() ? newEvent.end : moment().add(1, 'hour').toDate();
-  
+    const validStart = moment(newEvent.start).isValid()
+      ? newEvent.start
+      : moment().toDate();
+    const validEnd = moment(newEvent.end).isValid()
+      ? newEvent.end
+      : moment().add(1, "hour").toDate();
+
     const updatedEvent = { ...newEvent, start: validStart, end: validEnd };
     const updatedEvents = [...events, updatedEvent];
     setEvents(updatedEvents);
@@ -33,12 +37,19 @@ const CalendarPage = () => {
   };
 
   const handleUpdateEvent = (updatedEvent) => {
-    const validStart = moment(updatedEvent.start).isValid() ? updatedEvent.start : moment().toDate();
-    const validEnd = moment(updatedEvent.end).isValid() ? updatedEvent.end : moment().add(1, 'hour').toDate();
-  
+    const validStart = moment(updatedEvent.start).isValid()
+      ? updatedEvent.start
+      : moment().toDate();
+    const validEnd = moment(updatedEvent.end).isValid()
+      ? updatedEvent.end
+      : moment().add(1, "hour").toDate();
+
     const updatedEvents = events.map((event) =>
-      event.id === updatedEvent.id ? { ...updatedEvent, start: validStart, end: validEnd } : event
+      event.id === updatedEvent.id
+        ? { ...updatedEvent, start: validStart, end: validEnd }
+        : event
     );
+    console.log("updatedEvents", events);
     setEvents(updatedEvents);
     saveEventsToLocalStorage(updatedEvents);
     closeModal();
@@ -52,10 +63,10 @@ const CalendarPage = () => {
   };
 
   const openModal = (slotInfo) => {
-    if (!slotInfo.hasOwnProperty('id')) {
-      slotInfo.id = moment().format('x');
-      slotInfo.title = '';
-      slotInfo.location = '';
+    if (!slotInfo.hasOwnProperty("id")) {
+      slotInfo.id = moment().format("x");
+      slotInfo.title = "";
+      slotInfo.location = "";
       slotInfo.start = slotInfo.start || new Date();
       slotInfo.end = slotInfo.end || new Date();
     }
@@ -77,17 +88,17 @@ const CalendarPage = () => {
     const eventSlotInfo = {
       start: slotInfo.start,
       end: slotInfo.end,
-      id: moment().format('x'),
-      title: '',
-      location: '',
+      id: moment().format("x"),
+      title: "",
+      location: "",
     };
     openModal(eventSlotInfo);
   };
 
   const eventStyleGetter = (event, start, end, isSelected) => {
-    const currentTime = moment().format('YYYY MM DD');
-    const eventTime = moment(event.start).format('YYYY MM DD');
-    const background = currentTime > eventTime ? '#DE6987' : '#8CBD4C';
+    const currentTime = moment().format("YYYY MM DD");
+    const eventTime = moment(event.start).format("YYYY MM DD");
+    const background = currentTime > eventTime ? "#DE6987" : "#8CBD4C";
     return {
       style: {
         backgroundColor: background,
@@ -110,7 +121,7 @@ const CalendarPage = () => {
         localizer={localizer}
         defaultView="month"
         events={events}
-        style={{ height: '600px' }}
+        style={{ height: "600px" }}
         onSelectEvent={handleSelectEvent}
         onSelectSlot={handleSelectSlot}
         eventPropGetter={eventStyleGetter}
@@ -124,36 +135,40 @@ const CalendarPage = () => {
         className="bg-white p-6 rounded-lg w-96 mx-auto"
         overlayClassName="bg-black bg-opacity-50 fixed inset-0 z-50"
       >
-        <h2 className="text-xl font-semibold mb-4">{currentEvent?.id ? 'Edit Event' : 'Create Event'}</h2>
+        <h2 className="text-xl font-semibold mb-4">
+          {currentEvent?.id ? "Edit Event" : "Create Event"}
+        </h2>
         <div>
           <Input
-            onChange={(value) => handleInputChange('title', value)}
+            onChange={(value) => handleInputChange("title", value)}
             placeholder="Event Title"
             defaultValue={currentEvent?.title}
           />
           <Input
-            onChange={(value) => handleInputChange('location', value)}
+            onChange={(value) => handleInputChange("location", value)}
             placeholder="Event Location"
             defaultValue={currentEvent?.location}
           />
         </div>
         <div className="mt-6 flex justify-between">
-          <button className="bg-red-500 text-white py-2 px-4 rounded-md" onClick={closeModal}>
+          <button
+            className="bg-red-500 text-white py-2 px-4 rounded-md"
+            onClick={closeModal}
+          >
             Cancel
           </button>
           <button
             className="bg-green-500 text-white py-2 px-4 rounded-md"
             onClick={() => {
               if (currentEvent?.id) {
-                handleUpdateEvent(currentEvent);   
+                handleUpdateEvent(currentEvent);
               } else {
-                handleCreateEvent(currentEvent);    
+                handleCreateEvent(currentEvent);
               }
             }}
           >
             Save
           </button>
-       
         </div>
       </Modal>
     </div>
