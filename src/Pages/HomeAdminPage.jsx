@@ -2,7 +2,10 @@ import React from 'react';
 import { Line, Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 
-// Register chart components
+// استيراد مكون BarChart الذي قمت بإنشائه
+import BarChart from '../Components/BarChart'; // تأكد من أنك قد أضفت BarChart في نفس المجلد أو المسار الصحيح
+
+// تسجيل المكونات اللازمة من Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
 const HomeAdminPage = () => {
@@ -30,7 +33,6 @@ const HomeAdminPage = () => {
     ],
   };
 
-  // Chart options
   const chartOptions = {
     responsive: true,
     plugins: {
@@ -51,7 +53,7 @@ const HomeAdminPage = () => {
           <p className="text-xl sm:text-2xl">12,345</p>
         </div>
         <div className="bg-green-500 text-white p-4 sm:p-6 rounded-lg shadow-md">
-          <h3 className="text-lg sm:text-xl font-semibold">New Pataint</h3>
+          <h3 className="text-lg sm:text-xl font-semibold">New Patients</h3>
           <p className="text-xl sm:text-2xl">1,200</p>
         </div>
         <div className="bg-yellow-500 text-white p-4 sm:p-6 rounded-lg shadow-md">
@@ -61,25 +63,26 @@ const HomeAdminPage = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6">
-  <div className="bg-white p-4 sm:p-6 lg:p-4 xl:p-6 rounded-lg shadow-md w-full flex flex-col items-center justify-center">
-    <h3 className="text-lg sm:text-xl font-semibold mb-4 text-center">Pataint of Visits (Line Chart)</h3>
-    <div className="lg:h-[350px] xl:h-[400px] h-full min-h-[250px] w-full flex items-center justify-center">
-      <Line data={chartDataLine} options={chartOptions} />
-    </div>
-  </div>
-
-
-
-
-        {/* Pie Chart */}
+        {/* المخطط الخطي */}
         <div className="bg-white p-4 sm:p-6 lg:p-4 xl:p-6 rounded-lg shadow-md w-full flex flex-col items-center justify-center">
-            <h3 className="text-lg sm:text-xl font-semibold mb-4 text-center">Statistics Breakdown (Pie Chart)</h3>
-            <div className="lg:h-[350px] xl:h-[400px] w-full flex items-center justify-center">
-                <Pie data={chartDataPie} options={chartOptions} />
-            </div>
-            </div>
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-center">Patient Visits (Line Chart)</h3>
+          <div className="lg:h-[350px] xl:h-[400px] h-full min-h-[250px] w-full flex items-center justify-center">
+            <Line data={chartDataLine} options={chartOptions} />
+          </div>
+        </div>
 
+        {/* المخطط الدائري */}
+        <div className="bg-white p-4 sm:p-6 lg:p-4 xl:p-6 rounded-lg shadow-md w-full flex flex-col items-center justify-center">
+          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-center">Statistics Breakdown (Pie Chart)</h3>
+          <div className="lg:h-[350px] xl:h-[400px] w-full flex items-center justify-center">
+            <Pie data={chartDataPie} options={chartOptions} />
+          </div>
+        </div>
+      </div>
 
+      {/* إضافة المخطط البياني الشريطي */}
+      <div className="mb-6 ">
+        <BarChart /> {/* هنا يتم إضافة مكون BarChart */}
       </div>
     </div>
   );
