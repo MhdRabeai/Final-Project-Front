@@ -131,7 +131,6 @@ function App() {
               path="AddDrag"
               element={<AddDrug />}
             />
-           
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
             <Route index element={<CalendarPage />} />

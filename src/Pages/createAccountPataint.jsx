@@ -51,11 +51,7 @@ const CreateAccountPataint = () => {
     <div className="flex items-center justify-center my-section bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl lg:max-w-3xl">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
-<<<<<<< HEAD
         Pataint Profile
-=======
-          Patient Profile
->>>>>>> 46a924d14f95e58ce68657ccb2870c3eea56cae1
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -153,15 +149,8 @@ const CreateAccountPataint = () => {
           </form>
         </div>
       </div>
-<<<<<<< HEAD
-    </div>
+   
   );
 };
 
-export default CreateAccountPataint;
-=======
-    );
-  };
-  
-  export default CreateAccountDoctor;
->>>>>>> 46a924d14f95e58ce68657ccb2870c3eea56cae1
+  export default CreateAccountPataint;
