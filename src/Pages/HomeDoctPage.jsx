@@ -42,7 +42,7 @@ const HomeDoctPage = () => {
   };
 
   const chartDataPie = {
-    labels: ["Meal", "famel"],
+    labels: ["Meal", "femal"],
     datasets: [
       {
         data: [50, 100],

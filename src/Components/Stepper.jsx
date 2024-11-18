@@ -232,7 +232,7 @@ const CheckoutForm = ({ amount }) => {
             className={`w-full py-2 px-4 rounded-lg text-white font-bold ${
               isLoading
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-600 hover:bg-blue-700"
+                : "bg-[#4f9451] hover:bg-[#2e6430]"
             }`}
           >
             {isLoading ? "Processing..." : "Pay Now"}
