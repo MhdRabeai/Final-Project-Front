@@ -2,10 +2,8 @@ import React from 'react';
 import { Line, Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
 
-// استيراد مكون BarChart الذي قمت بإنشائه
-import BarChart from '../Components/BarChart'; // تأكد من أنك قد أضفت BarChart في نفس المجلد أو المسار الصحيح
+import BarChart from '../Components/BarChart';
 
-// تسجيل المكونات اللازمة من Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
 const HomeAdminPage = () => {
@@ -16,7 +14,7 @@ const HomeAdminPage = () => {
         label: 'Number of Visits',
         data: [65, 59, 80, 81, 56, 55],
         fill: false,
-        borderColor: 'rgb(75, 192, 192)',
+        borderColor: "#4F9451",
         tension: 0.1,
       },
     ],
@@ -27,7 +25,7 @@ const HomeAdminPage = () => {
     datasets: [
       {
         data: [300, 50, 100],
-        backgroundColor: ['#ff5733', '#33ff57', '#3357ff'],
+        backgroundColor: ['#ff5733', "#4F9451", '#3357ff'],
         hoverOffset: 4,
       },
     ],
@@ -52,7 +50,7 @@ const HomeAdminPage = () => {
           <h3 className="text-lg sm:text-xl font-semibold">Visits</h3>
           <p className="text-xl sm:text-2xl">12,345</p>
         </div>
-        <div className="bg-green-500 text-white p-4 sm:p-6 rounded-lg shadow-md">
+        <div className="bg-[#4F9451] text-white p-4 sm:p-6 rounded-lg shadow-md">
           <h3 className="text-lg sm:text-xl font-semibold">New Patients</h3>
           <p className="text-xl sm:text-2xl">1,200</p>
         </div>

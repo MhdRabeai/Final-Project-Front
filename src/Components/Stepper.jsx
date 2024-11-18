@@ -10,9 +10,9 @@ import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(
   "pk_test_51QMG6qFfxkp1DJeeG1mcP5YL3UfF3t6L97xYbqvlp18tFD8xFw8sWqMbFNXCim1F3nMze507PbJ13VhJg3Sfx2yV00GgwIyRrs"
 );
+
 const steps = [
   { id: 1, title: "Choose Appointment", description: "Pick a date and time" },
-
   {
     id: 2,
     title: "Confirm & Pay",
@@ -21,12 +21,22 @@ const steps = [
   {
     id: 3,
     title: "Done",
-    description: "complete booking",
+    description: "Complete your booking",
   },
+];
+
+const doctorFreeTimes = [
+  "10:00 AM - 10:30 AM",
+  "11:00 AM - 11:30 AM",
+  "01:00 PM - 01:30 PM",
+  "02:30 PM - 03:00 PM",
+  "04:00 PM - 04:30 PM",
 ];
 
 const Stepper = ({ amount }) => {
   const [currentStep, setCurrentStep] = useState(1);
+  const [selectedTime, setSelectedTime] = useState("");
+  const [userCondition, setUserCondition] = useState("");
 
   const goNext = () => {
     if (currentStep < steps.length) setCurrentStep(currentStep + 1);
@@ -35,13 +45,15 @@ const Stepper = ({ amount }) => {
   const goBack = () => {
     if (currentStep > 1) setCurrentStep(currentStep - 1);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("sssss");
+    console.log("Selected Time:", selectedTime);
+    console.log("User Condition:", userCondition);
   };
 
   return (
-    <div className=" flex flex-col items-center justify-center  p-6">
+    <div className="flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-2xl">
         <div className="flex items-center justify-between mb-8">
           {steps.map((step, index) => (
@@ -77,7 +89,36 @@ const Stepper = ({ amount }) => {
 
       <div className="w-full max-w-2xl bg-white p-6 rounded-lg shadow-md mt-6">
         <form>
-          {currentStep === 1 && <div>Step 1: Choose Appointment</div>}
+          {currentStep === 1 && (
+            <div>
+              <h3 className="text-lg font-semibold mb-4">
+                Select a Time Slot
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {doctorFreeTimes.map((time, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={`p-2 rounded-lg border ${
+                      selectedTime === time
+                        ? "bg-green-500 text-white"
+                        : "bg-gray-100 hover:bg-gray-200"
+                    }`}
+                    onClick={() => setSelectedTime(time)}
+                  >
+                    {time}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                placeholder="Describe your condition"
+                value={userCondition}
+                onChange={(e) => setUserCondition(e.target.value)}
+                className="w-full mt-4 p-2 border rounded-lg focus:border-green-500 focus:ring-green-500"
+                rows="4"
+              ></textarea>
+            </div>
+          )}
           {currentStep === 2 && (
             <Elements
               stripe={stripePromise}
@@ -88,7 +129,7 @@ const Stepper = ({ amount }) => {
               <CheckoutForm amount={40} />
             </Elements>
           )}
-          {currentStep === 3 && <div>Step 3: Enter Details</div>}
+          {currentStep === 3 && <div>Step 3: Your booking is complete!</div>}
         </form>
       </div>
 
@@ -128,6 +169,7 @@ const Stepper = ({ amount }) => {
 };
 
 export default Stepper;
+
 const CheckoutForm = ({ amount }) => {
   const stripe = useStripe();
   const elements = useElements();
@@ -160,7 +202,7 @@ const CheckoutForm = ({ amount }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center  ">
+    <div className="flex flex-col items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
         <div className="space-y-4">
           <div className="border border-gray-300 rounded-lg p-3">
