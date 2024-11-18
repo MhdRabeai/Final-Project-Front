@@ -6,6 +6,7 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-datepicker/dist/react-datepicker.css";
+import { v4 as uuidv4 } from 'uuid';
 
 const locales = {
   "en-US": require("date-fns/locale/en-US"),
@@ -27,6 +28,7 @@ const doctors = [
 
 const initialEvents = [
   {
+    id: uuidv4(),
     title: "Meeting",
     start: new Date(2024, 10, 15, 10, 0),
     end: new Date(2024, 10, 15, 12, 0),
@@ -34,6 +36,7 @@ const initialEvents = [
     doctorId: 1,
   },
   {
+    id: uuidv4(),
     title: "Conference",
     start: new Date(2024, 10, 20, 9, 0),
     end: new Date(2024, 10, 20, 11, 0),
@@ -91,19 +94,21 @@ const CalendarAdmin = () => {
 
     if (selectedEvent) {
       setEvents(events.map((event) =>
-        event === selectedEvent ? { ...newEvent } : event
+        event.id === selectedEvent.id ? { ...newEvent, id: event.id } : event
       ));
     } else {
-      setEvents([...events, newEvent]);
+      setEvents([...events, { ...newEvent, id: uuidv4() }]);
+    
     }
 
     setShowModal(false);
   };
 
   const handleDeleteEvent = () => {
-    setEvents(events.filter((event) => event !== selectedEvent));
+    setEvents(events.filter((event) => event.id !== selectedEvent.id));
     setShowModal(false);
   };
+
 
   return (
     <div className="container mx-auto p-4">
@@ -136,6 +141,8 @@ const CalendarAdmin = () => {
           startAccessor="start"
           endAccessor="end"
           style={{ height: "100%" }}
+          views={['week', 'day', 'agenda']}
+          defaultView="week"
           selectable
           onSelectSlot={handleSelectSlot}
           onSelectEvent={handleSelectEvent}

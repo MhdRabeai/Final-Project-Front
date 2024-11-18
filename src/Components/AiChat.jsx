@@ -32,7 +32,7 @@ const AiChat = () => {
 
       <div
         id="hs-offcanvas-example"
-        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full  sm:max-w-xs w-[80%] z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700 flex flex-col justify-between"
+        className="hs-overlay hs-overlay-open:translate-x-0 hidden -translate-x-full fixed top-0 start-0 transition-all duration-300 transform h-full  sm:max-w-xs w-[80%] z-[80] bg-white border-e dark:bg-neutral-800 dark:border-neutral-700 hs-overlay-open:flex flex-col justify-between"
         role="dialog"
         tabIndex="-1"
         aria-labelledby="hs-offcanvas-example-label"
