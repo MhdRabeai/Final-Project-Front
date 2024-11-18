@@ -37,7 +37,9 @@ import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
 import CreateAccountPataint from "./Pages/createAccountDoctor";
-import Profile from "./Pages/Profile";
+// import Profile from "./Pages/Profile";
+import PatientBills from "./Pages/PatientBills";
+import VideoChat from "./Pages/VideoChat";
 
 function App() {
 
@@ -124,7 +126,7 @@ function App() {
           <Route path="dashboard/pharmacy" element={<PharDash />} />
           <Route path="dashboard/user" element={<UserDash />}>
             {/* <Route index element={<ProfilePage />} /> */}
-            <Route path="Setting" element={<ProfilePage />} />
+            {/* <Route path="Setting" element={<ProfilePage />} /> */}
             <Route index element={<Sessions />} />
             <Route path="session" element={<Sessions />} />
             <Route path="Perspections" element={<PrescriptionPage />} />
