@@ -1,4 +1,4 @@
-import React,{ useState }  from "react";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import { IoMdSettings } from "react-icons/io";
@@ -14,19 +14,20 @@ import { FaListUl } from "react-icons/fa";
 // import DocProfile from "../Components/docProfile";
 
 const UserDash = () => {
-
   return (
     <div>
       <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
-        
-
-          <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
-            <div class="hidden md:block">
-              <div class="relative">
-                <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5"></div>
-              </div>
-            </div>
+          <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
+            <Link to={"/"}>
+              <img
+                src={`${logo}`}
+                alt="logo"
+                className=" block lg:hidden"
+                width={150}
+              />
+              {/* <img src="logo.png" alt="logo" width={175} /> */}
+            </Link>
 
             <div class="flex flex-row items-center justify-end gap-1">
               <button
@@ -305,7 +306,6 @@ dark:bg-neutral-800 dark:border-neutral-700"
         aria-label="Sidebar"
       >
         <div class="relative flex flex-col h-full max-h-full bg-[#4F9451] ">
-       
           <div className="relative z-10">
             <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
               <div className="inline-flex items-center border-x px-5 mx-5">
@@ -323,83 +323,64 @@ dark:bg-neutral-800 dark:border-neutral-700"
               data-hs-accordion-always-open
             >
               <ul class="flex flex-col space-y-1">
-             
                 <li>
-                <Link
+                  <Link
                     to="/dashboard/user/session"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-0 size-4 ml-2"
-                      width="24"
-                      height="24"
-                    >
-                     <FaListUl />
+                    <svg class="shrink-0 size-4 ml-2" width="24" height="24">
+                      <FaListUl />
                     </svg>
                     Sessions
                   </Link>
                 </li>
 
                 <li>
-                <Link
+                  <Link
                     to="/dashboard/user/Perspections"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-0 size-4 ml-2"
-                      width="24"
-                      height="24"
-                    >
-                     <FaClipboardList />
+                    <svg class="shrink-0 size-4 ml-2" width="24" height="24">
+                      <FaClipboardList />
                     </svg>
                     Percpections
                   </Link>
                 </li>
 
                 <li>
-                <Link
+                  <Link
                     to="/dashboard/user/bills"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-0 size-4 ml-2"
-                      width="24"
-                      height="24"
-                    >
+                    <svg class="shrink-0 size-4 ml-2" width="24" height="24">
                       <LiaMoneyBillSolid />
                     </svg>
                     Bills
                   </Link>
                 </li>
                 <li>
-                <Link
+                  <Link
                     to="/dashboard/user/chatroom"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-5 size-4 ml-2"
-                    >
-                    <MdVideoChat />
+                    <svg class="shrink-5 size-4 ml-2">
+                      <MdVideoChat />
                     </svg>
                     Chat Room
                   </Link>
                 </li>
-               
-                
+
                 <li>
-                <Link
+                  <Link
                     to="/dashboard/user/Setting"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-0 size-4 ml-2"                   
-                    >
+                    <svg class="shrink-0 size-4 ml-2">
                       <IoMdSettings />
                     </svg>
                     Setting
                   </Link>
                 </li>
-                        
               </ul>
             </nav>
           </div>
@@ -408,11 +389,10 @@ dark:bg-neutral-800 dark:border-neutral-700"
 
       <div class="w-full lg:ps-64">
         <div class=" space-y-4 sm:space-y-6">
-          <Outlet/>
+          <Outlet />
         </div>
       </div>
     </div>
-
   );
 };
 

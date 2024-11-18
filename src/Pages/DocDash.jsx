@@ -11,12 +11,11 @@ const DocDash = () => {
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
         
 
-          <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
-            <div class="hidden md:block">
-              <div class="relative">
-                <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none z-20 ps-3.5"></div>
-              </div>
-            </div>
+          <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
+          <Link to={"/"}>
+                  <img src={`${logo}`} alt="logo" className=" block lg:hidden" width={150}/>
+                  {/* <img src="logo.png" alt="logo" width={175} /> */}
+                </Link>
 
             <div class="flex flex-row items-center justify-end gap-1">
               <button
