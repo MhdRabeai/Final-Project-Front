@@ -3,6 +3,10 @@ import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import AddArticle from "./DoctorArticleForm"
 import Perspective  from "./PrescriptionForm"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle, faPenAlt } from '@fortawesome/free-solid-svg-icons';
+import {FaCalendarAlt, FaPills} from 'react-icons/fa'; 
+
 
 const DocDash = () => {
   return (
@@ -269,7 +273,6 @@ dark:bg-neutral-800 dark:border-neutral-700"
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
                   <img src={`${logo}`} alt="logo" />
-                  {/* <img src="logo.png" alt="logo" width={175} /> */}
                 </Link>
               </div>
             </div>
@@ -280,6 +283,46 @@ dark:bg-neutral-800 dark:border-neutral-700"
               class="hs-accordion-group p-3 w-full flex flex-col flex-wrap"
               data-hs-accordion-always-open
             >
+<<<<<<< HEAD
+              <ul className="flex flex-col space-y-1">
+  <li>
+    <Link
+      to="/dashboard/doct/DocProfile"
+      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+    >
+      <FontAwesomeIcon icon={faUserCircle} className="text-sm shrink-0" />
+      Profile
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/dashboard/doct/calendarpage"
+      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+    >
+      <FaCalendarAlt className="shrink-0" />
+      Calendar
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/dashboard/doct/AddArticle"
+      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+    >
+<FontAwesomeIcon icon={faPenAlt} className="text-sm shrink-0" />
+Add Article
+    </Link>
+  </li>
+  <li>
+    <Link
+      to="/dashboard/doct/PrescriptionForm"
+      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+    >
+<FaPills className="shrink-0" />      Prescription Form
+    </Link>
+  </li>
+</ul>
+
+=======
               <ul class="flex flex-col space-y-1">
                 
                 <li>
@@ -427,9 +470,8 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     PrescriptionForm 
                   </Link>
                 </li>
+>>>>>>> 2c281c62d18398a6db1509c930d4d43b7f56352e
 
-                
-              </ul>
             </nav>
           </div>
         </div>
