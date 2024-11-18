@@ -106,15 +106,11 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />}>
-          <Route
-              index
-              
-              element={<HomeAdminPage />}
-            />
-            <Route  path="CalendarAdmin" element={<CalendarAdmin />} />
+            <Route index element={<HomeAdminPage />} />
+            <Route path="CalendarAdmin" element={<CalendarAdmin />} />
             <Route path="TabelPataints" element={<TabelPataints />} />
             <Route path="TabelDoctors" element={<TabelDoctors />} />
-           
+
             <Route
               path="createAccountDoctor"
               element={<CreateAccountDoctor />}
@@ -138,7 +134,6 @@ function App() {
               path="CreateAccountPharmaceutical"
               element={<CreateAccountPharmaceutical />}
             />
-           
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
             <Route index element={<CalendarPage />} />
