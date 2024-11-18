@@ -22,7 +22,6 @@ import DocDash from "./Pages/DocDash";
 import PharDash from "./Pages/PharDash";
 import UserDash from "./Pages/UserDash";
 import CalendarPage from "./Pages/CalendarPage";
-// import createAccountPataint from "./Pages/createAccountPataint"
 import TabelPataints from "./Pages/TabelPataints";
 import TabelDoctors from "./Pages/TabelDoctors";
 import TabelDrugs from "./Pages/TabelDrugs";
@@ -36,7 +35,7 @@ import PrescriptionForm from "./Pages/PrescriptionForm";
 import DocProfile from "./Pages/DocProfil";
 import CalendarAdmin from "./Pages/calendarAdmin";
 import CreateAccountDoctor from "./Pages/createAccountDoctor";
-import CreateAccountPataint from "./Pages/createAccountDoctor";
+import CreateAccountPataint from "./Pages/createAccountPataint";
 // import Profile from "./Pages/Profile";
 import PatientBills from "./Pages/PatientBills";
 import VideoChat from "./Pages/VideoChat";
