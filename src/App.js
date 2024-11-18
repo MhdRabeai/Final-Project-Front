@@ -106,14 +106,15 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />}>
+          <Route
+              index
+              
+              element={<HomeAdminPage />}
+            />
             <Route  path="CalendarAdmin" element={<CalendarAdmin />} />
             <Route path="TabelPataints" element={<TabelPataints />} />
             <Route path="TabelDoctors" element={<TabelDoctors />} />
-            <Route
-              index
-              path="HomeAdminPage"
-              element={<HomeAdminPage />}
-            />
+           
             <Route
               path="createAccountDoctor"
               element={<CreateAccountDoctor />}

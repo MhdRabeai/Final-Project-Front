@@ -60,6 +60,7 @@ const HomeAdminPage = () => {
           <h3 className="text-lg sm:text-xl font-semibold">Sales</h3>
           <p className="text-xl sm:text-2xl">320</p>
         </div>
+       
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6">
