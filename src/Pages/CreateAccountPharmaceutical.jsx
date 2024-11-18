@@ -54,7 +54,7 @@ const CreateAccountPharmaceutical = () => {
     <div className="flex items-center justify-center my-section bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl lg:max-w-3xl">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
-          Doctor Profile
+          Pharmasist's Profile
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 text-center">
