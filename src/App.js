@@ -82,11 +82,11 @@ function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="blogs" element={<Blogs />} />
-            <Route path="blogs/:id" element={<BlogDetail />} />
+            <Route path="blogs/blog" element={<BlogDetail />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="team" element={<Team />}>
-              <Route path=":id" element={<DoctorPage />} />
-            </Route>
+            <Route path="team" element={<Team />} />
+
+            <Route path="team/:id" element={<DoctorPage />} />
             {/* <Route path="team/profile/:doctorId" element={<Profile />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>

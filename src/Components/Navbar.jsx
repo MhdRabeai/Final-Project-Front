@@ -73,7 +73,7 @@ const Navbar = () => {
             className="flex-none text-xl font-semibold text-white focus:outline-none focus:opacity-80"
             to="/"
           >
-            <img src="logo.png" alt="logo" width={200} />
+            <img src="/logo.png" alt="logo" width={200} />
           </NavLink>
           <div className="sm:hidden">
             <button

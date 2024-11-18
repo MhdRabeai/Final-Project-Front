@@ -5,8 +5,8 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
   return (
     <div className="container mx-auto p-3">
       <div className="flex flex-wrap gap-4">
-        <a
-          href="/"
+        <Link
+          to={`blog/${id}`}
           className="w-full mx-auto relative block overflow-hidden rounded-lg shadow-lg p-4 sm:p-4 lg:p-6  border border-gray-200 transition-transform transform hover:scale-105"
         >
           <span className="absolute inset-x-0 bottom-0 h-2  bg-[#4f9451]"></span>
@@ -45,7 +45,7 @@ const BlogCard = ({ id, date, CardTitle, CardDescription, image }) => {
               <dd className="text-xs text-gray-500">31st June, 2021</dd>
             </div>
           </dl>
-        </a>
+        </Link>
       </div>
     </div>
   );

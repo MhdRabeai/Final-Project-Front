@@ -75,7 +75,7 @@ const Home = () => {
                 </p>
                 <div className="mt-5 lg:mt-8 flex ">
                   <Link
-                    to='/about'
+                    to="/about"
                     className=" py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-[#4f9451] text-white hover:bg-[rgba(79,148,81,0.84)] focus:outline-none focus:bg-[rgba(79,148,81,0.84)] disabled:opacity-50 disabled:pointer-events-none"
                   >
                     Read More
@@ -296,21 +296,21 @@ const Home = () => {
               image="https://via.placeholder.com/150"
             />
             <BlogCard
-              id={1}
+              id={2}
               date={new Date().toLocaleDateString()}
               CardTitle={"title"}
               CardDescription={"lorem ...."}
               image="https://via.placeholder.com/150"
             />
             <BlogCard
-              id={1}
+              id={3}
               date={new Date().toLocaleDateString()}
               CardTitle={"title"}
               CardDescription={"lorem ...."}
               image="https://via.placeholder.com/150"
             />
             <BlogCard
-              id={1}
+              id={4}
               date={new Date().toLocaleDateString()}
               CardTitle={"title"}
               CardDescription={"lorem ...."}

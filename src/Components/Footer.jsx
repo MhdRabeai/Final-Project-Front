@@ -265,7 +265,7 @@ const Footer = () => {
         <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
           <div className="inline-flex items-center border-x px-5 mx-5">
             <Link to={"/"}>
-              <img src="logo.png" alt="logo" width={175} />
+              <img src="/logo.png" alt="logo" width={175} />
             </Link>
           </div>
         </div>
