@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import TeamCard from "../Components/TeamCard";
+import { IoIosSearch } from "react-icons/io";
+
 import SearchComponent from './SearchPage';
 
 // import { AudioOutlined } from "@ant-design/icons";
@@ -103,19 +105,23 @@ const Team = () => {
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
             /> */}
-              <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
-            <label htmlFor="p-5 search-input" className="sr-only">
-              Search
-            </label>
-            <input
-              type="text"
-              id="search-input"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-green-500 focus:ring-green-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Search for items"
-            />
-          </div>
+             <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
+  <label htmlFor="search-input" className="sr-only">
+    Search
+  </label>
+  <div className="relative">
+    <input
+      type="text"
+      id="search-input"
+      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
+      placeholder="Search..."
+    />
+    <IoIosSearch 
+      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+      size={20}
+    />
+  </div>
+</div>
         <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
           {currentTeamMembers.map((member, index) => (
             <TeamCard
