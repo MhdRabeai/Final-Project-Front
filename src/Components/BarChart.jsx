@@ -10,7 +10,6 @@ import {
   Legend,
 } from "chart.js";
 
-// تسجيل المكونات اللازمة من Chart.js
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -21,17 +20,16 @@ ChartJS.register(
 );
 
 const BarChart = () => {
-  // بيانات المخطط الشريطي
   const data = {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"],
     datasets: [
       {
-        label: "Page Views",
+        label: "Website Visitors",
         data: [10000, 7000, 8000, 12000, 6000, 10000, 4000],
         backgroundColor: "#4F9451",
       },
       {
-        label: "Downloads",
+        label: "booked sessions",
         data: [5000, 3000, 4000, 8000, 5000, 2000, 3000],
         backgroundColor: "rgba(107, 114, 128, 0.6)",
       },

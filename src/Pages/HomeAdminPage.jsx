@@ -63,7 +63,6 @@ const HomeAdminPage = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-6">
-        {/* المخطط الخطي */}
         <div className="bg-white p-4 sm:p-6 lg:p-4 xl:p-6 rounded-lg shadow-md w-full flex flex-col items-center justify-center">
           <h3 className="text-lg sm:text-xl font-semibold mb-4 text-center">Patient Visits (Line Chart)</h3>
           <div className="lg:h-[350px] xl:h-[400px] h-full min-h-[250px] w-full flex items-center justify-center">
@@ -71,7 +70,6 @@ const HomeAdminPage = () => {
           </div>
         </div>
 
-        {/* المخطط الدائري */}
         <div className="bg-white p-4 sm:p-6 lg:p-4 xl:p-6 rounded-lg shadow-md w-full flex flex-col items-center justify-center">
           <h3 className="text-lg sm:text-xl font-semibold mb-4 text-center">Statistics Breakdown (Pie Chart)</h3>
           <div className="lg:h-[350px] xl:h-[400px] w-full flex items-center justify-center">
@@ -80,9 +78,8 @@ const HomeAdminPage = () => {
         </div>
       </div>
 
-      {/* إضافة المخطط البياني الشريطي */}
       <div className="mb-6 ">
-        <BarChart /> {/* هنا يتم إضافة مكون BarChart */}
+        <BarChart />
       </div>
     </div>
   );
