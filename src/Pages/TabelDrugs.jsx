@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPencilAlt,
-  faTrash,
-  faSave,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPencilAlt, faTrash, faSave } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const TabelDrugs = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [data, setData] = useState([
     {
@@ -44,7 +42,6 @@ const TabelDrugs = () => {
     row.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Function to handle sorting
   const handleSort = (column) => {
     let direction = "ascending";
     if (sortConfig.key === column && sortConfig.direction === "ascending") {
@@ -89,6 +86,10 @@ const TabelDrugs = () => {
     setEditedData({ ...editedData, [name]: value });
   };
 
+  const handleAddDrugs = () => {
+    navigate("/dashboard/admin/AddDrag");
+  };
+
   return (
     <div className="flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 h-full">
       <div className="overflow-x-auto w-full max-w-7xl">
@@ -97,8 +98,13 @@ const TabelDrugs = () => {
             <h1 className="text-xl sm:text-2xl font-bold text-center my-4">
               All Drugs
             </h1>
-
-            <div className="relative max-w-xs">
+            <button
+              onClick={handleAddDrugs}
+              className="px-4 py-2 w-full sm:w-auto text-center text-white bg-[#4F9451] rounded-lg hover:bg-[#3a763e] transition duration-300"
+            >
+              Add Drug
+            </button>
+            <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
               <label htmlFor="search-input" className="sr-only">
                 Search
               </label>
@@ -113,7 +119,7 @@ const TabelDrugs = () => {
             </div>
           </div>
 
-          <div className="overflow-hidden min-h-[509px]">
+          <div className="overflow-hidden">
             {sortedData.length === 0 ? (
               <div className="flex justify-center items-center h-full">
                 <img
@@ -126,10 +132,7 @@ const TabelDrugs = () => {
               <table className="min-w-full table-auto text-sm sm:text-base">
                 <thead className="border-y border-gray-200 dark:border-neutral-700 bg-[#4F9451]">
                   <tr>
-                    <th className="py-3 px-2 text-left font-medium text-[#4F9451]">
-                      {/* <input type="checkbox" /> */}
-                    </th>
-
+                    <th className="py-3 px-2 text-left font-medium text-[#4F9451]" />
                     <th
                       className="py-3 px-2 text-left font-medium text-white"
                       onClick={() => handleSort("name")}
@@ -159,10 +162,13 @@ const TabelDrugs = () => {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
                   {sortedData.map((row) => (
-                    <tr key={row.name} className="border-b border-gray-300">
-                       <td className="py-3 px-3">
+                    <tr
+                      key={row.name}
+                      className="border-b border-gray-300 dark:border-neutral-700"
+                    >
+                      <td className="py-3 px-3">
                         <input
                           type="checkbox"
                           name="challenges"
@@ -170,7 +176,7 @@ const TabelDrugs = () => {
                           className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] dark:bg-neutral-800 dark:border-neutral-700"
                         />
                       </td>
-                      <td className="p-3 text-sm text-gray-800">
+                      <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
                         {editRow === row.name ? (
                           <input
                             type="text"
@@ -183,7 +189,7 @@ const TabelDrugs = () => {
                           row.name
                         )}
                       </td>
-                      <td className="p-3 text-sm text-gray-800">
+                      <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
                         {editRow === row.name ? (
                           <input
                             type="text"

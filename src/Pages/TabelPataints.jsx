@@ -106,7 +106,7 @@ const TabelPataints = () => {
     setSortConfig({ key, direction });
   };
   const handleAddPataint = () => {
-    navigate("/dashboard/admin/CreateAccountDoctor");
+    navigate("/dashboard/admin/CreateAccountPataint");
   };
   return (
     <div className="flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 h-full">
