@@ -1,6 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
+import { FaHome, FaCalendarAlt, FaPills, FaUsers, FaClipboardList, FaRegNewspaper } from 'react-icons/fa'; // Importing icons from react-icons
+
 const AdminDash = () => {
   return (
     <div>
@@ -14,7 +16,6 @@ const AdminDash = () => {
                 className=" block lg:hidden"
                 width={150}
               />
-              {/* <img src="logo.png" alt="logo" width={175} /> */}
             </Link>
 
             <div class="flex flex-row items-center justify-end gap-1">
@@ -268,7 +269,6 @@ const AdminDash = () => {
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
                   <img src={`${logo}`} alt="logo" />
-                  {/* <img src="logo.png" alt="logo" width={175} /> */}
                 </Link>
               </div>
             </div>
@@ -279,219 +279,128 @@ const AdminDash = () => {
               class="hs-accordion-group p-3 w-full flex flex-col flex-wrap"
               data-hs-accordion-always-open
             >
-              <ul class="flex flex-col space-y-1">
+               <ul className="flex flex-col space-y-1">
+          {/* Overview Tab */}
+          <li>
+            <Link
+              to="/dashboard/admin"
+              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+            >
+              <FaHome className="shrink-0" />
+              Overview
+            </Link>
+          </li>
+
+          {/* Calendar Tab */}
+          <li>
+            <Link
+              to="/dashboard/admin/CalendarAdmin"
+              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+            >
+              <FaCalendarAlt className="shrink-0" />
+              Calendar
+            </Link>
+          </li>
+
+          {/* All Drugs Tab */}
+          <li>
+            <Link
+              to="/dashboard/admin/TabelDrugs"
+              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+            >
+              <FaPills className="shrink-0" />
+              All Drugs
+            </Link>
+          </li>
+
+          {/* All Users Accordion */}
+          <li className="hs-accordion" id="projects-accordion">
+            <button
+              type="button"
+              className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+              aria-expanded="true"
+              aria-controls="projects-accordion-child"
+            >
+              <FaUsers className="shrink-0" />
+              All Users
+              {/* Arrow Icon for Accordion */}
+              <svg
+                className="hs-accordion-active:block ms-auto hidden size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m18 15-6-6-6 6" />
+              </svg>
+              <svg
+                className="hs-accordion-active:hidden ms-auto block size-4"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+
+            {/* User Sub-Links */}
+            <div
+              id="projects-accordion-child"
+              className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
+              role="region"
+              aria-labelledby="projects-accordion"
+            >
+              <ul className="ps-8 pt-1 space-y-1">
                 <li>
                   <Link
-                    to="/dashboard/admin"
+                    to="/dashboard/admin/TabelPataints"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                      <line x1="16" x2="16" y1="2" y2="6" />
-                      <line x1="8" x2="8" y1="2" y2="6" />
-                      <line x1="3" x2="21" y1="10" y2="10" />
-                      <path d="M8 14h.01" />
-                      <path d="M12 14h.01" />
-                      <path d="M16 14h.01" />
-                      <path d="M8 18h.01" />
-                      <path d="M12 18h.01" />
-                      <path d="M16 18h.01" />
-                    </svg>
-                    Overview
-                  </Link>
-                  <Link
-                    to="/dashboard/admin/CalendarAdmin"
-                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-                  >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                      <line x1="16" x2="16" y1="2" y2="6" />
-                      <line x1="8" x2="8" y1="2" y2="6" />
-                      <line x1="3" x2="21" y1="10" y2="10" />
-                      <path d="M8 14h.01" />
-                      <path d="M12 14h.01" />
-                      <path d="M16 14h.01" />
-                      <path d="M8 18h.01" />
-                      <path d="M12 18h.01" />
-                      <path d="M16 18h.01" />
-                    </svg>
-                    Calander
+                    All Patients
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/dashboard/admin/TabelDrugs"
+                    to="/dashboard/admin/TabelDoctors"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                      <line x1="16" x2="16" y1="2" y2="6" />
-                      <line x1="8" x2="8" y1="2" y2="6" />
-                      <line x1="3" x2="21" y1="10" y2="10" />
-                      <path d="M8 14h.01" />
-                      <path d="M12 14h.01" />
-                      <path d="M16 14h.01" />
-                      <path d="M8 18h.01" />
-                      <path d="M12 18h.01" />
-                      <path d="M16 18h.01" />
-                    </svg>
-                    All Drug
+                    All Doctors
                   </Link>
                 </li>
-
-                <li class="hs-accordion" id="projects-accordion">
-                  <button
-                    type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
-                    aria-expanded="true"
-                    aria-controls="projects-accordion-child"
-                  >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                    </svg>
-                    All Users
-                    <svg
-                      class="hs-accordion-active:block ms-auto hidden size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      class="hs-accordion-active:hidden ms-auto block size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-
-                  <div
-                    id="projects-accordion-child"
-                    class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-                    role="region"
-                    aria-labelledby="projects-accordion"
-                  >
-                    <ul class="ps-8 pt-1 space-y-1">
-                      <li>
-                        <Link
-                          to="/dashboard/admin/TabelPataints"
-                          className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-                        >
-                          All Pataint
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/dashboard/admin/TabelDoctors"
-                          className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-                        >
-                          all Doctors
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          to="/dashboard/admin/TabelPharmaceutical"
-                          className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-                        >
-                          Pharmaceutical
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-
                 <li>
                   <Link
-                    to="/dashboard/admin/BlogsAdmin"
+                    to="/dashboard/admin/TabelPharmaceutical"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    <svg
-                      class="shrink-0 size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
-                      <line x1="16" x2="16" y1="2" y2="6" />
-                      <line x1="8" x2="8" y1="2" y2="6" />
-                      <line x1="3" x2="21" y1="10" y2="10" />
-                      <path d="M8 14h.01" />
-                      <path d="M12 14h.01" />
-                      <path d="M16 14h.01" />
-                      <path d="M8 18h.01" />
-                      <path d="M12 18h.01" />
-                      <path d="M16 18h.01" />
-                    </svg>
-                    Articles
+                    Pharmaceutical
                   </Link>
                 </li>
               </ul>
+            </div>
+          </li>
+
+          {/* Articles Tab */}
+          <li>
+            <Link
+              to="/dashboard/admin/BlogsAdmin"
+              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+            >
+              <FaClipboardList className="shrink-0" />
+              Articles
+            </Link>
+          </li>
+        </ul>
             </nav>
           </div>
         </div>
