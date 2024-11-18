@@ -20,6 +20,24 @@ const TabelPataints = () => {
       gender: "Female",
       phonenumber: "123-456-7890",
     },
+    {
+      name: "Christina Bersh",
+      age: 45,
+      address: "4222 River Rd, Columbus",
+      email: "christina@example.com",
+      password: "******",
+      gender: "Female",
+      phonenumber: "123-456-7890",
+    },
+    {
+      name: "Christina Bersh",
+      age: 45,
+      address: "4222 River Rd, Columbus",
+      email: "christina@example.com",
+      password: "******",
+      gender: "Female",
+      phonenumber: "123-456-7890",
+    },
   ]);
   const [editRow, setEditRow] = useState(null);
   const [editedData, setEditedData] = useState({

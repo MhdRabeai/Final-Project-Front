@@ -26,6 +26,15 @@ const TabelDoctors = () => {
             gender: "Male",
             phonenumber: "987-654-3210"
         },
+        {
+            name: "Endy Ruiz",
+            age: 45,
+            address: "1818 H St NW, Washington",
+            email: "endy@example.com",
+            password: "******",
+            gender: "Male",
+            phonenumber: "987-654-3210"
+        },
     ]);
     const [editRow, setEditRow] = useState(null);
     const [editedData, setEditedData] = useState({
@@ -123,7 +132,7 @@ const TabelDoctors = () => {
                             placeholder="Search for items"
                         />
                     </div>
-                    <div className="overflow-hidden min-h-[509px]">
+                    <div className="overflow-x-auto">
                         {sortedData.length === 0 ? (
                             <div className="flex justify-center items-center h-full">
                                 <img
@@ -133,7 +142,7 @@ const TabelDoctors = () => {
                                 />
                             </div>
                         ) : (
-                            <table className="min-w-full table-auto">
+                                <table className="min-w-full table-auto text-sm sm:text-base">
                                 <thead className="border-y border-gray-200 dark:border-neutral-700 bg-[#4F9451]">
                                     <tr>
                                         <th></th>
@@ -166,7 +175,8 @@ const TabelDoctors = () => {
                                                 <div className="flex items-center h-5">
                                                     <input
                                                         type="checkbox"
-                                                        className="border-gray-300 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-600 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                                        name="challenges"
+                                                        className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] dark:bg-neutral-800 dark:border-neutral-700"
                                                     />
                                                 </div>
                                             </td>
@@ -196,7 +206,7 @@ const TabelDoctors = () => {
                                                     row.age
                                                 )}
                                             </td>
-                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200 hidden lg:table-cell">
                                                 {editRow === row.name ? (
                                                     <input
                                                         type="text"
@@ -222,7 +232,7 @@ const TabelDoctors = () => {
                                                     row.email
                                                 )}
                                             </td>
-                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200 hidden sm:table-cell">
                                                 {editRow === row.name ? (
                                                     <input
                                                         type="text"
@@ -235,7 +245,7 @@ const TabelDoctors = () => {
                                                     row.phonenumber
                                                 )}
                                             </td>
-                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            <td cclassName="p-3 text-sm text-gray-800 dark:text-neutral-200 hidden sm:table-cell">
                                                 {editRow === row.name ? (
                                                     <select
                                                         name="gender"
@@ -250,28 +260,22 @@ const TabelDoctors = () => {
                                                     row.gender
                                                 )}
                                             </td>
-                                            <td className="p-3 text-right">
+                                            <td className="pr-5 p-2 text-right hidden md:table-cell">
                                                 {editRow === row.name ? (
-                                                    <span
-                                                        onClick={() => handleSave(row.name)}
-                                                        className="text-green-600 cursor-pointer hover:text-green-800"
-                                                    >
-                                                        <FontAwesomeIcon icon={faSave} />
-                                                    </span>
+                                                    <div className="bg-green-100 rounded-full p-2 cursor-pointer" onClick={() => handleSave(row.name)}>
+                                                        <FontAwesomeIcon icon={faSave} className="text-green-500" />
+                                                    </div>
                                                 ) : (
                                                     <>
-                                                        <span
-                                                            onClick={() => handleEdit(row)}
-                                                            className="text-blue-600 cursor-pointer hover:text-blue-800 mx-4"
-                                                        >
-                                                            <FontAwesomeIcon icon={faPencilAlt} />
-                                                        </span>
-                                                        <span
-                                                            onClick={() => handleDelete(row.name)}
-                                                            className="text-red-600 cursor-pointer hover:text-red-800"
-                                                        >
-                                                            <FontAwesomeIcon icon={faTrash} />
-                                                        </span>
+                                                            <div className="flex items-center">
+                                                                <div className="bg-blue-100 rounded-full p-2 cursor-pointer mx-2"
+                                                                    onClick={() => handleEdit(row)}>
+                                                                    <FontAwesomeIcon icon={faPencilAlt} className="text-blue-500" />
+                                                                </div>
+                                                                <div className="bg-red-100 rounded-full p-2 cursor-pointer" onClick={() => handleDelete(row.name)}>
+                                                                    <FontAwesomeIcon icon={faTrash} className="text-red-500" />
+                                                                </div>
+                                                            </div>
                                                     </>
                                                 )}
                                             </td>

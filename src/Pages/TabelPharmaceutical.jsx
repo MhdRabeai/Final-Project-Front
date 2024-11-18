@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faTrash, faSave } from '@fortawesome/free-solid-svg-icons';
-
+import { useNavigate } from "react-router-dom";
 const TabelPharmaceutical = () => {
+    const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState("");
     const [data, setData] = useState([
         {
@@ -100,32 +101,38 @@ const TabelPharmaceutical = () => {
         }
         setSortConfig({ key, direction });
     };
-
+    const handleAddPharmaceutical = () => {
+        navigate("/dashboard/admin/CreateAccountPharmaceutical");
+    };
     return (
-
-        <div className="flex justify-center my-6">
-            <div className="overflow-x-auto min-h-[631px] w-full max-w-7xl">
-
+        <div className="flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 h-full">
+            <div className="overflow-x-auto w-full max-w-7xl">
                 <div className="min-w-full inline-block align-middle border border-gray-300 rounded-lg">
-                    <div className="py-3 px-4">
-
-                        <h1 className="text-2xl font-bold text-center  ">
-                            All Pharmaceutical
-                        </h1>
-                        <div className="relative max-w-xs">
-                            <label htmlFor="search-input" className="sr-only">Search</label>
-                            <input
-                                type="text"
-                                id="search-input"
-                                value={searchQuery}
-                                onChange={handleSearchChange}
-                                className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-                                placeholder="Search for items"
-                            />
+                    <div className="py-5 px-4 relative">
+                        <h1 className="text-xl sm:text-2xl font-bold text-center my-4">All Pharmaceutical</h1>
+                        <button
+                            onClick={handleAddPharmaceutical}
+                            className="px-4 py-2 w-full sm:w-auto text-center text-white bg-[#4F9451] rounded-lg hover:bg-[#3a763e] transition duration-300"
+                        >
+                            Add Pharmaceutical
+                        </button>
                         </div>
+                    <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
+                        <label htmlFor="p-5 search-input" className="sr-only">
+                            Search
+                        </label>
+                        <input
+                            type="text"
+                            id="search-input"
+                            value={searchQuery}
+                            onChange={handleSearchChange}
+                            className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                            placeholder="Search for items"
+                        />
                     </div>
+                  
 
-                    <div className="overflow-hidden min-h-[509px]">
+                    <div className="overflow-x-auto">
                         {sortedData.length === 0 ? (
                             <div className="flex justify-center items-center h-full">
                                 <img
@@ -135,43 +142,31 @@ const TabelPharmaceutical = () => {
                                 />
                             </div>
                         ) : (
-                            <table className="min-w-full table-auto">
-                                <thead className="border-y border-gray-200 dark:border-neutral-700">
-                                    <tr>
-                                        <th></th>
-                                        <th className="py-3 px-2 text-left font-medium text-[#4F9451]">
-                                            <button onClick={() => handleSort('name')} className="text-left">
-                                                Name
-                                            </button>
-                                        </th>
-                                        <th className="py-3 px-2 text-left font-medium text-[#4F9451]">
-                                            <button onClick={() => handleSort('age')} className="text-left">
-                                                Age
-                                            </button>
-                                        </th>
-                                        <th className="py-3 px-2 text-left font-medium text-[#4F9451]">
-                                            <button onClick={() => handleSort('address')} className="text-left">
-                                                Address
-                                            </button>
-                                        </th>
-                                        <th className="py-3 px-2 text-left font-medium text-[#4F9451]">
-                                            <button onClick={() => handleSort('email')} className="text-left">
-                                                Email
-                                            </button>
-                                        </th>
-                                        <th className="py-3 px-2 text-left font-medium text-[#4F9451]">
-                                            <button onClick={() => handleSort('phonenumber')} className="text-left">
-                                                Phone Number
-                                            </button>
-                                        </th>
-                                        <th className="py-3 px-2 text-left font-medium text-[#4F9451]">
-                                            <button onClick={() => handleSort('gender')} className="text-left">
-                                                Gender
-                                            </button>
-                                        </th>
-                                        <th className="py-3 pr-10 text-right font-medium text-[#4F9451]">Action</th>
-                                    </tr>
-                                </thead>
+                                <table className="min-w-full table-auto text-sm sm:text-base">
+                                    <thead className="border-y border-gray-200 dark:border-neutral-700 bg-[#4F9451]">
+                                        <tr>
+                                            <th></th>
+                                            <th className="py-3 px-2 text-left font-medium text-white">
+                                                <button onClick={() => handleSort("name")} className="text-left text-white">Name</button>
+                                            </th>
+                                            <th className="py-3 px-2 text-left font-medium text-white">
+                                                <button onClick={() => handleSort("age")} className="text-left text-white">Age</button>
+                                            </th>
+                                            <th className="py-3 px-2 text-left font-medium text-white hidden lg:table-cell">
+                                                <button onClick={() => handleSort("address")} className="text-left text-white">Address</button>
+                                            </th>
+                                            <th className="py-3 px-2 text-left font-medium text-white">
+                                                <button onClick={() => handleSort("email")} className="text-left text-white">Email</button>
+                                            </th>
+                                            <th className="py-3 px-2 text-left font-medium text-white hidden sm:table-cell">
+                                                <button onClick={() => handleSort("phonenumber")} className="text-left text-white">Phone Number</button>
+                                            </th>
+                                            <th className="py-3 px-2 text-left font-medium text-white hidden sm:table-cell">
+                                                <button onClick={() => handleSort("gender")} className="text-left text-white">Gender</button>
+                                            </th>
+                                            <th className="py-3 px-2 text-left font-medium text-white hidden md:table-cell">Action</th>
+                                        </tr>
+                                    </thead>
                                 <tbody className="divide-y divide-gray-200 dark:divide-neutral-700">
                                     {sortedData.map((row) => (
                                         <tr key={row.name} className="border-b border-gray-300 dark:border-neutral-700">
@@ -179,7 +174,7 @@ const TabelPharmaceutical = () => {
                                                 <div className="flex items-center h-5">
                                                     <input
                                                         type="checkbox"
-                                                        className="border-gray-300 rounded text-blue-600 focus:ring-blue-500 dark:bg-neutral-800 dark:border-neutral-600 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                                        className="shrink-0 mt-0.5 border-gray-200 rounded text-[#4f9451] focus:ring-[#4f9451] dark:bg-neutral-800 dark:border-neutral-700"
                                                     />
                                                 </div>
                                             </td>
@@ -222,7 +217,7 @@ const TabelPharmaceutical = () => {
                                                     row.address
                                                 )}
                                             </td>
-                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200 hidden lg:table-cell">
                                                 {editRow === row.name ? (
                                                     <input
                                                         type="email"
@@ -235,7 +230,7 @@ const TabelPharmaceutical = () => {
                                                     row.email
                                                 )}
                                             </td>
-                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200 hidden sm:table-cell">
                                                 {editRow === row.name ? (
                                                     <input
                                                         type="text"
@@ -248,7 +243,7 @@ const TabelPharmaceutical = () => {
                                                     row.phonenumber
                                                 )}
                                             </td>
-                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200">
+                                            <td className="p-3 text-sm text-gray-800 dark:text-neutral-200 hidden lg:table-cell">
                                                 {editRow === row.name ? (
                                                     <select
                                                         name="gender"
@@ -265,26 +260,20 @@ const TabelPharmaceutical = () => {
                                             </td>
                                             <td className="p-3 text-right">
                                                 {editRow === row.name ? (
-                                                    <span
-                                                        onClick={() => handleSave(row.name)}
-                                                        className="text-green-600 cursor-pointer hover:text-green-800"
-                                                    >
-                                                        <FontAwesomeIcon icon={faSave} />
-                                                    </span>
+                                                    <div className="bg-green-100 rounded-full p-2 cursor-pointer" onClick={() => handleSave(row.name)}>
+                                                        <FontAwesomeIcon icon={faSave} className="text-green-500" />
+                                                    </div>
                                                 ) : (
                                                     <>
-                                                        <span
-                                                            onClick={() => handleEdit(row)}
-                                                            className="text-blue-600 cursor-pointer hover:text-blue-800 mx-4"
-                                                        >
-                                                            <FontAwesomeIcon icon={faPencilAlt} />
-                                                        </span>
-                                                        <span
-                                                            onClick={() => handleDelete(row.name)}
-                                                            className="text-red-600 cursor-pointer hover:text-red-800"
-                                                        >
-                                                            <FontAwesomeIcon icon={faTrash} />
-                                                        </span>
+                                                            <div className="flex items-center">
+                                                                <div className="bg-blue-100 rounded-full p-2 cursor-pointer mx-2"
+                                                                    onClick={() => handleEdit(row)}>
+                                                                    <FontAwesomeIcon icon={faPencilAlt} className="text-blue-500" />
+                                                                </div>
+                                                                <div className="bg-red-100 rounded-full p-2 cursor-pointer" onClick={() => handleDelete(row.name)}>
+                                                                    <FontAwesomeIcon icon={faTrash} className="text-red-500" />
+                                                                </div>
+                                                            </div>
                                                     </>
                                                 )}
                                             </td>
