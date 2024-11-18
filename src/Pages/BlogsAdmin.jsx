@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import BlogCard from '../Components/BlogCard';
+import BlogCardAdmin from "../Components/BlogCardAdmin"; 
 import { Loading } from '../Components/Loading';
-// import SearchComponent from './SearchPage';
 import { Link } from 'react-router-dom';
 
 const BlogsAdmin = () => {
@@ -9,7 +8,6 @@ const BlogsAdmin = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
-  // const [searchQuery, setSearchQuery] = useState("");
   const itemsPerPage = 8;
 
   useEffect(() => {
@@ -28,7 +26,7 @@ const BlogsAdmin = () => {
     fetchData();
   }, []);
 
-  const totalPages = Math.min(Math.ceil(data.length / itemsPerPage), 8);
+  const totalPages = Math.ceil(data.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
@@ -45,9 +43,33 @@ const BlogsAdmin = () => {
   if (loading) {
     return <div><Loading /></div>;
   }
+
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+
+  const handleEdit = (id) => {
+    console.log("Editing post with ID:", id);
+  };
+
+  const handleDelete = (id) => {
+    console.log("Deleting post with ID:", id);
+  };
+
+  // Helper function to truncate text for title and body
+  const truncateText = (text, length = 100) => {
+    return text.length > length ? text.substring(0, length) + '...' : text;
+  };
+
+  // Function to generate page numbers dynamically
+  const generatePageNumbers = () => {
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers;
+  };
+
   return (
     <section className="dark:bg-black">
       <div className="container mx-auto px-4">
@@ -60,51 +82,76 @@ const BlogsAdmin = () => {
               Our Recent News
             </h2>
             <p className="text-base text-body-color dark:text-dark-6">
-              There are many variations of passages of Lorem Ipsum available
-              but the majority have suffered alteration in some form.
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
             </p>
-            {/* <SearchComponent
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-            /> */}
-              <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
-            <label htmlFor="p-5 search-input" className="sr-only">
-              Search
-            </label>
-            <input
-              type="text"
-              id="search-input"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="py-2 px-3 ps-9 block w-full border-gray-200 shadow-sm rounded-lg text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-              placeholder="Search for items"
-            />
+            <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
+              <label htmlFor="search-input" className="sr-only">Search</label>
+              <input
+                type="text"
+                id="search-input"
+                value={searchQuery}
+                onChange={handleSearchChange}
+                className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                placeholder="Search for items"
+              />
+            </div>
           </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 xl:grid-cols-4 xl:gap-4">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 xl:grid-cols-4 xl:gap-4">
             {currentBlogs.map((post) => (
-              <BlogCard
+              <BlogCardAdmin
                 key={post.id}
                 id={post.id}
                 date={new Date().toLocaleDateString()}
                 CardTitle={
                   <Link 
                     to={`/dashboard/admin/blog-detail/${post.id}`}
-                    className="text-green-500 hover:text-green-700 transition-colors duration-300" // تأثير hover
+                    className="text-[#4F9451] hover:text-[#4F9451] transition-colors duration-300"
                   >
-                    {post.title}
+                    {truncateText(post.title, 10)}
                   </Link>
                 }
-                CardDescription={post.body.substring(0, 100) + '...'}
+                CardDescription={truncateText(post.body, 80)}
                 image="https://via.placeholder.com/150"
-                doctorName="Dr. John Doe"
+                onEdit={handleEdit}
+                onDelete={handleDelete}
               />
             ))}
           </div>
-          {filteredData.length >= itemsPerPage && (
-            <div className="pt-10 text-center dark:bg-black">
-            </div>
-          )}
+
+          {/* Pagination Section */}
+          <div className="pt-10 text-center dark:bg-black">
+            <nav className="flex justify-center space-x-4">
+              {/* Prev Button */}
+              <button
+                onClick={() => paginate(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="px-4 py-2 rounded-md bg-gray-300 text-gray-800 disabled:bg-gray-400 transition duration-200 hover:bg-gray-400"
+              >
+                Prev
+              </button>
+
+              {/* Display Pagination Buttons */}
+              {generatePageNumbers().slice(currentPage - 1, currentPage + 3).map((pageNumber) => (
+                <button
+                  key={pageNumber}
+                  onClick={() => paginate(pageNumber)}
+                  className={`px-4 py-2 rounded-md ${currentPage === pageNumber ? 'bg-[#4f9451] text-white' : 'bg-gray-300 text-gray-800'} transition duration-200 hover:bg-[#4f9451] hover:text-white`}
+                >
+                  {pageNumber}
+                </button>
+              ))}
+
+              {/* Next Button */}
+              <button
+                onClick={() => paginate(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="px-4 py-2 rounded-md bg-gray-300 text-gray-800 disabled:bg-gray-400 transition duration-200 hover:bg-gray-400"
+              >
+                Next
+              </button>
+            </nav>
+          </div>
         </div>
       </div>
     </section>

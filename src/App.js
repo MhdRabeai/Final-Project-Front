@@ -42,6 +42,7 @@ import PatientBills from "./Pages/PatientBills";
 import VideoChat from "./Pages/VideoChat";
 import BlogsAdmin from "./Pages/BlogsAdmin";
 import BlogDetailAdmin from "./Pages/BlogDetailAdmin";
+import ProfilePage from "./Pages/ProfilePage";
 
 function App() {
 
@@ -136,7 +137,7 @@ function App() {
           <Route path="dashboard/pharmacy" element={<PharDash />} />
           <Route path="dashboard/user" element={<UserDash />}>
             {/* <Route index element={<ProfilePage />} /> */}
-            {/* <Route path="Setting" element={<ProfilePage />} /> */}
+            <Route path="Setting" element={<ProfilePage />} />
             <Route index element={<Sessions />} />
             <Route path="session" element={<Sessions />} />
             <Route path="Perspections" element={<PrescriptionPage />} />
@@ -144,6 +145,8 @@ function App() {
             <Route path="chatroom" element={<VideoChat />} />
             <Route path="review" element={<ReviewForm />} />
             <Route path="complain" element={<ComplaintsForm />} />
+          
+
           </Route>
 
           <Route
