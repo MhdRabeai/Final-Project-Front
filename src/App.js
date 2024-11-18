@@ -41,6 +41,7 @@ import CreateAccountPataint from "./Pages/createAccountDoctor";
 import PatientBills from "./Pages/PatientBills";
 import VideoChat from "./Pages/VideoChat";
 import BlogsAdmin from "./Pages/BlogsAdmin";
+import BlogDetailAdmin from "./Pages/BlogDetailAdmin";
 
 function App() {
 
@@ -115,6 +116,9 @@ function App() {
               path="BlogsAdmin"
               element={<BlogsAdmin />}
             />
+            <Route path="blog-detail/:id" element={<BlogDetailAdmin />} />
+            {/* <Route path="/blog-detail/:id" element={<BlogDetailAdmin/>} /> */}
+
             <Route path="TabelDrugs" element={<TabelDrugs />} />
 
             <Route
