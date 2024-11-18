@@ -24,6 +24,7 @@ const initialEvents = [
   {
     id: uuidv4(),
     title: "Meeting",
+    patientName :"mm",
     start: new Date(2024, 10, 15, 10, 0),
     end: new Date(2024, 10, 15, 12, 0),
     allDay: false,
@@ -32,6 +33,7 @@ const initialEvents = [
   {
     id: uuidv4(),
     title: "Conference",
+    patientName :"vv",
     start: new Date(2024, 10, 20, 9, 0),
     end: new Date(2024, 10, 20, 11, 0),
     allDay: false,
@@ -45,6 +47,7 @@ const CalendarAdmin = () => {
   const [newEvent, setNewEvent] = useState({
     title: '',
     description: '',
+    patientName: '',
     start: null,
     end: null,
     doctorId: null,
@@ -64,6 +67,7 @@ const CalendarAdmin = () => {
       setNewEvent({
         title: '',
         description: '',
+        patientName: '',
         start: slotInfo.start,
         end: slotInfo.end,
         doctorId: null,
@@ -72,13 +76,14 @@ const CalendarAdmin = () => {
       setShowModal(true);
     } else {
       setShowError(true);
-      setTimeout(() => setShowError(false), 3000); // Hide error after 3 seconds
+      setTimeout(() => setShowError(false), 3000);
     }
   };
 
   const handleSelectEvent = (event) => {
     setNewEvent({
       title: event.title,
+      patientName: event.patientName,
       description: event.description,
       start: event.start,
       end: event.end,
