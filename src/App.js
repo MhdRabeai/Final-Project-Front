@@ -43,6 +43,7 @@ import VideoChat from "./Pages/VideoChat";
 import BlogsAdmin from "./Pages/BlogsAdmin";
 import BlogDetailAdmin from "./Pages/BlogDetailAdmin";
 import ProfilePage from "./Pages/ProfilePage";
+import AddDrug from "./Pages/AddDrug";
 
 function App() {
 
@@ -125,6 +126,10 @@ function App() {
             <Route
               path="TabelPharmaceutical"
               element={<TabelPharmaceutical />}
+            />
+            <Route
+              path="AddDrag"
+              element={<AddDrug />}
             />
            
           </Route>
