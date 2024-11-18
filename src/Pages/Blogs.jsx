@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BlogCard from '../Components/BlogCard';
 import { Loading } from '../Components/Loading';
+import { IoIosSearch } from "react-icons/io";
 import SearchComponent from './SearchPage';
 
 const Blogs = () => {
@@ -8,6 +9,8 @@ const Blogs = () => {
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+
   const itemsPerPage = 8;
 
   useEffect(() => {
@@ -43,6 +46,9 @@ const Blogs = () => {
   if (loading) {
     return <div><Loading /></div>;
   }
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <section className="dark:bg-black">
@@ -59,10 +65,29 @@ const Blogs = () => {
               There are many variations of passages of Lorem Ipsum available
               but the majority have suffered alteration in some form.
             </p>
-            <SearchComponent
+            {/* <SearchComponent
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
-            />
+            /> */}
+
+<div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
+  <label htmlFor="search-input" className="sr-only">
+    Search
+  </label>
+  <div className="relative">
+    <input
+      type="text"
+      id="search-input"
+      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
+      placeholder="Search..."
+    />
+    <IoIosSearch 
+      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+      size={20}
+    />
+  </div>
+</div>
+
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 xl:grid-cols-4 xl:gap-4">
             {currentBlogs.map((post) => (

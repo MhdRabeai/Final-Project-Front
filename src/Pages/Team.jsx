@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import TeamCard from "../Components/TeamCard";
+import { IoIosSearch } from "react-icons/io";
+
 import SearchComponent from './SearchPage';
 
 // import { AudioOutlined } from "@ant-design/icons";
@@ -17,7 +19,7 @@ import SearchComponent from './SearchPage';
 
 const Team = () => {
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [searchQuery, setSearchQuery] = useState('');
   const teamData = [
     {
       name: "Coriss Ambady",
@@ -77,13 +79,15 @@ const Team = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(Math.min(pageNumber, totalPages));
   };
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   return (
     <section className="dark:bg-black">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap">
-          <div className="w-full px-4">
-            <div className="mx-auto mb-[60px] max-w-[510px] text-center">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col">
+            <div className="mx-auto max-w-[510px] text-center">
               <span className="mb-2 block text-lg font-semibold text-primary text-[#4F9451]">
                 Our Team
               </span>
@@ -97,10 +101,27 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <SearchComponent
+        {/* <SearchComponent
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
-            />
+            /> */}
+             <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
+  <label htmlFor="search-input" className="sr-only">
+    Search
+  </label>
+  <div className="relative">
+    <input
+      type="text"
+      id="search-input"
+      className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-green-500 focus:border-green-500"
+      placeholder="Search..."
+    />
+    <IoIosSearch 
+      className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"
+      size={20}
+    />
+  </div>
+</div>
         <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
           {currentTeamMembers.map((member, index) => (
             <TeamCard
@@ -180,7 +201,6 @@ const Team = () => {
             </div>
           </div>
         )}
-      </div>
     </section>
   );
 };
