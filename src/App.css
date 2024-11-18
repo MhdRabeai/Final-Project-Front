@@ -38,4 +38,8 @@
     margin: 0px auto;
   }
 }
+.card{
+  height: 400px;
+  width: 400px;
+}
 
