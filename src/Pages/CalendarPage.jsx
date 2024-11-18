@@ -6,6 +6,7 @@ import startOfWeek from 'date-fns/startOfWeek';
 import getDay from 'date-fns/getDay';
 import 'react-big-calendar/lib/css/react-big-calendar.css'; 
 import 'react-datepicker/dist/react-datepicker.css';
+import { Bounce, toast } from "react-toastify";
 import { v4 as uuidv4 } from 'uuid';
 
 const locales = {
@@ -75,8 +76,18 @@ const CalendarAdmin = () => {
       setSelectedEvent(null);
       setShowModal(true);
     } else {
-      setShowError(true);
-      setTimeout(() => setShowError(false), 3000);
+      return toast.error('Event creation outside working hours is not allowed.', {
+        position: "bottom-right",
+        autoClose: 750,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+    
     }
   };
 
