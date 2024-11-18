@@ -7,6 +7,7 @@ import {
 } from "@stripe/react-stripe-js";
 import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
+import { useUserInfo } from "../Services/UserContext";
 const stripePromise = loadStripe(
   "pk_test_51QMG6qFfxkp1DJeeG1mcP5YL3UfF3t6L97xYbqvlp18tFD8xFw8sWqMbFNXCim1F3nMze507PbJ13VhJg3Sfx2yV00GgwIyRrs"
 );
@@ -34,6 +35,7 @@ const doctorFreeTimes = [
 ];
 
 const Stepper = ({ amount }) => {
+  const { user } = useUserInfo();
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedTime, setSelectedTime] = useState("");
   const [userCondition, setUserCondition] = useState("");
@@ -48,6 +50,7 @@ const Stepper = ({ amount }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(user);
     console.log("Selected Time:", selectedTime);
     console.log("User Condition:", userCondition);
   };
@@ -91,9 +94,7 @@ const Stepper = ({ amount }) => {
         <form>
           {currentStep === 1 && (
             <div>
-              <h3 className="text-lg font-semibold mb-4">
-                Select a Time Slot
-              </h3>
+              <h3 className="text-lg font-semibold mb-4">Select a Time Slot</h3>
               <div className="grid grid-cols-2 gap-4">
                 {doctorFreeTimes.map((time, index) => (
                   <button
@@ -181,7 +182,6 @@ const CheckoutForm = ({ amount }) => {
 
     const { data } = await axios.post("http://localhost:4000/createPayment", {
       amount: amount,
-      credentials: "include",
     });
 
     const { error, paymentIntent } = await stripe.confirmCardPayment(
