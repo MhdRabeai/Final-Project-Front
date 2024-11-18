@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // import { faEnvelope, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 // import { MdOutlineEmail } from "react-icons/md";
 import { MdOutlineEmail, MdPerson, MdCalendarToday, MdPhone, MdLock } from 'react-icons/md';
-const CreateAccountPataint = () => {
+const CreateAccountDoctor = () => {
   const [formData, setFormData] = useState({
     profileImage: "",
     fullName: "",
@@ -54,7 +54,7 @@ const CreateAccountPataint = () => {
     <div className="flex items-center justify-center my-section bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl lg:max-w-3xl">
         <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
-          Doctor Profile
+          D
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4 text-center">
@@ -238,4 +238,4 @@ const CreateAccountPataint = () => {
   );
 };
 
-export default CreateAccountPataint;
+export default CreateAccountDoctor;

@@ -108,11 +108,11 @@ function App() {
             <Route path="TabelPataints" element={<TabelPataints />} />
             <Route path="TabelDoctors" element={<TabelDoctors />} />
             <Route
-              path="CreateAccountDoctor"
+              path="createAccountDoctor"
               element={<CreateAccountDoctor />}
             />
             <Route
-              path="CreateAccountPataint"
+              path="createAccountPataint"
               element={<CreateAccountPataint />}
             />
             <Route
