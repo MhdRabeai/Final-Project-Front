@@ -62,9 +62,11 @@ const Stepper = () => {
       </div>
 
       <div className="w-full max-w-2xl bg-white p-6 rounded-lg shadow-md mt-6">
-        {currentStep === 1 && <div>Step 1: Choose Appointment</div>}
-        {currentStep === 2 && <div>Step 2: Confirm & Pay</div>}
-        {currentStep === 3 && <div>Step 3: Enter Details</div>}
+        <form>
+          {currentStep === 1 && <div>Step 1: Choose Appointment</div>}
+          {currentStep === 2 && <div>Step 2: Confirm & Pay</div>}
+          {currentStep === 3 && <div>Step 3: Enter Details</div>}
+        </form>
       </div>
 
       <div className="flex justify-between w-full max-w-2xl mt-6">

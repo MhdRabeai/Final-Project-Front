@@ -45,9 +45,9 @@ import BlogDetailAdmin from "./Pages/BlogDetailAdmin";
 import ProfilePage from "./Pages/ProfilePage";
 import AddDrug from "./Pages/AddDrug";
 import CreateAccountPharmaceutical from "./Pages/CreateAccountPharmaceutical";
+import DoctorPage from "./Pages/DoctorPage";
 
 function App() {
-
   const location = useLocation();
 
   useEffect(() => {
@@ -85,7 +85,9 @@ function App() {
             <Route path="blogs" element={<Blogs />} />
             <Route path="blogs/:id" element={<BlogDetail />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="team" element={<Team />} />
+            <Route path="team" element={<Team />}>
+              <Route path=":id" element={<DoctorPage />} />
+            </Route>
             {/* <Route path="team/profile/:doctorId" element={<Profile />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
@@ -104,7 +106,7 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />}>
-            <Route index  path="CalendarAdmin" element={<CalendarAdmin />} />
+            <Route index path="CalendarAdmin" element={<CalendarAdmin />} />
             <Route path="TabelPataints" element={<TabelPataints />} />
             <Route path="TabelDoctors" element={<TabelDoctors />} />
             <Route
@@ -115,10 +117,7 @@ function App() {
               path="createAccountPataint"
               element={<CreateAccountPataint />}
             />
-            <Route
-              path="BlogsAdmin"
-              element={<BlogsAdmin />}
-            />
+            <Route path="BlogsAdmin" element={<BlogsAdmin />} />
             <Route path="blog-detail/:id" element={<BlogDetailAdmin />} />
             {/* <Route path="/blog-detail/:id" element={<BlogDetailAdmin/>} /> */}
 
@@ -128,10 +127,7 @@ function App() {
               path="TabelPharmaceutical"
               element={<TabelPharmaceutical />}
             />
-            <Route
-              path="AddDrug"
-              element={<AddDrug />}
-            />
+            <Route path="AddDrug" element={<AddDrug />} />
             <Route
               path="CreateAccountPharmaceutical"
               element={<CreateAccountPharmaceutical />}
@@ -155,8 +151,6 @@ function App() {
             <Route path="chatroom" element={<VideoChat />} />
             <Route path="review" element={<ReviewForm />} />
             <Route path="complain" element={<ComplaintsForm />} />
-          
-
           </Route>
 
           <Route
