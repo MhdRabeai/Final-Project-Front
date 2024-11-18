@@ -119,7 +119,7 @@ const TabelDrugs = () => {
             </div>
           </div>
 
-          <div className="overflow-hidden min-h-[509px]">
+          <div className="overflow-hidden">
             {sortedData.length === 0 ? (
               <div className="flex justify-center items-center h-full">
                 <img
