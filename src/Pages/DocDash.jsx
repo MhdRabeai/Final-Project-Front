@@ -11,9 +11,9 @@ const DocDash = () => {
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
         
 
-          <div class="w-full flex items-center justify-end ms-auto md:justify-between gap-x-1 md:gap-x-3">
+          <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
           <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" />
+                  <img src={`${logo}`} alt="logo" className=" block lg:hidden" width={150}/>
                   {/* <img src="logo.png" alt="logo" width={175} /> */}
                 </Link>
 
