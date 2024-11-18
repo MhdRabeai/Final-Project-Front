@@ -45,6 +45,7 @@ import ProfilePage from "./Pages/ProfilePage";
 import AddDrug from "./Pages/AddDrug";
 import CreateAccountPharmaceutical from "./Pages/CreateAccountPharmaceutical";
 import DoctorPage from "./Pages/DoctorPage";
+import HomeAdminPage from "./Pages/HomeAdminPage";
 
 function App() {
   const location = useLocation();
@@ -105,9 +106,15 @@ function App() {
           </Route>
 
           <Route path="dashboard/admin" element={<AdminDash />}>
-            <Route index path="CalendarAdmin" element={<CalendarAdmin />} />
+          <Route
+              index
+              
+              element={<HomeAdminPage />}
+            />
+            <Route  path="CalendarAdmin" element={<CalendarAdmin />} />
             <Route path="TabelPataints" element={<TabelPataints />} />
             <Route path="TabelDoctors" element={<TabelDoctors />} />
+           
             <Route
               path="createAccountDoctor"
               element={<CreateAccountDoctor />}
@@ -131,6 +138,7 @@ function App() {
               path="CreateAccountPharmaceutical"
               element={<CreateAccountPharmaceutical />}
             />
+           
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
             <Route index element={<CalendarPage />} />
