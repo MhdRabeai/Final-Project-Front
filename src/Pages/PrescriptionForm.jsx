@@ -6,65 +6,72 @@ function PrescriptionForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Handle form submission logic here
-    console.log('Patient ID:', patientId);
-    console.log('Medicine:', medicine);
+
+    const prescriptionData = {
+      patientId,
+      medicine,
+    };
+
+    console.log('Prescription Data:', prescriptionData);
+
+    setPatientId('');
+    setMedicine('');
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded px-8 py-8 mb-4">
-      <h2 className="text-xl text-green-700 font-bold mb-4">Send a Prescription</h2>
-
-      <div className="mb-4">
-        <label htmlFor="patientId" className="block text-green-700 text-sm font-bold mb-2">
-          Patient Name:
-        </label>
-        <div className="relative">
-          <input
-            type="text"
-            id="patientId"
-            value={patientId}
-            onChange={(e) => setPatientId(e.target.value)}
-            className="peer py-2 px-4 ps-11 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-            placeholder="Enter Patient Name..."
-          />
-          <div className="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="w-6 h-6 text-gray-500"
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-3xl md:p-8 lg:p-10">
+        <h2 className="text-xl md:text-2xl font-bold mb-6 text-center text-green-700">
+          Send a Prescription
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label
+              htmlFor="patientId"
+              className="block text-sm md:text-base font-medium text-gray-700 mb-2"
             >
-              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
+              Patient Name
+            </label>
+            <input
+              type="text"
+              id="patientId"
+              value={patientId}
+              onChange={(e) => setPatientId(e.target.value)}
+              placeholder="Enter Patient Name..."
+              className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600"
+              required
+            />
           </div>
-        </div>
-      </div>
 
-      <div className="mb-4">
-        <label htmlFor="medicine" className="block text-green-700 text-sm font-bold mb-2">
-          Medicine:
-        </label>
-        <textarea
-          id="medicine"
-          value={medicine}
-          onChange={(e) => setMedicine(e.target.value)}
-          className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-xs text-gray-500 focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
-          placeholder="Enter Medicine Details..."
-        />
-      </div>
+          <div>
+            <label
+              htmlFor="medicine"
+              className="block text-sm md:text-base font-medium text-gray-700 mb-2"
+            >
+              Medicine
+            </label>
+            <textarea
+              id="medicine"
+              value={medicine}
+              onChange={(e) => setMedicine(e.target.value)}
+              placeholder="Enter Medicine Details..."
+              className="w-full px-3 py-2 md:px-4 md:py-3 border rounded-lg text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-green-600"
+              rows="6"
+              required
+            />
+          </div>
 
-      <div className="flex justify-center">
-        <button type="submit" className="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
-          Submit Prescription
-        </button>
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-green-600 text-white py-2 md:py-3 rounded-lg shadow hover:bg-green-700"
+            >
+              Submit Prescription
+            </button>
+          </div>
+        </form>
       </div>
-    </form>  
+    </div>
   );
 }
 
