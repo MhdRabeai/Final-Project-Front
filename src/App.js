@@ -47,6 +47,8 @@ import CreateAccountPharmaceutical from "./Pages/CreateAccountPharmaceutical";
 import DoctorPage from "./Pages/DoctorPage";
 import HomeAdminPage from "./Pages/HomeAdminPage";
 import HomeDoctPage from "./Pages/HomeDoctPage";
+import MedicineCard from "./Components/medcin";
+import BillCard from "./Components/pharBill";
 
 function App() {
   const location = useLocation();
@@ -144,7 +146,14 @@ function App() {
             <Route path="AddArticle" element={<DoctorArticleForm />} />
             <Route path="PrescriptionForm" element={<PrescriptionForm />} />
           </Route>
-          <Route path="dashboard/pharmacy" element={<PharDash />} />
+          <Route path="dashboard/pharmacy" element={<PharDash />} >
+          <Route path="medcin" element={<MedicineCard />} />
+          <Route path="pharBill" element={<BillCard />} />
+
+
+          </Route>
+
+          
           <Route path="dashboard/user" element={<UserDash />}>
             {/* <Route index element={<ProfilePage />} /> */}
             <Route path="Setting" element={<ProfilePage />} />
