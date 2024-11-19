@@ -23,16 +23,6 @@
     "install": "^0.13.0",
     "moment": "^2.30.1",
     "npm": "^10.9.0",
-<<<<<<< HEAD
-    "openai": "^4.72.0",
-    "peerjs": "^1.5.4",
-=======
-
-    "openai": "^4.72.0",
-
-    "peerjs": "^1.5.4",
-
->>>>>>> 2f0e76dd8e3dabf2bacd3ec3b991ba09597cb57e
     "preline": "^2.5.1",
     "react": "^18.3.1",
     "react-big-calendar": "^1.15.0",
