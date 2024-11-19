@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
 import MedicineCard from "../Components/medcin";
 import BillCard from "../Components/pharBill";
@@ -323,9 +323,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
               data-hs-accordion-always-open
             >
               <ul class="flex flex-col space-y-1">
+              
                 <li>
-                  <a
-                    class="flex items-center gap-x-3.5 py-2 px-2.5 bg-green-500 shadow text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-green-500 dark:bg-neutral-700 dark:text-white"
+                  <Link
+                    to="/dashboard/pharmacy/medcin"
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-green-500 dark:bg-neutral-700 dark:text-white"
                     href="/"
                   >
                     <svg
@@ -344,16 +346,39 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
                     Medicine
-                  </a>
+                  
+                  </Link>
                 </li>
-
-                <li class="hs-accordion" id="users-accordion">
-                  <button
-                    type="button"
-                    class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500  focus:outline-none focus:bg-gray-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 "
-                    aria-expanded="true"
-                    aria-controls="users-accordion-child"
+                  
+                <li>
+                  <Link
+                    to="/dashboard/pharmacy/pharBill"
+                    class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-700 dark:text-white"
+                    href="/"
                   >
+                    <svg
+                      class="shrink-0 size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                      <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    Bill
+                  
+                  </Link>
+                </li>
+                  
+
+                {/* <li class="hs-accordion" id="users-accordion">
+                     
                     <svg
                       class="shrink-0 size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -372,20 +397,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                     </svg>
                     Sessions
-                    <svg
-                      class="hs-accordion-active:block ms-auto hidden size-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
+                   
                     <svg
                       class="hs-accordion-active:hidden ms-auto block size-4"
                       xmlns="http://www.w3.org/2000/svg"
@@ -400,7 +412,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                     >
                       <path d="m6 9 6 6 6-6" />
                     </svg>
-                  </button>
+                  
 
                   <div
                     id="users-accordion-child"
@@ -558,7 +570,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       </li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
 
                 <li class="hs-accordion" id="account-accordion">
                   <button
@@ -805,7 +817,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
         </div>
       </div>
 
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      {/* <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <MedicineCard />
     </div>
 
@@ -813,7 +825,8 @@ dark:bg-neutral-800 dark:border-neutral-700"
       <BillCard
        
       />
-    </div>
+    </div> */}
+    <Outlet/>
 
     </div>
   );
