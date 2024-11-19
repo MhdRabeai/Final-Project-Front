@@ -9,6 +9,7 @@
     "@heroicons/react": "^1.0.6",
     "@preline/carousel": "^2.5.0",
     "@preline/copy-markup": "^2.5.0",
+    "@square/web-sdk": "^2.0.1",
     "@stripe/react-stripe-js": "^2.9.0",
     "@stripe/stripe-js": "^4.10.0",
     "@testing-library/jest-dom": "^5.17.0",
@@ -22,6 +23,11 @@
     "install": "^0.13.0",
     "moment": "^2.30.1",
     "npm": "^10.9.0",
+
+    "openai": "^4.72.0",
+
+    "peerjs": "^1.5.4",
+
     "preline": "^2.5.1",
     "react": "^18.3.1",
     "react-big-calendar": "^1.15.0",
@@ -34,9 +40,12 @@
     "react-router-dom": "^6.28.0",
     "react-scripts": "^5.0.1",
     "react-slick": "^0.30.2",
+    "react-square-web-payments-sdk": "^3.2.1",
     "react-timeline": "^0.0.9",
     "react-toastify": "^10.0.6",
+    "simple-peer": "^9.11.1",
     "slick-carousel": "^1.8.1",
+    "socket.io-client": "^4.8.1",
     "stripe": "^17.3.1",
     "swiper": "^11.1.14",
     "uuid": "^11.0.3",

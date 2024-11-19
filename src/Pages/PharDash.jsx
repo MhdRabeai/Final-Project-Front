@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../Assets/logo.png";
+import MedicineCard from "../Components/medcin";
+import BillCard from "../Components/pharBill";
+
 const PharDash = () => {
   return (
     <div>
@@ -802,9 +805,16 @@ dark:bg-neutral-800 dark:border-neutral-700"
         </div>
       </div>
 
-      <div class="w-full lg:ps-64">
-        <div class="p-4 sm:p-6 space-y-4 sm:space-y-6">Content</div>
-      </div>
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <MedicineCard />
+    </div>
+
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <BillCard
+       
+      />
+    </div>
+
     </div>
   );
 };
