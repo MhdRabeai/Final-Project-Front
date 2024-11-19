@@ -147,6 +147,7 @@ function App() {
             <Route path="PrescriptionForm" element={<PrescriptionForm />} />
           </Route>
           <Route path="dashboard/pharmacy" element={<PharDash />} >
+          <Route index element={<MedicineCard />} />
           <Route path="medcin" element={<MedicineCard />} />
           <Route path="pharBill" element={<BillCard />} />
 
