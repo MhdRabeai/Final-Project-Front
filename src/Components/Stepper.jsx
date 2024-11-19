@@ -180,8 +180,8 @@ const CheckoutForm = ({ amount }) => {
     event.preventDefault();
     setIsLoading(true);
 
-    const { data } = await axios.post("http://localhost:4000/createPayment", {
-      amount: amount,
+    const { data } = await axios.post("http://localhost:4000/process-payment", {
+      amount: 40,
     });
 
     const { error, paymentIntent } = await stripe.confirmCardPayment(

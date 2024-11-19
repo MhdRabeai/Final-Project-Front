@@ -5,15 +5,15 @@ const DoctorArticleForm = () => {
   const [description, setDescription] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImage(reader.result);
-      };
-      reader.readAsDataURL(file);
+    if (file && file.type.startsWith('image/')) {
+      setImage(file);
+      setPreviewImage(URL.createObjectURL(file));
+    } else {
+      alert('Please upload a valid image file.');
     }
   };
 
@@ -40,6 +40,7 @@ const DoctorArticleForm = () => {
         setDescription('');
         setContent('');
         setImage(null);
+        setPreviewImage(null);
       })
       .catch((error) => {
         console.error('Error posting article:', error);
@@ -55,13 +56,10 @@ const DoctorArticleForm = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
 
           <div className="flex flex-col items-center">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Upload Image
-            </label>
             <div className="w-32 h-32 md:w-40 md:h-40 mb-4 rounded-lg overflow-hidden border-2 border-gray-300 shadow-sm">
-              {image ? (
+              {previewImage ? (
                 <img
-                  src={image}
+                  src={previewImage}
                   alt="Uploaded Preview"
                   className="w-full h-full object-cover"
                 />
@@ -71,11 +69,17 @@ const DoctorArticleForm = () => {
                 </div>
               )}
             </div>
-            <input
-              type="file"
-              onChange={handleImageChange}
-              className="text-xs md:text-sm text-gray-600"
-            />
+            <label className="cursor-pointer">
+              <span className="px-3 py-1.5 sm:px-4 sm:py-2 bg-green-600 text-white text-sm sm:text-base rounded-lg shadow hover:bg-green-700">
+                Upload Image
+              </span>
+              <input
+                type="file"
+                className="hidden"
+                accept="image/*"
+                onChange={handleImageChange}
+              />
+            </label>
           </div>
 
           <div>
@@ -113,6 +117,7 @@ const DoctorArticleForm = () => {
               required
             />
           </div>
+
           <div>
             <label
               htmlFor="content"
