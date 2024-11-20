@@ -362,7 +362,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 </li>
                 <li>
                   <Link
-                    to="/dashboard/user/chatroom"
+                    to="/chat"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg class="shrink-5 size-4 ml-2">

@@ -106,9 +106,10 @@ function App() {
             {/* <Route path="admin" element={<AdminDash />} />
             <Route path="doct" element={<DocDash />} />
             <Route path="pharmacy" element={<PharDash />} />
-            <Route path="user" element={<UserDash />} />
+           
             <Route path="*" element={<NotFound />} /> */}
           </Route>
+          {/* <Route path="user" element={<UserDash />} /> */}
 
           <Route path="dashboard/admin" element={<AdminDash />}>
             <Route index element={<HomeAdminPage />} />
