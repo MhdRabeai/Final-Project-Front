@@ -1,20 +1,29 @@
 import { Link } from "react-router-dom";
 
-const TeamCard = ({ id, imageSrc, name, profession }) => {
+const TeamCard = ({ id, avatar, name, doctorDetails }) => {
   return (
     <div className="w-full px-4 md-px-0 md:w-1/2 xl:w-1/4 hover:scale-105 transition">
       <Link to={`${id}`}>
         <div className="mx-auto mb-10 w-full  max-w-[370px]">
           <div className="relative overflow-hidden rounded-lg test sm-w-50px">
-            <img src={imageSrc} alt="img" className="w-full sm:w-60px" />
+            <img
+              src={`http://localhost:4000/${avatar}`}
+              alt="img"
+              className="w-full sm:w-60px"
+            />
+
             <div className="absolute bottom-5 left-0 w-full text-center">
               <div className="relative mx-5 overflow-hidden rounded-lg bg-white px-3 py-5 dark:bg-black">
                 <h3 className="text-dark dark:text-white text-base font-semibold">
                   {name}
                 </h3>
                 <p className="text-body-color dark:text-dark-6 text-xs">
-                  {profession}
+                  {doctorDetails.specialization}...
                 </p>
+                <p className="text-body-color dark:text-dark-6 text-xs">
+                  {doctorDetails.experience} Exp
+                </p>
+
                 <span className="absolute left-0 bottom-0">
                   <svg
                     width="61"

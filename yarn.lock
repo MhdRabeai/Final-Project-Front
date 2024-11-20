@@ -1988,6 +1988,11 @@
   resolved "https://registry.npmjs.org/@preline/copy-markup/-/copy-markup-2.5.0.tgz"
   integrity sha512-yx0MEIRwcka8XRVLi/8g8f1Vef1sVrBR9pZ91SmQVUkbjfSkI/xn7ynWVzrisvIWoBO2J8OzCnLecegAxbFeYw==
 
+"@preline/overlay@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.npmjs.org/@preline/overlay/-/overlay-2.5.0.tgz"
+  integrity sha512-5eWzP2N3sTOKhgoefXdrrxUNQh8F678von6ehN1cD79ujVfShYdWowvjtzMlUiTePbF0pgM/wG6D6mRzicOMzw==
+
 "@rc-component/async-validator@^5.0.3":
   version "5.0.4"
   resolved "https://registry.npmjs.org/@rc-component/async-validator/-/async-validator-5.0.4.tgz"

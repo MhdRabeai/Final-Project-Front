@@ -49,23 +49,19 @@ import HomeAdminPage from "./Pages/HomeAdminPage";
 import HomeDoctPage from "./Pages/HomeDoctPage";
 import MedicineCard from "./Components/medcin";
 import BillCard from "./Components/pharBill";
+import { HSStaticMethods } from "preline/preline";
+import Appointment from "./Pages/Appointment";
 
 function App() {
   const location = useLocation();
 
   useEffect(() => {
-    import("preline/preline")
-      .then((module) => {
-        const HSStaticMethods = module.HSStaticMethods;
-        if (HSStaticMethods) {
-          HSStaticMethods.autoInit();
-        }
-      })
-      .catch((error) => {
-        console.error("Error loading preline:", error);
-      });
+    require("preline/preline");
+  }, []);
+  useEffect(() => {
+    // @ts-ignore
+    HSStaticMethods.autoInit();
   }, [location.pathname]);
-
   return (
     <>
       <ToastContainer
@@ -90,7 +86,9 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="team" element={<Team />} />
 
-            <Route path="team/:id" element={<DoctorPage />} />
+            <Route path="team/:doctorId" element={<DoctorPage />} />
+            <Route path="team/:doctorId/booking" element={<Appointment />} />
+
             {/* <Route path="team/profile/:doctorId" element={<Profile />} /> */}
             <Route path="*" element={<NotFound />} />
           </Route>
@@ -101,76 +99,63 @@ function App() {
           </Route>
 
           <Route path="/dashboard" element={<DashRoot />}>
-            {/* <Route path="admin" element={<AdminDash />} />
-            <Route path="doct" element={<DocDash />} />
-            <Route path="pharmacy" element={<PharDash />} />
-            <Route path="user" element={<UserDash />} />
-            <Route path="*" element={<NotFound />} /> */}
+            <Route path="admin" element={<AdminDash />}>
+              <Route index element={<HomeAdminPage />} />
+              <Route path="CalendarAdmin" element={<CalendarAdmin />} />
+              <Route path="TabelPataints" element={<TabelPataints />} />
+              <Route path="TabelDoctors" element={<TabelDoctors />} />
+
+              <Route
+                path="createAccountDoctor"
+                element={<CreateAccountDoctor />}
+              />
+              <Route
+                path="createAccountPataint"
+                element={<CreateAccountPataint />}
+              />
+              <Route path="BlogsAdmin" element={<BlogsAdmin />} />
+              <Route path="blog-detail/:id" element={<BlogDetailAdmin />} />
+              {/* <Route path="/blog-detail/:id" element={<BlogDetailAdmin/>} /> */}
+
+              <Route path="TabelDrugs" element={<TabelDrugs />} />
+
+              <Route
+                path="TabelPharmaceutical"
+                element={<TabelPharmaceutical />}
+              />
+              <Route path="AddDrug" element={<AddDrug />} />
+              <Route
+                path="CreateAccountPharmaceutical"
+                element={<CreateAccountPharmaceutical />}
+              />
+            </Route>
+            <Route path="doct" element={<DocDash />}>
+              <Route index element={<HomeDoctPage />} />
+              <Route path="HomeDoctPage" element={<HomeDoctPage />} />
+              <Route path="CalendarPage" element={<CalendarPage />} />
+              <Route path="DocProfile" element={<DocProfile />} />
+              <Route path="AddArticle" element={<DoctorArticleForm />} />
+              <Route path="PrescriptionForm" element={<PrescriptionForm />} />
+            </Route>
+            <Route path="pharmacy" element={<PharDash />}>
+              <Route index element={<MedicineCard />} />
+              <Route path="medcin" element={<MedicineCard />} />
+              <Route path="pharBill" element={<BillCard />} />
+            </Route>
+
+            <Route path="user" element={<UserDash />}>
+              {/* <Route index element={<ProfilePage />} /> */}
+              <Route path="Setting" element={<ProfilePage />} />
+              <Route index element={<Sessions />} />
+              <Route path="session" element={<Sessions />} />
+              <Route path="Perspections" element={<PrescriptionPage />} />
+              <Route path="Bills" element={<PatientBills />} />
+              <Route path="chatroom" element={<VideoChat />} />
+              <Route path="review" element={<ReviewForm />} />
+              <Route path="complain" element={<ComplaintsForm />} />
+              <Route path="duser/calendarpage" element={<CalendarPage />} />
+            </Route>
           </Route>
-
-          <Route path="dashboard/admin" element={<AdminDash />}>
-            <Route index element={<HomeAdminPage />} />
-            <Route path="CalendarAdmin" element={<CalendarAdmin />} />
-            <Route path="TabelPataints" element={<TabelPataints />} />
-            <Route path="TabelDoctors" element={<TabelDoctors />} />
-
-            <Route
-              path="createAccountDoctor"
-              element={<CreateAccountDoctor />}
-            />
-            <Route
-              path="createAccountPataint"
-              element={<CreateAccountPataint />}
-            />
-            <Route path="BlogsAdmin" element={<BlogsAdmin />} />
-            <Route path="blog-detail/:id" element={<BlogDetailAdmin />} />
-            {/* <Route path="/blog-detail/:id" element={<BlogDetailAdmin/>} /> */}
-
-            <Route path="TabelDrugs" element={<TabelDrugs />} />
-
-            <Route
-              path="TabelPharmaceutical"
-              element={<TabelPharmaceutical />}
-            />
-            <Route path="AddDrug" element={<AddDrug />} />
-            <Route
-              path="CreateAccountPharmaceutical"
-              element={<CreateAccountPharmaceutical />}
-            />
-          </Route>
-          <Route path="dashboard/doct" element={<DocDash />}>
-          <Route index element={<HomeDoctPage />} />
-          <Route path="HomeDoctPage" element={<HomeDoctPage />} />
-            <Route path="CalendarPage" element={<CalendarPage />} />
-            <Route path="DocProfile" element={<DocProfile />} />
-            <Route path="AddArticle" element={<DoctorArticleForm />} />
-            <Route path="PrescriptionForm" element={<PrescriptionForm />} />
-          </Route>
-          <Route path="dashboard/pharmacy" element={<PharDash />} >
-          <Route index element={<MedicineCard />} />
-          <Route path="medcin" element={<MedicineCard />} />
-          <Route path="pharBill" element={<BillCard />} />
-
-
-          </Route>
-
-          
-          <Route path="dashboard/user" element={<UserDash />}>
-            {/* <Route index element={<ProfilePage />} /> */}
-            <Route path="Setting" element={<ProfilePage />} />
-            <Route index element={<Sessions />} />
-            <Route path="session" element={<Sessions />} />
-            <Route path="Perspections" element={<PrescriptionPage />} />
-            <Route path="Bills" element={<PatientBills />} />
-            <Route path="chatroom" element={<VideoChat />} />
-            <Route path="review" element={<ReviewForm />} />
-            <Route path="complain" element={<ComplaintsForm />} />
-          </Route>
-
-          <Route
-            path="dashboard/user/calendarpage"
-            element={<CalendarPage />}
-          />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ListItem from "../Components/ListItem";
 import Card from "../Components/card";
 import cardsData from "../Components/cardsData";
 import Testimonial from "../Components/Testimonial";
 
 import RoomPage from "./Chat/RoomPage";
+import { Loading } from "../Components/Loading";
 
 const About = () => {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  return isLoading ? (
+    <Loading />
+  ) : (
     <div className="max-w-[86rem] mx-auto px-4">
       {/* <Payment amount={10} /> */}
       <RoomPage />

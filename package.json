@@ -9,6 +9,7 @@
     "@heroicons/react": "^1.0.6",
     "@preline/carousel": "^2.5.0",
     "@preline/copy-markup": "^2.5.0",
+    "@preline/overlay": "^2.5.0",
     "@square/web-sdk": "^2.0.1",
     "@stripe/react-stripe-js": "^2.9.0",
     "@stripe/stripe-js": "^4.10.0",
@@ -25,7 +26,6 @@
     "npm": "^10.9.0",
     "openai": "^4.72.0",
     "peerjs": "^1.5.4",
-
     "preline": "^2.5.1",
     "react": "^18.3.1",
     "react-big-calendar": "^1.15.0",

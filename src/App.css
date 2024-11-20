@@ -32,14 +32,16 @@
 .my-section {
   height: calc(100vh - 60px);
 }
-@media (max-width:600px){
-  .test{
+.my-step:last-of-type {
+  flex: 0;
+}
+@media (max-width: 600px) {
+  .test {
     width: 80%;
     margin: 0px auto;
   }
 }
-.card{
+.card {
   height: 400px;
   width: 400px;
 }
-

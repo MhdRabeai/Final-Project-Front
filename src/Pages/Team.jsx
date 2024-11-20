@@ -1,73 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TeamCard from "../Components/TeamCard";
 import { IoIosSearch } from "react-icons/io";
-
-import SearchComponent from "./SearchPage";
-
-// import { AudioOutlined } from "@ant-design/icons";
-// import { Input, Space } from 'antd';
-// const { Search } = Input;
-// const suffix = (
-//   <AudioOutlined
-//     style={{
-//       fontSize: 16,
-//       color: "#1677ff",
-//     }}
-//   />
-// );
-// const onSearch = (value, _e, info) => console.log(info?.source, value);
+import { Loading } from "../Components/Loading";
 
 const Team = () => {
-  // const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [doctors, setDoctors] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const data = [
-    {
-      name: "Coriss Ambady",
-      profession: "Web Developer",
-      imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-    },
-    {
-      name: "John Doe",
-      profession: "UI/UX Designer",
-      imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-    },
-    {
-      name: "Jane Smith",
-      profession: "Backend Developer",
-      imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-    },
-    {
-      name: "Samuel Green",
-      profession: "Frontend Developer",
-      imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-    },
-    {
-      name: "Robert Williams",
-      profession: "Project Manager",
-      imageSrc: "https://i.ibb.co/8P6cvVy/image-01-1.jpg",
-    },
-    {
-      name: "Alice Johnson",
-      profession: "QA Engineer",
-      imageSrc: "https://i.ibb.co/T1J9LD4/image-03-2.jpg",
-    },
-    {
-      name: "Lucas Martin",
-      profession: "Web Developer",
-      imageSrc: "https://i.ibb.co/30tGtjP/image-04.jpg",
-    },
-    {
-      name: "Sophia Davis",
-      profession: "DevOps Engineer",
-      imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-    },
-    {
-      name: "Sophia Davis",
-      profession: "DevOps Engineer",
-      imageSrc: "https://i.ibb.co/yVVT0Dp/image-02-2.jpg",
-    },
-  ];
-  const filteredData = data.filter((row) =>
+
+  const filteredData = doctors.filter((row) =>
     row.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
   const [currentPage, setCurrentPage] = useState(1);
@@ -85,25 +26,43 @@ const Team = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(Math.min(pageNumber, totalPages));
   };
-  const [sortConfig, setSortConfig] = useState({
-    key: "name",
-    direction: "ascending",
-  });
-  const sortedData = [...filteredData].sort((a, b) => {
-    if (a[sortConfig.key] < b[sortConfig.key]) {
-      return sortConfig.direction === "ascending" ? -1 : 1;
-    }
-    if (a[sortConfig.key] > b[sortConfig.key]) {
-      return sortConfig.direction === "ascending" ? 1 : -1;
-    }
-    return 0;
-  });
+  // const [sortConfig, setSortConfig] = useState({
+  //   key: "name",
+  //   direction: "ascending",
+  // });
+  // const sortedData = [...filteredData].sort((a, b) => {
+  //   if (a[sortConfig.key] < b[sortConfig.key]) {
+  //     return sortConfig.direction === "ascending" ? -1 : 1;
+  //   }
+  //   if (a[sortConfig.key] > b[sortConfig.key]) {
+  //     return sortConfig.direction === "ascending" ? 1 : -1;
+  //   }
+  //   return 0;
+  // });
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
-
-  return (
+  const handleGetDoctors = async () => {
+    try {
+      const res = await fetch("http://localhost:4000/doctors", {
+        credentials: "include",
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setDoctors(data["doctors"]);
+      }
+    } catch (err) {}
+  };
+  useEffect(() => {
+    handleGetDoctors();
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+  return isLoading ? (
+    <Loading />
+  ) : (
     <section className="dark:bg-black">
       <div className="container mx-auto px-4">
         <div className="flex flex-col">
@@ -122,9 +81,9 @@ const Team = () => {
         </div>
       </div>
       {/* <SearchComponent
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-            /> */}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        /> */}
       <div className="relative max-w-xs sm:max-w-md lg:max-w-lg mx-auto my-4">
         <label htmlFor="search-input" className="sr-only">
           Search
@@ -146,11 +105,11 @@ const Team = () => {
       <div className="mx-4 flex flex-wrap justify-center dark:bg-black dark:border-white">
         {currentTeamMembers.map((member, index) => (
           <TeamCard
-            key={index}
-            id={index}
+            key={member.doctorDetails["_id"]}
+            id={member.doctorDetails["_id"]}
             name={member.name}
-            profession={member.profession}
-            imageSrc={member.imageSrc}
+            doctorDetails={member.doctorDetails}
+            avatar={member.avatar}
             className="dark:bg-white"
           />
         ))}

@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import AiChat from "../Components/AiChat";
+// import AiChat from "../Components/AiChat";
 
 const DashRoot = () => {
   return (
@@ -20,6 +21,7 @@ const DashRoot = () => {
         </li>
       </ul>
       <AiChat />
+      <Outlet />
     </div>
   );
 };

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import axios from "axios"; 
+import axios from "axios";
 
 const AiChat = () => {
   const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState(""); 
+  const [input, setInput] = useState("");
 
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
 
     const userMessage = { sender: "user", text: input.trim() };
-    setMessages((prev) => [...prev, userMessage]); 
+    setMessages((prev) => [...prev, userMessage]);
 
     try {
       const response = await axios.post("/api/chat", { message: input });
@@ -21,14 +21,14 @@ const AiChat = () => {
       setMessages((prev) => [...prev, errorResponse]);
     }
 
-    setInput(""); 
+    setInput("");
   };
 
   return (
     <>
       <button
         type="button"
-        className="fixed right-[-5px] bottom-20 z-40 text-white"
+        className="fixed right-[-5px] bottom-32 z-40 text-white"
         aria-haspopup="dialog"
         aria-expanded="false"
         aria-controls="hs-offcanvas-example"
@@ -59,7 +59,10 @@ const AiChat = () => {
       >
         <div>
           <div className="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
-            <h3 id="hs-offcanvas-example-label" className="font-bold text-gray-800 dark:text-white">
+            <h3
+              id="hs-offcanvas-example-label"
+              className="font-bold text-gray-800 dark:text-white"
+            >
               Chat with HealthBot
             </h3>
           </div>
@@ -68,13 +71,16 @@ const AiChat = () => {
               {messages.map((msg, index) => (
                 <li
                   key={index}
-                  className={`max-w-lg ${msg.sender === "user" ? "ms-auto flex justify-end" : "flex"} gap-x-2`}
+                  className={`max-w-lg ${
+                    msg.sender === "user" ? "ms-auto flex justify-end" : "flex"
+                  } gap-x-2`}
                 >
                   <div
-                    className={`p-4 rounded-2xl ${msg.sender === "user"
+                    className={`p-4 rounded-2xl ${
+                      msg.sender === "user"
                         ? "bg-blue-600 text-white"
                         : "bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700"
-                      }`}
+                    }`}
                   >
                     {msg.text}
                   </div>
@@ -84,7 +90,10 @@ const AiChat = () => {
           </div>
         </div>
 
-        <form onSubmit={sendMessage} className="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 mt-3 gap-1">
+        <form
+          onSubmit={sendMessage}
+          className="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 mt-3 gap-1"
+        >
           <input
             type="text"
             value={input}
