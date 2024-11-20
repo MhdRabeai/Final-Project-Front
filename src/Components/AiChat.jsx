@@ -1,28 +1,17 @@
-import React, { useState } from "react";
-import axios from "axios"; 
+import React, { useContext } from "react";
+import { Context } from "../Services/ChatContext";
 
 const AiChat = () => {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState(""); 
-
-  const sendMessage = async (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    const userMessage = { sender: "user", text: input.trim() };
-    setMessages((prev) => [...prev, userMessage]); 
-
-    try {
-      const response = await axios.post("/api/chat", { message: input });
-      const botResponse = { sender: "bot", text: response.data.reply };
-      setMessages((prev) => [...prev, botResponse]);
-    } catch (error) {
-      const errorResponse = { sender: "bot", text: "Something went wrong!" };
-      setMessages((prev) => [...prev, errorResponse]);
-    }
-
-    setInput(""); 
-  };
+  const {
+    input,
+    setInput,
+    onSent,
+    prevPrompts,
+    loading,
+    startChat,
+    handleUserChoice,
+    isChatStarted,
+  } = useContext(Context);
 
   return (
     <>
@@ -57,57 +46,108 @@ const AiChat = () => {
         tabIndex="-1"
         aria-labelledby="hs-offcanvas-example-label"
       >
-        <div>
-          <div className="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
-            <h3 id="hs-offcanvas-example-label" className="font-bold text-gray-800 dark:text-white">
-              Chat with HealthBot
-            </h3>
-          </div>
-          <div className="p-4 overflow-auto">
-            <ul className="space-y-5 max-h-[75vh] my-chat">
-              {messages.map((msg, index) => (
-                <li
-                  key={index}
-                  className={`max-w-lg ${msg.sender === "user" ? "ms-auto flex justify-end" : "flex"} gap-x-2`}
-                >
-                  <div
-                    className={`p-4 rounded-2xl ${msg.sender === "user"
-                        ? "bg-blue-600 text-white"
-                        : "bg-white border border-gray-200 dark:bg-neutral-900 dark:border-neutral-700"
-                      }`}
-                  >
-                    {msg.text}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        <form onSubmit={sendMessage} className="flex items-center px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-700 mt-3 gap-1">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Your Message..."
-            className="peer py-2 px-4 block w-full border-2 border-gray-200 rounded-lg text-sm focus:border-[#4f9451] focus:ring-0"
-            required
-          />
-          <button
-            type="submit"
-            className="inline-flex justify-center p-2 text-[#4f9451] rounded-full cursor-pointer hover:bg-[#4f94512c]"
-          >
+        <div className="p-4 flex justify-between items-center bg-[#4f9451] text-white">
+          <h2 className="text-lg font-semibold">Chat with AI</h2>
+          <button className="text-white bg-[#4f9451] p-2 rounded-full">
             <svg
-              className="w-5 h-5 rotate-90"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
+              className="w-6 h-6 text-white"
               fill="currentColor"
-              viewBox="0 0 18 20"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="m17.914 18.594-8-18a1 1 0 0 0-1.828 0l-8 18a1 1 0 0 0 1.157 1.376L8 18.281V9a1 1 0 0 1 2 0v9.281l6.758 1.689a1 1 0 0 0 1.156-1.376Z" />
+              <path
+                fill-rule="evenodd"
+                d="M10 3a1 1 0 011 1v6h6a1 1 0 110 2h-6v6a1 1 0 11-2 0v-6H3a1 1 0 110-2h6V4a1 1 0 011-1z"
+                clip-rule="evenodd"
+              />
             </svg>
           </button>
-        </form>
+        </div>
+
+        {/* عرض الرسائل */}
+
+        <>
+          <div className="flex-1 overflow-auto p-4 space-y-4">
+            {prevPrompts.map((message, index) => (
+              <div
+                key={index}
+                className={`flex ${
+                  message.role === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                <div
+                  className={`max-w-[75%] p-3 rounded-lg ${
+                    message.role === "user"
+                      ? "bg-[#4f9451] text-white text-lg font-medium"
+                      : "bg-[#d3f9d8] text-[#2a5d44] text-base"
+                  }`}
+                >
+                  {message.content}
+                </div>
+              </div>
+            ))}
+            {loading && (
+              <div className="flex justify-start">
+                <div className="max-w-[75%] p-3 rounded-lg bg-[#d3f9d8] text-[#2a5d44] text-base">
+                  Loading...
+                </div>
+              </div>
+            )}
+          </div>
+          {isChatStarted ? (
+            <div className="flex p-4 border-t dark:border-neutral-700">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                required
+                placeholder="Type a message..."
+                className="peer py-2 px-4 ps-11 block w-full
+                border-2  border-gray-200 rounded-lg text-sm
+                focus:border-[#4f9451] focus:ring-0 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:border-transparent 
+                 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600"
+                // className="flex-1 p-2 rounded-lg border border-gray-300 text-xl dark:border-neutral-600"
+              />
+              <button
+                onClick={() => onSent(input)}
+                className="ml-2 p-2 bg-green-500 text-white text-xl rounded-lg"
+              >
+                <img src="/12.webp" alt="img" class="w-7 h-7" />
+              </button>
+            </div>
+          ) : (
+            <div className="flex flex-col space-x-5 space-y-1">
+              <button
+                onClick={() => {
+                  handleUserChoice("1");
+                  startChat();
+                }}
+                className="flex-1 p-2 bg-green-500 text-white rounded-lg"
+              >
+                1- Appointment Booking with a Doctor{" "}
+              </button>
+              <button
+                onClick={() => {
+                  handleUserChoice("2");
+                  startChat();
+                }}
+                className="flex-1 p-2 bg-green-500 text-white rounded-lg"
+              >
+                2- Common Psychological Questions{" "}
+              </button>
+              <button
+                onClick={() => {
+                  handleUserChoice("3");
+                  startChat();
+                }}
+                className="flex-1 p-2 bg-green-500 text-white rounded-lg"
+              >
+                3- Initial Symptoms Diagnosis{" "}
+              </button>
+            </div>
+          )}
+        </>
+        {/* */}
       </div>
     </>
   );
@@ -115,61 +155,61 @@ const AiChat = () => {
 
 export default AiChat;
 
-// import React, { useState, useEffect } from "react";
+// import React, { useState } from "react";
 // import axios from "axios";
 
 // const AiChat = () => {
-//   const [questions, setQuestions] = useState([]);
-//   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-//   const [answers, setAnswers] = useState([]);
-//   const [results, setResults] = useState(null);
+//   const [messages, setMessages] = useState([]);
+//   const [input, setInput] = useState("");
 
-//   useEffect(() => {
-//     axios.get("http://localhost:5000/questions").then((response) => {
-//       setQuestions(response.data);
-//     });
-//   }, []);
+//   const sendMessage = async (e) => {
+//     e.preventDefault();
+//     if (!input.trim()) return;
 
-//   const handleAnswer = (answer) => {
-//     setAnswers([
-//       ...answers,
-//       { id: questions[currentQuestionIndex].id, answer, type: questions[currentQuestionIndex].type },
-//     ]);
+//     const userMessage = { sender: "user", text: input.trim() };
+//     setMessages((prev) => [...prev, userMessage]);
 
-//     if (currentQuestionIndex + 1 < questions.length) {
-//       setCurrentQuestionIndex(currentQuestionIndex + 1);
-//     } else {
-//       axios
-//         .post("http://localhost:5000/analyze", { answers })
-//         .then((response) => setResults(response.data))
-//         .catch((error) => console.error(error));
+//     try {
+//       const response = await axios.post("http://localhost:5000/analyze", {
+//         answers: [{ id: 1, type: "general", answer: input }],
+//       });
+
+//       const analysisResult = response.data[0]?.score || "No score available";
+//       const botResponse = { sender: "bot", text: `Your score: ${analysisResult}` };
+//       setMessages((prev) => [...prev, botResponse]);
+//     } catch (error) {
+//       const errorResponse = { sender: "bot", text: "Something went wrong!" };
+//       setMessages((prev) => [...prev, errorResponse]);
 //     }
+
+//     setInput("");
 //   };
 
 //   return (
-//     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-//       <h1>Mental Health Diagnosis</h1>
-//       {!results && questions.length > 0 ? (
+//     <>
+//       <div>
+//         <h3>Chat with HealthBot</h3>
 //         <div>
-//           <p>{questions[currentQuestionIndex].question}</p>
-//           <button onClick={() => handleAnswer("Yes")}>Yes</button>
-//           <button onClick={() => handleAnswer("No")}>No</button>
-//         </div>
-//       ) : results ? (
-//         <div>
-//           <h2>Results:</h2>
 //           <ul>
-//             {results.map((result) => (
-//               <li key={result.id}>
-//                 {result.type}: {result.score}/10
+//             {messages.map((msg, index) => (
+//               <li key={index} className={msg.sender === "user" ? "user" : "bot"}>
+//                 {msg.text}
 //               </li>
 //             ))}
 //           </ul>
 //         </div>
-//       ) : (
-//         <p>Loading questions...</p>
-//       )}
-//     </div>
+//         <form onSubmit={sendMessage}>
+//           <input
+//             type="text"
+//             value={input}
+//             onChange={(e) => setInput(e.target.value)}
+//             placeholder="Your Message..."
+//             required
+//           />
+//           <button type="submit">Send</button>
+//         </form>
+//       </div>
+//     </>
 //   );
 // };
 

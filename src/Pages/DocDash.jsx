@@ -276,7 +276,8 @@ dark:bg-neutral-800 dark:border-neutral-700"
             <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src={`${logo}`} alt="logo" /> */}
+                  <img src={`/logo.png`} alt="logo" />
                 </Link>
               </div>
             </div>
@@ -358,6 +359,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
 
       <div class="w-full lg:ps-64">
         <div class="my-section">
+          <Outlet />
           <Outlet />
         </div>
       </div>
