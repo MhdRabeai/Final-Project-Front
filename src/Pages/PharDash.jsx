@@ -1,6 +1,11 @@
 import React from "react";
+<<<<<<< HEAD
+import { Link } from "react-router-dom";
+// import logo from "../Assets/logo.png";
+=======
 import { Link, Outlet } from "react-router-dom";
 import logo from "../Assets/logo.png";
+>>>>>>> 0ed0fb955603e2028786d4bafe38318892e787c3
 import MedicineCard from "../Components/medcin";
 import BillCard from "../Components/pharBill";
 
@@ -10,9 +15,10 @@ const PharDash = () => {
       <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
           <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
-          <Link to={"/"}>
+            <Link to={"/"}>
               <img
-                src={`${logo}`}
+                // src={`${logo}`}
+                src={`/logo.png`}
                 alt="logo"
                 className=" block lg:hidden"
                 width={150}
@@ -310,7 +316,8 @@ dark:bg-neutral-800 dark:border-neutral-700"
             <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src={`${logo}`} alt="logo" /> */}
+                  <img src={`/logo.png`} alt="logo" />
                   {/* <img src="logo.png" alt="logo" width={175} /> */}
                 </Link>
               </div>
@@ -817,6 +824,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
         </div>
       </div>
 
+<<<<<<< HEAD
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <MedicineCard />
+      </div>
+=======
       {/* <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <MedicineCard />
     </div>
@@ -827,7 +839,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
       />
     </div> */}
     <Outlet/>
+>>>>>>> 0ed0fb955603e2028786d4bafe38318892e787c3
 
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <BillCard />
+      </div>
     </div>
   );
 };
