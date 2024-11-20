@@ -14,20 +14,24 @@ const BlogsAdmin = () => {
   const itemsPerPage = 8;
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchBlogs = async () => {
       try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const response = await fetch('http://localhost:4000/getAllBlogs');
+        if (!response.ok) {
+          throw new Error('Error fetching blogs');
+        }
         const result = await response.json();
         setData(result);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchData();
+    fetchBlogs();
   }, []);
+
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
