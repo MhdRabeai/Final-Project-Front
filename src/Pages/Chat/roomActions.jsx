@@ -2,23 +2,24 @@ import axios from "axios";
 
 const apiUrl = "http://localhost:4000/api/rooms";
 
-export const createRoom = async (name, password, ownerId) => {
+export const createRoom = async (roomName, password, ownerId) => {
   try {
     const response = await axios.post(`${apiUrl}/create`, {
-      name,
+      roomName,
       password,
       ownerId,
     });
+    
     return response.data;
   } catch (error) {
     throw new Error("Error creating room");
   }
 };
 
-export const joinRoom = async (e, roomName, password) => {
-  e.preventFefault();
+export const joinRoom = async (id, roomName, password) => {
   try {
     const response = await axios.post(`${apiUrl}/join-room`, {
+      user_id: id,
       roomName,
       password,
     });

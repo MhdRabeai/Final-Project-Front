@@ -1,9 +1,11 @@
 import { io } from "socket.io-client";
 
 const socket = io("http://localhost:4000", {
-  withCredentials: true,
+  transports: ["polling"],
 });
-
+socket.on("connect", () => {
+  console.log("Connected to server");
+});
 export const joinRoom = (roomId, userId) => {
   socket.emit("joinRoom", { roomId, userId });
 };

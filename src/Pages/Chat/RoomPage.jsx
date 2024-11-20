@@ -31,7 +31,19 @@ const RoomPage = () => {
     if (roomId) {
       checkRoomStatus(roomId)
         .then((status) => setRoomStatus(status))
-        .catch(() => setError("Error checking room status"));
+        .catch((err) =>
+          toast.error(err.message, {
+            position: "bottom-right",
+            autoClose: 750,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+          })
+        );
     }
   }, [roomId]);
 
@@ -40,6 +52,7 @@ const RoomPage = () => {
       console.log("New message:", message)
     );
     socket.on("accessGranted", (message) => setSuccessMessage(message));
+    console.log(successMessage);
     return () => socket.disconnect();
   }, []);
 
@@ -48,11 +61,10 @@ const RoomPage = () => {
       setIsLoading(true);
       try {
         const room = await createRoom(roomName, password, user["_id"]);
-        setRoomId(room._id);
-        socketJoinRoom(room._id, room.ownerId);
+        setRoomId(room["insertedId"]);
+        socketJoinRoom(room["insertedId"], room.ownerId);
         setIsJoined(true);
-        console.log(room);
-        // console.log(await room.json());
+        navigate(`/chat/${roomName}`);
         return toast.success("Room created successfully!", {
           position: "bottom-right",
           autoClose: 1000,
@@ -85,36 +97,20 @@ const RoomPage = () => {
   const handleJoinRoom = async () => {
     setIsLoading(true);
     try {
-      if (roomStatus?.isPrivate) {
-        toast.error(
-          "This room is private. You need an invitation or password.",
-          {
-            position: "bottom-right",
-            autoClose: 750,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          }
-        );
-      } else {
-        await joinRoom(roomName, password);
-        socketJoinRoom(roomId, user?._id);
-        setIsJoined(true);
-        return toast.success("You have joined the room!", {
-          position: "bottom-right",
-          autoClose: 1000,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Bounce,
-        });
-      }
+      await joinRoom(user?._id, roomName, password);
+      socketJoinRoom(roomId, user?._id);
+      setIsJoined(true);
+      navigate(`/chat/${roomId}`);
+      return toast.success("You have joined the room!", {
+        position: "bottom-right",
+        autoClose: 1000,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
     } catch (err) {
       return toast.error(err.message, {
         position: "bottom-right",

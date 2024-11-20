@@ -50,6 +50,7 @@ import HomeDoctPage from "./Pages/HomeDoctPage";
 import MedicineCard from "./Components/medcin";
 import BillCard from "./Components/pharBill";
 import RoomPage from "./Pages/Chat/RoomPage";
+import VideoRoom from "./Pages/Chat/VideoRoom";
 
 function App() {
   const location = useLocation();
@@ -170,7 +171,9 @@ function App() {
             path="dashboard/user/calendarpage"
             element={<CalendarPage />}
           />
+          <Route path="chat" element={<RoomPage />} />
 
+          <Route path="chat/:name" element={<VideoRoom />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

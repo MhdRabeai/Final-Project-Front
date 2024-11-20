@@ -18,17 +18,14 @@ const ContextProvider = (props) => {
   const [isChatStarted, setIsChatStarted] = useState(false);
 
   useEffect(() => {
-    // حفظ الرسائل في localStorage عند التغيير
     sessionStorage.setItem("prevPrompts", JSON.stringify(prevPrompts));
   }, [prevPrompts]);
-  // وظيفة تأخير عرض النصوص بين الكلمات
   const delayPara = (i, nextWord) => {
     setTimeout(() => {
       setResultData((prev) => prev + nextWord);
     }, 75 * i);
   };
 
-  // بدء محادثة جديدة
   const newChat = () => {
     setLoading(false);
     setShowResult(false);
@@ -37,7 +34,7 @@ const ContextProvider = (props) => {
     setIsChatStarted(true);
   };
   const startChat = () => {
-    setIsChatStarted(true); // تغيير حالة بدء المحادثة
+    setIsChatStarted(true);
     setPrevPrompts([
       {
         role: "bot",
