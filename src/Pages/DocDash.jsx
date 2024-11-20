@@ -1,11 +1,14 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-// import logo from "../Assets/logo.png";
+
 import AddArticle from "./DoctorArticleForm";
 import Perspective from "./PrescriptionForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle, faPenAlt } from "@fortawesome/free-solid-svg-icons";
 import { FaCalendarAlt, FaPills } from "react-icons/fa";
+import { CiVideoOn } from "react-icons/ci";
+
+import { MdOutlineDashboard } from "react-icons/md";
 
 const DocDash = () => {
   return (
@@ -14,13 +17,13 @@ const DocDash = () => {
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
           <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <Link to={"/"}>
-              {/* <img src={`${logo}`} alt="logo" className=" block lg:hidden" width={150}/> */}
               <img
-                src="/logo.png"
+                src={`/logo.png`}
                 alt="logo"
                 className=" block lg:hidden"
                 width={150}
               />
+              {/* <img src="logo.png" alt="logo" width={175} /> */}
             </Link>
 
             <div class="flex flex-row items-center justify-end gap-1">
@@ -288,6 +291,18 @@ dark:bg-neutral-800 dark:border-neutral-700"
               <ul className="flex flex-col space-y-1">
                 <li>
                   <Link
+                    to="/dashboard/doct"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <MdOutlineDashboard
+                      icon={faUserCircle}
+                      className="text-sm shrink-0"
+                    />
+                    Overview
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     to="/dashboard/doct/DocProfile"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
@@ -305,6 +320,15 @@ dark:bg-neutral-800 dark:border-neutral-700"
                   >
                     <FaCalendarAlt className="shrink-0" />
                     Calendar
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard/doct/chat"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <CiVideoOn className="text-sm shrink-0" />
+                    Video Chat
                   </Link>
                 </li>
                 <li>
@@ -335,6 +359,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
 
       <div class="w-full lg:ps-64">
         <div class="my-section">
+          <Outlet />
           <Outlet />
         </div>
       </div>

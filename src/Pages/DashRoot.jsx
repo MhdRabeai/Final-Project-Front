@@ -1,8 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import AiChat from "../Components/AiChat";
+import { useUserInfo } from "../Services/UserContext";
 
 const DashRoot = () => {
+  const { user } = useUserInfo();
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log(user["role"]);
+    return () => {};
+  }, []);
   return (
     <div className="relative">
       <ul>

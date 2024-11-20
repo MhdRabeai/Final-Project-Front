@@ -49,6 +49,7 @@ import HomeAdminPage from "./Pages/HomeAdminPage";
 import HomeDoctPage from "./Pages/HomeDoctPage";
 import MedicineCard from "./Components/medcin";
 import BillCard from "./Components/pharBill";
+import RoomPage from "./Pages/Chat/RoomPage";
 
 function App() {
   const location = useLocation();
@@ -139,22 +140,20 @@ function App() {
             />
           </Route>
           <Route path="dashboard/doct" element={<DocDash />}>
-          <Route index element={<HomeDoctPage />} />
-          <Route path="HomeDoctPage" element={<HomeDoctPage />} />
+            <Route index element={<HomeDoctPage />} />
+            <Route path="HomeDoctPage" element={<HomeDoctPage />} />
             <Route path="CalendarPage" element={<CalendarPage />} />
             <Route path="DocProfile" element={<DocProfile />} />
+            <Route path="chat" element={<RoomPage />} />
             <Route path="AddArticle" element={<DoctorArticleForm />} />
             <Route path="PrescriptionForm" element={<PrescriptionForm />} />
           </Route>
-          <Route path="dashboard/pharmacy" element={<PharDash />} >
-          <Route index element={<MedicineCard />} />
-          <Route path="medcin" element={<MedicineCard />} />
-          <Route path="pharBill" element={<BillCard />} />
-
-
+          <Route path="dashboard/pharmacy" element={<PharDash />}>
+            <Route index element={<MedicineCard />} />
+            <Route path="medcin" element={<MedicineCard />} />
+            <Route path="pharBill" element={<BillCard />} />
           </Route>
 
-          
           <Route path="dashboard/user" element={<UserDash />}>
             {/* <Route index element={<ProfilePage />} /> */}
             <Route path="Setting" element={<ProfilePage />} />
