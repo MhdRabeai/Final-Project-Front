@@ -157,6 +157,7 @@ function App() {
             </Route>
           </Route>
 
+          <Route path="chat/:name" element={<VideoRoom />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

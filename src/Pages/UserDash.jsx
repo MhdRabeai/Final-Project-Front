@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../Assets/logo.png";
+// import logo from "../Assets/logo.png";
 import { IoMdSettings } from "react-icons/io";
 import { MdVideoChat } from "react-icons/md";
 import { LiaMoneyBillSolid } from "react-icons/lia";
@@ -21,7 +21,8 @@ const UserDash = () => {
           <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <Link to={"/"}>
               <img
-                src={`${logo}`}
+                // src={`${logo}`}
+                src={`/logo.png`}
                 alt="logo"
                 className=" block lg:hidden"
                 width={150}
@@ -310,7 +311,8 @@ dark:bg-neutral-800 dark:border-neutral-700"
             <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src={`${logo}`} alt="logo" /> */}
+                  <img src={`/logo.png`} alt="logo" />
                   {/* <img src="logo.png" alt="logo" width={175} /> */}
                 </Link>
               </div>
@@ -360,7 +362,7 @@ dark:bg-neutral-800 dark:border-neutral-700"
                 </li>
                 <li>
                   <Link
-                    to="/dashboard/user/chatroom"
+                    to="/chat"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
                     <svg class="shrink-5 size-4 ml-2">

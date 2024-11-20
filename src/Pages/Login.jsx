@@ -12,45 +12,52 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
+    console.log(email);
+    console.log(password);
     e.preventDefault();
-    const res = await fetch("http://localhost:4000/login", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({ email: email, password: password }),
-    });
-
-    const msg = await res.json();
-    if (res.ok) {
-      await loginUser();
-      navigate("/");
-      return toast.success(msg["message"], {
-        position: "bottom-right",
-        autoClose: 1000,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
+    try {
+      const res = await fetch("http://localhost:4000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({ email, password }),
       });
-    } else {
-      setIsLoading(false);
-      navigate("/login");
 
-      return toast.error(msg["message"], {
-        position: "bottom-right",
-        autoClose: 750,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
+      const msg = await res.json();
+      console.log(res);
+      if (res.ok) {
+        await loginUser();
+        navigate("/");
+        return toast.success(msg["message"], {
+          position: "bottom-right",
+          autoClose: 1000,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      } else {
+        setIsLoading(false);
+        navigate("/login");
+
+        return toast.error(msg["message"], {
+          position: "bottom-right",
+          autoClose: 750,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+      }
+    } catch (err) {
+      console.log(err.message);
     }
   };
 
@@ -124,9 +131,6 @@ const Login = () => {
                       </div>
                       <button
                         type="button"
-                        data-hs-toggle-password='{
-        "target": "#hs-toggle-password"
-      }'
                         className="absolute inset-y-0 end-0 flex items-center z-20 px-3 cursor-pointer text-gray-400 rounded-e-md focus:outline-none focus:text-[#4f9451] dark:text-neutral-600 dark:focus:text--500"
                       >
                         <svg

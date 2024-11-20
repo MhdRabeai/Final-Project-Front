@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import socket from "../../Services/socket"; // تأكد من أنك تستخدم نفس الكائن socket.io الذي تستخدمه للدردشة
-import Peer from "peerjs"; // مكتبة PeerJS أو WebRTC الأصلية
+import socket from "../../Services/socket";
+import Peer from "peerjs";
 
 const VideoRoom = () => {
   const [peer, setPeer] = useState(null);
@@ -12,11 +12,10 @@ const VideoRoom = () => {
   const [isVideoOff, setIsVideoOff] = useState(false);
   const [incomingCall, setIncomingCall] = useState(null);
 
-  const videoRef = useRef(null); // مرجع للفيديو المحلي
-  const remoteVideoRef = useRef(null); // مرجع للفيديو البعيد
+  const videoRef = useRef(null);
+  const remoteVideoRef = useRef(null);
 
   useEffect(() => {
-    // الحصول على دفق الوسائط (الفيديو والصوت) من الكاميرا
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
@@ -25,7 +24,6 @@ const VideoRoom = () => {
       })
       .catch((err) => console.error("Error accessing media devices:", err));
 
-    // استقبال إشعار الاتصال الوارد
     socket.on("incomingCall", (callerId) => {
       setIncomingCall(callerId);
     });
@@ -53,14 +51,12 @@ const VideoRoom = () => {
 
     newPeer.on("stream", (stream) => {
       setRemoteStream(stream);
-      if (remoteVideoRef.current) remoteVideoRef.current.srcObject = stream;
     });
 
     setPeer(newPeer);
     setIsCalling(true);
   };
 
-  // قبول المكالمة الواردة
   const acceptCall = (signalData) => {
     const newPeer = new Peer({
       initiator: false,
@@ -74,73 +70,118 @@ const VideoRoom = () => {
 
     newPeer.on("stream", (stream) => {
       setRemoteStream(stream);
-      if (remoteVideoRef.current) remoteVideoRef.current.srcObject = stream;
     });
 
     newPeer.signal(signalData);
     setPeer(newPeer);
     setIsCalling(true);
   };
-  // إنهاء المكالمة
+
   const endCall = () => {
     peer.destroy();
     setIsCalling(false);
     setIsConnected(false);
     setRemoteStream(null);
   };
+
   const toggleMute = () => {
     const audioTrack = myStream.getAudioTracks()[0];
     audioTrack.enabled = !audioTrack.enabled;
     setIsMuted(!isMuted);
   };
 
-  // إيقاف الفيديو
   const toggleVideo = () => {
     const videoTrack = myStream.getVideoTracks()[0];
     videoTrack.enabled = !videoTrack.enabled;
     setIsVideoOff(!isVideoOff);
   };
+
   return (
-    <div>
-      <h1>Video Chat</h1>
+    <div class="max-w-4xl mx-auto p-4 bg-gray-800 text-white rounded-lg shadow-lg">
+      <h1 class="text-3xl font-semibold text-center mb-6">Video Chat</h1>
 
-      {/* عرض الفيديو المحلي */}
-      <video ref={videoRef} autoPlay muted />
+      <div class="relative mb-4">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          class="w-full h-auto rounded-lg shadow-md"
+        />
+      </div>
 
-      {/* عرض الفيديو البعيد */}
-      {isConnected && <video ref={remoteVideoRef} autoPlay />}
-
-      {/* إشعار المكالمة الواردة */}
-      {incomingCall && !isCalling && !isConnected && (
-        <div>
-          <h3>Incoming call from {incomingCall}</h3>
-          <button onClick={() => acceptCall(incomingCall)}>Accept</button>
-          <button onClick={() => setIncomingCall(null)}>Reject</button>
+      {isConnected && remoteStream && (
+        <div class="relative mb-4">
+          <video
+            ref={remoteVideoRef}
+            autoPlay
+            srcObject={remoteStream}
+            class="w-full h-auto rounded-lg shadow-md"
+          />
         </div>
       )}
 
-      {/* حالة الاتصال */}
-      {isConnected ? (
-        <p>Connected</p>
-      ) : isCalling ? (
-        <p>Calling...</p>
-      ) : (
-        <p>Waiting for call...</p>
+      {incomingCall && !isCalling && !isConnected && (
+        <div class="bg-blue-600 p-4 rounded-lg mb-4">
+          <h3 class="text-xl font-semibold">
+            Incoming call from {incomingCall}
+          </h3>
+          <div class="mt-4 flex gap-4 justify-center">
+            <button
+              onClick={() => acceptCall(incomingCall)}
+              class="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+            >
+              Accept
+            </button>
+            <button
+              onClick={() => setIncomingCall(null)}
+              class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+            >
+              Reject
+            </button>
+          </div>
+        </div>
       )}
 
-      {/* التحكم في المكالمات */}
-      <div>
+      <div class="text-center mt-4">
+        {isConnected ? (
+          <p class="text-lg text-green-500">Connected</p>
+        ) : isCalling ? (
+          <p class="text-lg text-yellow-400">Calling...</p>
+        ) : (
+          <p class="text-lg text-gray-400">Waiting for call...</p>
+        )}
+      </div>
+
+      <div class="mt-6 flex justify-center gap-6">
         {isCalling && (
           <>
-            <button onClick={endCall}>End Call</button>
-            <button onClick={toggleMute}>{isMuted ? "Unmute" : "Mute"}</button>
-            <button onClick={toggleVideo}>
+            <button
+              onClick={endCall}
+              class="bg-red-600 hover:bg-red-800 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+            >
+              End Call
+            </button>
+            <button
+              onClick={toggleMute}
+              class="bg-gray-500 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+            >
+              {isMuted ? "Unmute" : "Mute"}
+            </button>
+            <button
+              onClick={toggleVideo}
+              class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
+            >
               {isVideoOff ? "Turn Video On" : "Turn Video Off"}
             </button>
           </>
         )}
         {!isCalling && !isConnected && (
-          <button onClick={() => startCall("targetUserId")}>Start Call</button>
+          <button
+            onClick={() => startCall("targetUserId")}
+            class="bg-teal-500 hover:bg-teal-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
+          >
+            Start Call
+          </button>
         )}
       </div>
     </div>

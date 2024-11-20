@@ -124,61 +124,61 @@ const AiChat = () => {
 
 export default AiChat;
 
-// import React, { useState, useEffect } from "react";
+// import React, { useState } from "react";
 // import axios from "axios";
 
 // const AiChat = () => {
-//   const [questions, setQuestions] = useState([]);
-//   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-//   const [answers, setAnswers] = useState([]);
-//   const [results, setResults] = useState(null);
+//   const [messages, setMessages] = useState([]);
+//   const [input, setInput] = useState("");
 
-//   useEffect(() => {
-//     axios.get("http://localhost:5000/questions").then((response) => {
-//       setQuestions(response.data);
-//     });
-//   }, []);
+//   const sendMessage = async (e) => {
+//     e.preventDefault();
+//     if (!input.trim()) return;
 
-//   const handleAnswer = (answer) => {
-//     setAnswers([
-//       ...answers,
-//       { id: questions[currentQuestionIndex].id, answer, type: questions[currentQuestionIndex].type },
-//     ]);
+//     const userMessage = { sender: "user", text: input.trim() };
+//     setMessages((prev) => [...prev, userMessage]);
 
-//     if (currentQuestionIndex + 1 < questions.length) {
-//       setCurrentQuestionIndex(currentQuestionIndex + 1);
-//     } else {
-//       axios
-//         .post("http://localhost:5000/analyze", { answers })
-//         .then((response) => setResults(response.data))
-//         .catch((error) => console.error(error));
+//     try {
+//       const response = await axios.post("http://localhost:5000/analyze", {
+//         answers: [{ id: 1, type: "general", answer: input }],
+//       });
+
+//       const analysisResult = response.data[0]?.score || "No score available";
+//       const botResponse = { sender: "bot", text: `Your score: ${analysisResult}` };
+//       setMessages((prev) => [...prev, botResponse]);
+//     } catch (error) {
+//       const errorResponse = { sender: "bot", text: "Something went wrong!" };
+//       setMessages((prev) => [...prev, errorResponse]);
 //     }
+
+//     setInput("");
 //   };
 
 //   return (
-//     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-//       <h1>Mental Health Diagnosis</h1>
-//       {!results && questions.length > 0 ? (
+//     <>
+//       <div>
+//         <h3>Chat with HealthBot</h3>
 //         <div>
-//           <p>{questions[currentQuestionIndex].question}</p>
-//           <button onClick={() => handleAnswer("Yes")}>Yes</button>
-//           <button onClick={() => handleAnswer("No")}>No</button>
-//         </div>
-//       ) : results ? (
-//         <div>
-//           <h2>Results:</h2>
 //           <ul>
-//             {results.map((result) => (
-//               <li key={result.id}>
-//                 {result.type}: {result.score}/10
+//             {messages.map((msg, index) => (
+//               <li key={index} className={msg.sender === "user" ? "user" : "bot"}>
+//                 {msg.text}
 //               </li>
 //             ))}
 //           </ul>
 //         </div>
-//       ) : (
-//         <p>Loading questions...</p>
-//       )}
-//     </div>
+//         <form onSubmit={sendMessage}>
+//           <input
+//             type="text"
+//             value={input}
+//             onChange={(e) => setInput(e.target.value)}
+//             placeholder="Your Message..."
+//             required
+//           />
+//           <button type="submit">Send</button>
+//         </form>
+//       </div>
+//     </>
 //   );
 // };
 

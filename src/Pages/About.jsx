@@ -19,7 +19,8 @@ const About = () => {
   ) : (
     <div className="max-w-[86rem] mx-auto px-4">
       {/* <Payment amount={10} /> */}
-      <RoomPage />
+      {/* <RoomPage /> */}
+      {/* <AiChat /> */}
       <section className="overflow-hidden   pb-6 mb-6 border-b-2 border-[#ddd]">
         <div className="container mx-auto">
           <div className=" flex  flex-wrap items-center justify-between -mx-4">

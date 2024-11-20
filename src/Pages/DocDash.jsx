@@ -1,25 +1,30 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../Assets/logo.png";
-import AddArticle from "./DoctorArticleForm"
-import Perspective  from "./PrescriptionForm"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle, faPenAlt } from '@fortawesome/free-solid-svg-icons';
-import {FaCalendarAlt, FaPills} from 'react-icons/fa'; 
 
+import AddArticle from "./DoctorArticleForm";
+import Perspective from "./PrescriptionForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserCircle, faPenAlt } from "@fortawesome/free-solid-svg-icons";
+import { FaCalendarAlt, FaPills } from "react-icons/fa";
+import { CiVideoOn } from "react-icons/ci";
+
+import { MdOutlineDashboard } from "react-icons/md";
 
 const DocDash = () => {
   return (
     <div>
       <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
-        
-
           <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
-          <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" className=" block lg:hidden" width={150}/>
-                  {/* <img src="logo.png" alt="logo" width={175} /> */}
-                </Link>
+            <Link to={"/"}>
+              <img
+                src={`/logo.png`}
+                alt="logo"
+                className=" block lg:hidden"
+                width={150}
+              />
+              {/* <img src="logo.png" alt="logo" width={175} /> */}
+            </Link>
 
             <div class="flex flex-row items-center justify-end gap-1">
               <button
@@ -267,12 +272,12 @@ dark:bg-neutral-800 dark:border-neutral-700"
         aria-label="Sidebar"
       >
         <div class="relative flex flex-col h-full max-h-full bg-[#4F9451] ">
-         
           <div className="relative z-10">
             <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src={`${logo}`} alt="logo" /> */}
+                  <img src={`/logo.png`} alt="logo" />
                 </Link>
               </div>
             </div>
@@ -283,43 +288,81 @@ dark:bg-neutral-800 dark:border-neutral-700"
               class="hs-accordion-group p-3 w-full flex flex-col flex-wrap"
               data-hs-accordion-always-open
             >
-                            <ul className="flex flex-col space-y-1">
-  <li>
-    <Link
-      to="/dashboard/doct/DocProfile"
-      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-    >
-      <FontAwesomeIcon icon={faUserCircle} className="text-sm shrink-0" />
-      Profile
-    </Link>
-  </li>
-  <li>
-    <Link
-      to="/dashboard/doct/calendarpage"
-      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-    >
-      <FaCalendarAlt className="shrink-0" />
-      Calendar
-    </Link>
-  </li>
-  <li>
-    <Link
-      to="/dashboard/doct/AddArticle"
-      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-    >
-<FontAwesomeIcon icon={faPenAlt} className="text-sm shrink-0" />
-Add Article
-    </Link>
-  </li>
-  <li>
-    <Link
-      to="/dashboard/doct/PrescriptionForm"
-      className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-    >
-<FaPills className="shrink-0" />      Prescription Form
-    </Link>
-  </li>
-</ul>
+              <ul className="flex flex-col space-y-1">
+                <li>
+                  <Link
+                    to="/dashboard/doct"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <MdOutlineDashboard
+                      icon={faUserCircle}
+                      className="text-sm shrink-0"
+                    />
+                    Overview
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard/doct/DocProfile"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <FontAwesomeIcon
+                      icon={faUserCircle}
+                      className="text-sm shrink-0"
+                    />
+                    Profile
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/chat"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <svg class="shrink-5 size-4 ml-2">
+                      <MdVideoChat />
+                    </svg>
+                    Chat Room
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard/doct/calendarpage"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <FaCalendarAlt className="shrink-0" />
+                    Calendar
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard/doct/chat"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <CiVideoOn className="text-sm shrink-0" />
+                    Video Chat
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard/doct/AddArticle"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <FontAwesomeIcon
+                      icon={faPenAlt}
+                      className="text-sm shrink-0"
+                    />
+                    Add Article
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/dashboard/doct/PrescriptionForm"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <FaPills className="shrink-0" /> Prescription Form
+                  </Link>
+                </li>
+              </ul>
             </nav>
           </div>
         </div>
@@ -327,8 +370,8 @@ Add Article
 
       <div class="w-full lg:ps-64">
         <div class="my-section">
-        <Outlet/>
-         
+          <Outlet />
+          <Outlet />
         </div>
       </div>
     </div>

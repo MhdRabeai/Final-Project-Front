@@ -1,6 +1,9 @@
 import React from "react";
+
+// import logo from "../Assets/logo.png";
+
 import { Link, Outlet } from "react-router-dom";
-import logo from "../Assets/logo.png";
+
 import MedicineCard from "../Components/medcin";
 import BillCard from "../Components/pharBill";
 
@@ -10,9 +13,10 @@ const PharDash = () => {
       <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-[48] w-full bg-[#4F9451] border-b text-sm py-2.5 lg:ps-[260px] dark:bg-neutral-800 dark:border-neutral-700">
         <nav class="px-4 sm:px-6 flex basis-full items-center w-full mx-auto">
           <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
-          <Link to={"/"}>
+            <Link to={"/"}>
               <img
-                src={`${logo}`}
+                // src={`${logo}`}
+                src={`/logo.png`}
                 alt="logo"
                 className=" block lg:hidden"
                 width={150}
@@ -310,7 +314,8 @@ dark:bg-neutral-800 dark:border-neutral-700"
             <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src={`${logo}`} alt="logo" /> */}
+                  <img src={`/logo.png`} alt="logo" />
                   {/* <img src="logo.png" alt="logo" width={175} /> */}
                 </Link>
               </div>
@@ -323,7 +328,6 @@ dark:bg-neutral-800 dark:border-neutral-700"
               data-hs-accordion-always-open
             >
               <ul class="flex flex-col space-y-1">
-              
                 <li>
                   <Link
                     to="/dashboard/pharmacy/medcin"
@@ -346,10 +350,9 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
                     Medicine
-                  
                   </Link>
                 </li>
-                  
+
                 <li>
                   <Link
                     to="/dashboard/pharmacy/pharBill"
@@ -372,10 +375,8 @@ dark:bg-neutral-800 dark:border-neutral-700"
                       <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
                     Bill
-                  
                   </Link>
                 </li>
-                  
 
                 {/* <li class="hs-accordion" id="users-accordion">
                      
@@ -826,8 +827,11 @@ dark:bg-neutral-800 dark:border-neutral-700"
        
       />
     </div> */}
-    <Outlet/>
+      <Outlet />
 
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+        <BillCard />
+      </div>
     </div>
   );
 };

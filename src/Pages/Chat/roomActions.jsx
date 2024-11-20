@@ -2,20 +2,28 @@ import axios from "axios";
 
 const apiUrl = "http://localhost:4000/api/rooms";
 
-export const createRoom = async (name, password) => {
+export const createRoom = async (roomName, password, ownerId) => {
   try {
-    const response = await axios.post(`${apiUrl}/create`, { name, password });
+    const response = await axios.post(`${apiUrl}/create`, {
+      roomName,
+      password,
+      ownerId,
+    });
+    
     return response.data;
   } catch (error) {
     throw new Error("Error creating room");
   }
 };
 
-export const joinRoom = async (roomId, password) => {
+export const joinRoom = async (id, roomName, password) => {
   try {
-    const response = await axios.post(`${apiUrl}/join-room/${roomId}`, {
+    const response = await axios.post(`${apiUrl}/join-room`, {
+      user_id: id,
+      roomName,
       password,
     });
+    console.log(response.data);
     return response.data;
   } catch (error) {
     throw new Error("Error joining room");
@@ -25,7 +33,8 @@ export const joinRoom = async (roomId, password) => {
 export const checkRoomStatus = async (roomId) => {
   try {
     const response = await axios.get(`${apiUrl}/status/${roomId}`);
-    return response.data; // يعيد معلومات الغرفة بما في ذلك ما إذا كانت خاصة أو عامة
+    console.log("response");
+    return response.data;
   } catch (error) {
     throw new Error("Error checking room status");
   }
