@@ -6,6 +6,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import { UserProvider } from "./Services/UserContext";
+import ContextProvider from "./Services/ChatContext";
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
@@ -18,7 +19,11 @@ root.render(
     >
       <ConfigProvider theme={{ token: { colorPrimary: "#4f9451" } }}>
         <UserProvider>
-          <App />
+          <ContextProvider>
+
+
+            <App />
+          </ContextProvider>
         </UserProvider>
       </ConfigProvider>
     </BrowserRouter>
