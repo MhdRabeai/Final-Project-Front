@@ -1,6 +1,11 @@
 import React from "react";
-
+<<<<<<< HEAD
+import { Link } from "react-router-dom";
+// import logo from "../Assets/logo.png";
+=======
 import { Link, Outlet } from "react-router-dom";
+import logo from "../Assets/logo.png";
+>>>>>>> 0ed0fb955603e2028786d4bafe38318892e787c3
 import MedicineCard from "../Components/medcin";
 import BillCard from "../Components/pharBill";
 
