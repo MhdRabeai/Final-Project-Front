@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../Assets/logo.png";
-import { FaHome, FaCalendarAlt, FaPills, FaUsers } from 'react-icons/fa'; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
-
+// import logo from "../Assets/logo.png";
+import { FaHome, FaCalendarAlt, FaPills, FaUsers } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 
 const AdminDash = () => {
   return (
@@ -14,7 +13,8 @@ const AdminDash = () => {
           <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <Link to={"/"}>
               <img
-                src={`${logo}`}
+                // src={`${logo}`}
+                src={`/logo.png`}
                 alt="logo"
                 className=" block lg:hidden"
                 width={150}
@@ -271,7 +271,8 @@ const AdminDash = () => {
             <div className="w-full max-w-5xl px-4 xl:px-0 py-4 lg:pt-6 mx-auto flex justify-center">
               <div className="inline-flex items-center border-x px-5 mx-5">
                 <Link to={"/"}>
-                  <img src={`${logo}`} alt="logo" />
+                  {/* <img src={`${logo}`} alt="logo" /> */}
+                  <img src={`/logo.png`} alt="logo" />
                 </Link>
               </div>
             </div>
@@ -282,120 +283,124 @@ const AdminDash = () => {
               class="hs-accordion-group p-3 w-full flex flex-col flex-wrap"
               data-hs-accordion-always-open
             >
-               <ul className="flex flex-col space-y-1">
-          <li>
-            <Link
-              to="/dashboard/admin"
-              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-            >
-              <FaHome className="shrink-0" />
-              Overview
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/dashboard/admin/CalendarAdmin"
-              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-            >
-              <FaCalendarAlt className="shrink-0" />
-              Calendar
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              to="/dashboard/admin/TabelDrugs"
-              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-            >
-              <FaPills className="shrink-0" />
-              All Drugs
-            </Link>
-          </li>
-
-          <li className="hs-accordion" id="projects-accordion">
-            <button
-              type="button"
-              className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
-              aria-expanded="true"
-              aria-controls="projects-accordion-child"
-            >
-              <FaUsers className="shrink-0" />
-              All Users
-              <svg
-                className="hs-accordion-active:block ms-auto hidden size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m18 15-6-6-6 6" />
-              </svg>
-              <svg
-                className="hs-accordion-active:hidden ms-auto block size-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-            </button>
-
-            <div
-              id="projects-accordion-child"
-              className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
-              role="region"
-              aria-labelledby="projects-accordion"
-            >
-              <ul className="ps-8 pt-1 space-y-1">
+              <ul className="flex flex-col space-y-1">
                 <li>
                   <Link
-                    to="/dashboard/admin/TabelPataints"
+                    to="/dashboard/admin"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    All Patients
+                    <FaHome className="shrink-0" />
+                    Overview
                   </Link>
                 </li>
+
                 <li>
                   <Link
-                    to="/dashboard/admin/TabelDoctors"
+                    to="/dashboard/admin/CalendarAdmin"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    All Doctors
+                    <FaCalendarAlt className="shrink-0" />
+                    Calendar
                   </Link>
                 </li>
+
                 <li>
                   <Link
-                    to="/dashboard/admin/TabelPharmaceutical"
+                    to="/dashboard/admin/TabelDrugs"
                     className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
                   >
-                    Pharmaceutical
+                    <FaPills className="shrink-0" />
+                    All Drugs
+                  </Link>
+                </li>
+
+                <li className="hs-accordion" id="projects-accordion">
+                  <button
+                    type="button"
+                    className="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+                    aria-expanded="true"
+                    aria-controls="projects-accordion-child"
+                  >
+                    <FaUsers className="shrink-0" />
+                    All Users
+                    <svg
+                      className="hs-accordion-active:block ms-auto hidden size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m18 15-6-6-6 6" />
+                    </svg>
+                    <svg
+                      className="hs-accordion-active:hidden ms-auto block size-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </button>
+
+                  <div
+                    id="projects-accordion-child"
+                    className="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden"
+                    role="region"
+                    aria-labelledby="projects-accordion"
+                  >
+                    <ul className="ps-8 pt-1 space-y-1">
+                      <li>
+                        <Link
+                          to="/dashboard/admin/TabelPataints"
+                          className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                        >
+                          All Patients
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/dashboard/admin/TabelDoctors"
+                          className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                        >
+                          All Doctors
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/dashboard/admin/TabelPharmaceutical"
+                          className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                        >
+                          Pharmaceutical
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li>
+                  <Link
+                    to="/dashboard/admin/BlogsAdmin"
+                    className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
+                  >
+                    <FontAwesomeIcon
+                      icon={faFileAlt}
+                      className="text-sm shrink-0"
+                    />{" "}
+                    Articles
                   </Link>
                 </li>
               </ul>
-            </div>
-          </li>
-
-          <li>
-            <Link
-              to="/dashboard/admin/BlogsAdmin"
-              className="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-white rounded-lg hover:bg-green-500 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300"
-            >
-<FontAwesomeIcon icon={faFileAlt} className="text-sm shrink-0" />              Articles
-            </Link>
-          </li>
-        </ul>
             </nav>
           </div>
         </div>
