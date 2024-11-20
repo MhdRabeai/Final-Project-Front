@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import logo from "../Assets/logo.png";
+
 import AddArticle from "./DoctorArticleForm";
 import Perspective from "./PrescriptionForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,7 +18,7 @@ const DocDash = () => {
           <div class="w-full flex items-center justify-between ms-auto md:justify-between gap-x-1 md:gap-x-3">
             <Link to={"/"}>
               <img
-                src={`${logo}`}
+                src={`/logo.png`}
                 alt="logo"
                 className=" block lg:hidden"
                 width={150}
