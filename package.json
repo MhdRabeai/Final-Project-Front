@@ -25,7 +25,6 @@
     "npm": "^10.9.0",
     "openai": "^4.72.0",
     "peerjs": "^1.5.4",
-
     "preline": "^2.5.1",
     "react": "^18.3.1",
     "react-big-calendar": "^1.15.0",
