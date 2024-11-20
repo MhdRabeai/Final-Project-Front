@@ -1,11 +1,6 @@
 import React from "react";
-<<<<<<< HEAD
-import { Link } from "react-router-dom";
-// import logo from "../Assets/logo.png";
-=======
+
 import { Link, Outlet } from "react-router-dom";
-import logo from "../Assets/logo.png";
->>>>>>> 0ed0fb955603e2028786d4bafe38318892e787c3
 import MedicineCard from "../Components/medcin";
 import BillCard from "../Components/pharBill";
 
@@ -824,11 +819,6 @@ dark:bg-neutral-800 dark:border-neutral-700"
         </div>
       </div>
 
-<<<<<<< HEAD
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <MedicineCard />
-      </div>
-=======
       {/* <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <MedicineCard />
     </div>
@@ -839,7 +829,6 @@ dark:bg-neutral-800 dark:border-neutral-700"
       />
     </div> */}
     <Outlet/>
->>>>>>> 0ed0fb955603e2028786d4bafe38318892e787c3
 
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         <BillCard />
