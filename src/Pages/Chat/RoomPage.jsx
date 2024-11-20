@@ -146,7 +146,7 @@ const RoomPage = () => {
           Call Room
         </h1>
         {isLoading && <p className="text-blue-500 mb-4">Loading..</p>}
-        <form>
+        <form onSubmit={(e)=> e.preventDefault()}>
           <div>
             <div className="sm:col-span-3">
               <label
